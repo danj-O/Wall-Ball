@@ -1,0 +1,27 @@
+-x
+objective-c
+-arch
+arm64
+-std=c99
+-fobjc-arc
+-gmodules
+-fpascal-strings
+-Os
+-isysroot
+/Applications/Xcode9.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk
+-fno-objc-exceptions
+-miphoneos-version-min=9.0
+-g
+-fvisibility=hidden
+-fembed-bitcode-marker
+-iquote
+-iquote
+-I/Users/builduser/buildslave/unity/build/build/iOSSupport/Trampoline/build/Release-iphoneos/include
+-I/Users/builduser/buildslave/unity/build/build/iOSSupport/Trampoline/Classes
+-I/Users/builduser/buildslave/unity/build/build/iOSSupport/Trampoline
+-F/Users/builduser/buildslave/unity/build/build/iOSSupport/Trampoline/build/Release-iphoneos
+-mno-thumb
+aarch64-apple-darwin17.4.0
+"4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.38)"
+SDK_PRODUCT_BUILD_VERSION=15B87
+15B87
