@@ -89,27 +89,27 @@ public class Player2Controller : MonoBehaviour
 
 
         //DROPPING PREFABS SECTION
-        if (Input.GetKeyDown(KeyCode.Space) && bombCount > 0)
+        if (Input.GetKeyDown(KeyCode.Period) && bombCount > 0)
         {
             //what to spawn, where to spawn, which direction to spawn in
             Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z) + (transform.forward * 2), transform.rotation);
             bombCount -= 1;
             SetBombCountText();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && bombCount == 0)
+        else if (Input.GetKeyDown(KeyCode.Period) && bombCount == 0)
         {
             Debug.Log("Player out of bombs");
             SetBombCountText();
         }
 
 
-        if (Input.GetKeyDown(KeyCode.V) && wallCount > 0)
+        if (Input.GetKeyDown(KeyCode.Comma) && wallCount > 0)
         {
             Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
             wallCount -= 1;
             SetWallCountText();
         }
-        else if (Input.GetKeyDown(KeyCode.V) && wallCount == 0)
+        else if (Input.GetKeyDown(KeyCode.Comma) && wallCount == 0)
         {
             Debug.Log("Player 1 out of walls");
             SetWallCountText();

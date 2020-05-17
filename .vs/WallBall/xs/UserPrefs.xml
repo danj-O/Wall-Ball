@@ -1,14 +1,10 @@
 ﻿<Properties StartupConfiguration="{358711D1-48CF-C8BA-F884-2C8B65D8E858}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlagWinner2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BombExplode.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController1.cs" Line="183" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController1.cs" Line="108" Column="129" />
       <File FileName="Assets/Scripts/Player2Controller.cs" Line="48" Column="47" />
       <File FileName="Assets/Scripts/Wall.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BombExplode.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BombStore.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/WallStore.cs" Line="23" Column="6" />
-      <File FileName="Assets/Scripts/FlagWinner.cs" Line="26" Column="29" />
-      <File FileName="Assets/Scripts/FlagWinner2.cs" Line="26" Column="28" />
+      <File FileName="Assets/Scripts/BombExplode.cs" Line="11" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
