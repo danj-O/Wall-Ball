@@ -15,6 +15,10 @@ TagManager:
   - Joystick2
   - Joybutton2
   - JoybuttonWall2
+  - Carry Flag
+  - Flag2
+  - Flag1
+  - Carry Flag 2
   layers:
   - Default
   - TransparentFX

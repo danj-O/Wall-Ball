@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Player2Controller : MonoBehaviour
@@ -31,15 +32,33 @@ public class Player2Controller : MonoBehaviour
     //public int currentHealth;
     private int wallCount;
     private int bombCount;
+
+    public float bombCooldown;
+    private float bombCooldownDefault = 0f;
+    private bool isBombCooledDown = true;
+
     public Text wallCountText;
     public Text bombCountText;
 
+    public Text WinnerText;
+
+    public GameObject carryFlag;
+    public GameObject flag;
+    public bool isCarryingFlag;
+    public bool flagIsDropped;
+
+    private float overlapColliderRange = 2.5f;
 
 
     void Start()
     {
         //currentHealth = maxHealth;
         //healthbar.SetMaxHealth(maxHealth);
+
+        carryFlag = GameObject.FindWithTag("Carry Flag 2");
+        carryFlag.SetActive(false);
+        isCarryingFlag = false;
+        flagIsDropped = false;
 
         rb = GetComponent<Rigidbody>();
         joystick = GameObject.FindWithTag("Joystick2").GetComponent<FixedJoystick>();
@@ -52,10 +71,6 @@ public class Player2Controller : MonoBehaviour
 
         SetWallCountText();
         SetBombCountText();
-
-
-
-
     }
 
     // Update is called once per frame
@@ -88,20 +103,32 @@ public class Player2Controller : MonoBehaviour
         }
 
 
-        //DROPPING PREFABS SECTION
-        if (Input.GetKeyDown(KeyCode.Period) && bombCount > 0)
+        //DROPPING PREFABS(WALLS AND BOMBS) SECTION
+
+        //bomb cooldown conditional
+        if (bombCooldown > 0 && !isBombCooledDown)
+        {
+            bombCooldown -= Time.deltaTime;
+        }
+        else if (bombCooldown <= 0)
+        {
+            isBombCooledDown = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Period) && bombCount > 0 && isBombCooledDown)
         {
             //what to spawn, where to spawn, which direction to spawn in
             Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z) + (transform.forward * 2), transform.rotation);
             bombCount -= 1;
             SetBombCountText();
+            bombCooldown = bombCooldownDefault;
+            isBombCooledDown = false;
         }
         else if (Input.GetKeyDown(KeyCode.Period) && bombCount == 0)
         {
             Debug.Log("Player out of bombs");
             SetBombCountText();
         }
-
 
         if (Input.GetKeyDown(KeyCode.Comma) && wallCount > 0)
         {
@@ -115,7 +142,27 @@ public class Player2Controller : MonoBehaviour
             SetWallCountText();
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            isCarryingFlag = false;
+            flagIsDropped = true;
+            carryFlag.SetActive(false);
+            //GameObject.FindWithTag("Flag2").SetActive(true);
+        }
+        Collider[] hits = Physics.OverlapSphere(transform.position, overlapColliderRange);
+        foreach (Collider hit in hits)
+        {
+            if (hit.tag == "Playa" && isCarryingFlag)
+            {
+                isCarryingFlag = false;
+                flagIsDropped = true;
+                carryFlag.SetActive(false);
+                Debug.Log("TAGGED!!! DROP THE GEM!");
+            }
+        }
     }
+
+
     //here we can add items to inventory when entering a pickup area MAYBE
     private void OnTriggerEnter(Collider other)
     {
@@ -147,9 +194,21 @@ public class Player2Controller : MonoBehaviour
                 SetBombCountText();
             }
         }
+        if (other.tag == "Flag1")
+        {
+            Destroy(other.gameObject);
+            carryFlag.SetActive(true);
+            isCarryingFlag = true;
+        }
+        if (other.tag == "Flag2" && isCarryingFlag)
+        {
+            Debug.Log("Blue player wins!");
+            //restarts the game--should change this to option menu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
-
+    //functions to instantiate bombs and walls
     private void DeployBomb()
     {
         if (bombCount > 0)
@@ -181,7 +240,7 @@ public class Player2Controller : MonoBehaviour
 
     }
 
-
+    //functions to set player UI for bombs and walls
     private void SetWallCountText()
     {
         wallCountText.text = "Walls: " + wallCount.ToString();

@@ -6,17 +6,21 @@ public class BombExplode : MonoBehaviour
 {
     public int wallBreak;
     public float bombTimer;
+    public float bombTimerDefault = 2;
+
     //public bool isWallInRange = false;
     private bool isBombLive = false;
     public ParticleSystem explosion;
+    private float particleDestroyDuration;
 
     // Start is called before the first frame update
     void Awake()
     {
         isBombLive = true;
-        bombTimer = 1;
+        bombTimer = bombTimerDefault;
         //Instantiate(Sparks, transform.position, Quaternion.identity);
 
+        //particleDestroyDuration = gameObject.GetComponent<ParticleSystem>().main.startLifetime;
     }
 
     // Update is called once per frame
@@ -30,7 +34,7 @@ public class BombExplode : MonoBehaviour
             {
                 //Debug.Log("BOOM");
                 isBombLive = false;
-                bombTimer = 1;
+                bombTimer = bombTimerDefault;
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 

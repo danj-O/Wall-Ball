@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController1 : MonoBehaviour
 {
+    public bool isPlayer1;
+
     private Rigidbody rb;
     private Button bombButton;
     private Button wallButton;
@@ -31,9 +34,22 @@ public class PlayerController1 : MonoBehaviour
     //public int currentHealth;
     private int wallCount;
     private int bombCount;
+
+    public float bombCooldown;
+    private float bombCooldownDefault = 0f;
+    private bool isBombCooledDown = true;
+
     public Text wallCountText;
     public Text bombCountText;
 
+    public Text WinnerText;
+
+    public GameObject carryFlag;
+    public GameObject flag;
+    public bool isCarryingFlag;
+    public bool flagIsDropped;
+
+    private float overlapColliderRange = 2.5f;
 
 
     void Start()
@@ -41,21 +57,40 @@ public class PlayerController1 : MonoBehaviour
         //currentHealth = maxHealth;
         //healthbar.SetMaxHealth(maxHealth);
 
-        rb = GetComponent<Rigidbody>();
-        joystick = GameObject.FindWithTag("Joystick").GetComponent<FixedJoystick>();
+        //Set variables to player1 or player2
+        if (gameObject.tag == "Playa")
+        {
+            isPlayer1 = true;
+            getAxisHorizontal = "Horizontal";
+            getAxisVertical = "Vertical";
+            joystick = GameObject.FindWithTag("Joystick").GetComponent<FixedJoystick>();
+            GameObject.FindWithTag("Joybutton").GetComponent<Button>().onClick.AddListener(DeployBomb);
+            GameObject.FindWithTag("JoybuttonWall").GetComponent<Button>().onClick.AddListener(DeployWall);
+            carryFlag = GameObject.FindWithTag("Carry Flag");
 
-        GameObject.FindWithTag("Joybutton").GetComponent<Button>().onClick.AddListener(DeployBomb);
-        GameObject.FindWithTag("JoybuttonWall").GetComponent<Button>().onClick.AddListener(DeployWall);
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            isPlayer1 = false;
+            getAxisHorizontal = "Horizontal2";
+            getAxisVertical = "Vertical2";
+            joystick = GameObject.FindWithTag("Joystick2").GetComponent<FixedJoystick>();
+            GameObject.FindWithTag("Joybutton2").GetComponent<Button>().onClick.AddListener(DeployBomb);
+            GameObject.FindWithTag("JoybuttonWall2").GetComponent<Button>().onClick.AddListener(DeployWall);
+            carryFlag = GameObject.FindWithTag("Carry Flag 2");
+        }
+
+        carryFlag.SetActive(false);
+        isCarryingFlag = false;
+        flagIsDropped = false;
+
+        rb = GetComponent<Rigidbody>();
 
         wallCount = 3;
         bombCount = 6;
 
         SetWallCountText();
         SetBombCountText();
-
-
-
-
     }
 
     // Update is called once per frame
@@ -87,35 +122,66 @@ public class PlayerController1 : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection.normalized), 0.5f);
         }
 
-
         //DROPPING PREFABS(WALLS AND BOMBS) SECTION
-        if (Input.GetKeyDown(KeyCode.Space) && bombCount > 0)
+
+        //bomb cooldown conditional
+        if(bombCooldown > 0 && !isBombCooledDown)
+        {
+            bombCooldown -= Time.deltaTime;
+        }
+        else if(bombCooldown <= 0)
+        {
+            isBombCooledDown = true;
+        }
+
+        if ((Input.GetKeyDown(KeyCode.Space) && isPlayer1 && bombCount > 0 && isBombCooledDown) || (Input.GetKeyDown(KeyCode.Period) && !isPlayer1 && bombCount > 0 && isBombCooledDown))
         {
             //what to spawn, where to spawn, which direction to spawn in
-            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z) + (transform.forward * 2), transform.rotation);
+            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z) + (transform.forward * 2), transform.rotation);
             bombCount -= 1;
             SetBombCountText();
+            bombCooldown = bombCooldownDefault;
+            isBombCooledDown = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && bombCount == 0)
+        else if ((Input.GetKeyDown(KeyCode.Space) && isPlayer1 && bombCount == 0) || (Input.GetKeyDown(KeyCode.Period) && !isPlayer1 && bombCount == 0))
         {
             Debug.Log("Player out of bombs");
             SetBombCountText();
         }
 
-
-        if (Input.GetKeyDown(KeyCode.V) && wallCount > 0)
+        if ((Input.GetKeyDown(KeyCode.V) && isPlayer1 && wallCount > 0) || (Input.GetKeyDown(KeyCode.Comma) && !isPlayer1 && wallCount > 0))
         {
             Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
             wallCount -= 1;
             SetWallCountText();
         }
-        else if (Input.GetKeyDown(KeyCode.V) && wallCount == 0)
+        else if ((Input.GetKeyDown(KeyCode.V) && isPlayer1 && wallCount == 0) || (Input.GetKeyDown(KeyCode.Comma) && !isPlayer1 && wallCount == 0))
         {
             Debug.Log("Player 1 out of walls");
             SetWallCountText();
         }
 
+        if ((Input.GetKeyDown(KeyCode.C) && isPlayer1) || (Input.GetKeyDown(KeyCode.L) && !isPlayer1))
+        {
+            isCarryingFlag = false;
+            flagIsDropped = true;
+            carryFlag.SetActive(false);
+            //GameObject.FindWithTag("Flag2").SetActive(true);
+        }
+        Collider[] hits = Physics.OverlapSphere(transform.position, overlapColliderRange);
+        foreach (Collider hit in hits)
+        {
+            if ((hit.tag == "Player2" && isCarryingFlag && isPlayer1) || (hit.tag == "Playa" && isCarryingFlag && !isPlayer1))
+            {
+                isCarryingFlag = false;
+                flagIsDropped = true;
+                carryFlag.SetActive(false);
+                Debug.Log("TAGGED!!! DROP THE GEM!");
+            }
+        }
     }
+
+
     //here we can add items to inventory when entering a pickup area MAYBE
     private void OnTriggerEnter(Collider other)
     {
@@ -137,7 +203,6 @@ public class PlayerController1 : MonoBehaviour
         {
             if (other.GetComponent<BombStore>().inventory <= 0)
             {
-                Debug.Log("Bomb store has no bombs!");
             }
             else if (other.GetComponent<BombStore>().inventory > 0)
             {
@@ -145,7 +210,37 @@ public class PlayerController1 : MonoBehaviour
                 Debug.Log(other.GetComponent<BombStore>().inventory);
                 bombCount += 1;
                 SetBombCountText();
+                Debug.Log("Pickup Bomb");
+
             }
+        }
+
+        if (other.tag == "Flag2" && isPlayer1)
+        {
+            Debug.Log("Red player has the flag!");
+            Destroy(other.gameObject);
+            carryFlag.SetActive(true);
+            isCarryingFlag = true;
+        }
+        else if (other.tag == "Flag1" && !isPlayer1)
+        {
+            Debug.Log("Blue player has the flag!");
+            Destroy(other.gameObject);
+            carryFlag.SetActive(true);
+            isCarryingFlag = true;
+        }
+
+        if (other.tag == "Flag1" && isCarryingFlag && isPlayer1)
+        {
+            Debug.Log("Red player wins!");
+            //restarts the game--should change this to option menu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (other.tag == "Flag2" && isCarryingFlag && !isPlayer1)
+        {
+            Debug.Log("Blue player wins!");
+            //restarts the game--should change this to option menu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
