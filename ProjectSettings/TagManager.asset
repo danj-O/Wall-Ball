@@ -19,6 +19,12 @@ TagManager:
   - Flag2
   - Flag1
   - Carry Flag 2
+  - bombJoystick
+  - wallJoystick
+  - wallJoystick2
+  - wallButton
+  - End Zone
+  - End Zone 2
   layers:
   - Default
   - TransparentFX

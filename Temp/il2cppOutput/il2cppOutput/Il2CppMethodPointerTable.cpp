@@ -61,6 +61,8 @@ extern "C" void AppDomain_InternalSetDomain_m27029EDC56728C03386AC87097BAD176280
 extern "C" void AppDomain_InternalSetDomainByID_m3832F4BB8C1CE9195F40E84DF7AD3303B8F33418 ();
 extern "C" void AppDomain_getCurDomain_mD7B43429B7B7D7AE59D29F5394B870C170EF53CC ();
 extern "C" void AppDomain_get_CurrentDomain_m3D3D52C9382D6853E49551DA6182DBC5F1118BF0 ();
+extern "C" void RegexParser_MakeException_m6D521D75808E2CD4255A68DC3456EAF2A88F2874 ();
+extern "C" void RegexWriter_MakeException_m443C4CFA99AE06710D1E1BFA3D6EB9737AE70F17 ();
 extern "C" void Array_CreateInstance_mE3FF1559BCD06302A7DA79FCE32232941AC38F3F ();
 extern "C" void Array_CreateInstance_m5FE74E0701D431412B309031C208BB7F0B62AA05 ();
 extern "C" void Array_CreateInstance_mA240E55E62250C18ED5DFF119055CF5002C4CE3F ();
@@ -173,9 +175,12 @@ extern "C" void CLRConfig_CheckThrowUnobservedTaskExceptions_m7E817CDBB28FAAD9A3
 extern "C" void Char_CheckLetter_mD46EA70277A4CDD51568114D46B5C6CB5E5265B6 ();
 extern "C" void Char_CheckLetterOrDigit_m6494ECB3F3B19DC41364285D1E12B83BC0132CB9 ();
 extern "C" void Char_CheckNumber_m8993FC5CD9BEC2CD77509400615ABAB93118489E ();
+extern "C" void Char_CheckPunctuation_m907FC59526778DAFBD88DCD8B2C262DD73297571 ();
+extern "C" void Char_CheckSeparator_mA37B99B44339849D416C46F29C4159F6EC86969D ();
 extern "C" void Char_Equals_mF5F094BED35D6DE2ACEAE25F6FEF524B8BD9CBAC_AdjustorThunk ();
 extern "C" void Char_Equals_mE3AD655E668CAE1B4AD8444B746166FD80C662D8_AdjustorThunk ();
 extern "C" void Char_IsAscii_m6F0B6AF1A65126EF6D32AF73DE043D7B5EF241E8 ();
+extern "C" void Char_IsControl_m32D58EB3C86758859BA4AC8BC075AB54F166F44E ();
 extern "C" void Char_IsDigit_m29508E0B60DAE54350BDC3DED0D42895DBA4087E ();
 extern "C" void Char_IsHighSurrogate_m64C60C09A8561520E43C8527D3DC38FF97E6274D ();
 extern "C" void Char_IsHighSurrogate_m8AB8BB9DEC2443D5799232FDA89C5BD0E5E091DB ();
@@ -185,6 +190,9 @@ extern "C" void Char_IsLetterOrDigit_mD7307B3157DFA4EC20D58F68ACB6A9793D3A8292 (
 extern "C" void Char_IsLowSurrogate_m11EF790BE9683BDF04022FD055104AE7A22A6A9C ();
 extern "C" void Char_IsLower_mE89996F09044C07A991164C7E6A4A9C02867CC90 ();
 extern "C" void Char_IsNumber_m6B4D661D496A7EBCC142740E91F55B01754FC24F ();
+extern "C" void Char_IsPunctuation_m2F82DCD9CE2CBED034F8CF39E247BBB065935D51 ();
+extern "C" void Char_IsSeparator_m63614CEC080B97A4F9DBC3EE000CFF7BCDC5ED8A ();
+extern "C" void Char_IsSeparatorLatin1_m2A5B7CB13D0606CD25210FEDD764898FD86546FD ();
 extern "C" void Char_IsSurrogate_m464F9F75070ACD88165EE4734D617622A6667CB1 ();
 extern "C" void Char_IsSurrogate_m43C03392CA71985B36FE7EB29B6ECB2DABA2680F ();
 extern "C" void Char_IsSurrogatePair_m186784A2523D247DD43AC669D29A140AE0E992CF ();
@@ -935,6 +943,60 @@ extern "C" void InternalEncoderBestFitFallback_Equals_m2EB7A90447CFF5F07B9C30156
 extern "C" void InternalEncoderBestFitFallbackBuffer_Fallback_mE0AEEE10F3131D945B3CDF7F111E58B684807282 ();
 extern "C" void InternalEncoderBestFitFallbackBuffer_Fallback_m663125CD8F395CCB5C12C7F293FEB8795837E450 ();
 extern "C" void InternalEncoderBestFitFallbackBuffer_MovePrevious_m01F1272790435CEB01EDDBBBBFC64B13B0DE93B1 ();
+extern "C" void Match_IsMatched_m7686CA418F588EC198A82DE287326C46F4CBDD5F ();
+extern "C" void Regex_IsMatch_m79684C4D2CE6C5495BCCE9A32AC029E1E5950B7C ();
+extern "C" void Regex_IsMatch_m2FB867817B341A5FA3E64A41F31820C9658F22A5 ();
+extern "C" void Regex_IsMatch_m3C44A8D92E43EA8CC8D623ECC394B27F09E2D5DA ();
+extern "C" void Regex_IsMatch_m90348BB44AD120A322F411001522DB0758A6678B ();
+extern "C" void Regex_UseOptionInvariant_m0CA185DBDB15932BB8A8B4F53EB8ACECEC006566 ();
+extern "C" void Regex_UseOptionR_m84945EDBEDCD61DBCEB691C929CA28F4B0AF4B49 ();
+extern "C" void Regex_get_RightToLeft_m546BF531C94563A11427CD24367525462CDB4509 ();
+extern "C" void RegexBoyerMoore_IsMatch_m820D06ED51C062451AFAF22682D2EB06C8DFABD9 ();
+extern "C" void RegexBoyerMoore_MatchPattern_m41D57E11972B2142649662886DA145AFE396F602 ();
+extern "C" void RegexCharClass_CharInCategory_mCDE20DF783F8D4E4403EC7F00F9C12E34D86C2DD ();
+extern "C" void RegexCharClass_CharInCategoryGroup_m28E498004F5EA6445C83F1B8EB4A776C210D30C5 ();
+extern "C" void RegexCharClass_CharInClass_m194AAA57BBBD30E78E70255D6F53FAFDB785EC0E ();
+extern "C" void RegexCharClass_CharInClassInternal_m5D1634F64092E4BD9EB6427447F952983211A760 ();
+extern "C" void RegexCharClass_CharInClassRecursive_m5560DBADE1463FDEC38643C72CDF2FD5B3F69A5F ();
+extern "C" void RegexCharClass_IsECMAWordChar_m6E7FC296DB816D89E3D6CF8672DCE6DFC519D741 ();
+extern "C" void RegexCharClass_IsEmpty_mAD6C63FE25C4CF3E52A20185418925D12C4C07CF ();
+extern "C" void RegexCharClass_IsMergeable_mB9A0CD8306728BAFA5460C7FD748A2A7AD4BA448 ();
+extern "C" void RegexCharClass_IsNegated_m9CEDECE7EDA98ACD502E75783CA631A719DBC675 ();
+extern "C" void RegexCharClass_IsSingleton_m89D3E8460B0E7020DB0ABA607AC2F76FB9A34F1A ();
+extern "C" void RegexCharClass_IsSingletonInverse_m3E75D541C85AD842B9EB80705D6869EDB3F6928D ();
+extern "C" void RegexCharClass_IsSubtraction_m3C9EF97AFE7E4BCC24A2DF10834BF62279D7EE26 ();
+extern "C" void RegexCharClass_IsWordChar_m2DF03D32DAB403138E397CB05F45D37BD50EB18C ();
+extern "C" void RegexCharClass_get_CanMerge_mC27A4CF83CFBEF3741A3DB4F99ABA6DE76B57837 ();
+extern "C" void RegexCode_OpcodeBacktracks_mDA23B91B55FE4991B168BF8E18F6DDDC7667B882 ();
+extern "C" void RegexFC_AddFC_m5B05CD1D7700817843366EC1DF728977EDD4D11E ();
+extern "C" void RegexFC_IsCaseInsensitive_mD87B0C49AAEBB61215F09A9C5ABF8CCB8B5AB64E ();
+extern "C" void RegexFCD_FCIsEmpty_m57FDE5D4E352620B7773AD54B286531CA21FCDAD ();
+extern "C" void RegexFCD_IntIsEmpty_mE825A8A0DF9D5BA6618357ABBA93421D4099AAEB ();
+extern "C" void RegexInterpreter_FindFirstChar_m95CDB0ECB99F7850479D951A5F32BB6B19B91F44 ();
+extern "C" void RegexInterpreter_Refmatch_m52369ADBF64E25A9EEEBE216939454EBB8D8E138 ();
+extern "C" void RegexInterpreter_Stringmatch_m543BC6834400A925D2603AE6FBB47944694AFDF1 ();
+extern "C" void RegexNode_UseOptionR_mB931929BBD1D89F8B263AA846C1665775096713E ();
+extern "C" void RegexParser_EmptyOptionsStack_m5FCB7AF81ACB5C91A73231C9F0AA0DFB32067A45 ();
+extern "C" void RegexParser_EmptyStack_mB65B33DCF98A5967407B7C6A07F8799681202BE5 ();
+extern "C" void RegexParser_IsCaptureName_mBFB85B16ED80CA59452491B4C3278C77ADCA1FDF ();
+extern "C" void RegexParser_IsCaptureSlot_m80540BE449D9B98B2B159CD5169F7AA6DB63CB80 ();
+extern "C" void RegexParser_IsOnlyTopOption_m66FE256A81BBD173C96B90EE9EBE9721F9ED16A1 ();
+extern "C" void RegexParser_IsQuantifier_mE0620E30A63AD0C0DB9550A52A4A7D0BB4BC3A31 ();
+extern "C" void RegexParser_IsSpace_m1E41FA7DD1FB93BF9220530CA91B35EF08879F30 ();
+extern "C" void RegexParser_IsSpecial_mFF68456E944ACAF048B4F96F5758FFDD1D5E7DCD ();
+extern "C" void RegexParser_IsStopperX_m0BCF2DB4B0E1324C9109C8BFD486FC5DBA8DC646 ();
+extern "C" void RegexParser_IsTrueQuantifier_m4AA95A9CE7CD78600E8D525ECA5A095984FBC63F ();
+extern "C" void RegexParser_UseOptionE_mC171EEF863E091591BAD771F16B72D742F044096 ();
+extern "C" void RegexParser_UseOptionI_mFA3B59BD8A6F61626E20F8FE909A23289E694263 ();
+extern "C" void RegexParser_UseOptionM_mDE945B2DE782D12A5013D408F4FFBCABEC48C63D ();
+extern "C" void RegexParser_UseOptionN_mE9C62585222B2D99D295708E4486C952973F35D5 ();
+extern "C" void RegexParser_UseOptionS_mE96EEA754E1EEEF658AAF73885D048342D1D200E ();
+extern "C" void RegexParser_UseOptionX_mD63DEED6741AEA0B3F6CC4239712A4B2EF690810 ();
+extern "C" void RegexPrefix_get_CaseInsensitive_m76E04480FA9FFAE4C5031CA12F4AE9A2576212C0 ();
+extern "C" void RegexRunner_IsBoundary_m6C846E11790EC61A9E75A24230E1477913DB3441 ();
+extern "C" void RegexRunner_IsECMABoundary_m35C5F5DDC7C2F0E57EBA2E9D9892A88EDAEE4B97 ();
+extern "C" void RegexRunner_IsMatched_mD7F580AA0533D5C4BC41D18824FA74BE16EAE7A3 ();
+extern "C" void RegexWriter_EmptyStack_mB0C109FA21F5CFD16A34438BA1CC1CE8BED91E7C ();
 extern "C" void StringBuilder_StartsWith_m191999C1CF871FC076122689B8ECB798863C4467 ();
 extern "C" void UTF32Decoder_get_HasState_m7C5F98182E1DD561FC0F64D4EA41A7D88B75FC0B ();
 extern "C" void UTF32Encoding_Equals_m2E0DA397C925E477A9C5DF4B268EADD2EC937DE5 ();
@@ -1076,6 +1138,7 @@ extern "C" void TimeSpan_op_GreaterThan_mC4CE0AD3057035058479B695ACDC089F3A6EA48
 extern "C" void TimeSpan_op_GreaterThanOrEqual_m7FE9830EF2AAD2BB65628A0FE7F7C70161BB4D9B ();
 extern "C" void TimeSpan_op_Inequality_mEAE207F8B9A9B42CC33F4DE882E69E98C09065FC ();
 extern "C" void TimeSpan_op_LessThan_mF92FF63DD1E52540977D3B1753D43895F7B0A117 ();
+extern "C" void TimeSpan_op_LessThanOrEqual_mFFB6826BC19E5E63E62697EF3A81B84CD529E83B ();
 extern "C" void AdjustmentRule_Equals_mE58526212854504DB5575E2396F3C97F4F0EEA95 ();
 extern "C" void TransitionTime_Equals_mB551A5FE7A3347F0090F98E80401CC9204C3D191_AdjustorThunk ();
 extern "C" void TransitionTime_Equals_m8A0240236B27E6EE75B5FA2F96A1C992F835B010_AdjustorThunk ();
@@ -1220,6 +1283,143 @@ extern "C" void __DTString_SkipWhiteSpaceCurrent_m85EF1DCFFB216A209FEB3CC53CB8E9
 extern "C" void __Filters_FilterAttribute_mBF9879ECFB908212C56CAE0B42C9E29BFCB347C1 ();
 extern "C" void __Filters_FilterIgnoreCase_m883976C13C53B21BE3430DE51D4317CBCF89F53A ();
 extern "C" void __Filters_FilterName_m768C2766720890EE1D07554E3433C0F828D427DB ();
+extern "C" void ColorTween_GetIgnoreTimescale_mCA66E1F4C1012F1C0946741FF263A99C689540E4_AdjustorThunk ();
+extern "C" void ColorTween_ValidTarget_mEDC11E5C3559003C2BDC8F58310D0225DF696C23_AdjustorThunk ();
+extern "C" void ColorTween_get_ignoreTimeScale_m5EC81A0CD0E0C78C03983AEC40BE8861E9B6FF2A_AdjustorThunk ();
+extern "C" void FloatTween_GetIgnoreTimescale_mD16A634E783CE9A8D79F58187CF794F208E33C6F_AdjustorThunk ();
+extern "C" void FloatTween_ValidTarget_m76EDBCE1A349AAF5EF44EE2633B08BEFD0F7C4A7_AdjustorThunk ();
+extern "C" void FloatTween_get_ignoreTimeScale_m91DEC43AD8A5FA1D6D1F16C00CA068D232CCCA61_AdjustorThunk ();
+extern "C" void KerningPair_get_ignoreSpacingAdjustments_mD68D0ADCB956F51D48FD18EFF32688AC5A6BC1CC ();
+extern "C" void U3CU3Ec__DisplayClass3_0_U3CAddKerningPairU3Eb__0_mB652BC434D037CF84B2AB91F2D8DC143E778A793 ();
+extern "C" void U3CU3Ec__DisplayClass4_0_U3CAddGlyphPairAdjustmentRecordU3Eb__0_m08E0B69CF1D372BC58D4ED9E8F1974A6A6049CAD ();
+extern "C" void U3CU3Ec__DisplayClass5_0_U3CRemoveKerningPairU3Eb__0_m4A28BC5DAB18715A10E4ECB1B862A0C141D20EDA ();
+extern "C" void MaterialReference_Contains_m23AC586CCB099EFBC053CB770A376A806AAC7E27 ();
+extern "C" void MaterialReferenceManager_Contains_mA47B1EE7A487AE400E4A94853448B001F5B86322 ();
+extern "C" void MaterialReferenceManager_Contains_mECE568C5352EC5934780004095DBC3A749186F0B ();
+extern "C" void MaterialReferenceManager_TryGetColorGradientPreset_mD1D419EF99846FCB3D2BA48E3269260B753C6F45 ();
+extern "C" void MaterialReferenceManager_TryGetColorGradientPresetInternal_m3F60F9F115AACD72562737F9A71CE8A2509221DF ();
+extern "C" void MaterialReferenceManager_TryGetFontAsset_m8A4BFE32C63385C04CAEDBD120A9306EEC3D078B ();
+extern "C" void MaterialReferenceManager_TryGetFontAssetInternal_mB8573336158A80687268F9DB641255C09E16E461 ();
+extern "C" void MaterialReferenceManager_TryGetMaterial_m8A2153D05BE784E4C9D4016FCA3935484EF7F122 ();
+extern "C" void MaterialReferenceManager_TryGetMaterialInternal_mE600C0A5D96669187048F1660538096D1C0BEEE0 ();
+extern "C" void MaterialReferenceManager_TryGetSpriteAsset_mABBA3060114916A6B6F90F1AD9CA0C605E249329 ();
+extern "C" void MaterialReferenceManager_TryGetSpriteAssetInternal_m3319C2C8366CC2EDBF464918291CF180D2BF5E28 ();
+extern "C" void SetPropertyUtility_SetColor_mA991E137437932BFA74CAFDC049BE305C8B4EB10 ();
+extern "C" void ShaderUtilities_IsMaskingEnabled_m721A76C5FBA282C0ABA48CDB42EF224569F181A1 ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72_MoveNext_mC643A7B618B36232F537ED2F22252FB6D27D977F ();
+extern "C" void TMP_Dropdown_get_IsExpanded_m79F11548A63AE3B248D0B3C6FD856534A83D2ED1 ();
+extern "C" void TMP_FontAsset_HasCharacter_m55D82F7FD2DCC311D10912425A0ED4F77DBF0A03 ();
+extern "C" void TMP_FontAsset_HasCharacter_m5294A8BB0D9F6FE9B28F83365B728E11338ACF02 ();
+extern "C" void TMP_FontAsset_HasCharacter_mE52DF3A60A3A457FCBAF79625078F3B353607744 ();
+extern "C" void TMP_FontAsset_HasCharacter_Internal_m4B203B997ACCF9683CECA2B50394B24F54DF88C9 ();
+extern "C" void TMP_FontAsset_HasCharacters_m47B86529B1E8ADC01D65D07C7C78FF2822A8678B ();
+extern "C" void TMP_FontAsset_HasCharacters_mB90CA341ADF7919396A603F6CA375ACC78165959 ();
+extern "C" void TMP_FontAsset_TryAddCharacterInternal_mEA410CC2F803499842A2D223B48B46506CEA0E6E ();
+extern "C" void TMP_FontAsset_TryAddCharacter_Internal_mF819C6763550D10205C083CDCB3546A5447D2327 ();
+extern "C" void TMP_FontAsset_TryAddCharacters_mA5B2A5062224571CD718724A89515A715D0F4FDE ();
+extern "C" void TMP_FontAsset_TryAddCharacters_mB6165CD88A5187D3C54E49AAEB62EA7037AF8D7D ();
+extern "C" void TMP_FontAsset_TryAddCharacters_mFAAA16F068761A58994EB2D99168954478852A64 ();
+extern "C" void TMP_FontAsset_TryAddCharacters_m44ED28A7EE9464DFED25151751698773D0ECB371 ();
+extern "C" void TMP_FontAssetUtilities_TryGetCharacterFromFontFile_m901D7D8C6DD71CBC355606833F0461C748BF4D5B ();
+extern "C" void TMP_FontAssetUtilities_TryGetGlyphFromFontFile_m578FC9E4CD60EC0AD555F6D9EE62E9843F4B103E ();
+extern "C" void U3CCaretBlinkU3Ed__267_MoveNext_mF08C5807BA50B4176911AE5D754A833D829CD484 ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285_MoveNext_m507B40457D322CFF2B732021A0242BD5EA3AE80C ();
+extern "C" void TMP_InputField_InPlaceEditing_mA0368BA9DF0447A8BE337B379B56DC29FC4FF75C ();
+extern "C" void TMP_InputField_IsValidChar_m7728572C1B211CB6BD3CB6965E55720A5C7EB6A9 ();
+extern "C" void TMP_InputField_MayDrag_m6B7E92B3BD537A8E8FF42A6323AB83377CDF5B12 ();
+extern "C" void TMP_InputField_get_customCaretColor_m71F6482C132A877A82E9F5523667CD6C4434FE9B ();
+extern "C" void TMP_InputField_get_hasSelection_mF33171C0E4DFC78F3621A98290BA4FB3F41A1D65 ();
+extern "C" void TMP_InputField_get_isFocused_m15D595A58CE1832B89FD2E2B483BA56A358F9523 ();
+extern "C" void TMP_InputField_get_isRichTextEditingAllowed_m73DAAC913241AA9ABD6BFE66427A0B93713884FA ();
+extern "C" void TMP_InputField_get_multiLine_m32C7B876777CC7FBEDBAA89706D0E35C65CFF345 ();
+extern "C" void TMP_InputField_get_onFocusSelectAll_mA2A53849DE6653DFD3AD78D6451070D5FC171C42 ();
+extern "C" void TMP_InputField_get_readOnly_mFB02F1C9763E97CB996BF6D6A91F3A190F5ABEDE ();
+extern "C" void TMP_InputField_get_resetOnDeActivation_m328F10DD9D0979C9957780C9DF8789CE7BA5E2FD ();
+extern "C" void TMP_InputField_get_restoreOriginalTextOnEscape_m5B5B9005D04B4122B09398BABFB4771C17BA7382 ();
+extern "C" void TMP_InputField_get_richText_m7E35022E8B728EA392977F8F1AEB2BAA8B1FAC1D ();
+extern "C" void TMP_InputField_get_shouldHideMobileInput_mC6AF27F37DBE6DC3D3D7F5481CCFE00A0889B594 ();
+extern "C" void TMP_InputField_get_shouldHideSoftKeyboard_mAAEEAFF911FD54178692A4FF03C74F0D48761035 ();
+extern "C" void TMP_InputField_get_wasCanceled_mFE7B044E0973E4BB288049B7D22B5611AC3DFFA9 ();
+extern "C" void TMP_InputField_isKeyboardUsingEvents_mE671DC31B447B809B8EE06E60DF76D0CFA4BAF58 ();
+extern "C" void U3CU3Ec__DisplayClass10_0_U3CGetBaseMaterialU3Eb__0_m070982C19C98149C5C8F0F153654E9FFD6573E3F ();
+extern "C" void U3CU3Ec__DisplayClass12_0_U3CAddMaskingMaterialU3Eb__0_mC2A8207FF0FBEB0407C0103C208377D333A9A947 ();
+extern "C" void U3CU3Ec__DisplayClass13_0_U3CRemoveStencilMaterialU3Eb__0_mBF6C68341D455F0D169903AC541FC3B1474EEA8E ();
+extern "C" void U3CU3Ec__DisplayClass14_0_U3CReleaseBaseMaterialU3Eb__0_m77C16EDB31634336188679321D815574D5CA0D18 ();
+extern "C" void TMP_Math_Approximately_mD1E8C7947699EE157A2054C17BA7BD42D5F567F3 ();
+extern "C" void TMP_Settings_get_autoSizeTextContainer_m99CA476AC7FCA396242782D30FCBC0921160E2B4 ();
+extern "C" void TMP_Settings_get_enableEmojiSupport_mCB9AD64585217397D801F2062167DBEC149B3353 ();
+extern "C" void TMP_Settings_get_enableExtraPadding_mF89950FDAD5447DA2E8A144FAC66C98D18C40BF4 ();
+extern "C" void TMP_Settings_get_enableKerning_m818CD7E43A5E68A6102FF1E50B9DDCB74C4B7D96 ();
+extern "C" void TMP_Settings_get_enableParseEscapeCharacters_m1BD0DDDCE95E5785AE098D3FDCF61D1A8D59D3C5 ();
+extern "C" void TMP_Settings_get_enableRaycastTarget_m756A273130DD2B281A3D06D8F676FD82B0F2B1AD ();
+extern "C" void TMP_Settings_get_enableTintAllSprites_mAE030C1089B4F5B01A1CA8BFE77BFE7AFB70CC6A ();
+extern "C" void TMP_Settings_get_enableWordWrapping_m34AE1B2523BE8F1053AEE6C566FB8FAB2B0CEFE3 ();
+extern "C" void TMP_Settings_get_getFontFeaturesAtRuntime_m4B6BC492D74C0335B2AD9A89CD7D152A0769B821 ();
+extern "C" void TMP_Settings_get_matchMaterialPreset_mDD06897713B2AFDECC9A4309B055FBD6D9D001DA ();
+extern "C" void TMP_Settings_get_warningsDisabled_mEDFD0B29B9F8CD8DF38D21C481EA9B0352A5FB5C ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7_MoveNext_m291E89FF50D99F13C1EFF8FCE39C97B3AC2C9AAE ();
+extern "C" void TMP_SubMesh_get_isDefaultMaterial_m17DB478E7065176D5A4D1257C3C48BFFC9EBCB3D ();
+extern "C" void TMP_SubMeshUI_get_isDefaultMaterial_m80C46FEC4CA9C9AA31DA7EE8DCCB12F67B24FC76 ();
+extern "C" void TMP_Text_IsTagName_mC9DAAC5BCC8265F5CCD5E3B0FD6EB7555FB60896 ();
+extern "C" void TMP_Text_IsTagName_m405FF7D7F28E099336640FF26368FB5FF1B45608 ();
+extern "C" void TMP_Text_IsTagName_mB9BFDF8BBB8ABFD24C310597848E634A20D5D4F3 ();
+extern "C" void TMP_Text_IsTagName_m7C1513CB94AC9B8123FEB4E467B85A4922E7620F ();
+extern "C" void TMP_Text_ReplaceClosingStyleTag_mD2C56F2962261A3207AF1028D444E2FB7D00C283 ();
+extern "C" void TMP_Text_ReplaceClosingStyleTag_m16666694EC081C261C24622F00C6B07A95382120 ();
+extern "C" void TMP_Text_ReplaceClosingStyleTag_m1741869347BFA5120F8C95100324A340CE6E2A5F ();
+extern "C" void TMP_Text_ReplaceClosingStyleTag_mA18E48AE65821B53B3C9683328A3A21431C9A412 ();
+extern "C" void TMP_Text_ReplaceOpeningStyleTag_m4E535C42672519061377E4A35E70DC616B54C268 ();
+extern "C" void TMP_Text_ReplaceOpeningStyleTag_mD258F32CF12E998D0D9B26BD2D6D2A57A31BDF28 ();
+extern "C" void TMP_Text_ReplaceOpeningStyleTag_m74E810FF5B1EB7E3ED8862925C3E5DF7E08FCC3E ();
+extern "C" void TMP_Text_ReplaceOpeningStyleTag_m93C3741B9DF660D693070F5945C70BA5A42F0846 ();
+extern "C" void TMP_Text_ValidateHtmlTag_m353DF3A937F86B98B948183F904EEA77CE254948 ();
+extern "C" void TMP_Text_get_autoSizeTextContainer_mFFB528A68A9C203EADE1380E2F5567E25E927620 ();
+extern "C" void TMP_Text_get_enableAutoSizing_m81C585B89E7807E21C0FB3AC05ABEB9E1316D70A ();
+extern "C" void TMP_Text_get_enableCulling_mE2C8FD6386080F0A9F7F86C54A4B794955C60D4B ();
+extern "C" void TMP_Text_get_enableKerning_m2578689AF5554E0CA5410D69C3E2DC5F6C18AB6A ();
+extern "C" void TMP_Text_get_enableVertexGradient_m6DE83199E83AE7FFF211D4993E787631FCF8718E ();
+extern "C" void TMP_Text_get_enableWordWrapping_m8140D63B850629B25F6ABE9211E9F777E7826533 ();
+extern "C" void TMP_Text_get_extraPadding_m53CB163C6AA1FD58764120845CE1555374AA5AD4 ();
+extern "C" void TMP_Text_get_havePropertiesChanged_m245597D2C7482B160E88C691C6B750BC2261805E ();
+extern "C" void TMP_Text_get_ignoreRectMaskCulling_m5BEB38E3905A4130EB236EF225F12623F12AC145 ();
+extern "C" void TMP_Text_get_ignoreVisibility_mD15152D484F3A856C677110D1099D5987D98CECC ();
+extern "C" void TMP_Text_get_isLinkedTextComponent_m4802F2C0D8317699C790F5C2921FAA0CF7934533 ();
+extern "C" void TMP_Text_get_isOrthographic_mA443FD54934C574BCAEEEA32A42039DE130CD10B ();
+extern "C" void TMP_Text_get_isOverlay_m3876730DDAE7037EEFC539BEC7466AEFB0DEDC55 ();
+extern "C" void TMP_Text_get_isRightToLeftText_mB3F090ACF62BB32BADAA8C4D1A01B358F0952358 ();
+extern "C" void TMP_Text_get_isTextOverflowing_mCE3B3F43C3240AF18AC931D29B1B6D4B0608B018 ();
+extern "C" void TMP_Text_get_isTextTruncated_m43D9F69F69EDC0FB9857CE90FD937D9F624EA28E ();
+extern "C" void TMP_Text_get_isUsingBold_m96EC0C0AAE56582C5C3755B6B4BD312912E4E9FB ();
+extern "C" void TMP_Text_get_isUsingLegacyAnimationComponent_m6542171FF3DD7A9FAE6AF672FD21B503227B016A ();
+extern "C" void TMP_Text_get_isVolumetricText_m55363EF05066FFEE38E8B40C13FFB08D84264360 ();
+extern "C" void TMP_Text_get_overrideColorTags_mD9DC3851B1D734A5E0C94AFF1CEAB2F76E3BF1AD ();
+extern "C" void TMP_Text_get_parseCtrlCharacters_mE1389834E9E452A25D18350F76C7A9B746BA7DC7 ();
+extern "C" void TMP_Text_get_richText_m83366F02ACB64AA1770F58245E67A86986CE5056 ();
+extern "C" void TMP_Text_get_tintAllSprites_m5ABCE4E559E811E2B83E872543CC1579799C146F ();
+extern "C" void TMP_Text_get_useMaxVisibleDescender_mE87F700FCE4ACD381E983B513B969B4E227D09D2 ();
+extern "C" void TMP_Text_get_vertexBufferAutoSizeReduction_m543ACF5A1C771E46D9CBF7AA5357BBF06A95415A ();
+extern "C" void TMP_TextParsingUtilities_IsHighSurrogate_mB2203BA61705034A537D20AF10002E34BDA7A439 ();
+extern "C" void TMP_TextParsingUtilities_IsLowSurrogate_m01DB93A3246640997189F276CEABF5BEF83763A6 ();
+extern "C" void TMP_TextUtilities_IntersectLinePlane_mD1E007BC3AE3DCAE4A51AC7BD8D67F23C71C6E51 ();
+extern "C" void TMP_TextUtilities_IsIntersectingRectTransform_mB332191CF4FADACA95C63C1ABE92831512C05DAC ();
+extern "C" void TMP_TextUtilities_PointIntersectRectangle_m193289CD8786E6B2FB06163988DBF8FCE2AC79E8 ();
+extern "C" void TMP_TextUtilities_ScreenPointToWorldPointInRectangle_mFE5C4F353402FF5A474453FB310CB40B36EC7924 ();
+extern "C" void TMP_UpdateManager_InternalRegisterTextElementForGraphicRebuild_mB56D1393B0F98361C2847A9C9FAA29E9B9E8CDCB ();
+extern "C" void TMP_UpdateManager_InternalRegisterTextElementForLayoutRebuild_mDF27950AC384CE4BD255AF84B2E36CC088AFB43F ();
+extern "C" void TMP_UpdateRegistry_InternalRegisterCanvasElementForGraphicRebuild_m74587A2910708B04FC14BF3C826210B607F7CAB3 ();
+extern "C" void TMP_UpdateRegistry_InternalRegisterCanvasElementForLayoutRebuild_m46AF2AE34F4CBA1C212C595AF301C6D4E57AD1F3 ();
+extern "C" void TMPro_ExtensionMethods_Compare_m10C7BB0662CFB19051659EACFF8EDF0084D7E8D8 ();
+extern "C" void TMPro_ExtensionMethods_Compare_m2511824FCD78A6118463515B5663407A9105C127 ();
+extern "C" void TMPro_ExtensionMethods_Compare_mCB8C299F5CB778627C9E639A4155D9C9F5BE22A1 ();
+extern "C" void TMPro_ExtensionMethods_Compare_m92FF0DFFA92EEC8DE9D08099F19638DBA5F9023C ();
+extern "C" void TMPro_ExtensionMethods_CompareRGB_m9305C0DBD1C5FAAFA79754B876D0F063F62D463A ();
+extern "C" void TMPro_ExtensionMethods_CompareRGB_m08AC611C3C4047127378B36C4D44EEC6F4B6EC34 ();
+extern "C" void TextContainer_get_hasChanged_m378D5FF61BD2505A071106BB1C3C4F2991332EB6 ();
+extern "C" void TextContainer_get_isAutoFitting_m15D125D5CAFB8D928735D8A071A796B7C71BCA7B ();
+extern "C" void TextContainer_get_isDefaultHeight_m9830856138E9F1CA095714B4257C7ECE731A6BE8 ();
+extern "C" void TextContainer_get_isDefaultWidth_mB72DA8350D0DC6777705E24BF90D9ACF02C5539C ();
+extern "C" void TextMeshPro_get_autoSizeTextContainer_m0354F661F7F5B004A2B2BA07BF556CDA0D36637E ();
+extern "C" void TextMeshProUGUI_get_autoSizeTextContainer_mF3AE9830CE6D5878C106B56533DF317D1B7E7179 ();
 extern "C" void AnimationCurve_Equals_m5E3528A0595AC6714584CAD54549D756C9B3DDD5 ();
 extern "C" void AnimationCurve_Equals_m60310C21F9B109BAC9BA4FACE9BEF88931B22DED ();
 extern "C" void AnimationCurve_Internal_Equals_m7ACF09175F2DC61D95006ABB5BBE1CF7434B2D1D ();
@@ -1327,6 +1527,7 @@ extern "C" void BuiltinRuntimeReflectionSystem_TickRealtimeProbes_m7100EF316D04C
 extern "C" void GraphicsFormatUtility_IsCompressedTextureFormat_m456D7B059F25F7378E05E3346CB1670517A46C71 ();
 extern "C" void GraphicsFormatUtility_IsCrunchFormat_m97E8A6551AAEE6B1E4E92F92167FC97CC7D73DB1 ();
 extern "C" void GraphicsFormatUtility_IsSRGBFormat_mBF49E7451A3960BD67B1F13745BCA3AC5C8AC66E ();
+extern "C" void RenderPipeline_get_disposed_m36B43AE3C77998D35345F4191A750DB2F298653C ();
 extern "C" void SupportedRenderingFeatures_IsLightmapBakeTypeSupported_m4F9CD811B4CE02F9B1786672A6AE37DC7A47E239 ();
 extern "C" void SupportedRenderingFeatures_IsMixedLightingModeSupported_mD7803C613108B86195AFB36F01B0864A7A8DAFDB ();
 extern "C" void Font_HasCharacter_m23CC7E1E37BCA115DC130B841CF3207212E2802E ();
@@ -1346,8 +1547,10 @@ extern "C" void Gradient_Equals_m0A13AD7938F81F21CC380609A506A39B37CF2097 ();
 extern "C" void Gradient_Equals_m7F23C7692189DDD94FC31758493D4C99C2F3FB1E ();
 extern "C" void Gradient_Internal_Equals_m210D28E9843DBA28E2F60FDBB366FE2B5B739B1A ();
 extern "C" void Input_GetButtonDown_mBCFF01DD979D2BE061A8F47082060258F2C4458B ();
+extern "C" void Input_GetKey_m54DC93F781FFEAB1DCDFAA3D15FA2FC01BF7667A ();
 extern "C" void Input_GetKeyDown_mD82B14BB87E1C811668BD1A2CFBC0CF3D4983FEA ();
 extern "C" void Input_GetKeyDownInt_m87B29738C0DD59D90CF4661004F090CB697BDC0C ();
+extern "C" void Input_GetKeyInt_mCAE84934A2A069329005CB582E2B038FA5DDFF12 ();
 extern "C" void Input_GetMouseButton_mFA83B0C0BABD3113D1AAB38FBB953C91EA7FFA30 ();
 extern "C" void Input_GetMouseButtonDown_mBC5947EA49ED797F0DB1830BFC13AF6514B765FD ();
 extern "C" void Input_GetMouseButtonUp_m726EDCD35F8DECF774810AB1E9ED590B85DB10F1 ();
@@ -1469,6 +1672,20 @@ extern "C" void SystemInfo_IsValidEnumValue_m112F964C57B2311EA910CCA5CE0FFABFFF9
 extern "C" void SystemInfo_SupportsRenderTextureFormat_m74D259714A97501D28951CA48298D9F0AE3B5907 ();
 extern "C" void SystemInfo_SupportsTextureFormat_m1FCBD02367A45D11CAA6503715F3AAE24CA98B79 ();
 extern "C" void SystemInfo_SupportsTextureFormatNative_mD028594492646D7AB78A4C2F51CA06F63E665210 ();
+extern "C" void GlyphMetrics_Equals_mF3CC06B964ABE29EF38712324B813677D88856A3_AdjustorThunk ();
+extern "C" void GlyphMetrics_Equals_m9B560B32ACCF0761D3BAD2031882235C7EAD601D_AdjustorThunk ();
+extern "C" void GlyphRect_Equals_m0AC7F5A910EDE18B48500657446BD514CA555114_AdjustorThunk ();
+extern "C" void GlyphRect_Equals_m1F715BF623E07565AEA7268996F4F57EE3EE9371_AdjustorThunk ();
+extern "C" void FontEngine_TryAddGlyphToTexture_mD70AEC0FDCEE818B4366C78FF662464F13112172 ();
+extern "C" void FontEngine_TryAddGlyphToTexture_Internal_mAD9085B9AF5B6BEBAB100A0F0DD3114CF23B7E82 ();
+extern "C" void FontEngine_TryAddGlyphsToTexture_mFC834881F6DB0867C01A9902A879C13ED66404A4 ();
+extern "C" void FontEngine_TryAddGlyphsToTexture_Internal_m8A1C14812C18BE60C2C3795D1DD21FFE6B9C3EEB ();
+extern "C" void FontEngine_TryGetGlyphWithIndexValue_m75A9F7605232FAF4D9948E2E7BDFFB01A8FD5178 ();
+extern "C" void FontEngine_TryGetGlyphWithIndexValue_Internal_mB4D0E3754E546E77B9F0D6C1A0A621C273B0D170 ();
+extern "C" void FontEngine_TryGetGlyphWithUnicodeValue_mBC940303E740DC1897FCA6247D048266298BE00C ();
+extern "C" void FontEngine_TryGetGlyphWithUnicodeValue_Internal_m8B4C9643A51BB4D3E1F83C7DDF593E9247D5A38C ();
+extern "C" void FontEngine_TryPackGlyphInAtlas_m0E9E8FBBC64AF69CB1DEB3C8A2EF862222C3B8EA ();
+extern "C" void FontEngine_TryPackGlyphInAtlas_Internal_m5FFA31006069F5F44A10B55C2BE8BF7C6BB91A9B ();
 extern "C" void TextGenerationSettings_CompareColors_m41313F2A332F5780C5BD6F8134EBB14473CC5C66_AdjustorThunk ();
 extern "C" void TextGenerationSettings_CompareVector2_m27AE82F513B8E6D4A529A02B1A3806A85E710F1C_AdjustorThunk ();
 extern "C" void TextGenerationSettings_Equals_m39912D195B0384AADC5C274659324EC8720C4F7D_AdjustorThunk ();
@@ -1478,6 +1695,10 @@ extern "C" void TextGenerator_Populate_Internal_mCA54081A0855AED6EC6345265603409
 extern "C" void TextGenerator_Populate_Internal_m42F7FED165D62BFD9C006D19A0FCE5B70C1EF92B ();
 extern "C" void TextGenerator_Populate_Internal_Injected_mC1D6A0A0A9E0BFDB146EA921DA459D83FF33DEDE ();
 extern "C" void Texture2D_Internal_CreateImpl_mD3BC6187168CEDAFAC59DFA2EA1DCE102071C548 ();
+extern "C" void Texture2D_Resize_m9B3D67DF42A47D5C573D084C080CEDA5E330A8D2 ();
+extern "C" void Texture2D_Resize_m3A64BAF31DF4A82284B56C15614CE4FDA0785F7D ();
+extern "C" void Texture2D_ResizeImpl_m92009FC5D076C295BA1DECBA9F4A21A678A425C3 ();
+extern "C" void Texture2D_ResizeWithFormatImpl_mA7D86CB3F93C5B34F4F728C3AF4BABC9FC8C42BC ();
 extern "C" void Texture2D_get_isReadable_mCF446A169E1D8BF244235F4E9B35DDC4F5E696AD ();
 extern "C" void Texture2DArray_Internal_CreateImpl_m11961106A999012827B209B1A32CEDA633F59E8B ();
 extern "C" void Texture2DArray_get_isReadable_mB2E454ED94BB334E77B42E6CD9DABC0B1D679C1A ();
@@ -1495,6 +1716,7 @@ extern "C" void TrackedReference_Equals_mB1E157BE74CB5240DA6C4D3A38047A015B067C2
 extern "C" void TrackedReference_op_Equality_m6176AA0B99576B1734E9A9D7DDA0A27ECACBAA96 ();
 extern "C" void Enumerator_MoveNext_mF27E895DC4BB3826D2F00E9484A9ECC635770031 ();
 extern "C" void Transform_IsChildOf_mCB98BA14F7FB82B6AF6AE961E84C47AE1D99AA80 ();
+extern "C" void Transform_get_hasChanged_m57B246DA5FB4AC01F1F109DCFE1D7A12048767D2 ();
 extern "C" void SpriteAtlas_CanBindTo_m6CE0E011A4C5F489F9A62317380FB35F20DF7016 ();
 extern "C" void SpriteAtlasManager_RequestAtlas_m792F61C44C634D9E8F1E15401C8CECB7A12F5DDE ();
 extern "C" void U3COnFinishSubmitU3Ec__Iterator0_MoveNext_mE9C0CB584CBFC3430A8FFD39F4875504AF27A063 ();
@@ -1609,6 +1831,7 @@ extern "C" void Vector3_op_Inequality_mFEEAA4C4BF743FB5B8A47FF4967A5E2C73273D6E 
 extern "C" void Vector4_Equals_m552ECA9ECD220D6526D8ECC9902016B6FC6D49B5_AdjustorThunk ();
 extern "C" void Vector4_Equals_mB9894C2D4EE56C6E8FDF6CC40DCE0CE16BA4F7BF_AdjustorThunk ();
 extern "C" void Vector4_op_Equality_m9AE0D09EC7E02201F94AE469ADE9F416D0E20441 ();
+extern "C" void Vector4_op_Inequality_m7038D1E27BCA2E4C0EA8E034C30E586635FBF228 ();
 extern "C" void WaitForSecondsRealtime_get_keepWaiting_mC257FFC53D5734250B919A8B6BE460A6D8A7CD99 ();
 extern "C" void MSCompatUnicodeTable_Category_m4DECB878B26F26AFA6B96C2BC397CA6314CB5267 ();
 extern "C" void MSCompatUnicodeTable_Level1_m810D77124E45F055EF36150E0FFD14CBB1EA9599 ();
@@ -1668,6 +1891,8 @@ extern "C" void Normalization_GetCombiningClass_mE4FE7AF1CC77468229ED3E949CB73C0
 extern "C" void UInt16_System_IConvertible_ToByte_mA95B992F24924E773C5602A6FEE29BDE5EE2072F_AdjustorThunk ();
 extern "C" void UInt32_System_IConvertible_ToByte_m9386861ED644D7B5E76BD0D7FB86DEEB0173A0A5_AdjustorThunk ();
 extern "C" void UInt64_System_IConvertible_ToByte_m4F0E7D7E850AA40CE8FEE68B44B5FF29409CCB27_AdjustorThunk ();
+extern "C" void TMP_FontStyleStack_Add_m6D5F31F514380C1AF92F3AAC3079749DA64D7411_AdjustorThunk ();
+extern "C" void TMP_FontStyleStack_Remove_mD6CD885D934CE993AB971F9622117045B5C1FEE7_AdjustorThunk ();
 extern "C" void UnmanagedMemoryStream_get_PositionPointer_m679CDF3178C1512CA36CAB5FD1A39F5A398A2ADB ();
 extern "C" void NumberBuffer_PackForNative_m7790B7A255562FC1823BACABA471AF133A86D640_AdjustorThunk ();
 extern "C" void RuntimeMarshal_DecodeBlobArray_m2A5F7FA2917EE0ED4B06311AD2D46DA1773BCCE9 ();
@@ -1676,8 +1901,8 @@ extern "C" void ASN1_get_Value_m9BD6239E12A6148AF9507C2F58058C6B8147A079 ();
 extern "C" void BitConverterLE_GetBytes_m406ADCCE048705851CA952B5103A9020BBBDFBDA ();
 extern "C" void BitConverterLE_GetBytes_m1207548B6BC0E2D49DD06D5B3A3AC19C001BDB35 ();
 extern "C" void BitConverterLE_GetBytes_m9428D4A01AC77E50E16D9B738098F2954E5964E0 ();
-extern "C" void BitConverterLE_GetUIntBytes_m871281C3039A5B7DFB56E0F3EBBE22F74135997C ();
 extern "C" void BitConverterLE_GetUIntBytes_m2B688B5F912B4453DD14F1043A3C8E3E171FFF41 ();
+extern "C" void BitConverterLE_GetUIntBytes_m871281C3039A5B7DFB56E0F3EBBE22F74135997C ();
 extern "C" void BitConverterLE_GetULongBytes_mEA155106F6785491F8070F485963C96DA55B83F0 ();
 extern "C" void AppDomain_GetMarshalledDomainObjRef_m2579B1B9662ED4CC23EF52B27B10D955D6DB4C2D ();
 extern "C" void BitConverter_GetBytes_mB7DFC7C4705F916C40527A87C9AA6D0EABC23512 ();
@@ -1788,6 +2013,17 @@ extern "C" void InternalDecoderBestFitFallbackBuffer_GetNextChar_m9878FA9B746286
 extern "C" void InternalDecoderBestFitFallbackBuffer_TryBestFit_m893FED71FD776004F8B3DDBA0F209ACD819D9B7E ();
 extern "C" void InternalEncoderBestFitFallbackBuffer_GetNextChar_m7F2814EF4110563B0D2862FA0F90FB54049E8D84 ();
 extern "C" void InternalEncoderBestFitFallbackBuffer_TryBestFit_m4BC29FFF78F074AB58EBD2247EAA801205C8F5E7 ();
+extern "C" void RegexCharClass_SingletonChar_m01C15732FAD399460FF5BB449B8177A77CAB1DB9 ();
+extern "C" void RegexInterpreter_CharAt_mAE2AF6D293F53C2D8961C2D0C145BC3ADF6EC105 ();
+extern "C" void RegexInterpreter_Forwardcharnext_mD2C6694CC31BC75D3E20C511D1004D28AAE1390F ();
+extern "C" void RegexParser_CharAt_m08DBAE0DFD788548F74E061031B7221154F96A77 ();
+extern "C" void RegexParser_MoveRightGetChar_m3CF088DE129BADB346CCEEF1D547E2D260BC894A ();
+extern "C" void RegexParser_RightChar_m9E231199A8E5EA994AA1746FC5E977AF3823FDEB ();
+extern "C" void RegexParser_RightChar_m246E9E1F8D0A4A8E485C23E233CD3915C23739D8 ();
+extern "C" void RegexParser_ScanCharEscape_mF8821EE73F3F8A5D4267642F6E4F0A666FA5E7A6 ();
+extern "C" void RegexParser_ScanControl_m244F59DA2B0711D154B7D68CCB5765390C65B5B8 ();
+extern "C" void RegexParser_ScanHex_m296FC19218F8186D2C1B630DF9F138CFB195625E ();
+extern "C" void RegexParser_ScanOctal_mCF3925D06CBBA1DD0CB60199F59991D099430C3A ();
 extern "C" void StringBuilder_get_Chars_mC069533DCA4FB798DFA069469EBABA85DCC183C6 ();
 extern "C" void UTF32Encoding_GetHighSurrogate_mCB369ADE162D44F8844E77D960F2D58723694EB2 ();
 extern "C" void UTF32Encoding_GetLowSurrogate_mB8C16E47F1E7AD95B3097C15C697D7E099C8455C ();
@@ -1797,6 +2033,14 @@ extern "C" void UInt32_System_IConvertible_ToChar_mC0A386C36A0EBC656E6F887A1CCD5
 extern "C" void UInt64_System_IConvertible_ToChar_mBB0EEBDF5CB12C5CE93ECD9C39124D33F221A523_AdjustorThunk ();
 extern "C" void UriHelper_EscapedAscii_m06D556717795E649EBBB30E4CBCF3D221C1FEB78 ();
 extern "C" void __DTString_GetChar_m15E6D62E27D5EC6E7E726D2E6A719A95A521CAE6_AdjustorThunk ();
+extern "C" void OnValidateInput_EndInvoke_m5572A626B672DBB088B74DDE28F247591EA7DC7F ();
+extern "C" void OnValidateInput_Invoke_m73C11D1534196B5C2FA728C46342043A8F93E61E ();
+extern "C" void TMP_InputField_Validate_mCB989784D2BD470DD9F8578C9B48E63AA32CC6D2 ();
+extern "C" void TMP_InputField_get_asteriskChar_mEE98A897232D7B643B527D0C0B9D64A6B1482BB0 ();
+extern "C" void TMP_TextParsingUtilities_ToLowerASCIIFast_mEE6BF705F53064F464900F064B09C7B5AC2D8E3D ();
+extern "C" void TMP_TextParsingUtilities_ToUpperASCIIFast_m53379780AEC938A90699E4128C680DD72F4C83D7 ();
+extern "C" void TMP_TextUtilities_ToLowerFast_m1DEAD360B85F0378A77EE723C84AE2E8B9FDCD2E ();
+extern "C" void TMP_TextUtilities_ToUpperFast_m7329EEEA76C453A57844853C60901D174A4D2221 ();
 extern "C" void Event_get_character_m78B46D412357B71233F3D41842928A19B290915C ();
 extern "C" void OnValidateInput_EndInvoke_mAB770AE895D1805E679C0C25B83C024D229040CF ();
 extern "C" void OnValidateInput_Invoke_m73A9F2DB58DE24B74FE88632E339712EA910BED9 ();
@@ -1831,9 +2075,12 @@ extern "C" void HashtableEnumerator_get_Entry_m09E4C8736E1303C56569896F34943C95F
 extern "C" void SortedListEnumerator_get_Entry_mEDCBB15F075D7D79709D37B9EB395F39252C253E ();
 extern "C" void ResourceEnumerator_get_Entry_mFE1ABE5691EDD95C756BAD75AED222D2CA6FC9C3 ();
 extern "C" void DictionaryEnumerator_get_Entry_m43D72FBF041254775BFFD1B888E35ED32CB6E365 ();
+extern "C" void TMP_Settings_GetCharacters_m87B52E9D173924679473739B32E85624198F4A15 ();
 extern "C" void TimeZoneInfo_ParseAbbreviations_mF9E2B864DA8DDDA370DD9D43D5A7E3D8B7FBA76A ();
 extern "C" void TimeZoneInfo_ParseTimesTypes_mDE8026755AF2207FFD76312DB22A472EE850BBA6 ();
 extern "C" void DateTimeFormatInfoScanner_get_KnownWords_m879DDD544D295C4D35F07F69BBE8C2A7148DEFBE ();
+extern "C" void TMP_FontAsset_get_characterLookupTable_mB01E64728A3D6B7BFE5EDA2FF678B836996CFD37 ();
+extern "C" void TMP_FontAsset_get_glyphLookupTable_m9F0993D9E53E3B37FF204AC531A16EA7A48EAEA6 ();
 extern "C" void EventPayload_get_Keys_mD236EE154B85DCB3F0E625EFB795797859D9C865 ();
 extern "C" void EventCommandEventArgs_get_Arguments_mC479E0933B8003A788E2D47344FFAFD8EB4B6B91 ();
 extern "C" void Statics_GetProperties_m5DFC41E95E0807B7F0EE158533B1B386AC80FAD1 ();
@@ -1874,11 +2121,22 @@ extern "C" void SerializationEvents_GetMethodsWithAttribute_m19F287113784C4EBB11
 extern "C" void TimeZoneInfo_CreateAdjustmentRule_m91309BB1DD028055DF1162AF2C32E3B49B205217 ();
 extern "C" void TimeZoneInfo_GetSystemTimeZonesWinRTFallback_m6A927CC8A8AC235866DC2399C990A32C6BF846D0 ();
 extern "C" void EventProvider_GetSessions_mF76C5CED507D8F8C66063D65255AA7AA46ED76AD ();
+extern "C" void TMP_FontAsset_get_characterTable_mC69663A9EC0FCF3CDA26418D7A662FFCCCD8E82F ();
+extern "C" void OptionDataList_get_options_mD7B62EB17EF0D8C700792B5868E950678C82668D ();
+extern "C" void TMP_Dropdown_get_options_m2A509F28E9AA0D259D28CBA0A0992CE5ED60ABC2 ();
+extern "C" void TMP_FontAsset_get_fallbackFontAssetTable_mD68B9B681CD12ED337BB98433EA42F274F89DB2F ();
+extern "C" void TMP_Settings_get_fallbackFontAssets_m002C1133AE79ADFBED3EC255431C8E9F9EEA7FC3 ();
+extern "C" void TMP_FontFeatureTable_get_glyphPairAdjustmentRecords_m240C494168A809171BE9B21A1D8B93681E910FD1 ();
+extern "C" void TMP_SpriteAsset_get_spriteCharacterTable_m9ED68AC98A521D2CAD2EDF75B11EC23F0C93A1E1 ();
+extern "C" void TMP_SpriteAsset_get_spriteGlyphTable_m64D4F7FF69FC913975F43ECC22FDA0FAB3E2DB59 ();
 extern "C" void RaycasterManager_GetRaycasters_mC012BA818045A764CA81B7FE812312ED8D4724D9 ();
 extern "C" void EventTrigger_get_triggers_m89CFFFA0D9858804EC5B3612D58E346BB5A89083 ();
 extern "C" void InvokableCallList_PrepareInvoke_m5BB28A5FBF10C84ECF5B52EBC52F9FCCDC840DC1 ();
 extern "C" void UnityEventBase_PrepareInvoke_mFA3E2C97DB776A1089DCC85C9F1DA75C295032AE ();
 extern "C" void LayoutGroup_get_rectChildren_m0DF5653E3FC488B553826E1D5E75D90FCDCA237F ();
+extern "C" void TMP_FontAsset_get_glyphTable_m9EFCC2243B2739AC576F87A07F6E8AE8C2A90550 ();
+extern "C" void TMP_FontAsset_get_freeGlyphRects_m62DA42D990705B7537617547B2C32C14C9770B37 ();
+extern "C" void TMP_FontAsset_get_usedGlyphRects_m1BE2AC04816308DDBCD92B35CE12E5BFF1A2F2BE ();
 extern "C" void OptionDataList_get_options_mFE97692E7835C863B40C95B8F76CF9E4F384C2BB ();
 extern "C" void Dropdown_get_options_m936486EEAB117AAB3539EE9443D9EB099EDEE9FD ();
 extern "C" void Selectable_get_allSelectables_m640C12344CEEF36F2F1227C1D11EAE4EBD62D77D ();
@@ -1935,6 +2193,10 @@ extern "C" void OidCollection_System_Collections_IEnumerable_GetEnumerator_m3FD3
 extern "C" void Evidence_GetEnumerator_m03EB4131E670C6BAFA8C155ABCD98637699AA43E ();
 extern "C" void String_System_Collections_IEnumerable_GetEnumerator_mB1587886EA519A21EF4833A08FF1AF715497C1BF ();
 extern "C" void XmlNode_System_Collections_IEnumerable_GetEnumerator_mC8BE3ACFBE87B8F5ABAE7B797FAF48A900679B27 ();
+extern "C" void TMP_Dropdown_DelayedDestroyDropdownList_m6DD41D394989827DF9C6567C86B8520333255716 ();
+extern "C" void TMP_InputField_CaretBlink_mB609253CF43EF03332FEF1F9CA3E9C0DCE72E154 ();
+extern "C" void TMP_InputField_MouseDragOutsideRect_mE269A95CDBA4C979496C83A802BF20580DECFFA7 ();
+extern "C" void TMP_SpriteAnimator_DoSpriteAnimationInternal_m144E4B3BDEDEF0DDB2072179173D40B496FBFFD9 ();
 extern "C" void GUISkin_GetEnumerator_m3F6D91C1C038E5DC24C38F6D23C95DEE03173987 ();
 extern "C" void Transform_GetEnumerator_mE98B6C5F644AE362EC1D58C10506327D6A5878FC ();
 extern "C" void Button_OnFinishSubmit_m8E4F41D33C11DA8D12C16D98337CAF58AED8663F ();
@@ -2207,12 +2469,15 @@ extern "C" void Math_Acos_mA015FB00E4C265D5FAD2D17E52C16A828472D666 ();
 extern "C" void Math_Ceiling_m379E37FEB7C1DC30F53CBFA8896E0DD0804C44C7 ();
 extern "C" void Math_Cos_m2A56736FA0ADF035FA2F54813C6C6E21D6C05F4C ();
 extern "C" void Math_Floor_mC3101A845FDA61AA1E9D4AC3C613F2A3F54332D8 ();
+extern "C" void Math_InternalTruncate_mAE5DE69F993E1DF43433F66135A2A80CEF0AC7C2 ();
 extern "C" void Math_Log_mD51F54D254E1380E2317F19403E67DFB15008CD9 ();
 extern "C" void Math_Log_m5C457D6A666677B3E260C571049528D5BE93B7AF ();
 extern "C" void Math_Pow_m9CD842663B1A2FA4C66EEFFC6F0D705B40BE46F1 ();
 extern "C" void Math_Round_m92CC19B936A3FC72826AD3950A90E5D9EB7513FE ();
 extern "C" void Math_Sin_m70D30E020E871902B8610553CD000D7826B8B1DF ();
+extern "C" void Math_SplitFractionDouble_m88260C271374C2523447550FAB21BC5EEA603216 ();
 extern "C" void Math_Sqrt_mB2008A97F28A0FC333E8DA31C6B1731D015BF5D2 ();
+extern "C" void Math_Truncate_m44E272770DC7ED9901329E1FC8D0D1F0731C9011 ();
 extern "C" void Number_ParseDouble_m1114DFDF930B69AB3222044E9818855F131B5672 ();
 extern "C" void Random_Sample_m1CCBC99EFFC1F61BABA8EFB3935311C8F82673AF ();
 extern "C" void __BinaryParser_ReadDouble_m7AE239B013E3F891916C510E520706E2F0AF6922 ();
@@ -2244,6 +2509,7 @@ extern "C" void MonoIO_GetException_m89CBE5A787ED811E6A37BF8BFCE2F7E2B54072A3 ()
 extern "C" void MonoIO_GetException_m80679F0AE2F61A8E2F8537A6178D1AA791EE8BA8 ();
 extern "C" void Error_ArgumentNull_mCA126ED8F4F3B343A70E201C44B3A509690F1EA7 ();
 extern "C" void Error_MoreThanOneMatch_m85C3617F782E9F2333FC1FDF42821BE069F24623 ();
+extern "C" void Error_NoElements_m17188AC2CF25EB359A4E1DDE9518A98598791136 ();
 extern "C" void Assembly_CreateNIE_m5076DC7513181632DAF6DC6726A154E5DBE960F2 ();
 extern "C" void Module_CreateNIE_m0A06200E43193425754DE3A21266650E45A0B2C4 ();
 extern "C" void ExceptionDispatchInfo_get_SourceException_m212F50A437B8B18AFECE39F2A9F7231787F45F28 ();
@@ -2392,6 +2658,7 @@ extern "C" void TimerCallback_BeginInvoke_m8C0291B93231EC42260B0FB426CE548E6A590
 extern "C" void WaitCallback_BeginInvoke_m6D50CA2A74AF60AE847EC36236F0E836CFF74B62 ();
 extern "C" void WaitOrTimerCallback_BeginInvoke_m86C8EC9E231C1076272729D07B6331A3253150CF ();
 extern "C" void UnhandledExceptionEventHandler_BeginInvoke_m685D3D37FBE53A62A290C06A727BA6E2559F1B54 ();
+extern "C" void OnValidateInput_BeginInvoke_m4CA340029A37B6121AD91575987C4B55418F7CEB ();
 extern "C" void OnOverrideControllerDirtyCallback_BeginInvoke_m35CE43BF7D40E88192183CF666F2BB7EFE8C6F9D ();
 extern "C" void LogCallback_BeginInvoke_mECA20C96EB7E35915BC9202F833685D0ED5F66A7 ();
 extern "C" void LowMemoryCallback_BeginInvoke_m4686E95B4CF6EDE103DB0448FC54354BAE5F1745 ();
@@ -3070,6 +3337,7 @@ extern "C" void String_Compare_m4F7827906BB2FD00745D6A962DB23A7FF58BEB47 ();
 extern "C" void String_Compare_m208E4853037D81DD5C91DCA060C339DADC3A6064 ();
 extern "C" void String_Compare_mA1D43767F882FE677F238637A8785FCCEE7173D9 ();
 extern "C" void String_Compare_m5BD1EF8904C9B13BEDB7A876B122F117B317B442 ();
+extern "C" void String_CompareOrdinal_m3DE819A1E2FB2B4992CFF04CA36921B77A3FC387 ();
 extern "C" void String_CompareOrdinal_m172D84EDDE0823F53EAB60857C07EA7F85600068 ();
 extern "C" void String_CompareOrdinalHelper_m8CF6B70AB35A10B3DA4A6A03D396D42B07F4CF0C ();
 extern "C" void String_CompareOrdinalIgnoreCaseHelper_mDEF4C17B43B7581D0EC38A8B69DC4CDB927E6E74 ();
@@ -3212,6 +3480,43 @@ extern "C" void Normalization_GetPrimaryCompositeFromMapIndex_mC882AED4638E77E97
 extern "C" void Normalization_GetPrimaryCompositeHelperIndex_mBF42ECA25605228B344D469251274E6E0C0102B2 ();
 extern "C" void Normalization_TryCompose_m5879D248041F211393CD46EA75FB4654253A2BD7 ();
 extern "C" void Normalization_TryComposeWithPreviousStarter_mC6EE7E98390E0FDA79259873D8CF514EBCFBC162 ();
+extern "C" void Match_MatchIndex_mA39CA9F84C3872675CB9C76EC342EFB30A2B5DA0 ();
+extern "C" void Match_MatchLength_m25492EACF56E8211FEEC4856F93D7A19D30A984F ();
+extern "C" void RegexBoyerMoore_Scan_m204A42056131A694B6D31FC69563355788CABD67 ();
+extern "C" void SingleRangeComparer_Compare_mF2CAD555BAC4D9CBF6A8F90D829CB528BD7BCCC9 ();
+extern "C" void RegexCharClass_RangeCount_mEACBB4BD08CE18A9C4F0C433A7D6C5726F563E2E ();
+extern "C" void RegexFCD_AnchorFromType_m4B458E2C589633A43F9324C14F9192EF68F80A14 ();
+extern "C" void RegexFCD_Anchors_m562FA644F10503074714E0F58A2A00F9F727D75E ();
+extern "C" void RegexFCD_PopInt_m1E4B64F2F6DDBCB7495E673540CF25FDD4D01B7E ();
+extern "C" void RegexInterpreter_Bump_mC33CB8A0CC0DF1C69F11115BD225D2D8B63F8753 ();
+extern "C" void RegexInterpreter_Forwardchars_mE5E437E285604CDC60551C112F7B2CEF7297F4ED ();
+extern "C" void RegexInterpreter_Leftchars_m3A200CD41FFE8C89CCB85B3CC7A367E32C5988D1 ();
+extern "C" void RegexInterpreter_Operand_m1ACB9C398C9C7ADF8DA58824877B99F08F181526 ();
+extern "C" void RegexInterpreter_Operator_m4DE2EAA1744D15294F2767D5217F753FE74FAC0B ();
+extern "C" void RegexInterpreter_Rightchars_m3DB37A53D6C3DC3311C9EA020690CC0824959D30 ();
+extern "C" void RegexInterpreter_StackPeek_m08C28311048F6B075379EE46B924FC211BA48EC6 ();
+extern "C" void RegexInterpreter_StackPeek_m308DE22A8E1AF524319E7F1D5A94DBFEC37700ED ();
+extern "C" void RegexInterpreter_Textpos_mC66F0DE729E76EDA0BEEA7B1ABEE369BA6C81D5B ();
+extern "C" void RegexInterpreter_Textstart_mE71CFC006954F38B9EB6CD85BCC0867E63BF0894 ();
+extern "C" void RegexInterpreter_TrackPeek_m4EF7918CC0F10FFF7E73C1C9D13E74D1D8D13318 ();
+extern "C" void RegexInterpreter_TrackPeek_mEECF3E94E7823A68474C691F695D71087729553C ();
+extern "C" void RegexInterpreter_Trackpos_m472ADA4F5E1D07E71896E42714DFB723CB016842 ();
+extern "C" void RegexNode_ChildCount_m23B6965575DB0DBC1D90212820DEA144FCB06996 ();
+extern "C" void RegexNode_Type_mFA1C2F11F3487BB1BCBA7F58FFB7975EC18E9CD4 ();
+extern "C" void RegexParser_CaptureSlotFromName_mE3FD1D57EB29D4C7A0E4029E4D4785297798EE43 ();
+extern "C" void RegexParser_CharsRight_m318662CFE3223C3FA5E921D376409B4E1B28F9B4 ();
+extern "C" void RegexParser_HexDigit_m4BAEE94B2077B96A4B1D56C459EFB2B1938E1174 ();
+extern "C" void RegexParser_ScanDecimal_mE966D2C7F357215A52F88120F40A37707C1AB33A ();
+extern "C" void RegexParser_Textpos_m36658DED82367E05DF4333E68A666FEEBC3DAC07 ();
+extern "C" void RegexParser_TypeFromCode_m0969E0D233AC767039B0A333901F47A22BABE0E8 ();
+extern "C" void RegexRunner_Crawlpos_m26A92CA69EF0C65BC7389834A12AD331538D064D ();
+extern "C" void RegexRunner_MatchIndex_mA8EEC418C65572A82720F5D16BAC99224CF0251A ();
+extern "C" void RegexRunner_MatchLength_m06FA694D5EFE42F89C25C8599BBE86C7726DB2C6 ();
+extern "C" void RegexRunner_Popcrawl_mD8C76E2C584E6908F4BB11E055B97581F0CF7268 ();
+extern "C" void RegexWriter_CurPos_mEA105879492A4B415FA8AC25B29AA49153F83C18 ();
+extern "C" void RegexWriter_MapCapnum_m6AFE8BED80960BAA522EAA873D535C9D5AD4B811 ();
+extern "C" void RegexWriter_PopInt_m8885F9428571674EC224D6BBC93570B1B4671713 ();
+extern "C" void RegexWriter_StringCode_m6AA17FFEBDD5E155004F05A78CF13B0D8E901158 ();
 extern "C" void StringBuilder_get_Capacity_m504D58B139889E471E4627C43EEA0A5DF7F4F4D0 ();
 extern "C" void StringBuilder_get_Length_m44BCD2BF32D45E9376761FF33AA429BFBD902F07 ();
 extern "C" void StringBuilder_get_MaxCapacity_m1367C928745408E67DFF57F501177B4CA978F365 ();
@@ -3376,6 +3681,83 @@ extern "C" void Version_get_Major_m7A6BEEF367674B8C06B15F6675AFF0C32CCEE87C ();
 extern "C" void Version_get_Minor_mCBAFA7052D1786A47B4BA971E7193A4EB9A7D059 ();
 extern "C" void Version_get_Revision_mB0BADD4E233FA3001FB7BB4795A0A330880453BB ();
 extern "C" void __DTString_GetDigit_m0A4FC9D7AA54648B77398FAF7997FF7FED3694BF_AdjustorThunk ();
+extern "C" void KerningTable_AddGlyphPairAdjustmentRecord_m32A760F556A19FC2E1CB3E5661AF46EDE742D57C ();
+extern "C" void KerningTable_AddKerningPair_mA7AD3240B59D9022440863898CE5E8BBE1B09319 ();
+extern "C" void MaterialReference_AddMaterialReference_mBCED916099107D859312D06F12044E007C0BC9E2 ();
+extern "C" void MaterialReference_AddMaterialReference_mBEF97C70F89DFC05A18EC689BCF5FB368A6E72C1 ();
+extern "C" void TMP_Dropdown_get_value_m505AE9FA106D177AA773F6F2ACD55222C7FF3611 ();
+extern "C" void TMP_FontAsset_get_atlasHeight_mFE49170F556D1026A99EFC06A4727BEC88D32910 ();
+extern "C" void TMP_FontAsset_get_atlasPadding_m754E9BBDA8E492EFFD0869A089D3DEF15234BEED ();
+extern "C" void TMP_FontAsset_get_atlasWidth_mD5B991F38DCA7247093AC9BC8E3387076D8A6B56 ();
+extern "C" void TMP_InputField_FindNextWordBegin_m05EF697DDD7B4EE62BE691FE6EC633F8C764C354 ();
+extern "C" void TMP_InputField_FindPrevWordBegin_mECBD4B291A9AD62AAD415126D18D512FD2C1FB76 ();
+extern "C" void TMP_InputField_GetCaretPositionFromStringIndex_m3BB76399A73444B92E4E9810A47C33B0F4DB3235 ();
+extern "C" void TMP_InputField_GetMaxCaretPositionFromStringIndex_mD09DBEF6E5C711E2E37B181D2912BB2ACC5A849B ();
+extern "C" void TMP_InputField_GetMinCaretPositionFromStringIndex_mD496CDA83804F6F4B15996D579FEDEE3702F2C8B ();
+extern "C" void TMP_InputField_GetStringIndexFromCaretPosition_m7AB93FE2023A83721AF679E4F582018E676845B3 ();
+extern "C" void TMP_InputField_LineDownCharacterPosition_m0BFF543B6C744C5525E6E14F0A12545D5DE31912 ();
+extern "C" void TMP_InputField_LineUpCharacterPosition_mEC7042FD61BFEA68CE57315BAE90220335B5BC21 ();
+extern "C" void TMP_InputField_PageDownCharacterPosition_mC87CCE50E6048997852EEBAE095D88511EBFA48B ();
+extern "C" void TMP_InputField_PageUpCharacterPosition_m20A3BBEBDFAA83B709645142710E18398BA9D2E0 ();
+extern "C" void TMP_InputField_get_caretPosition_m23691ECB3F0337D76058533CE8A3A24B3D04CE5D ();
+extern "C" void TMP_InputField_get_caretPositionInternal_m9050B001005A0EA1322D758583CF16DE8E16CB40 ();
+extern "C" void TMP_InputField_get_caretSelectPositionInternal_m04529761EA4858F662362BB2B679B88B298EA5AF ();
+extern "C" void TMP_InputField_get_caretWidth_mED485EB35983C93A969877E5F521F95F32146453 ();
+extern "C" void TMP_InputField_get_characterLimit_mD4D7BE6B182181A5219129D5134EEE00B952A981 ();
+extern "C" void TMP_InputField_get_layoutPriority_m99AEDDFDD8B5FA3AE2906B55E4EC7479310D7A3B ();
+extern "C" void TMP_InputField_get_lineLimit_mB3B345E3A7C45C821A9818A317809D2095C7265B ();
+extern "C" void TMP_InputField_get_selectionAnchorPosition_m81412008AA4B0B03F4B6DA2900F12ABF250473FF ();
+extern "C" void TMP_InputField_get_selectionFocusPosition_m9932991537D331AD2A19B9F8558BBA998D8A35A4 ();
+extern "C" void TMP_InputField_get_selectionStringAnchorPosition_mAE92EEF95B63CB85C6E510C2FD2E7ACF14763A4D ();
+extern "C" void TMP_InputField_get_selectionStringFocusPosition_m509737B7AF84AC4F317FD83A944017537566138A ();
+extern "C" void TMP_InputField_get_stringPosition_mC1161AE479C1698F753683D5CB35223720F47F18 ();
+extern "C" void TMP_InputField_get_stringPositionInternal_m54A3525F6D51E2190EAB35048DFA6B67FF162D45 ();
+extern "C" void TMP_InputField_get_stringSelectPositionInternal_mBE3C45B014ACB9199B43251DC969FECC1BDBBEEB ();
+extern "C" void TMP_MaterialManager_GetStencilID_m416131A0A82239B3CFD843A0018D6A146176A06C ();
+extern "C" void TMP_Settings_get_missingGlyphCharacter_mF57C2B4CC93CB8A5C294D10D90947FA2DAF8E46F ();
+extern "C" void TMP_SpriteAsset_GetSpriteIndexFromHashcode_m3C05A1728A1C0D0392F35EE9B63FDC1EB068DFE5 ();
+extern "C" void TMP_SpriteAsset_GetSpriteIndexFromName_mFD0F909D3245AEDDCC906F6172E819982E5AFDC6 ();
+extern "C" void TMP_SpriteAsset_GetSpriteIndexFromUnicode_m3DC1234970BD370C9ED850859C20B5C9A3309DD2 ();
+extern "C" void TMP_SpriteCharacter_get_hashCode_mFD53B175E29DDAA808D6E2C588B58A15EA61D2B2 ();
+extern "C" void TMP_Style_get_hashCode_mD855529D4DC91212C99654D63A3AB4DCDD465321 ();
+extern "C" void TMP_Text_GetAttributeParameters_m1596FBF7E2CE0CAA36F80F64ACB4EE140592EA90 ();
+extern "C" void TMP_Text_GetTagHashCode_mCA5CBD3E0605DBE75DC426CFEF1A48D6D8A1E01B ();
+extern "C" void TMP_Text_GetTagHashCode_mBD373B2A85BC9911C770AAD3B4525A2CB8C6E83B ();
+extern "C" void TMP_Text_GetTagHashCode_mD7C06923F9EA39B6F28D4CD2B57914B6242CF041 ();
+extern "C" void TMP_Text_GetTagHashCode_mC362B06D21DC995DA325A603E73DCF3466DE05E4 ();
+extern "C" void TMP_Text_GetUTF16_mC37EAA320F128E0449A893AEFBE436BBABD5A8D7 ();
+extern "C" void TMP_Text_GetUTF16_m61BE253641597816445326C4D026E32A4D72042C ();
+extern "C" void TMP_Text_GetUTF32_m76AD817A328C05E4BAB81C5EF04CF78F3E0ED961 ();
+extern "C" void TMP_Text_GetUTF32_mFFCA08E1EE49BB79CD098EFE3287741C67F7741F ();
+extern "C" void TMP_Text_HexToInt_mF09CB73323A39CABCC83FBD34EA69DF80E8EE3B8 ();
+extern "C" void TMP_Text_RestoreWordWrappingState_mE89EDF25D735F8530A7C397282074B52F1E8439D ();
+extern "C" void TMP_Text_SetArraySizes_mF2F9015EDC23E300F91ED34F72D1553CD4BAF8B4 ();
+extern "C" void TMP_Text_get_firstOverflowCharacterIndex_m5BD0EECC99BD6F68B973A6F9B81A930CB963E92E ();
+extern "C" void TMP_Text_get_firstVisibleCharacter_m53A48CC6EBB4D9BDE61BE0E6F5B2ADADC6ED6743 ();
+extern "C" void TMP_Text_get_layoutPriority_m646E1754642A35B332304BE649D0694CBE61AA11 ();
+extern "C" void TMP_Text_get_maxVisibleCharacters_m274EB595D6A59EBD2EA8DCFCEC76BC0C12A86667 ();
+extern "C" void TMP_Text_get_maxVisibleLines_m52EE38EB087974BA708A00A8EAC59CAD242C6F16 ();
+extern "C" void TMP_Text_get_maxVisibleWords_mB89AFA1EDC688050A5BC0C852BBF7C064774C11F ();
+extern "C" void TMP_Text_get_pageToDisplay_m07E377FB28F8BC99F25E7EAAC2BA12C55CC701DD ();
+extern "C" void TMP_TextParsingUtilities_GetHashCodeCaseSensitive_m95C9859C6B2AD76E0BECF49742097179E5E7AADF ();
+extern "C" void TMP_TextUtilities_FindIntersectingCharacter_m7F8B19DC9B6B29EC6491A912D0F78CCECEF40088 ();
+extern "C" void TMP_TextUtilities_FindIntersectingLine_mE7E12992E579C69DA5BF5AD1C8B1754BE535B2D3 ();
+extern "C" void TMP_TextUtilities_FindIntersectingLink_mC2B0B41159DF2F5BAE81D37071633929E5FB9DD7 ();
+extern "C" void TMP_TextUtilities_FindIntersectingWord_m348AE6446B380BE334D0AD4A27047AFD1A563650 ();
+extern "C" void TMP_TextUtilities_FindNearestCharacter_mE016C462BAA950AB17A971896216F98C89753653 ();
+extern "C" void TMP_TextUtilities_FindNearestCharacterOnLine_m352E8606C8B7674B1458CDA95867275EA2AD6636 ();
+extern "C" void TMP_TextUtilities_FindNearestLine_m1A60CBB85E7D7F5B9687D42C8178CBE1BE29B591 ();
+extern "C" void TMP_TextUtilities_FindNearestLink_mCE9F2D2E79104207EDD7E65E5612E04E96F2F90A ();
+extern "C" void TMP_TextUtilities_FindNearestWord_m51E169EA6CC4920E34DCAB1D5B814824A567F6C3 ();
+extern "C" void TMP_TextUtilities_GetCursorIndexFromPosition_mC34D84C130CEDB02E2C8CE7591B2FCEA872AD72F ();
+extern "C" void TMP_TextUtilities_GetCursorIndexFromPosition_m565A978C054D2EA2AFD8346747F3463CD76596C0 ();
+extern "C" void TMP_TextUtilities_GetSimpleHashCode_m3340CE59FAD65A71193665015260BA7758CEAB6E ();
+extern "C" void TMP_TextUtilities_HexToInt_mF522350598B16262D5F382F20EE918B46C294AE5 ();
+extern "C" void TMP_TextUtilities_StringHexToInt_mD0F404AD055EDBEC8AFFD5D0F3BB09E48B3420D5 ();
+extern "C" void TextMeshPro_SetArraySizes_m611B930C828F6AC73E2FB8786876AF1F2E335386 ();
+extern "C" void TextMeshPro_get_sortingLayerID_m43C804244695C386E85433588F0E4CF7A2A93BF4 ();
+extern "C" void TextMeshPro_get_sortingOrder_mFC472E09FA72FC3765177D86EFA7EDAC5406AA81 ();
+extern "C" void TextMeshProUGUI_SetArraySizes_m876EAE8394515E722551C88F77D2CD650E5BB3A2 ();
 extern "C" void AnimationCurve_GetHashCode_m22EEE795E7C76841C40A1563E3E90CBB089B19A6 ();
 extern "C" void AttributeHelperEngine_CheckIsEditorScript_m95CEEF4147D16BC2985EAADD300905AB736F857E ();
 extern "C" void AttributeHelperEngine_GetDefaultExecutionOrderFor_m0972E47FA03C9CEF196B1E7B2E708E30DF4AD063 ();
@@ -3436,16 +3818,22 @@ extern "C" void Gradient_GetHashCode_m2596E6672ACDAD829961AB1FBD3EB649A908DE64 (
 extern "C" void Input_get_touchCount_m2A22A8E963E14F1221F768412663C8D11F806CD6 ();
 extern "C" void DefaultValueAttribute_GetHashCode_m4782E2C5A005991FA7E705110A690DD5E0E52D50 ();
 extern "C" void LayerMask_op_Implicit_m2AFFC7F931005437E8F356C953F439829AF4CFA5 ();
+extern "C" void Material_get_passCount_m790A357C17FB4D829C479652B1B65BC15F73FBB1 ();
+extern "C" void Mathf_Abs_mC7DD2FB3789B5409055836D0E7D8227AD2099FDC ();
 extern "C" void Mathf_CeilToInt_m0230CCC7CC9266F18125D9425C38A25D1CA4275B ();
 extern "C" void Mathf_Clamp_mE1EA15D719BF2F632741D42DF96F0BC797A20389 ();
 extern "C" void Mathf_FloorToInt_m0C42B64571CE92A738AD7BB82388CE12FBE7457C ();
 extern "C" void Mathf_Max_mBDE4C6F1883EE3215CD7AE62550B2AC90592BC3F ();
 extern "C" void Mathf_Min_m1A2CC204E361AE13C329B6535165179798D3313A ();
+extern "C" void Mathf_NextPowerOfTwo_m071D88C91A1CBECD47F18CA20D219C77879865E7 ();
 extern "C" void Mathf_RoundToInt_m0EAD8BD38FCB72FA1D8A04E96337C820EC83F041 ();
 extern "C" void Matrix4x4_GetHashCode_m6627C82FBE2092AE4711ABA909D0E2C3C182028F_AdjustorThunk ();
 extern "C" void Mesh_DefaultDimensionForChannel_mF943AF434BB9F54DBB3B3DE65F7B816E617A89C9 ();
 extern "C" void Mesh_get_subMeshCount_m6BE7CFB52CE84AEE45B4E5A704E865954397F52F ();
+extern "C" void NoAllocHelpers_SafeLength_m85E794F370BFE9D3954E72480AE6ED358AF5102C ();
 extern "C" void Object_GetHashCode_mCF9141C6640C2989CD354118673711D5F3741984 ();
+extern "C" void Object_GetInstanceID_m33A817CEE904B3362C8BAAF02DB45976575CBEF4 ();
+extern "C" void Object_GetOffsetOfInstanceIDInCPlusPlusObject_m7C7130E8611F32F6CC9A47400AC5BDC2BA5E6D23 ();
 extern "C" void ParticleSystemRenderer_Internal_GetMeshCount_m8643D16C124760372764B0A3D73E1BE4581491AB ();
 extern "C" void Physics_RaycastNonAlloc_m9CC4B976EA1936076FFA1339BF6FBE78A2DA593F ();
 extern "C" void Physics_RaycastNonAlloc_m0A9CEF12FB7EE9C790609A15CBFE975725365CF9 ();
@@ -3494,6 +3882,20 @@ extern "C" void AchievementDescription_get_points_mF84D543E614C28818ABA12E7F8C5F
 extern "C" void SortingLayer_GetLayerValueFromID_m564F9C83200E5EC3E9578A75854CB943CE5546F8 ();
 extern "C" void Sprite_GetPacked_mBDE07283B07E7FB8892D309C5EDC81584C849BCC ();
 extern "C" void Sprite_GetPackingMode_mF0507D88752CDA45A9283445067070092E524317 ();
+extern "C" void FaceInfo_get_pointSize_m7FF87189B44B164920FDFBC1AF255255F310B5FF_AdjustorThunk ();
+extern "C" void Glyph_get_atlasIndex_mF246F5C157408FCD5281DBFF08E21CBF28BB529A ();
+extern "C" void GlyphMetrics_GetHashCode_mB88CD082436B6E204011997AB57BFA8843EBBD5C_AdjustorThunk ();
+extern "C" void GlyphRect_GetHashCode_m3A99EB971A433E57B195D6C06EBFF5F7ADD4E2E2_AdjustorThunk ();
+extern "C" void GlyphRect_get_height_mD272F54F14F730E8CAECFE7DC759F9E237374F90_AdjustorThunk ();
+extern "C" void GlyphRect_get_width_mDFB5E23F494329D497B7DE156B831DF6A0D2DC28_AdjustorThunk ();
+extern "C" void GlyphRect_get_x_m0BAD0C0AA39EDD78635C17E6334C06D272C9FEDF_AdjustorThunk ();
+extern "C" void GlyphRect_get_y_m2149E34A0421CAA14EC681885722D4E587B3103B_AdjustorThunk ();
+extern "C" void FontEngine_GetFaceInfo_Internal_m651FC0E71B8D4FB858C70374126E142659537F8C ();
+extern "C" void FontEngine_GetGlyphPairAdjustmentTable_Internal_m8A6247127839E83B66B84C0898E64ADA151996D8 ();
+extern "C" void FontEngine_InitializeFontEngine_Internal_m1E2A10F8DAB78AD620024ECFA665C55F91B55445 ();
+extern "C" void FontEngine_LoadFontFace_With_Size_FromFont_Internal_m325AFCA4FC2C627409FC9831A009940112D6B013 ();
+extern "C" void FontEngine_RenderGlyphsToTexture_Internal_m75E35FA3BB446FAD0E9574A2109BF1AF8758218D ();
+extern "C" void FontEngineUtilities_MaxValue_mFF6CBAAE6C3015C2A0E7492A381F6F2118CA1215 ();
 extern "C" void TextGenerator_get_characterCount_m2A8F9764A7BD2AD1287D3721638FB6114D6BDDC7 ();
 extern "C" void TextGenerator_get_characterCountVisible_mD0E9AA8120947F5AED58F512C0978C2E82ED1182 ();
 extern "C" void TextGenerator_get_lineCount_m7A3CC9D67099CDC4723A683716BE5FBC623EE9C4 ();
@@ -3565,6 +3967,9 @@ extern "C" void NumberFormatInfo_get_NumberGroupSizes_m565821165B43AA202D8F644E4
 extern "C" void NumberFormatInfo_get_PercentGroupSizes_m4E8851281AB5160EC0EE06F633B08235440DF4C8 ();
 extern "C" void TaiwanCalendar_get_Eras_m225F604174076A8AA0818EC9CCFBA30F8F11A608 ();
 extern "C" void ValueTypeFixupInfo_get_ParentIndex_m6B7ADD6FF8AC73C8DDBF4FAA49AF2CA484EE7816 ();
+extern "C" void TMP_FontAsset_GetCharactersArray_m7D4E9769FC08753B1FF67FE9F6AFEEEC0FEAB781 ();
+extern "C" void TMP_Style_get_styleClosingTagArray_m84F69B96364C8DBBA1A4FF28FFA57B4108221958 ();
+extern "C" void TMP_Style_get_styleOpeningTagArray_mD14F5B38FE24916AB41BD00C68F0815F92EBDFE9 ();
 extern "C" void Mesh_GetIndices_m2FD8417547E7595F590CE55D381E0D13A8D72AA5 ();
 extern "C" void Mesh_GetIndices_m4260DCF1026449C4E8C4C40229D12AF8CAB26EAF ();
 extern "C" void Mesh_GetIndicesImpl_m2118C6CA196093FD19BB05E5258C0DCE06FEAD30 ();
@@ -3763,6 +4168,7 @@ extern "C" void Activator_CreateInstance_mEE50708E1E8AAD4E5021A2FFDB992DDF65727E
 extern "C" void Activator_CreateInstance_mD65133A292FB03ACADFA0659A34952F285B4CCA8 ();
 extern "C" void Activator_CreateInstance_m8514197681D9771380014317A84B751EC31DBBC0 ();
 extern "C" void Activator_CreateInstance_m328643EF5AC04AA6C24BFADFCAB54E99DE5CA00F ();
+extern "C" void AppDomain_GetData_mD6C34853507A96159BB1A7773C65E8B21DBC7250 ();
 extern "C" void AppDomain_InitializeLifetimeService_m05B608CD854DBFB1FD8919E2B2F0F93EAFF5B8CD ();
 extern "C" void AppDomain_InvokeInDomainByID_mEA4AF64087DA8C757F8B499C9FA5E8A5AEEEE2CC ();
 extern "C" void ArrayEnumerator_Clone_m6CE6E38241B4B87AA18C451B3AA79C1FE44A9B46 ();
@@ -4073,6 +4479,7 @@ extern "C" void Encoding_get_InternalSyncObject_m83E4529829B8FCFB1CE706425804440
 extern "C" void EncodingHelper_InvokeI18N_m638F0C7660999BE0390DD7E26CBC9603D139D2D6 ();
 extern "C" void InternalDecoderBestFitFallbackBuffer_get_InternalSyncObject_m882032FDCD9281FC5145B8AA0F2C604EB806915A ();
 extern "C" void InternalEncoderBestFitFallbackBuffer_get_InternalSyncObject_m07257512FD952E191F4C1A480BB8F2B43D3CEA21 ();
+extern "C" void ExclusiveReference_Get_mE79B077388AFBD19A4524E630701783E7DCE61E4 ();
 extern "C" void Reader_GetLocalValue_mDF960A5165F72ED7458C4766F82BD023FCD20392_AdjustorThunk ();
 extern "C" void ExecutionContext_GetLocalValue_m3763707975927902B9366A1126178DE56063F5E8 ();
 extern "C" void Interlocked_CompareExchange_m92F692322F12C6FD29B3834B380639DCD094B651 ();
@@ -4088,6 +4495,14 @@ extern "C" void Version_Clone_mC9305AB873E1FF41BA1B81C2988F0C113CC11035 ();
 extern "C" void WeakReference_get_Target_mF924E58A87EF45E9D2A464FAA36B7A6079F10B1F ();
 extern "C" void XmlChildEnumerator_System_Collections_IEnumerator_get_Current_m2E52170DBEF6245A93126D3C7FF60ED17DDE2BD1 ();
 extern "C" void XmlNode_System_ICloneable_Clone_m7208212A0F30077B18060E4D12B3C83D172D3D39 ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m58717D11B90F4472FF220450742D992A0CA1F841 ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_IEnumerator_get_Current_m17D87CD5D3C14C87374EA32D7705D9EAEACBC86D ();
+extern "C" void U3CCaretBlinkU3Ed__267_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m07530821610C865083C61E529BB9D89C4F36037F ();
+extern "C" void U3CCaretBlinkU3Ed__267_System_Collections_IEnumerator_get_Current_m5D97BA91753957D206EA8AFF3ED3ED8CE695DF87 ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE098B15D6DDF9C8CCF124292D59BBB5748075D81 ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285_System_Collections_IEnumerator_get_Current_m63A1ECA11B7D6D6298BBC5FB241C40CC7DC84913 ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0D2789BF0E97DD4034E28EFFC2912F61FD39CD3D ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_IEnumerator_get_Current_m62228FE3978EE7E2E12AE15E0EA2B4EDC8A38E58 ();
 extern "C" void CustomYieldInstruction_get_Current_m9B2B482ED92A58E85B4D90A5AC7C89DFF87E33DC ();
 extern "C" void GUIUtility_Internal_GetDefaultSkin_m1D4A53896309F1A4A54AF15D7E5F4DC61451276E ();
 extern "C" void DefaultValueAttribute_get_Value_m1E1505D5F1838C28CA4C52DED4A20E81F81BFCC3 ();
@@ -4796,6 +5211,81 @@ extern "C" void Interlocked_Exchange_m799859F5121A37920381B0ADFF238EAAAD00E6E7 (
 extern "C" void UInt16_System_IConvertible_ToSingle_m6B087CB34DBF0B394642977BB68F8B503DED3C7E_AdjustorThunk ();
 extern "C" void UInt32_System_IConvertible_ToSingle_m2B438F2707D2FB9C8FDC6D79B263677FA3C37096_AdjustorThunk ();
 extern "C" void UInt64_System_IConvertible_ToSingle_m04A4372F398081E930044EEECC7B73B4686EE8F0_AdjustorThunk ();
+extern "C" void ColorTween_GetDuration_mDD1E4514763566EB98FEF3E2494B324CD4807B33_AdjustorThunk ();
+extern "C" void ColorTween_get_duration_mBDF74743714A4C7373DBF108805E7D68B70BE1FA_AdjustorThunk ();
+extern "C" void FloatTween_GetDuration_m8897B3E5D24ABE6C6963458F16ED9D9D70CF5BE1_AdjustorThunk ();
+extern "C" void FloatTween_get_duration_m9F75600C6074E2371F4B085C228009790C382ABF_AdjustorThunk ();
+extern "C" void FloatTween_get_startValue_mA9D409C758431660EE013070179704EE05BC6D1B_AdjustorThunk ();
+extern "C" void FloatTween_get_targetValue_mFA1D2AD63B02958BA97E059D78AD6E448A858088_AdjustorThunk ();
+extern "C" void ShaderUtilities_GetPadding_m85F4485320B2346139D2D344E381DB6F3DB3B6BF ();
+extern "C" void ShaderUtilities_GetPadding_m7FFE9C50EDA8D4FA73E05241BCF45F1FEEEEE92B ();
+extern "C" void TMP_GlyphValueRecord_get_xAdvance_m337CA60953B1208B16853C433065D621B2C20C9F_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_get_xPlacement_mE8B211BCC0F047D5A981E4765F66884E8826F82A_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_get_yAdvance_m24096D89BA337CB044EB10BC98D1398EA6E0623E_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_get_yPlacement_mE6D61CD59137296A0296B05704932EB7B9925C22_AdjustorThunk ();
+extern "C" void TMP_InputField_get_caretBlinkRate_m9E4BA3BEF06239E8B0CCA2420B9C653C6108DE6C ();
+extern "C" void TMP_InputField_get_flexibleHeight_mCF2B60976B66D7D5FC8D3B03D941D32DBDD97471 ();
+extern "C" void TMP_InputField_get_flexibleWidth_m3794D57AA24292C813673862B1542337B000DBB8 ();
+extern "C" void TMP_InputField_get_minHeight_m8C9C97862E5DF485A4AE5089072ED5BA0F52C8A8 ();
+extern "C" void TMP_InputField_get_minWidth_m838BF9EEE7AB6296530FF8F34F63B0CF1F191192 ();
+extern "C" void TMP_InputField_get_pointSize_m53D598DDE0ABDB0EF5619879ABAEF70D906E0D9E ();
+extern "C" void TMP_InputField_get_preferredHeight_m26419D3BF8908369F97752073DDD5D9ABFD64A3C ();
+extern "C" void TMP_InputField_get_preferredWidth_m65AC05763C6355C00645B2420ED072ED397F2AB4 ();
+extern "C" void TMP_InputField_get_scrollSensitivity_m7C5A1CA2E0D5C813B4523F422B4F2CEAC7A4AAD9 ();
+extern "C" void TMP_Settings_get_defaultFontSize_m291E720E02E2FF65C593A6083BE40688A90CF0F0 ();
+extern "C" void TMP_Settings_get_defaultTextAutoSizingMaxRatio_mFC6ABDE7D301E6F5C767531DA1595C0CF13CC11C ();
+extern "C" void TMP_Settings_get_defaultTextAutoSizingMinRatio_m122DE45709066DFF23B9C62C0FA5EA11CD50040B ();
+extern "C" void TMP_SubMesh_GetPaddingForMaterial_m7C4AA173286AEFC51F8A0C6244305EFBE0D77C15 ();
+extern "C" void TMP_SubMesh_get_padding_mBAE2229E48FE6492B76D650F7B737EBE5787F2A2 ();
+extern "C" void TMP_SubMeshUI_GetPaddingForMaterial_m84C43B4E5E8A5ED40903C1321AC84AFFBACC139F ();
+extern "C" void TMP_SubMeshUI_GetPaddingForMaterial_m0EF23FF6E7ED8FD5A9A5D25A503C3AD409FD9E06 ();
+extern "C" void TMP_SubMeshUI_get_padding_m893F93C6773A93EE7A86360464B4379C8AA85F97 ();
+extern "C" void TMP_Text_ConvertToFloat_mAA679590C43944D553726CB9540B0A7076F3132E ();
+extern "C" void TMP_Text_ConvertToFloat_mBFA8DA2CC3638E8547B43E03CD8FB2F17B32B208 ();
+extern "C" void TMP_Text_GetPaddingForMaterial_m282C3BF0A755CE150B6E4DC6B9F6F452DB160880 ();
+extern "C" void TMP_Text_GetPaddingForMaterial_mAE39EEE41E08136940C4645878212E4FD520C558 ();
+extern "C" void TMP_Text_GetPreferredHeight_m746C2BEFF40208B3AE28160CB3BA5B48467CE11A ();
+extern "C" void TMP_Text_GetPreferredHeight_m9163451EC9E415D9FB1CF520657A8DDCA1529FE1 ();
+extern "C" void TMP_Text_GetPreferredWidth_mBAE2F8D3045661A66AD6D953AB03C67E8EDE7884 ();
+extern "C" void TMP_Text_GetPreferredWidth_mAC6F8B73DB5209F6F1585CBD1461A8FB4CA1B31F ();
+extern "C" void TMP_Text_GetRenderedHeight_mB8B4DFC07B3553362005BB8A411B77DA1821CAD2 ();
+extern "C" void TMP_Text_GetRenderedHeight_mA667C05DAC4452CCA6414B35FCBCAD9B2E9E1AF8 ();
+extern "C" void TMP_Text_GetRenderedWidth_mD0E38BA3233BF1C5300FB3C8E80CD68F07C8E2D0 ();
+extern "C" void TMP_Text_GetRenderedWidth_m09597001977CC5B43C4E2EDB3DA42AFA95B3E501 ();
+extern "C" void TMP_Text_PackUV_m88FEA3127A1A2CB066A6072E98FE3EA2E88F3126 ();
+extern "C" void TMP_Text_get_alpha_m654B0A34DF46DBB8C3C3332A184A629832AD705C ();
+extern "C" void TMP_Text_get_characterSpacing_m0E8BA15BB908AB8E90EFAA79688F2F7DB6F35119 ();
+extern "C" void TMP_Text_get_characterWidthAdjustment_m9A91E6226793194C94F0B5F083714371984F5367 ();
+extern "C" void TMP_Text_get_flexibleHeight_m2772E66E842DFF07FEC4B6D0860A6839E551B4EA ();
+extern "C" void TMP_Text_get_flexibleWidth_mABDD64CCE910C2E5F4DA183852B63E26CABB6415 ();
+extern "C" void TMP_Text_get_fontScale_m9F65205A757C81B8C73909D77716E632F3A6BCDC ();
+extern "C" void TMP_Text_get_fontSize_mCC2F675A5C06792A72EB688108F9A2233222682B ();
+extern "C" void TMP_Text_get_fontSizeMax_mDB903927E54409CE5ECCC853925505103084630C ();
+extern "C" void TMP_Text_get_fontSizeMin_mB8F84CE5C438D454328FEBAF74ABCD6706A73330 ();
+extern "C" void TMP_Text_get_lineSpacing_mE85966CD05287073CF925E4A7F1D553D0C957CA1 ();
+extern "C" void TMP_Text_get_lineSpacingAdjustment_m6570C71297BF019072E35BABB4D369A2E0892B1A ();
+extern "C" void TMP_Text_get_mappingUvLineOffset_m290794F1D0FAEB24BB0C285D3B8B359DE32C8A1A ();
+extern "C" void TMP_Text_get_maxHeight_mB83CDF264BE504458836781C72FD4180D2CE6EB7 ();
+extern "C" void TMP_Text_get_maxWidth_m9AFD4D9D5A2C8E74FF7ECB0DA1EA6213ADE798F1 ();
+extern "C" void TMP_Text_get_minHeight_mCBCCC71B627519C50BCC04374975A2E3D461ACD4 ();
+extern "C" void TMP_Text_get_minWidth_m806F8954AC1240A981D03C31D676AC61A5FFA459 ();
+extern "C" void TMP_Text_get_outlineWidth_mFB3398A4FB667873ECEA3389EB0AFBD6EC635F1F ();
+extern "C" void TMP_Text_get_paragraphSpacing_mF7ACFD7BC22882972CFE8DECC54A7C13EBEFB86A ();
+extern "C" void TMP_Text_get_pixelsPerUnit_m81B760800BA1680E84BC2571B7C2CF45DC0C1F8E ();
+extern "C" void TMP_Text_get_preferredHeight_mE91D6FEB62BE3721DF42683B9D992FD7AFB42962 ();
+extern "C" void TMP_Text_get_preferredWidth_m87DCD55F07A19D493CE459A631522A51260CA0F9 ();
+extern "C" void TMP_Text_get_renderedHeight_m2B431C6A857B86D7D12481CB8141F27CF34C94FD ();
+extern "C" void TMP_Text_get_renderedWidth_m6C9F9C59FA44A6E2173D03C468E957730E0784E7 ();
+extern "C" void TMP_Text_get_wordSpacing_mD464A681F2E5A9488AB968E8D706D796D9F84C43 ();
+extern "C" void TMP_Text_get_wordWrappingRatios_m6BEF0010465524A426B00419C5C4FEAB83D977B0 ();
+extern "C" void TMP_TextElement_get_scale_m3F70966EB22594EB684AB558C59BDA133A2C0F49 ();
+extern "C" void TMP_TextUtilities_DistanceToLine_m211B57E93D3927E6FBFA202C14E4D708939CDCA8 ();
+extern "C" void TextContainer_get_height_mF570F9217BF09F1AEF34C9ADAB48537FEC61E6A1 ();
+extern "C" void TextContainer_get_width_m1143D04E380D2D46B5EA0E802FF8E62159892D83 ();
+extern "C" void TextMeshPro_GetPaddingForMaterial_mE903F6B9A478FD386F05FE08524E1185BDF88F1F ();
+extern "C" void TextMeshPro_GetPaddingForMaterial_m0E769028845CFC102A541041E519E4C1B210C966 ();
+extern "C" void TextMeshProUGUI_GetPaddingForMaterial_mA745F039417DA00C83ED1E44C0391B56F0D08CEA ();
+extern "C" void TextMeshProUGUI_GetPaddingForMaterial_mC533B46C609C9F321584FB2010A13D1EAE7CFCC2 ();
 extern "C" void AudioListener_ReadExtensionPropertyValue_m35EFD2B46A6541295B00D530C87373005566338B ();
 extern "C" void AudioListenerExtension_ReadExtensionProperty_mB76B1DFD58F53977751D2D2024051A76618603E3 ();
 extern "C" void AudioSource_ReadExtensionPropertyValue_m4160AE7E016E58B1D17767A105AB453148DDC0DB ();
@@ -4816,8 +5306,11 @@ extern "C" void GUIStyle_get_fixedWidth_mEACB70758F83DCD64CE363143849CC40E49B8D8
 extern "C" void GUIUtility_get_pixelsPerPoint_m6B4AB38F60A0AC54034A62043F74E06A613E4D56 ();
 extern "C" void Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496 ();
 extern "C" void Input_GetAxisRaw_m35430CD9260C960DFE19F809D5410BA0DBFDE0F7 ();
+extern "C" void Material_GetFloat_mC1764F8B39FD31C6B7629D417BC8375D6E6AC60C ();
+extern "C" void Material_GetFloatImpl_m7F4A1A6FE5D9EA1F5C90CD1476AB819C7BD7D4ED ();
 extern "C" void Mathf_Abs_mD852D98E3D4846B45F57D0AD4A8C6E00EF272662 ();
 extern "C" void Mathf_Acos_mF3B88F0C8A5AE43F4C4A42676C8D3DE67B3EAF82 ();
+extern "C" void Mathf_Ceil_m4FC7645E3D0F8FEDC33FE507E3D913108DD94E94 ();
 extern "C" void Mathf_Clamp_m033DD894F89E6DCCDAFC580091053059C86A4507 ();
 extern "C" void Mathf_Clamp01_m1E5F736941A7E6DC4DBCA88A1E38FE9FBFE0C42B ();
 extern "C" void Mathf_Cos_mC5ECAE74D1FE9AF6F6EFF50AD3CD6BA1941B267A ();
@@ -4847,6 +5340,30 @@ extern "C" void Rect_get_yMax_m8AA5E92C322AF3FF571330F00579DA864F33341B_Adjustor
 extern "C" void Rect_get_yMin_m31EDC3262BE39D2F6464B15397F882237E6158C3_AdjustorThunk ();
 extern "C" void Screen_get_dpi_m92A755DE9E23ABA717B5594F4F52AFB0FBEAC1D3 ();
 extern "C" void Sprite_get_pixelsPerUnit_m54E3B43BD3D255D18CAE3DC8D963A81846983030 ();
+extern "C" void FaceInfo_get_ascentLine_m13CEC01C7B73BE33EEFFA354CEF301439CE0E87A_AdjustorThunk ();
+extern "C" void FaceInfo_get_baseline_m6903D36FD0392A31203A6580D35186DE2DA61CBA_AdjustorThunk ();
+extern "C" void FaceInfo_get_capLine_m595382AC2AED0EBE2FD0EE34FD62BBD2A2BD0100_AdjustorThunk ();
+extern "C" void FaceInfo_get_descentLine_mCF674AE70BF8C18047BB823008C3A648FAFE750B_AdjustorThunk ();
+extern "C" void FaceInfo_get_lineHeight_m524B1B20AEED2B8A3E9BEA9E2CD1ECBCF0C39E61_AdjustorThunk ();
+extern "C" void FaceInfo_get_scale_mF90743435232CC99211482A602E0E8FC85F177F0_AdjustorThunk ();
+extern "C" void FaceInfo_get_strikethroughOffset_m6D56B3F6B3947CF4C40B351B3E70DE5CCE7B0006_AdjustorThunk ();
+extern "C" void FaceInfo_get_subscriptOffset_m6FA6DB14BC472CEF9B0056D22192C5F9C161FD91_AdjustorThunk ();
+extern "C" void FaceInfo_get_subscriptSize_m44430100DE344AA8BC502C810191A93D2F93FCBD_AdjustorThunk ();
+extern "C" void FaceInfo_get_superscriptOffset_m6D6B04E0A73FFDD8EC6D1836DC7E806270F6D947_AdjustorThunk ();
+extern "C" void FaceInfo_get_superscriptSize_m7DAC9FD6EC72892974AA0664A2CD237DCDE99864_AdjustorThunk ();
+extern "C" void FaceInfo_get_tabWidth_mEE028F7DF366FABC8F358C064317B2F58BA38C1D_AdjustorThunk ();
+extern "C" void FaceInfo_get_underlineOffset_mF219DC8934F4C0A4EFE10E8856EBABE2FFE8688F_AdjustorThunk ();
+extern "C" void FaceInfo_get_underlineThickness_mBD8888AA62DCA3EF8390F4958DF4703DA513CD2E_AdjustorThunk ();
+extern "C" void Glyph_get_scale_mB6FDF083196D83B61233ECBF9407A708DE4F692E ();
+extern "C" void GlyphMetrics_get_height_mB5A04A175CFE3D75A523F6287125681C00B9176C_AdjustorThunk ();
+extern "C" void GlyphMetrics_get_horizontalAdvance_m1147FB02BC559DB0BF276725DA79F70CACF9FAE0_AdjustorThunk ();
+extern "C" void GlyphMetrics_get_horizontalBearingX_m8523F1F23BC4A6761FD0378CCED4D5E63843F77E_AdjustorThunk ();
+extern "C" void GlyphMetrics_get_horizontalBearingY_mAD3428D1774FA6D75FE8BF77CCB8689F8A76110B_AdjustorThunk ();
+extern "C" void GlyphMetrics_get_width_mD69248CE4E78D9D43DFF7573A83637DEE7A47E9E_AdjustorThunk ();
+extern "C" void GlyphValueRecord_get_xAdvance_mF3C5C569D232241F77947296305A8C7C297E8279_AdjustorThunk ();
+extern "C" void GlyphValueRecord_get_xPlacement_mCC70E3C1C7A2437B47128E74C905B25C452DAF8F_AdjustorThunk ();
+extern "C" void GlyphValueRecord_get_yAdvance_mE6A8FDC6406B7A6BFA72852DB976AAFAD0009FE4_AdjustorThunk ();
+extern "C" void GlyphValueRecord_get_yPlacement_m1785A042219A2303F2AC442CCD12842935474CCD_AdjustorThunk ();
 extern "C" void TextGenerator_GetPreferredHeight_mC2F191D9E9CF2365545D0A3F1EBD0F105DB27963 ();
 extern "C" void TextGenerator_GetPreferredWidth_mBF228094564195BBB66669F4ECC6EE1B0B05BAAA ();
 extern "C" void Time_get_deltaTime_m16F98FC9BA931581236008C288E3B25CBCB7C81E ();
@@ -5039,6 +5556,8 @@ extern "C" void ConfigurationSection_SerializeSection_m76F991963602BC728C4B22044
 extern "C" void IgnoreSection_SerializeSection_m03CB506F46AEA369F5FCAEC048509461D907FEE9 ();
 extern "C" void Convert_ToBase64String_mF201749AD724C437524C8A6108519470A0F65B84 ();
 extern "C" void Convert_ToBase64String_m86FF376EC650C7A6E85EDD7BCF5BEC23EE5402DF ();
+extern "C" void Convert_ToString_m19979FD8FCD84DC6CFBF835D7666956E5138467B ();
+extern "C" void Convert_ToString_m013DD2590D9DCBA00A8A4FEEBE7FC2DBD4DDBC70 ();
 extern "C" void Convert_ToString_m10FC2E5535B944C2DFE83E6D2659122C9408F0FF ();
 extern "C" void DBNull_ToString_mA97EAD399B15473466B66DEFB53FC261A00BE785 ();
 extern "C" void DBNull_ToString_m57394DA26A502AAD19DBEAE045230CEB5F6FF236 ();
@@ -5615,6 +6134,8 @@ extern "C" void String_InternalSubString_m25D6800EDE68EF93F03E24F039C0CC1378AE3C
 extern "C" void String_Join_m49371BED70248F0FCE970CB4F2E39E9A688AAFA4 ();
 extern "C" void String_Join_mAD2E71273792A113300BE8D8AA6958C2AA0AC6EF ();
 extern "C" void String_Normalize_m331F324C5A5E95FF79E2AB44A0C454324E91F7C6 ();
+extern "C" void String_PadHelper_m305F79FF4A52536857473BE831FF880AE58F9F85 ();
+extern "C" void String_PadRight_mDC890E71A75C12F96DC1430CF94B1B7C1ED839B0 ();
 extern "C" void String_Remove_m54FD37F2B9CA7DBFE440B0CB8503640A2CFF00FF ();
 extern "C" void String_Replace_m276641366A463205C185A9B3DC0E24ECB95122C9 ();
 extern "C" void String_Replace_m970DFB0A280952FA7D3BA20AB7A8FB9F80CF6470 ();
@@ -5655,6 +6176,17 @@ extern "C" void Normalization_Compose_mEB36830839D05AAA1579B2500EAF0AF0611910AA 
 extern "C" void Normalization_Decompose_m72A6B276D99DEA8A6060E5060342D44BE739E030 ();
 extern "C" void Normalization_Normalize_mE05051BD0A486B68CA43E9AB82EECFFF1F952DEF ();
 extern "C" void Normalization_Normalize_mF3A284956561BA6BACEBCA2D28419DF54BBE279E ();
+extern "C" void Capture_ToString_mD49A28CAD5727E8F629643EDE0C6BAB476BA639E ();
+extern "C" void Capture_get_Value_m8F739B7E4E173814B0890ECFEA37194D592BE91C ();
+extern "C" void Regex_ToString_mF967EF5E8BD74C3692379B8436AB8D3C5963FA75 ();
+extern "C" void RegexBoyerMoore_ToString_mB0A62E68E8A3CAC5CE3AC45E1C54FA72DFB626F6 ();
+extern "C" void RegexCharClass_NegateCategory_mF2E03FFFE79E427F39D9368013A334F5BD118E13 ();
+extern "C" void RegexCharClass_SetFromProperty_mA33170AF599765B5FDE8611BED646A850FB2330E ();
+extern "C" void RegexCharClass_ToStringClass_m7A760D96732A03D46C4060064B3FC58349D2B4D5 ();
+extern "C" void RegexFC_GetFirstChars_m7252E826F9A5BC1842A5A255BAC5A36EE8DADAF5 ();
+extern "C" void RegexParser_ParseProperty_m69C638E755F0A5C1A2BC8E08827E6124889C2CEF ();
+extern "C" void RegexParser_ScanCapname_m1D4DB4E5DA312CBCA841391F729CC626DC657D85 ();
+extern "C" void RegexPrefix_get_Prefix_m7137EC6CA5B857F49946E2EAEA19784040D430CF ();
 extern "C" void StringBuilder_ToString_mC93526603BBE053CAD68863D7ED464354598E7EF ();
 extern "C" void StringBuilder_ToString_mB91781E31C1CF168F780733E67EA40A5386693C6 ();
 extern "C" void StringBuilderCache_GetStringAndRelease_mDD5B8378FE9378CACF8660EB460E0CE545F215F7 ();
@@ -5720,6 +6252,34 @@ extern "C" void ValueType_ToString_mDD1C1C0E1FC55404602E8E02C4E12448B31AEE4F ();
 extern "C" void Version_ToString_mDECF4A07B036D33A66BFC4A647363FBB89323034 ();
 extern "C" void Version_ToString_m8B385B5C25D9FD3A25EE2DDF02B592CAFC1C0AB0 ();
 extern "C" void Res_GetString_m47B81D62E4B5E4C48C06BCC7995B9ED5218EE7A2 ();
+extern "C" void Extents_ToString_mCDE6ADB89386A8BB3042771A3F98D9211D0BE537_AdjustorThunk ();
+extern "C" void Mesh_Extents_ToString_m92D41502A2415A09102A7347398E4D4B94CC3FFC_AdjustorThunk ();
+extern "C" void SpriteFrame_ToString_m06F5A33D924B46027DCCB34E08D50803D5A453B0_AdjustorThunk ();
+extern "C" void SpriteSize_ToString_m2B7966FD1CFC5620064F31F0AE97D8C5B06EE789_AdjustorThunk ();
+extern "C" void OptionData_get_text_m88D2899521CF3C6A53E4B8F1685203D888864642 ();
+extern "C" void TMP_FontAsset_GetCharacters_mC7D4B6535C697834DA442F2CDE18AF4F4CA08543 ();
+extern "C" void TMP_FontAsset_get_version_m6611DA6B390BF90278FE956CC4715AA9FD44885B ();
+extern "C" void TMP_InputField_GetSelectedString_m099498095B27FFB8F007B6EFDEFB3DCD280735D2 ();
+extern "C" void TMP_InputField_get_clipboard_m18A9FB50C4862026741B51D530397B0C27D8DAA5 ();
+extern "C" void TMP_InputField_get_compositionString_mFC0A11B8AC9DFBD5727A24467362725A6699992F ();
+extern "C" void TMP_InputField_get_text_m0B83533C9290F4C6956BDE7FC9024CBF5DDCB785 ();
+extern "C" void TMP_LinkInfo_GetLinkID_m08F4A2FC2423450D5AA20BCCDA4F6CDE6F3CBE8E_AdjustorThunk ();
+extern "C" void TMP_LinkInfo_GetLinkText_m2588B2538FDD663E9C7D00D21ECD6D9D7F564D8C_AdjustorThunk ();
+extern "C" void TMP_Settings_get_defaultColorGradientPresetsPath_mB3BF577767BE347DFE07EA425374884DC5C56447 ();
+extern "C" void TMP_Settings_get_defaultFontAssetPath_m858864B72725D1DB3EA505EA807DC94AF7DE3F7C ();
+extern "C" void TMP_Settings_get_defaultSpriteAssetPath_m413E9F522D322D8541175128A471AA12665AC58F ();
+extern "C" void TMP_Settings_get_version_m39F3DDEDECDA6FA43D83E524ADBB456AC4C8D1F0 ();
+extern "C" void TMP_SpriteAsset_get_version_mAD47C52C6698B01C9C22D2B3448AA5B187E7359B ();
+extern "C" void TMP_SpriteCharacter_get_name_m7B9372625D32D8F8565912F1E76735B5AE8D21EC ();
+extern "C" void TMP_Style_get_name_m31B5C39F26CE8D9DF519E854B1CE965430618165 ();
+extern "C" void TMP_Style_get_styleClosingDefinition_mE1AE938A52C0997DABA363CDE194491A3E8BFE4B ();
+extern "C" void TMP_Style_get_styleOpeningDefinition_m08CD5457DFBE22FD2DD058878FB66A6FA2379135 ();
+extern "C" void TMP_Text_GetParsedText_m32D1E8D177CF340C95546B8AEC00FCCC70E1E9C0 ();
+extern "C" void TMP_Text_get_text_m585E635D68DD2AD9C884A88658222AB7F84720FB ();
+extern "C" void TMP_WordInfo_GetWord_mF7E1BD19C83BA1F3BAAFAC496CF05F1BCD13F0D2_AdjustorThunk ();
+extern "C" void TMPro_ExtensionMethods_ArrayToString_mD6ECD8BD848577E03A2831AAA4D5A7DA95F4A4B8 ();
+extern "C" void TMPro_ExtensionMethods_IntToString_mC3C6E96232281414E2990157249B88751C04F433 ();
+extern "C" void TMPro_ExtensionMethods_IntToString_mC83EF6E46BE55750D44FE27B0C412A00C4004338 ();
 extern "C" void AssertionException_get_Message_m857FDA8060518415B2FFFCCA4A6BEE7B9BF66ECE ();
 extern "C" void AssertionMessageUtil_GetEqualityMessage_mDBD27DDE3A03418E4A2F8DB377AE866F656C812A ();
 extern "C" void AssertionMessageUtil_GetMessage_mA6DC7467BAF09543EA091FC63587C9011E1CA261 ();
@@ -5787,6 +6347,8 @@ extern "C" void UserProfile_get_id_m8288816F2E75AB08541CEC21853FA578040D8D01 ();
 extern "C" void UserProfile_get_userName_m767405E576E7AC1CFA320AF99B84F1FB9B91B652 ();
 extern "C" void StackTraceUtility_ExtractFormattedStackTrace_m02A2ACEEF753617FAAA08B4EA840A49263901660 ();
 extern "C" void StackTraceUtility_ExtractStackTrace_mEDFB4ECA329B87BC7DF2AA3EF7F9A31DAC052DC0 ();
+extern "C" void TextAsset_ToString_m8C7ED5DD80E20B3A16A2100F62319811BE5DC830 ();
+extern "C" void TextAsset_get_text_mD3FBCD974CF552C7F7C7CD9A07BACAE51A2C5D42 ();
 extern "C" void TouchScreenKeyboard_get_text_mC025B2F295D315E1A18E7AA54B013A8072A8FEB0 ();
 extern "C" void AnimationTriggers_get_disabledTrigger_mAFD454C24CB2C129EA456D171F8584C9F6F45C43 ();
 extern "C" void AnimationTriggers_get_highlightedTrigger_mDEB27C95E2242771B4E37F5841B2B6D39E31DD05 ();
@@ -5875,6 +6437,8 @@ extern "C" void String_InternalSplitOmitEmptyEntries_mEEA7D613F4E40CBB33800ECED5
 extern "C" void String_Split_m13262358217AD2C119FD1B9733C3C0289D608512 ();
 extern "C" void String_SplitInternal_m237DA5C7F3990502AF435882805ADDE9491E60BE ();
 extern "C" void Type_GetEnumNames_m41CAB9298D20E6F227CB8A01073081FFEE554E31 ();
+extern "C" void Material_GetShaderKeywords_m786F6539953C2B890A0827715404D3508BFCF685 ();
+extern "C" void Material_get_shaderKeywords_mF653034CC23EB4A65580BA4388F7258328C9C90C ();
 extern "C" void Leaderboard_GetUserFilter_m742884C530786E1463900F5346A75BEC6D226951 ();
 extern "C" void ByteMatcher_Match_mF9866E6C6F2FEC09034695FBED166744F65BA931 ();
 extern "C" void ASCIIEncoding_GetDecoder_mA934F385E4E41AF1ECFAA91CC04F1587FF87878B ();
@@ -5928,6 +6492,43 @@ extern "C" void EncodingHelper_get_UTF8Unmarked_mDC45343C3BA5B14AD998D36344DDFD0
 extern "C" void EncodingProvider_GetEncodingFromProvider_mA0F1D2A29AF8309112363BA3AEAD24F4F84F8A6F ();
 extern "C" void EncodingProvider_GetEncodingFromProvider_m6B4B2550725947939A8DEF0B26D335D7957017A7 ();
 extern "C" void Normalization_QuickCheck_m41D4FF8E0DC13D1D0CE7BDB35607FDA313DCB86B ();
+extern "C" void Regex_CacheCode_m68F93FF3B918776D190D4DB807A3323691C77F0A ();
+extern "C" void Regex_LookupCachedAndUpdate_m88CA03797C5ED796BD5E1319DF6B1B6B6FCE6C0D ();
+extern "C" void Match_get_Empty_m5D3AE3D0580F06ED901EE69FCCED6AF44715528F ();
+extern "C" void Regex_Run_m74FB5EF178DF43F88B9058B94939F557479B93FC ();
+extern "C" void RegexRunner_Scan_m1C3B1B034601773D510A4D2DEC337635A540BE31 ();
+extern "C" void RegexRunner_TidyMatch_m61A8AE20E505F2055B276EB020EB0B804ED2D924 ();
+extern "C" void RegexCharClass_Parse_mBC3780FFF0DDFB62CA2085746618E6C256E8D86C ();
+extern "C" void RegexCharClass_ParseRecursive_mF7E7DD4EB594C9C30A60E72CD3CFD4EC1D822CF5 ();
+extern "C" void RegexParser_ScanCharClass_mF775DA8BFD214C64BC3D91E07436543717976DC4 ();
+extern "C" void RegexParser_ScanCharClass_mFE669B1C9CB6652157D9E8DAEE5B924C581AE81F ();
+extern "C" void RegexCharClass_GetRangeAt_mE563FF8072DD9B4E1179F55416CCD7FC4EB2C4FC ();
+extern "C" void RegexWriter_RegexCodeFromRegexTree_mAC489A29C00688CA929661BC394F1C4CF997CFC5 ();
+extern "C" void RegexWriter_Write_m57CF8209EF566CD40F9146C74DF889C8AA06E061 ();
+extern "C" void RegexFCD_PopFC_m987A35E9ADF69335799EDEEB12C2CD3A3F40FB6E ();
+extern "C" void RegexFCD_RegexFCFromRegexTree_mA85E74765529D05113116C73EC397E832D81D0BC ();
+extern "C" void RegexFCD_TopFC_m26ED21621830CF30FDA46AE8D7F3AC9F50DE416F ();
+extern "C" void RegexNode_Child_m5AA4FFDDCCFA22FE70BA0F236F19A963AEF72079 ();
+extern "C" void RegexNode_MakeQuantifier_m1332537AA6BCCCD68A3E59EA7994CCFE69A19444 ();
+extern "C" void RegexNode_Reduce_mE9E22C30C296E328ABC7EDC9C52F18059FAE27C1 ();
+extern "C" void RegexNode_ReduceAlternation_m60EECC172A975620A5118D14D6ECF8B846ECED9F ();
+extern "C" void RegexNode_ReduceConcatenation_m4BE1B6DBBC0F4BAB9A3873414B5EE77D825AD53B ();
+extern "C" void RegexNode_ReduceGroup_m069FA93D4F88006F18473E647069B349683B9204 ();
+extern "C" void RegexNode_ReduceRep_m726F03D9E2420F276A37777942B66D15CA73F77E ();
+extern "C" void RegexNode_ReduceSet_m912F4A0DFF694EB14DE520599369A811C2E9D10D ();
+extern "C" void RegexNode_ReverseLeft_m994638E4886D007B9B29BC23EA3C8D76A92099FD ();
+extern "C" void RegexNode_StripEnation_mE19E0A57BCE0D0BF47F51A5103C08FCC7BB9E24F ();
+extern "C" void RegexParser_ScanBackslash_m45E9E0ABDB7DF70F58850B48905DE9DE026EA64C ();
+extern "C" void RegexParser_ScanBasicBackslash_m5F438E56ACBE272622D39D4208B2D5ED536DD7B8 ();
+extern "C" void RegexParser_ScanGroupOpen_mA4918ACA08C7E4C945197BBE4EF734AF5B35096C ();
+extern "C" void RegexParser_ScanRegex_m62049A6C66D6D8CDD795B9C740283D1EC85126DB ();
+extern "C" void RegexParser_Unit_mEAEEAC39DBE372DC762644F49E6E163CA37EA34E ();
+extern "C" void Regex_get_Options_m823A30690EEA63798DB8497F3E9CF062412B8653 ();
+extern "C" void RegexParser_OptionFromCode_m6BCD10574DF5E08599B5F7FC8E947E3DC69EE151 ();
+extern "C" void RegexFCD_FirstChars_mC60DC5CA9A078998CB55594436AB9CBFD86478FB ();
+extern "C" void RegexFCD_Prefix_m50B30C508C6745832FD3A76B2169462455C1A28E ();
+extern "C" void RegexPrefix_get_Empty_mAD10DECDBC7C51F9ACF5C02E3191874252DF9B8B ();
+extern "C" void RegexParser_Parse_mD206BB554B6087ED35C5F744D72A93A07721D789 ();
 extern "C" void ArraySpec_Append_mEA5F3D33185A31FDCF7365E21B65937F2FE17639 ();
 extern "C" void ParseNumbers_ConvertToBase16_mF82C0864D56A6869C00ABD37B6CA32A1A1C867EF ();
 extern "C" void ParseNumbers_ConvertToBase2_mAB60A334FCF7A06854FCC360FBFE4237B53CDCD9 ();
@@ -6061,6 +6662,8 @@ extern "C" void LifetimeServices_get_LeaseTime_m8D9AE2DE5C5AA4E239538DE8DDCF579F
 extern "C" void LifetimeServices_get_RenewOnCallTime_m2F618D2FF8A8C0A11020F3EF35DC25EABB206218 ();
 extern "C" void LifetimeServices_get_SponsorshipTimeout_m66EDBFD928382D170E1D62BA9FC8044B96723738 ();
 extern "C" void __BinaryParser_ReadTimeSpan_mAC815CA793E4B80B542FB1C0AE04448942509F67 ();
+extern "C" void Regex_InitDefaultMatchTimeout_mC91736B02BD12B92CBD93C329E7A8233CD0B9DA4 ();
+extern "C" void Regex_get_MatchTimeout_mD484D1CF0B6BF8516A08991D1387761CAE2340D6 ();
 extern "C" void TimeSpan_Add_mC4C54D4AF8C34EF36288176B85FF2F488A7C5507_AdjustorThunk ();
 extern "C" void TimeSpan_FromDays_m99DCC655C53C2898FF0C41D1DDFE17A749081DDB ();
 extern "C" void TimeSpan_FromHours_m90C3C400E2561055C063148CF7B6D71EE5E52D5F ();
@@ -6411,9 +7014,30 @@ extern "C" void UInt32_Parse_mEEC266AE3E2BA9F49F4CD5E69EBDA3A1B008E125 ();
 extern "C" void UInt32_Parse_mE1049C2D5FDBBA83337898D8608580C6E1CCFEE1 ();
 extern "C" void UInt32_System_IConvertible_ToUInt32_m7F98AF966A31B1A315E7DFFEE3F2A68D48E690AF_AdjustorThunk ();
 extern "C" void UInt64_System_IConvertible_ToUInt32_mFF9B4ABD152C30CB4A9F09BAED4D197245141AF7_AdjustorThunk ();
+extern "C" void KerningPair_get_firstGlyph_m96AE41BAEF6534A133CB3E94CEADA8EEEA65DEDF ();
+extern "C" void KerningPair_get_secondGlyph_mAF6D653DB34CD05C53C4CD6816BE45A7FAB9E9CA ();
+extern "C" void U3CU3Ec_U3CSortKerningPairsU3Eb__7_0_m6443058FB61D41201C46195F600360A89DA99F61 ();
+extern "C" void U3CU3Ec_U3CSortKerningPairsU3Eb__7_1_mC5C106477E61BCD877A2FC3DBAA0891981405B54 ();
+extern "C" void U3CU3Ec_U3CSortCharacterTableU3Eb__100_0_m70DED69038B0CD44CDFD0C723877DA2524FA824D ();
+extern "C" void U3CU3Ec_U3CSortGlyphTableU3Eb__101_0_m2F5725536C92615B4C7F8CB359B34AD5601B104D ();
+extern "C" void TMP_FontAsset_GetGlyphIndex_m5AD54645C591C23CF2AE50163411A2BECD027FA0 ();
+extern "C" void U3CU3Ec_U3CSortGlyphPairAdjustmentRecordsU3Eb__6_0_mE0E67E37CDD4589B794361E2C46EFC8C20101265 ();
+extern "C" void U3CU3Ec_U3CSortGlyphPairAdjustmentRecordsU3Eb__6_1_m8523B561D4C17CF9D36686729F6223DB82E6DC10 ();
+extern "C" void TMP_GlyphAdjustmentRecord_get_glyphIndex_mA8D4CF960CAD6B2D6CE631C3819B0AF9F58ED65B_AdjustorThunk ();
+extern "C" void U3CU3Ec_U3CSortCharacterTableU3Eb__33_0_m819C30410B52F95857DA71BB03D776D525EEA490 ();
+extern "C" void U3CU3Ec_U3CSortGlyphTableU3Eb__32_0_m742F8E4C3A6B94BDFF6C5B1DC686DDA74E924BD9 ();
+extern "C" void TMP_TextElement_get_glyphIndex_m0FF6CF612313ECAF763105EE76E0AD4280CB931F ();
+extern "C" void TMP_TextElement_get_unicode_mDDF9BAC4654137D346B105D1D3481E44006E1D55 ();
+extern "C" void TMP_TextParsingUtilities_GetHashCode_m194D7250E22FFE0EF0B451AF6E97053B19483C0C ();
+extern "C" void TMP_TextParsingUtilities_ToLowerASCIIFast_mC463A3DA66D372CCA853F335B56AB9C22CEDA923 ();
+extern "C" void TMP_TextParsingUtilities_ToUpperASCIIFast_mCCB0B4346E052E84898B1272FD2476973186BF08 ();
+extern "C" void TMP_TextUtilities_GetSimpleHashCodeLowercase_m9479C0A65C56E3D31ECEF17749ED4B21998FC20D ();
 extern "C" void ConsumeSampleFramesNativeFunction_EndInvoke_m4F91AA6FC2DFEF1495E3BA8D7BF1098C9E043711 ();
 extern "C" void ConsumeSampleFramesNativeFunction_Invoke_mA644FB7343047BEC754D81AC2AFABDC300DF5D74 ();
 extern "C" void AudioSampleProvider_get_id_m9E16910C6A2335F87E6B257D3059A8BBC8D7253A ();
+extern "C" void Glyph_get_index_mE8CFBF3B6E08A43EF11AA2E941F7FD9EDFF1C79F ();
+extern "C" void FontEngine_GetGlyphIndex_m9877A2238C4292F3CC5F72688E4BB2EBBB9DBCB1 ();
+extern "C" void GlyphAdjustmentRecord_get_glyphIndex_m5E03D5A58AF3664F35E15CC1B449101B96DD0BD3_AdjustorThunk ();
 extern "C" void BitConverter_ToUInt64_m2AB7FBC373C5A2DEB276DDF00289A69C80A84451 ();
 extern "C" void Boolean_System_IConvertible_ToUInt64_mBBF3682359CE16072F3107ABCF86D3A5C78F1E05_AdjustorThunk ();
 extern "C" void Byte_System_IConvertible_ToUInt64_mAA94DD1DCFB2238DFB2484891B886A1AF7F5E556_AdjustorThunk ();
@@ -6501,14 +7125,6 @@ extern "C" void FlagContainerScript_Update_mF6B81EC1F297B132EA0182E2559A41F81AC5
 extern "C" void FlagScript__ctor_mADAB0A0C89CD7B03CBD82216F27F720A6CB68B52 ();
 extern "C" void FlagScript_Start_mC8085D3AC5EE1F8E56707A7DE31A5A2A622B18F9 ();
 extern "C" void FlagScript_Update_m9DA36FEEB0C81A844DA4933026ED34CC0F654455 ();
-extern "C" void FlagWinner2__ctor_m56CCB565851A4011F2FD278316EFC0CB2B1FB2ED ();
-extern "C" void FlagWinner2_OnTriggerEnter_mE02565F9F1E17A609E5D6F09109D2CC2313B4AD8 ();
-extern "C" void FlagWinner2_Start_mBB6575F4E2179FA4C53C76B4DB98A0C8D81259CD ();
-extern "C" void FlagWinner2_Update_m197E851ED01F74D70774D3E54C8686AA47291232 ();
-extern "C" void FlagWinner__ctor_m884EFD650F6986F35BBAE5B7E8AE1930D46B36B6 ();
-extern "C" void FlagWinner_OnTriggerEnter_mCC611A1C84CA5888D81DD578F6BAD6D804748EBF ();
-extern "C" void FlagWinner_Start_m2B67DE38ED639B4904F1F46B9BB928E489671B48 ();
-extern "C" void FlagWinner_Update_m2F69BD52AB20F0874AD01153070C1A09923CD996 ();
 extern "C" void FloatingJoystick__ctor_mFE6173BF4B5A37A9E365D8322334FF90AA0DE960 ();
 extern "C" void FloatingJoystick_OnPointerDown_m2DB74D40D3D0D670E92442E24851FF5995CCE764 ();
 extern "C" void FloatingJoystick_OnPointerUp_m31F698F0F60ECAAB34D55DF8B1FF2E533B818DEA ();
@@ -6742,6 +7358,7 @@ extern "C" void ArithmeticException__ctor_mE39E53B845DB39374DFC9B613B87342A4D05C
 extern "C" void ArithmeticException__ctor_mAE18F94959F9827DEA553C7C2F3C5568BEC81CCF ();
 extern "C" void ArithmeticException__ctor_m1412E36F7AF7D25CF6A00670AE2296E88DA85F5F ();
 extern "C" void ArrayEnumerator__ctor_mF6431B42D70C8DACACCEC14D1676A6EACA831062 ();
+extern "C" void ArrayEnumerator_Reset_mD816AD0387167D06ACC09E2407F20DD8DF91FF0B ();
 extern "C" void SorterGenericArray__ctor_m8A0342B35AC3046A24FD7208C6AAEACCEAA6FB89_AdjustorThunk ();
 extern "C" void SorterGenericArray_DownHeap_m972A85AD4FC96D36FF769FA12D828F9195D6D360_AdjustorThunk ();
 extern "C" void SorterGenericArray_Heapsort_m348C661B9B20D60F0A7A41ABB266365D1271028C_AdjustorThunk ();
@@ -6841,8 +7458,10 @@ extern "C" void Char__cctor_m36A597E4A09E96474A4F9904DCDEAFE13277CE2D ();
 extern "C" void CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3 ();
 extern "C" void CharEnumerator__ctor_mF290FC81A2221C77C971AF8896279ED4ECB8DFFD ();
 extern "C" void CharEnumerator_Dispose_m953D307BE8FBD5DA4F9D0C10A593B949838EE49C ();
+extern "C" void CharEnumerator_Reset_mB10759A262CC6DCEE2203A7D7A38470D4630F36B ();
 extern "C" void ArrayListEnumeratorSimple__cctor_mDFC4483845B6790B4EF8A2DDAE737A32F7BA5745 ();
 extern "C" void ArrayListEnumeratorSimple__ctor_m756A442DA7502E724BC9F670BC872C3C0CFDC16A ();
+extern "C" void ArrayListEnumeratorSimple_Reset_m2589CBC0F391537C700CAF174C29B7E1A8CF9A85 ();
 extern "C" void ArrayList__cctor_m728B9FB508863097CCE6A679225695E064BD273A ();
 extern "C" void ArrayList__ctor_m481FA7B37620B59B8C0434A764F5705A6ABDEAE6 ();
 extern "C" void ArrayList__ctor_m5BD62A8348AB3A2F573860E81A181B5376AF8FA1 ();
@@ -6884,6 +7503,7 @@ extern "C" void ObjectEqualityComparer__cctor_mADDEF8463750911807053CC6A98D57B16
 extern "C" void ObjectEqualityComparer__ctor_m915830D1728E66DAE8797E7BE46AA4754C629BD9 ();
 extern "C" void HashHelpers__cctor_m73E11D520498610CE0C26CA94967CEDA5969111D ();
 extern "C" void HashtableEnumerator__ctor_mA4893AEBBF14528B90AF67E83490AC2CE935A166 ();
+extern "C" void HashtableEnumerator_Reset_m1B23469BFCF718FF78AA504A91E93AB733AE4C55 ();
 extern "C" void KeyCollection__ctor_m58E48C20C50744A6E711BA0504B8520945C5DD4B ();
 extern "C" void KeyCollection_CopyTo_mAC93A19478D6F9168EF9ADFBE68C5E45C453BC79 ();
 extern "C" void SyncHashtable__ctor_m2CA4BAD2FE04F356B41CB54032144A6F577D960F ();
@@ -6924,6 +7544,7 @@ extern "C" void Hashtable_set_Item_m42EB4588D6679744F9BE7C2E9FE58EFC91B9F66B ();
 extern "C" void LowLevelComparer__cctor_m2DCDAD27BA9553BF9C77B200A37B4C26B5146B53 ();
 extern "C" void LowLevelComparer__ctor_m880FBF3287CA2B9BA3A3501F8492A224C3045605 ();
 extern "C" void QueueEnumerator__ctor_m092D234EC5E7E625B31D1D626D951C1835F87EDF ();
+extern "C" void QueueEnumerator_Reset_mA1E9C48A119A6E6A98564BD3201D2B5E528986A4 ();
 extern "C" void Queue__ctor_mF04C9A574B8F803C2682CCE8B69B49FF088D14C4 ();
 extern "C" void Queue__ctor_m9D54C0C05803263517B6B75FC6BF08371A28EC52 ();
 extern "C" void Queue__ctor_m7A38C651E238B2B6626D9DE8182210D956F4FCCD ();
@@ -6932,6 +7553,7 @@ extern "C" void Queue_CopyTo_m83969DA0BA9A261DC4E1737B704BB161754242F5 ();
 extern "C" void Queue_Enqueue_mAB96DA7B967CCF88384C288A1104B4375ADC1D92 ();
 extern "C" void Queue_SetCapacity_mB3C8692505E4094B25C932B8AED6EB6A032283A0 ();
 extern "C" void SortedListEnumerator__ctor_m91F6FB1020A030036AE45501806206DE3695568B ();
+extern "C" void SortedListEnumerator_Reset_mA0ACBEBFF0955F4BF3B6CA08C028361AE993C1A4 ();
 extern "C" void SortedList__cctor_m6A728310AF9D3D2330C935724E8B7D211A5EC016 ();
 extern "C" void SortedList__ctor_mBF1B7B8D37D3C752EA3F9FA173076B9478A35CEE ();
 extern "C" void SortedList__ctor_mD73C626428344DB75A9EE4EBDD009568226D7757 ();
@@ -6946,6 +7568,7 @@ extern "C" void SortedList_RemoveAt_m5EB61F5A3B6D5DD93169325D7EEF41C34547813D ()
 extern "C" void SortedList_set_Capacity_mBE3FA4CD3FFF4D79E340C95007ED475AC96EFB52 ();
 extern "C" void SortedList_set_Item_m070CA28A6691AB17E1A464BA43975503365EE0CC ();
 extern "C" void StackEnumerator__ctor_m6F43FBDA48F989B725ADA7CCEC46900630B631F7 ();
+extern "C" void StackEnumerator_Reset_m72AB015F4BB163EC9DC19457743EF309A4C24187 ();
 extern "C" void Stack__ctor_m98F99FFBF373762F139506711349267D5354FE08 ();
 extern "C" void Stack__ctor_mAA16105AE32299FABCBCCB6D912C220816030193 ();
 extern "C" void Stack_Clear_m9B8C5F26A38E15BD96ADFA5D3DF38227BDD91041 ();
@@ -7106,6 +7729,7 @@ extern "C" void U3CU3Ec__DisplayClass11_0__ctor_mC36FF641F6D74BAFFD34D20C425F6CA
 extern "C" void U3CU3Ec__DisplayClass11_0_U3CGetActivityDyingDelegateU3Eb__0_m564AE359E0218F0F72645EEFC5412A7EB1CEAEA8 ();
 extern "C" void U3CU3Ec__DisplayClass13_0__ctor_m98D55CE8C6D7C06709C5EBCA1F4AA16C4FD0DBE7 ();
 extern "C" void U3CGetFilterAsTupleU3Ed__7__ctor_mE6E6456BDBEAFAF62BA8CF3D075D053E046F0E4F ();
+extern "C" void U3CGetFilterAsTupleU3Ed__7_System_Collections_IEnumerator_Reset_m90DAD077759C760A2A2DFE315532247320FCBDA0 ();
 extern "C" void U3CGetFilterAsTupleU3Ed__7_System_IDisposable_Dispose_mEDA871B0D34012DD87B7E98D4D8B99736B456012 ();
 extern "C" void ActivityFilter__ctor_m00C3F59EE554D19FD8DF964906B75B493545193A ();
 extern "C" void ActivityFilter_DisableFilter_m9FBB5B5BA14DE3C7E50C3E5CADAF4D20B9DAE9E0 ();
@@ -7201,6 +7825,7 @@ extern "C" void EventListener_OnEventSourceCreated_mE16D909C658BAC318541F2170B71
 extern "C" void EventListener_OnEventWritten_m948452552734FAA3156D27B90E72520BC14451D0 ();
 extern "C" void EventListener_RemoveReferencesToListenerInEventSources_m5B066B7A9FAB7FF4A8C233DDD9C66B912EEEE056 ();
 extern "C" void U3CGetEnumeratorU3Ed__17__ctor_m96831BB252933F4FC367C90E8C6560467C39CCEE ();
+extern "C" void U3CGetEnumeratorU3Ed__17_System_Collections_IEnumerator_Reset_mDC045F6D9917B711DDC89E6B9A2EE9CC1DCD2856 ();
 extern "C" void U3CGetEnumeratorU3Ed__17_System_IDisposable_Dispose_m9F76E3E5CB1711E1B01C26506CEEA33FEEBF8ECC ();
 extern "C" void EventPayload__ctor_m8B60F93322B2AA2BA544D139AAA4091F35B44B9F ();
 extern "C" void EventPayload_Add_m30450C18FFC7912DEDDB784D268B461887970717 ();
@@ -8278,6 +8903,7 @@ extern "C" void MissingSatelliteAssemblyException__ctor_mBD05D2BEE035C0DAEFC15A8
 extern "C" void MissingSatelliteAssemblyException__ctor_mB533A2C29EC15FEE64852662511B8F3B7672E065 ();
 extern "C" void NeutralResourcesLanguageAttribute__ctor_m877C44C215473FE36183B9E4DA2C18C8E81556EB ();
 extern "C" void U3CGetEnumeratorU3Ed__5__ctor_m584A71C0FA005BC9E52F7F4F4C7EEA86E6B04CFA ();
+extern "C" void U3CGetEnumeratorU3Ed__5_System_Collections_IEnumerator_Reset_m2CE55FE28B086721C27CF3ACD0250953A60DB59F ();
 extern "C" void U3CGetEnumeratorU3Ed__5_System_IDisposable_Dispose_m36940C31241B488CDD10B61B0FEC8C9FDE51E7D8 ();
 extern "C" void ResourceFallbackManager__ctor_m75E783DBA7D3BF4AA654303102614C54EEF9E3D2 ();
 extern "C" void ResourceLocator__ctor_m117CC55E99954CC1ED8B8D5138B3BE4E8ED0F694_AdjustorThunk ();
@@ -8297,6 +8923,7 @@ extern "C" void ResourceManager_OnDeserializing_m50B549D2B013ECA3BA5F73C54BE9FC8
 extern "C" void ResourceManager_OnSerializing_m8EA8B9091D910AA7CA9250DE0EF090910DDA1137 ();
 extern "C" void ResourceManager_SetAppXConfiguration_mD3FC0285AF4B421A52E1026CBC3F03F0109C5868 ();
 extern "C" void ResourceEnumerator__ctor_m332EA0C7EFA41649166DB61965183A85A3A0B38F ();
+extern "C" void ResourceEnumerator_Reset_m0F5FE16F630FADD76B1B746EBDF42BA492238CD2 ();
 extern "C" void ResourceReader__ctor_mF57230EBDF59341DD7DD5A7AAEBE25B8677BF768 ();
 extern "C" void ResourceReader_Close_mCD281029D1B483C1D2A4C7A94AEDBFFED4CA195F ();
 extern "C" void ResourceReader_Dispose_mD8F9E6059807CE0F446B7107E5A8F2B05F3F230F ();
@@ -8585,6 +9212,7 @@ extern "C" void LogicalCallContext_Merge_mB5D94134FDB381F70CB295ED542DE5444D8388
 extern "C" void MCMDictionary__cctor_m2692DBAB329967E42393D39C37F92A3D9A4A827E ();
 extern "C" void MCMDictionary__ctor_m02A28CFFBADCD5CC83267E16B471BB453BF54D21 ();
 extern "C" void DictionaryEnumerator__ctor_mA7D9DB0B74A0FB195C28FF779A366377D32FCC85 ();
+extern "C" void DictionaryEnumerator_Reset_m13E09097E0CEBBB90906F8A85DAE7E4B41AF450E ();
 extern "C" void MessageDictionary__ctor_m679873B25EF35750306D2976BC48BD4FE251F2D9 ();
 extern "C" void MessageDictionary_Add_m015064027A6721BD583B7FAC2B1CF75BF809F8E9 ();
 extern "C" void MessageDictionary_CopyTo_mB806B4F6D7CE553EC083A77DC72314DA362368C9 ();
@@ -9106,6 +9734,7 @@ extern "C" void SerializationInfo_ExpandArrays_mE0F1E1C8737D8EAA43FAA34A1DFCDCF1
 extern "C" void SerializationInfo_SetType_m3F30AFEB3555E20E995D31713C0604E26B2CF784 ();
 extern "C" void SerializationInfo_UpdateValue_m061390F667AABBC605E266D5BCED0825FC503B95 ();
 extern "C" void SerializationInfoEnumerator__ctor_m2409FCB25F7F2284C04B53473E7F01DE9D5FCE2E ();
+extern "C" void SerializationInfoEnumerator_Reset_m6AB5305A2ED1A370080E22C4A6D3FD18397F5961 ();
 extern "C" void SerializationObjectManager__ctor_m8DD33BF17C11FD16B14FB99A35D662326CA839AE ();
 extern "C" void SerializationObjectManager_AddOnSerialized_mDF8C37B38BE202AB575A1DB65346E5D9A461FE31 ();
 extern "C" void SerializationObjectManager_RaiseOnSerializedEvent_m98A5FBD984680AE8529E3065C885BA5B446CF435 ();
@@ -9161,6 +9790,7 @@ extern "C" void Oid_set_Value_m304CEF248379566701402100FA015EAC640C033F ();
 extern "C" void OidCollection__ctor_m99B93BB5B35BF7A395CFB7F8B155DFA8DD734800 ();
 extern "C" void OidCollection_System_Collections_ICollection_CopyTo_mE508CB1FD9E56CCFE5A4BDD5251D815BF78AC5A9 ();
 extern "C" void OidEnumerator__ctor_mCA4FBC8408E2B04FD0A524E256E284E8A44E0797 ();
+extern "C" void OidEnumerator_Reset_m5006C3B1283711E2BDDEA6C25FDF93BBB900195E ();
 extern "C" void RNGCryptoServiceProvider__cctor_mAFBAE437FCB38E36E3E6D27BBDC7F0CED4BA7408 ();
 extern "C" void RNGCryptoServiceProvider__ctor_m5D6369AAF2AD50F4052C89B66B612E4C317FCF7E ();
 extern "C" void RNGCryptoServiceProvider_Check_m18FF0852EEC7E75E9CF4942E9785FD24FC448F7A ();
@@ -9208,6 +9838,7 @@ extern "C" void X509SubjectKeyIdentifierExtension__ctor_m95DD08883D5E284C1582027
 extern "C" void X509SubjectKeyIdentifierExtension_CopyFrom_m45E7EB4E976E4759046077C79FBC4A820C9A95EC ();
 extern "C" void SecurityPermissionAttribute_set_SkipVerification_m1A284EDF78B6996F4CDF56A6FDEAA18B821DE765 ();
 extern "C" void EvidenceEnumerator__ctor_mD4153081415054237617C4E5AFAA036445E6A43B ();
+extern "C" void EvidenceEnumerator_Reset_m7C34F282CC975B8A002C37B26605B31997CEA37C ();
 extern "C" void Evidence__ctor_mF2BFE39AA27373124E9DE283733ACF3C52BB7392 ();
 extern "C" void Evidence_CopyTo_m1450F3905052BFEBD0F9CED1B855EB81CC867356 ();
 extern "C" void SecurityAttribute__ctor_m5E0BE88BC648CA3F10B585D7A10D6BFDC6A70833 ();
@@ -9382,6 +10013,151 @@ extern "C" void Normalization_Decompose_mC120D0C06838074BAE44D314E2E39FF3909935B
 extern "C" void Normalization_DecomposeChar_mFCD460869F56DD899498A1A3F70025C1C1B84A6C ();
 extern "C" void Normalization_ReorderCanonical_mC647AA0BB997910E2FC0ED33CF89DCE413362C4C ();
 extern "C" void Normalization_load_normalization_resource_m189BEDAFFDA3BEBCDCF2FDD71C10E76E6F1DD278 ();
+extern "C" void CachedCodeEntry__ctor_m78BCA6060E7D83B172F998AF60D17FB41BE703B8 ();
+extern "C" void Capture__ctor_m3ED807279C93FFCE8BE4EAF447DA01E62EF93D7B ();
+extern "C" void Capture__ctor_m6CC8A5385C7BD6B8AE63F9812293EC3252A65B3B ();
+extern "C" void ExclusiveReference__ctor_m0427943C75CBB283EF26034339E3D412A080B5D7 ();
+extern "C" void ExclusiveReference_Release_m9A1577138872106EA54A04EA4AB77F710CEDE336 ();
+extern "C" void Group__cctor_m213E26F039439904671CFD5DAF5D85B47D5CBE68 ();
+extern "C" void Group__ctor_mDCB3D51B8A672B342F452177D42D6D3F2F9BA91A ();
+extern "C" void Group__ctor_mECF4574592517D363C35ADC07F9D6F7E7DE6B4F6 ();
+extern "C" void Match__cctor_m9158A9D469720E89CD9004B65F55EEEF5E330C0E ();
+extern "C" void Match__ctor_m38BC8AD7EEFA99C6FC25587D6FE56450FA849E0C ();
+extern "C" void Match__ctor_m08A8262ACD89C9E47AA7168D0F2CC6E3338855D7 ();
+extern "C" void Match_AddMatch_m3C9178A7D6F8175A7628E4BE579FD209B7C7650A ();
+extern "C" void Match_BalanceMatch_mCC0EC358E4C33191B896226512FE8F086EFEA4CF ();
+extern "C" void Match_RemoveMatch_m6268C01D537F0BACB7DD707E11FA873C3E1918C7 ();
+extern "C" void Match_Reset_m9EDCC3689E8A5A57A644946AEC3E41C1901C7DAF ();
+extern "C" void Match_Tidy_m88B2494631267F8CF7E90F3305F713550ED39CE8 ();
+extern "C" void MatchSparse__ctor_mEA523FCAF96D8A81401D3ED010CACE4463CCE811 ();
+extern "C" void Regex__cctor_m86CE9B8D0FF5F2B54D4FF27D2213A1E6917477DF ();
+extern "C" void Regex__ctor_mFDE4B6A423C15AA60BF9FEC7D4D7DFD4657D7C6E ();
+extern "C" void Regex__ctor_mF11825F6E24D7D780BD34C74C96392DEC3602A5D ();
+extern "C" void Regex__ctor_mEF4515C4C44DF8BE410F388C82CC679D743FB5CD ();
+extern "C" void Regex__ctor_m87918FB2A856E264A492D2A2B4B412BE4E2370BB ();
+extern "C" void Regex_InitializeReferences_m2CD000C1AFAA8B214F32D989C7D116B684A31840 ();
+extern "C" void Regex_System_Runtime_Serialization_ISerializable_GetObjectData_m95B0E2523A72DF6AC56DEA7CDA286F771E06B0FD ();
+extern "C" void Regex_ValidateMatchTimeout_m71FE7188780DEAD57093B7345CCC50D0159218BE ();
+extern "C" void RegexBoyerMoore__ctor_m39674FB18BB75DD891AAE3781FDA0CCDDEBC2F8C ();
+extern "C" void LowerCaseMapping__ctor_m881B66875631FF0DD253696FE56313A9E3F24187_AdjustorThunk ();
+extern "C" void SingleRange__ctor_m4674722AFC97A111D2466AE2050C2E4E6E57303E ();
+extern "C" void SingleRangeComparer__ctor_m9E44BF07F0F0C9E565E0BA050C1A26F496226BAD ();
+extern "C" void RegexCharClass__cctor_m5170E52D9864BA712125FB33F309FE9E37869EA8 ();
+extern "C" void RegexCharClass__ctor_mAA44510F3E5001A8612355B4FFB718D9DDC74264 ();
+extern "C" void RegexCharClass__ctor_mB05A6CC8015C5D545C639682454A524DE7E2EA97 ();
+extern "C" void RegexCharClass_AddCategory_m6A4625370DA8927DF5342275CB1F6155FC2BA255 ();
+extern "C" void RegexCharClass_AddCategoryFromName_m9AD2D607E1E34A52CBC26FC38D468905C43A9202 ();
+extern "C" void RegexCharClass_AddChar_m4C4BFD42572978A9F98ADE75BE3811593957A9E3 ();
+extern "C" void RegexCharClass_AddCharClass_m0E5DD1105844AFB7CE45B5C801304B5C803FB5CA ();
+extern "C" void RegexCharClass_AddDigit_mC4DE43D884E575729BB2E575DA5552989368F6B3 ();
+extern "C" void RegexCharClass_AddLowercase_m01C1B11EB0B82E065276C7ECF60725886F59A07A ();
+extern "C" void RegexCharClass_AddLowercaseRange_mCDDE9661C9C300DFEB51A8FE36E2F790E3E75D75 ();
+extern "C" void RegexCharClass_AddRange_mCFE9B670B3EBB13A5CDB694B1D1D6B1C0249D110 ();
+extern "C" void RegexCharClass_AddSet_mFFDE070E770BE967173D630AD50010C3397F7B97 ();
+extern "C" void RegexCharClass_AddSpace_mC6557749D96EBD114BCB133D14887A29304196D8 ();
+extern "C" void RegexCharClass_AddSubtraction_m17E538235B02A1435BD43D4FE4501DA67AA35145 ();
+extern "C" void RegexCharClass_AddWord_m1D2553B878162B32B0548536AE4C3EE673041CA0 ();
+extern "C" void RegexCharClass_Canonicalize_m44EEFB16DB02E73C1E7280D15DAE98E50F4D6FA4 ();
+extern "C" void RegexCharClass_set_Negate_mEB8659D83748A4DF28CDDFC3AC573A6504385E09 ();
+extern "C" void RegexCode__ctor_mBCB059D3E98AEA211794E89DDF99193231F298CA ();
+extern "C" void RegexFC__ctor_m354E8197215F3EE9097B69E783B744365A38EF20 ();
+extern "C" void RegexFC__ctor_m023D08ED0365AE9AAC539333B4390A8052C59229 ();
+extern "C" void RegexFC__ctor_mDCBBCCC1BB476741943D7F9AD88731B1DCA0C1B5 ();
+extern "C" void RegexFCD__ctor_mFC6A3309CAFA8C3C2B94094AD443738823388A3B ();
+extern "C" void RegexFCD_CalculateFC_m2267FAA6BCA80275E21DC9A0BAF90BBC85204BD8 ();
+extern "C" void RegexFCD_PushFC_mBE154E351E7C49FFFC26E603B4672136D91479C7 ();
+extern "C" void RegexFCD_PushInt_m63817D3969DF7BD31B7C93D43EE45C4AF539868F ();
+extern "C" void RegexFCD_SkipChild_m661F5D339305B97A37D855240A0B9AF500FE03F6 ();
+extern "C" void RegexInterpreter__ctor_m7B9BA594CF5F338B2E257EDADC2481826BF4C6BB ();
+extern "C" void RegexInterpreter_Advance_mCD1A51680CD0318DDF6D104DE8C722FCCC468CCA ();
+extern "C" void RegexInterpreter_Advance_m779870D7E1FA3580492E2E8B75E2805613525AF7 ();
+extern "C" void RegexInterpreter_Backtrack_m46612DE84F898D1656DE30F3BA86E93209E279E1 ();
+extern "C" void RegexInterpreter_Backwardnext_mD10CE2A9E229D0655EF01565DB39C902654D00CD ();
+extern "C" void RegexInterpreter_Go_mBE9DEAECBD68F60DDFE2BB5A8C24CF92A1FB503A ();
+extern "C" void RegexInterpreter_Goto_m438DE9CE790DF0757383C91126DEA68C6B0DADFE ();
+extern "C" void RegexInterpreter_InitTrackCount_mD93771C3D75617898528698E29AD09B7EA5EE24B ();
+extern "C" void RegexInterpreter_SetOperator_m5B633C33EE4CD85364E7C60003ACE8EA93FDAC91 ();
+extern "C" void RegexInterpreter_StackPop_mD057CA7B190ED8FBD33C6CE48E1F28E4B09FC4F2 ();
+extern "C" void RegexInterpreter_StackPop_m90FC35FD76D9B63851ECFD641DAA08B1B58C7B91 ();
+extern "C" void RegexInterpreter_StackPush_mC28C3F8B3C811C4DCA6CD312F7F487206C871E55 ();
+extern "C" void RegexInterpreter_StackPush_m911FF20379BF912884E7F98BB59CFB6C51AA1861 ();
+extern "C" void RegexInterpreter_Textto_m6CE60A7C8FA9F9CEECD26BD6025F055EB64887AA ();
+extern "C" void RegexInterpreter_TrackPop_m84B55BE8F346693942045E937174EC8C1AE91F08 ();
+extern "C" void RegexInterpreter_TrackPop_m73AB2E002DB92E231B62510861277320F76BEEED ();
+extern "C" void RegexInterpreter_TrackPush_m5A8B9F863211AAEC7E5FAD14ECDDAFDE3059210D ();
+extern "C" void RegexInterpreter_TrackPush_mB2AF47E651D2A3853A719EFB908C30D27EC2FF5F ();
+extern "C" void RegexInterpreter_TrackPush_m3EA36B28D636D1C617F85CEA57650344B562A38F ();
+extern "C" void RegexInterpreter_TrackPush_mBCAADB1DF177D91DC9AA4518DCDB3AAF7D6C0E15 ();
+extern "C" void RegexInterpreter_TrackPush2_m4EBCF8B183717311AEE3FAA6AD6FAF1F08B14F77 ();
+extern "C" void RegexInterpreter_TrackPush2_mD591F73FDDF69084636E0834BCCD530B057898FF ();
+extern "C" void RegexInterpreter_Trackto_m0C7B05A7385BE3F9BB096FE28DC22942A9F96783 ();
+extern "C" void RegexMatchTimeoutException__ctor_m4EFD030442FEEC81E59AB8CDF35D603A5D551058 ();
+extern "C" void RegexMatchTimeoutException__ctor_m554FE8CFA7F42483517F11948A61E4D3C9F44D07 ();
+extern "C" void RegexMatchTimeoutException__ctor_mCCDB413A8F68D924B276B8FED2744E81BE4C89AF ();
+extern "C" void RegexMatchTimeoutException_Init_m09AF601CC7369F2D7E1300B166517FE7D20EB6F1 ();
+extern "C" void RegexMatchTimeoutException_Init_m0F165C7170A46724458C06DA5EC05536D8CB95B7 ();
+extern "C" void RegexMatchTimeoutException_System_Runtime_Serialization_ISerializable_GetObjectData_m78FACBA38C002E195A507A32CDAB768D8DBC93E7 ();
+extern "C" void RegexNode__ctor_m29676E9646F598C827F25E906EEB6EA14A6FD5DB ();
+extern "C" void RegexNode__ctor_m92FB70D6C28D7E021A2A1ACBAD583461AB014F11 ();
+extern "C" void RegexNode__ctor_mAE76BA90AA85F205CB0CC6799F06D1AD85A49F64 ();
+extern "C" void RegexNode__ctor_m0EFEB707603B3C667626117E09A7EED58BBEC6D4 ();
+extern "C" void RegexNode__ctor_m89ACB97FB7FE8B38C0D69F0F2445A7916BC67D85 ();
+extern "C" void RegexNode_AddChild_m734A86A25E6074316FAC566F7D127253F7B71703 ();
+extern "C" void RegexNode_MakeRep_mC310B028FBE3BD5EB80F83E4E05B891ADEE45C22 ();
+extern "C" void RegexParser__cctor_mF468AF3C5916BA72C579CBD41A73D2DAD004F0EE ();
+extern "C" void RegexParser__ctor_mC69D13B4FC323EE77392251139C5F2C456171310 ();
+extern "C" void RegexParser_AddAlternate_mDBDEEF8180738DE0D31CC05B0E223EFF0D66939B ();
+extern "C" void RegexParser_AddConcatenate_mF80F14978ED6626A8F8E5F37AEB3B946A01192C1 ();
+extern "C" void RegexParser_AddConcatenate_m81CC39ED404E571347F0E97650F3BEB14639B1B0 ();
+extern "C" void RegexParser_AddConcatenate_m3743C87DFCD1784A949BFDCE9443845CCD630A5D ();
+extern "C" void RegexParser_AddGroup_m54BBB919E4D4AD05EFECBC3ECBE46FC4A90569EA ();
+extern "C" void RegexParser_AddUnitNode_m6EE11A898128A169E41A5C7B38B1F3DD314FB304 ();
+extern "C" void RegexParser_AddUnitNotone_mAA142A94BB7B6A358BA36A3920DB139382889749 ();
+extern "C" void RegexParser_AddUnitOne_m72DFA82092408E9C63544126093D98390E0C2145 ();
+extern "C" void RegexParser_AddUnitSet_m024168548909EA2DF649E6194D60135312ADF5B3 ();
+extern "C" void RegexParser_AddUnitType_m1ECB4025CA3B580F051CF6891D9C96922CA2FA7A ();
+extern "C" void RegexParser_AssignNameSlots_m168605CD3A6D6AAA52AFFDB13BE3D5DFAC3FE94B ();
+extern "C" void RegexParser_CountCaptures_m5255DE4B24B8D9BA7B2A2A7A1FD79A67B36F4634 ();
+extern "C" void RegexParser_MoveLeft_m1BC035A4EA49F4168093B2AB0EEAB2653CB04033 ();
+extern "C" void RegexParser_MoveRight_m6F0A1C10AE9EA183F04A9E06B62B2B53648688AC ();
+extern "C" void RegexParser_MoveRight_m7D1D27C901CAB81BCF60803E22FBDF2DEEC6CC51 ();
+extern "C" void RegexParser_NoteCaptureName_m96A5301077C4C6554E993A2266EA40B690F455C4 ();
+extern "C" void RegexParser_NoteCaptureSlot_m8B2D20B819C86E427837C879CCA72B9BCD1C4AA8 ();
+extern "C" void RegexParser_PopGroup_m43AB1FB84E11D8DFF6C5D38B9CAD324E5425DD74 ();
+extern "C" void RegexParser_PopKeepOptions_m8ACBCD324BAF7269F90AEB3CF901B666524658FA ();
+extern "C" void RegexParser_PopOptions_mA18691037302741375A44BD8BDC9387DFB07B676 ();
+extern "C" void RegexParser_PushGroup_m6F4246ECA3A6F29DA096C3B41D97652427E3175E ();
+extern "C" void RegexParser_PushOptions_m2034533961B704CBFA0F97BD4A54CB7269F0D88A ();
+extern "C" void RegexParser_Reset_mEC49D1DCEBC555768D2FB90DA42374F1C547E328 ();
+extern "C" void RegexParser_ScanBlank_m99BA3097E182DE425BE0137BAFDD0218F0DF360D ();
+extern "C" void RegexParser_ScanOptions_m5CD283C15179190846762B90F78F0A87E7495537 ();
+extern "C" void RegexParser_SetPattern_m4B385D83A9680A1B2707EBCA8659B6E12EDD5E46 ();
+extern "C" void RegexParser_StartGroup_m36A6C0ED245D844CD2E630160994C3F2D7CCA994 ();
+extern "C" void RegexParser_Textto_m5C8BAB13E35429238EA9A5F13D5A5A580D0DD3AC ();
+extern "C" void RegexPrefix__cctor_mCDCE7EDB98AFB119EE0281D37F7BC019AD28773D ();
+extern "C" void RegexPrefix__ctor_m93489A4FF55425A15BF5390E77EE0B84F6F9364C ();
+extern "C" void RegexRunner__ctor_mC04D94995556E71E813F8420C8A4EC0B66404550 ();
+extern "C" void RegexRunner_Capture_mE34CB0D3351BCC69F6FDE6CDEA763B93C5E92642 ();
+extern "C" void RegexRunner_CheckTimeout_m52486A9CE7B6EA4C83BB60FB200196AF0EE5687B ();
+extern "C" void RegexRunner_Crawl_m655A5D262056F7E13F0645CE5611AE65E83D97DB ();
+extern "C" void RegexRunner_DoCheckTimeout_mCDAA40848A2F8AAD70928FFD8A6C08FF2D9E72A3 ();
+extern "C" void RegexRunner_DoubleCrawl_mF0425849E5E3C2BA5E9009CED7DE245C8CA0F7CC ();
+extern "C" void RegexRunner_DoubleStack_m8969F05F9E086EAA194DCBD2F137778239918925 ();
+extern "C" void RegexRunner_DoubleTrack_m057C14C51F137222469C6526406B0E1069747618 ();
+extern "C" void RegexRunner_EnsureStorage_m6BC13F773B014E2875CCD9A83E4093A77AA1053C ();
+extern "C" void RegexRunner_InitMatch_mF9CD772D4A8E12F89B4785324CD6939ABAE89AD4 ();
+extern "C" void RegexRunner_StartTimeoutWatch_m257FBE0C72761082A11D275954C6A1343EB13301 ();
+extern "C" void RegexRunner_TransferCapture_m4F01B5A96647BC3FD338ACF6D509741D80FEC837 ();
+extern "C" void RegexRunner_Uncapture_mA7163C77BE1683E508821AB251F33FB7520CE3F8 ();
+extern "C" void RegexTree__ctor_m5B10D5149928B35CE397472028EE327669C211DA ();
+extern "C" void RegexWriter__ctor_m63A858FAE36A8640812DFF917751C1E215A2AE82 ();
+extern "C" void RegexWriter_Emit_mDC0B76CE49A6DE83DD2D169236BCD516AE9263EF ();
+extern "C" void RegexWriter_Emit_m6B0ACB44155A07161060838F483D555E7EF6ACED ();
+extern "C" void RegexWriter_Emit_m7C1D08F071C805F13DBF7684AEC3F2F7E748C497 ();
+extern "C" void RegexWriter_EmitFragment_mEFDD8EA3A65320222CF4EA8A52B33C687EE0C5AC ();
+extern "C" void RegexWriter_PatchJump_m6C0A440142E7AC772AD4AF7DF5D8291B6CA6D7D2 ();
+extern "C" void RegexWriter_PushInt_mFBC85956A26FEBC66244C8DFC881106D85DD2C1D ();
+extern "C" void SharedReference__ctor_m48E749BC646BEC89282B8F336325D42DE48CFC81 ();
 extern "C" void StringBuilder__ctor_mF928376F82E8C8FF3C11842C562DB8CF28B2735E ();
 extern "C" void StringBuilder__ctor_m1C0F2D97B838537A2D0F64033AE4EF02D150A956 ();
 extern "C" void StringBuilder__ctor_mAC298BE4C79DFA111AA5AA4063F79F47744959FD ();
@@ -9792,6 +10568,7 @@ extern "C" void ThreadStart_Invoke_m11B6A66E82F02C74399A7314C14C7F52393CC4B4 ();
 extern "C" void ThreadStateException__ctor_m45CB0F9C9BFBAE82CD65CB8AEDB9EE9C1A2027FA ();
 extern "C" void ThreadStateException__ctor_m977994CF05BB56040152C0F84DF00A8426ACCCB4 ();
 extern "C" void ThreadStateException__ctor_m8269A7EE51BF315AD8C0A4B64C2B2319035BB767 ();
+extern "C" void Timeout__cctor_m9C4BFE11D3494ED5DB59176974B66055093F26D9 ();
 extern "C" void Scheduler__cctor_mF399300AD4750C3FA6E8BFE5DDF32162B6F1AB9B ();
 extern "C" void Scheduler__ctor_mA11657BA808AF374E216FDAAA472E18F00B84FEB ();
 extern "C" void Scheduler_Add_m669D8B05D43F207A8BE1AA1912154AB6F0E9EBEB ();
@@ -9865,6 +10642,9 @@ extern "C" void TimeZoneInfo_Validate_m2C720033788975438481F523D5AE5F3A9E5D3702 
 extern "C" void TimeZoneNotFoundException__ctor_m13C5CB453D2842823AA85B9B4E422C42D659FA19 ();
 extern "C" void TimeZoneNotFoundException__ctor_mA8D2277188E55C2B6EA52CEB57A8AD18243CECDE ();
 extern "C" void TimeZoneNotFoundException__ctor_m38A84B100985F5907DE77F71A3B98CD3BF1D9CD3 ();
+extern "C" void TimeoutException__ctor_mB870CBFE33BA657A6C7FBFAB77984096ADCA62CF ();
+extern "C" void TimeoutException__ctor_m18609AA35D5F9E6B53E125B2B00D37EBBAB1DB65 ();
+extern "C" void TimeoutException__ctor_mF1C60F8EDC528DD4115617C3A3ED34CB20175F1A ();
 extern "C" void Type__cctor_m518A008233352C5E9FBF9E165B0C3CE81ACF0036 ();
 extern "C" void Type__ctor_m55A9DC11F422D2DFDA1501FEC589D5823AB86CEE ();
 extern "C" void Type_CreateBinder_mD7D0BA5DDBCC08A4F9D3A0DA5FE6697BAA29D9E6 ();
@@ -9966,6 +10746,7 @@ extern "C" void WeakReference_GetObjectData_m1DBED399F8C4A13F8C764A2AADFC5B6EBA5
 extern "C" void WeakReference_set_Target_mF6E89E1F816A61EF8E8FFABE07CFFEF35E518635 ();
 extern "C" void WindowsConsoleDriver__ctor_m9C9E675288391C478152CCB5789D7726611BF70D ();
 extern "C" void XmlChildEnumerator__ctor_m9D966497AE59A0784E4FE7CB883226B7A332F311 ();
+extern "C" void XmlChildEnumerator_System_Collections_IEnumerator_Reset_m3EF3533A19F3926CDCCD9CD82498D01B5F7EA08A ();
 extern "C" void XmlReader__cctor_m3EF2489C81E4EEF249A34242FC130A861972991E ();
 extern "C" void XmlReader_Close_m47D14A18E83F246EFE28A792766CD77101A182BF ();
 extern "C" void XmlReader_Dispose_m56DD3810681D55E0671AC2C7C49649B2B1730E7A ();
@@ -9980,9 +10761,785 @@ extern "C" void __Filters__cctor_mAC913CDF08E7AB6541101C4B96483BF49C6E2F14 ();
 extern "C" void __Filters__ctor_mA9DEA9B853B953C85A78E101A8001E9EE0E66B35 ();
 extern "C" void __Il2CppComDelegate_Finalize_m893C22F7BEDFBDF8F015EA584CC1419D144D2187 ();
 extern "C" void __Il2CppComObject_Finalize_m98123DBAAA7974D2616F9E90F2574955714CA9A9 ();
+extern "C" void CaretInfo__ctor_m2A1A904B1BB9F92DA16B51129303C3A515D0AFE5_AdjustorThunk ();
+extern "C" void ColorTweenCallback__ctor_mC6B431E8502AEA82EDFA9EE08D593EA026EA3C65 ();
+extern "C" void ColorTween_AddOnChangedCallback_mCB17182F2BBFC8316626CB229D9758C2B3CD05AB_AdjustorThunk ();
+extern "C" void ColorTween_TweenValue_m55933ECAC62FD8F6320BE911214FE9FFB78E38D1_AdjustorThunk ();
+extern "C" void ColorTween_set_duration_m673AE8A83214FB5A0CD9D995482D49CDC6723C58_AdjustorThunk ();
+extern "C" void ColorTween_set_ignoreTimeScale_m41D7A6143F764EA3D18125005B27F5F6366737DC_AdjustorThunk ();
+extern "C" void ColorTween_set_startColor_m2B769C6741BEE0F1DF5E09226F1FC36ED6799B0B_AdjustorThunk ();
+extern "C" void ColorTween_set_targetColor_m881BE7EF43253C535765C6CA7D1B1C5603BE3C8D_AdjustorThunk ();
+extern "C" void ColorTween_set_tweenMode_mF4ABCEC43CB0D706B9D12AEE3722DB885D8942A5_AdjustorThunk ();
+extern "C" void Compute_DT_EventArgs__ctor_mFF94BC4129E9A4EF9C4C99DF0F618585BFB50510 ();
+extern "C" void Compute_DT_EventArgs__ctor_m8D4F3E1043231DB1D4585435F232B394D2C6A521 ();
+extern "C" void Extents__ctor_m71A6D28DCBFA8BDE2617E89AB46C40978FA81F17_AdjustorThunk ();
+extern "C" void FaceInfo_Legacy__ctor_mAB3F5AD05BFB37FACEC0A3F5D9973F93AC8D5D78 ();
+extern "C" void FastAction__ctor_m296BD8427F412D8A53750805BFC4467255CED3AC ();
+extern "C" void FastAction_Add_m2753C253CA9E2322F2CD9C7757BB7296D03A2D9E ();
+extern "C" void FastAction_Call_m00F69EF2E2EFD13F03CA2F7988EDB50086EEB84B ();
+extern "C" void FastAction_Remove_mDCC3743A749540B2BC1F718CF40C3001BD7F7F84 ();
+extern "C" void FloatTweenCallback__ctor_m1C795A47C5FD0CD0E0DED180F72C2CC5F7CFB38F ();
+extern "C" void FloatTween_AddOnChangedCallback_mBA8E5924866457647E95BCEE7E00649DCD60A62C_AdjustorThunk ();
+extern "C" void FloatTween_TweenValue_m99F8C3F813B0984F7C5AEA5CA2F035FB6D32C063_AdjustorThunk ();
+extern "C" void FloatTween_set_duration_mCCC8CD4A31B83CAC202FDAB0361205A7516188C0_AdjustorThunk ();
+extern "C" void FloatTween_set_ignoreTimeScale_m1B2CEEE7F1285DD799D23020C10F329F061B1DA2_AdjustorThunk ();
+extern "C" void FloatTween_set_startValue_m886A0DFD26F4DE82D0B8876CE486DCA6F28EB99E_AdjustorThunk ();
+extern "C" void FloatTween_set_targetValue_mBC38AE1A6A89005DB88AEEA90EAE458326647524_AdjustorThunk ();
+extern "C" void FontAssetCreationSettings__ctor_m800AB6405BF19A45BEFCD345F171A6BCC7F7AA11_AdjustorThunk ();
+extern "C" void GlyphPairKey__ctor_m3A5D2125C2F25129C709785DABC5537C0A14504D_AdjustorThunk ();
+extern "C" void GlyphPairKey__ctor_mA40DDE42B5B8E23FCC693BAEB144BB08D40E4496_AdjustorThunk ();
+extern "C" void GlyphValueRecord_Legacy__ctor_m2675A5F79DE031DE110E81FABCBF556B612B4873_AdjustorThunk ();
+extern "C" void KerningPair__cctor_m79C41ADD4E56773B06AF5BA5A95046C0A40F2E38 ();
+extern "C" void KerningPair__ctor_m96EFB818AC9754737A6909044C49972CD1797242 ();
+extern "C" void KerningPair__ctor_mB0B4EA55FECE5C592739F8E2A44B3B60716DF814 ();
+extern "C" void KerningPair__ctor_mF2039BF36F48BFDCB0B952A5BA362916C2DEB268 ();
+extern "C" void KerningPair_ConvertLegacyKerningData_m47C96DCAFA959D0C707CA52F622FD48744926977 ();
+extern "C" void KerningPair_set_firstGlyph_m803F5AD38DCBCBEAF97AC2D29B560D9B1AD5D795 ();
+extern "C" void KerningPair_set_secondGlyph_m118C501D1A85ADFB860F3134DD71F199E7CC801C ();
+extern "C" void KerningPairKey__ctor_m73F77F7631B858785DF8D10112A319C4FBFBF1D4_AdjustorThunk ();
+extern "C" void U3CU3Ec__cctor_m6A71C46D73A3D0DA88F985BD86D2E3B45BC59F71 ();
+extern "C" void U3CU3Ec__ctor_mFEF59552A56B56236EF264D0557746752BA9FF59 ();
+extern "C" void U3CU3Ec__DisplayClass3_0__ctor_m580412B55CAA185CAB1B93D26B25F2194B28E34C ();
+extern "C" void U3CU3Ec__DisplayClass4_0__ctor_m81DC132E697974F50DC24BD0965FBC37EA0C4DC7 ();
+extern "C" void U3CU3Ec__DisplayClass5_0__ctor_m88E965C6B564BF23F117A9BDB0D8CD9BF0EEBE28 ();
+extern "C" void KerningTable__ctor_m32FB2D4A2B2479CF17C099BE0C042376E9013249 ();
+extern "C" void KerningTable_AddKerningPair_mF915E80935E56E3199F1D205CBDB0BE55E23A4CB ();
+extern "C" void KerningTable_RemoveKerningPair_m0E5B7CF328563A3F4FA6560CA8AB86730C23D80A ();
+extern "C" void KerningTable_RemoveKerningPair_m2F54F078747F383BEF82EC8FFC8140D057DCC231 ();
+extern "C" void KerningTable_SortKerningPairs_m77277F2631EF201AA04F0CA0B35AFD5224DD7067 ();
+extern "C" void MaterialReference__ctor_mC0D0055995F082C37559BF6DE1EDAA0D9E2C444C_AdjustorThunk ();
+extern "C" void MaterialReferenceManager__ctor_mA230B6E3D1A7D22A4E1FADF2C1CF9FCB473E0A2A ();
+extern "C" void MaterialReferenceManager_AddColorGradientPreset_mDE80EFAABB2A14BD95FD46319F69AB96A2393E35 ();
+extern "C" void MaterialReferenceManager_AddColorGradientPreset_Internal_m8A1EDD4AED2E4DFCC662C101DD95FCAC192C6081 ();
+extern "C" void MaterialReferenceManager_AddFontAsset_m0F2A70F54C6F13741B31158FCF52FBFE3C7E1D2A ();
+extern "C" void MaterialReferenceManager_AddFontAssetInternal_mE527177997F1D9FAD9A87091DD9E0FFEAD001033 ();
+extern "C" void MaterialReferenceManager_AddFontMaterial_m2468B2695BF3AC8E81FA1A1EC19E259A33DDC17B ();
+extern "C" void MaterialReferenceManager_AddFontMaterialInternal_mCB884E525AA884578B548F9890B558B92AB6DCBA ();
+extern "C" void MaterialReferenceManager_AddSpriteAsset_mE81D1F44050D42C2EC659DC95F8CA2B4836C10B2 ();
+extern "C" void MaterialReferenceManager_AddSpriteAsset_m2BE14787064D4F467D8A31D2C867B529ACB59004 ();
+extern "C" void MaterialReferenceManager_AddSpriteAssetInternal_m0BED546F46EC1619662EE0775EB73A2EBA63CA4C ();
+extern "C" void MaterialReferenceManager_AddSpriteAssetInternal_mF5D74D0FCFFEEC1D8FE60BD94A637F302EB4A08B ();
+extern "C" void Mesh_Extents__ctor_mE89306AE3C1F9BBC8EC83483D18D1C30A9F45989_AdjustorThunk ();
+extern "C" void ShaderUtilities__cctor_mCC0DA25B1E0507C3E6CB1C7B011557D7C8D6E776 ();
+extern "C" void ShaderUtilities_GetShaderPropertyIDs_m933D279353B8C3F4AE1813FA85ACD30F9B6B70EE ();
+extern "C" void ShaderUtilities_UpdateShaderRatios_mDCEF0280171EA078A948597AECF4177491A14755 ();
+extern "C" void SpriteDataObject__ctor_m1236EBD6ECF0D3924CD9D459D7D627DA4F46CDE5 ();
+extern "C" void TexturePacker__ctor_m46B501969237BCB29DA078802E837B8AEF9D442F ();
+extern "C" void TMP_Asset__ctor_m3DE63D48E7F514B23A74F77A3860D816EB197AFA ();
+extern "C" void TMP_Character__ctor_mF2903EF6CE696279295EEFD77EF1C2EFC0EC56A6 ();
+extern "C" void TMP_Character__ctor_mF534127A1CCE0963465083219858E2A4E2226035 ();
+extern "C" void TMP_Character__ctor_mC7AA3DE6DED0AD81A398C27F09DFA13162C2BAFD ();
+extern "C" void TMP_ColorGradient__cctor_m71CE37A288F688B7A2DD33ED4CD561CE9DF81309 ();
+extern "C" void TMP_ColorGradient__ctor_m791B3ED1705422F5967322721F724A0096D99D5C ();
+extern "C" void TMP_ColorGradient__ctor_m1DA5B1124940B1D77BB34079EF79F84C3843DD02 ();
+extern "C" void TMP_ColorGradient__ctor_m6A791A9AABB4A9CBFE9F2DD809284E8680301EFA ();
+extern "C" void TMP_DefaultControls__cctor_m015050AEAC5466C948AAD03793A1F7B2ABB395F8 ();
+extern "C" void TMP_DefaultControls_SetDefaultColorTransitionValues_m495A0BE59C72A72837D9798402C36F8EEFD88C28 ();
+extern "C" void TMP_DefaultControls_SetDefaultTextValues_m6042BB4C6357E4A7EC6A2FDE0DBF07C96F939102 ();
+extern "C" void TMP_DefaultControls_SetLayerRecursively_mE0536A04C384CF3711CFFE6B5DE5BDBBE03067C8 ();
+extern "C" void TMP_DefaultControls_SetParentAndAlign_mE29E799022492873DCF02A4702BCD4AF35772C4B ();
+extern "C" void U3CU3Ec__DisplayClass60_0__ctor_mC7F89E67DD8E84D796C07F7C9E8ABB6F5FEF1556 ();
+extern "C" void U3CU3Ec__DisplayClass60_0_U3CShowU3Eb__0_m00C1450B70C201913151492F8AE9FBC61A31358D ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72__ctor_m274A07822241A8BC59918B7A6F5CC71A1F617358 ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_IEnumerator_Reset_m1DC1BA0A67BE883A25FFDD75B415004D41BAB1CA ();
+extern "C" void U3CDelayedDestroyDropdownListU3Ed__72_System_IDisposable_Dispose_m86AF6C422029C4550F130A9902ED81ED058FA19F ();
+extern "C" void DropdownEvent__ctor_m5159D8F99C902E86113EAADFE9F2B81A495CA2F5 ();
+extern "C" void DropdownItem__ctor_mAA48CFA89DE4CFE4DBC4D54EACA5D59160BC5598 ();
+extern "C" void DropdownItem_OnCancel_m777656A4AF558A4FBBD7000287CB54F01DFBC6C1 ();
+extern "C" void DropdownItem_OnPointerEnter_m6876CB32E28EBD21349B852D58690168C6EF0C86 ();
+extern "C" void DropdownItem_set_image_mF7707ABF8FDA846D054D6DD1AE8684B9A5457504 ();
+extern "C" void DropdownItem_set_rectTransform_m89EBB610B9C17AD408DADB3A096C8BF8EDF978A0 ();
+extern "C" void DropdownItem_set_text_m99A6C5CCDFBAFC3CB35A35516ADC4CF84E595ADF ();
+extern "C" void DropdownItem_set_toggle_mC131CA30062487AC118DD1D709A1B8A947AB87AB ();
+extern "C" void OptionData__ctor_mAF4A3E2D1F7F7121683B66BB64E2D7D9383E2CC4 ();
+extern "C" void OptionData__ctor_m80B363DB2199075040C07161E8A83BB415B63B60 ();
+extern "C" void OptionData__ctor_mB9A9C7195A843B453FAA80A404D0E8481F2A5042 ();
+extern "C" void OptionData__ctor_m46ED680863078DF54B1AD2767AB76C58D44578CC ();
+extern "C" void OptionData_set_image_mA3906C699D22D16DC123736152506A9CBBCEB73D ();
+extern "C" void OptionData_set_text_mCE67F5B12C243D8DDB9C96FED26FE3EE86B6C2B2 ();
+extern "C" void OptionDataList__ctor_m8A0F35954EC2393F3B34401C40E3966BF86091CC ();
+extern "C" void OptionDataList_set_options_mFDF56C11D9611B047BEF9D9434568892B7697A0F ();
+extern "C" void TMP_Dropdown__cctor_m1354234AFADFBCD4F94562A62B0D1D105850F044 ();
+extern "C" void TMP_Dropdown__ctor_m2535E37394AA92D593EE9C982E056B84E3AFC833 ();
+extern "C" void TMP_Dropdown_AddOptions_m4B1F3555A4F12C8A49442F3BA7963F838852014B ();
+extern "C" void TMP_Dropdown_AddOptions_m0254DD10370FEE3AC5220AD94A5BF79495E476D1 ();
+extern "C" void TMP_Dropdown_AddOptions_m47620892E46D43DD120A9F80CBF0FEB292936D25 ();
+extern "C" void TMP_Dropdown_AlphaFadeList_mE97D64B1D8908AC87CDE1366A7B73A3A51C24B3E ();
+extern "C" void TMP_Dropdown_AlphaFadeList_m1759AA1518F5FA264358A219CE5424ED9CD4D24F ();
+extern "C" void TMP_Dropdown_Awake_m122B2BD88EDCD1ACC7D56CFB95A2D06774FE2D49 ();
+extern "C" void TMP_Dropdown_ClearOptions_m048C1E3B6871A1ED62FB586DBBCAFA4DE382C96A ();
+extern "C" void TMP_Dropdown_DestroyBlocker_mF59977CE31025B504AECA914A6503376E4D935B8 ();
+extern "C" void TMP_Dropdown_DestroyDropdownList_m0F770160B0148D9861BC17C504EA20B55A854082 ();
+extern "C" void TMP_Dropdown_DestroyItem_mF8D859D0BDBE4678E5B213FAB58A8FE86922637A ();
+extern "C" void TMP_Dropdown_Hide_mC3D767D152BD51E76C28A342884179F0A05EE85A ();
+extern "C" void TMP_Dropdown_ImmediateDestroyDropdownList_mFC1530BA413B1128B0BAF4DA97E50510ADDC04F2 ();
+extern "C" void TMP_Dropdown_OnCancel_m1237CB62DE1C63AF42310CF4922445D97B339EE7 ();
+extern "C" void TMP_Dropdown_OnDisable_mA0573AC56C438141DA7C22B1553FA17A3A1F9A67 ();
+extern "C" void TMP_Dropdown_OnPointerClick_mB001C8C32E6326AD59A29917A74C6526BD18A2B7 ();
+extern "C" void TMP_Dropdown_OnSelectItem_mD7F714C36EEEA70B97C08B1DF5075F3AD715C4B0 ();
+extern "C" void TMP_Dropdown_OnSubmit_m13410F20F68435EECCB7CF566CFEC6640420BD31 ();
+extern "C" void TMP_Dropdown_RefreshShownValue_m837A9070B4FBA6621F00BB1E7B7ACD81FBAD451F ();
+extern "C" void TMP_Dropdown_SetAlpha_m7B93215214872002541F7AF4B3A0280DA4BD34DE ();
+extern "C" void TMP_Dropdown_SetValue_m5AFAF91CED4ACAC133E70CDA49951BDB5AA33ADB ();
+extern "C" void TMP_Dropdown_SetValueWithoutNotify_m77538507D860C6E18B3892C4E1F8697A065379F0 ();
+extern "C" void TMP_Dropdown_SetupTemplate_m1D3C052F72C631157C89206685E3A85ACDC43086 ();
+extern "C" void TMP_Dropdown_Show_m85E1B97A71F170686579230841CF85262C32085D ();
+extern "C" void TMP_Dropdown_Start_m6D54B50EACDB0130FC404A8610F987906E9B7613 ();
+extern "C" void TMP_Dropdown_set_captionImage_mF2C5271CE2417F0D4A485592223F5323C9B18753 ();
+extern "C" void TMP_Dropdown_set_captionText_m8E7E47A54BDD21EBF040947F92C159346C47E49D ();
+extern "C" void TMP_Dropdown_set_itemImage_mFB469E632F331FAC8C9A9EB08D7893EE00E66615 ();
+extern "C" void TMP_Dropdown_set_itemText_mBDAC673CCC3DAD5E085C2D8BFBC46863A612806D ();
+extern "C" void TMP_Dropdown_set_onValueChanged_mF39C3A3484766C63BC3CCB286E50C92285FBE715 ();
+extern "C" void TMP_Dropdown_set_options_mCC29E2878531BA5CDAE82265B6072E8B4C849081 ();
+extern "C" void TMP_Dropdown_set_template_m54659530042C87A98102D16AF0F28244EE4AC4B9 ();
+extern "C" void TMP_Dropdown_set_value_m0157A3F590CD895A90BC91B26DA886C6F3F854E3 ();
+extern "C" void U3CU3Ec__cctor_m7EB58B3661508ECDE7B6ED01A46928504B6B0480 ();
+extern "C" void U3CU3Ec__ctor_m5E9A1F7DF55F5BE2DD7EC1E41D9CFBB211D82476 ();
+extern "C" void TMP_FontAsset__cctor_m2FC955F497F620A69ADEB20C54F25B5C9632F463 ();
+extern "C" void TMP_FontAsset__ctor_m8A75846088FC51CEFEC51490A9091FC90546214E ();
+extern "C" void TMP_FontAsset_Awake_m4A832CD8A2553C4F68C7C22F7046391A3463A4BE ();
+extern "C" void TMP_FontAsset_ClearFontAssetData_m67872BECE980BC41E3D577FCAB0D9C07DC58BF9D ();
+extern "C" void TMP_FontAsset_InitializeDictionaryLookupTables_mEC7414972FD47DC48F016C74E04C47F829B6138B ();
+extern "C" void TMP_FontAsset_ReadFontAssetDefinition_mB19C8CC08E9B48557DEFBBB5481D6E7F50335203 ();
+extern "C" void TMP_FontAsset_SortCharacterTable_m8CE5CA6862C9D1E46695DA5DB6C00AD461795A62 ();
+extern "C" void TMP_FontAsset_SortGlyphAndCharacterTables_mCC3E06AD1E26ED8F9AB17D4419D3970F6B8636F8 ();
+extern "C" void TMP_FontAsset_SortGlyphTable_mB32D43E1D9C0318C250802FD54E1CCDE56DF8757 ();
+extern "C" void TMP_FontAsset_UpdateAtlasTexture_mC020B800783526166514FF11D3D3343651880D7A ();
+extern "C" void TMP_FontAsset_UpdateGlyphAdjustmentRecords_m32454C76CB00D52C9475D892C6C4FEEF2D7B0B2A ();
+extern "C" void TMP_FontAsset_UpgradeFontAsset_mD30FE45858342E99081EEBAA0BF728BC06948FA3 ();
+extern "C" void TMP_FontAsset_UpgradeGlyphAdjustmentTableToFontFeatureTable_m519A1A1C87F5D5E5146995DA30E4EFBBC8D6AC4C ();
+extern "C" void TMP_FontAsset_set_atlasHeight_mF06DCF6BAAFC50236AF84B8DD74EADE666133312 ();
+extern "C" void TMP_FontAsset_set_atlasPadding_mFC2573373408F2BD87ECA6ADD700ACD210F24317 ();
+extern "C" void TMP_FontAsset_set_atlasPopulationMode_mA5D62F8AFA1083A76A49BAF4BB2B6775DFC65A34 ();
+extern "C" void TMP_FontAsset_set_atlasRenderMode_m58B1C0782105E4C2E35CFB566F253AB4057CF7BA ();
+extern "C" void TMP_FontAsset_set_atlasTextures_m8B0B40F09AC86B0D1468A07DF014A79115C5FCD2 ();
+extern "C" void TMP_FontAsset_set_atlasWidth_m88EDBBA8F93F19AABC55CC8B0FCD918ABDCF94D5 ();
+extern "C" void TMP_FontAsset_set_characterTable_m9FFD7FD48B3B8A5FD6498209861806146B93D162 ();
+extern "C" void TMP_FontAsset_set_creationSettings_mD2806D4A43A2F240F592BECB30952580BA9F5DEF ();
+extern "C" void TMP_FontAsset_set_faceInfo_mA4527A8A81DF83593C2307C6B777B350D38F99C1 ();
+extern "C" void TMP_FontAsset_set_fallbackFontAssetTable_mC19AF1CE557DDE8E97BC94E84ECADAA6A1CFA12A ();
+extern "C" void TMP_FontAsset_set_fontFeatureTable_m7CC7996CF82AA71F5D70CA2978BC65303C6004C9 ();
+extern "C" void TMP_FontAsset_set_fontWeightTable_m5060F29D1526FBCF4926C468690E907FF8C8F6DE ();
+extern "C" void TMP_FontAsset_set_freeGlyphRects_mF185621149C8EB803148FF60A4029D66DF0F0735 ();
+extern "C" void TMP_FontAsset_set_glyphTable_m3252AEBCBBA45F6F9D6B06FD132A90B5D938A65B ();
+extern "C" void TMP_FontAsset_set_sourceFontFile_m2C1EECF7B7EB2AE94B12B1CB04712554F9879C5A ();
+extern "C" void TMP_FontAsset_set_usedGlyphRects_m02D8DF610E9B3E3598A2F93CDD1F514EEFD56E92 ();
+extern "C" void TMP_FontAsset_set_version_m332D7A4F4EEE28ED7318E1DBD6C17E0E6B6D3B49 ();
+extern "C" void TMP_FontAssetUtilities__cctor_m65C0DF0B2447FAAEF159B8FDC2C1003D771023F5 ();
+extern "C" void TMP_FontAssetUtilities__ctor_mFD82FB734E4621E76822F7EEDC7610908330406B ();
+extern "C" void U3CU3Ec__cctor_mD23EF57095E8127289946D3F3D66B0F0C5E5DCB5 ();
+extern "C" void U3CU3Ec__ctor_m5AB83AD993D76BA03A6121F1B173B08674CA5D72 ();
+extern "C" void TMP_FontFeatureTable__ctor_mD4E783ED559F00AFA53A5C0B057C2940EF19EF1E ();
+extern "C" void TMP_FontFeatureTable_SortGlyphPairAdjustmentRecords_m583F8C8FD824635A6E73F24AD9863B67915D6C22 ();
+extern "C" void TMP_FontFeatureTable_set_glyphPairAdjustmentRecords_m55F3E25B7007CF2FBAB57A823E6525C3BA2D840E ();
+extern "C" void TMP_FontStyleStack_Clear_m10522FBFF992EDED2760100F5FA23EDDD3A456B2_AdjustorThunk ();
+extern "C" void TMP_Glyph__ctor_m84D2B050E5E4762C1096105954D265A0239FC8C8 ();
+extern "C" void TMP_GlyphAdjustmentRecord__ctor_m20C804287A2DB10E4F5C31FDE4A19620163C421D_AdjustorThunk ();
+extern "C" void TMP_GlyphAdjustmentRecord__ctor_m63B6E62A342CD7DD9615EBC65509742EBB3BA347_AdjustorThunk ();
+extern "C" void TMP_GlyphAdjustmentRecord_set_glyphIndex_m47EA017264669BCF0070071888B8009F5DC33C92_AdjustorThunk ();
+extern "C" void TMP_GlyphAdjustmentRecord_set_glyphValueRecord_m469E313D1FD38C2275435644A46252499793CDE9_AdjustorThunk ();
+extern "C" void TMP_GlyphPairAdjustmentRecord__ctor_mF843152BFC34EC45E04221B1AF941138F61A604A ();
+extern "C" void TMP_GlyphPairAdjustmentRecord__ctor_m9884035C0EB843241BE4238DE5785D738682D7F9 ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_set_featureLookupFlags_mB3ABF53F3E3B1A61510F87EC5565C62386F05A7E ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m7E5F29F18EC8979E166F963E3CD5FC23E31F5266 ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_m8B7E2176684C8E3DBE4ED4EA2D63D46D3EE59F43 ();
+extern "C" void TMP_GlyphValueRecord__ctor_m986E4BD32C0BA35C2B75AAE7BB62A72057AFABC3_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord__ctor_mC5D6912CF60A1749818B2436D2DE95369220DC73_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord__ctor_mC3B5FC382BFAC1B3E99A1E4F64AA69521E23EDE1_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_set_xAdvance_m7F20E0A069014B7F5FE4DD58F80FB5EFA13F546D_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_set_xPlacement_mB234B75CC6B7630081623781F5BAF9963CDEB9F6_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_set_yAdvance_m8353E7E6D0358FBB8FA86914C520D24A795CC867_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_set_yPlacement_m22130F49E21346F3B3D61BD6BA985688B0666003_AdjustorThunk ();
+extern "C" void U3CCaretBlinkU3Ed__267__ctor_mC699F231886DF53BE8EAEBFF0B382A21B526300E ();
+extern "C" void U3CCaretBlinkU3Ed__267_System_Collections_IEnumerator_Reset_mCA944CBD6914A912C084E0C0652F5658489E2435 ();
+extern "C" void U3CCaretBlinkU3Ed__267_System_IDisposable_Dispose_mDD95AF0564249DDF3B85F6BAF136CEBB5AB94FF1 ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285__ctor_m00621968B9D009D9666D30375A27E24DB5E48945 ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285_System_Collections_IEnumerator_Reset_mCB3269F30C77CE8E30C2ADDE141705E55C4F9A4D ();
+extern "C" void U3CMouseDragOutsideRectU3Ed__285_System_IDisposable_Dispose_m9ED3DB5D2609EBCD333AFED1F7517372E2D0F6AE ();
+extern "C" void OnChangeEvent__ctor_m5D91870239AF60B63837CFD9A7AD318385110566 ();
+extern "C" void OnValidateInput__ctor_m57AF303504576D68D6DE5902D8E4D2A9E504D49A ();
+extern "C" void SelectionEvent__ctor_mDE136423905DC114E1508BC15A2D53F3D2DE2BB9 ();
+extern "C" void SubmitEvent__ctor_mDC065E53A47B58CFEF1CF5DC952D25498FD78A07 ();
+extern "C" void TextSelectionEvent__ctor_m0E1828CFD97B30DD17D95AFD58EA97E6261595CA ();
+extern "C" void TouchScreenKeyboardEvent__ctor_m0DEAEFD2929C40528A9B37F65099613733E12213 ();
+extern "C" void TMP_InputField__cctor_m628D175232F7E47F051B6FBBC8F7258B829ADCFD ();
+extern "C" void TMP_InputField__ctor_m6E2B891AA2A08531AECD73ADAC21101799CA830F ();
+extern "C" void TMP_InputField_ActivateInputField_mE70FCEB22402C3C03A61B57FB105025EAB64FF94 ();
+extern "C" void TMP_InputField_ActivateInputFieldInternal_m465E913699720C321D936412B93A2A0A102D97CB ();
+extern "C" void TMP_InputField_AdjustRectTransformRelativeToViewport_m4D0CE7670528E055358CE7A439350065D6629639 ();
+extern "C" void TMP_InputField_AdjustTextPositionRelativeToViewport_m5B8EECCF129C65E334B2F802B52692F83F3899DF ();
+extern "C" void TMP_InputField_Append_m6B1020CC29D5CA4E320AFC3955BC0AFD816ED7D2 ();
+extern "C" void TMP_InputField_Append_m59434D99ABA56A0A45AF1131DE8316ACF944C79A ();
+extern "C" void TMP_InputField_AssignPositioningIfNeeded_m2A8EBF26E4A74EC3C79D3EB95AB34BD34937BD78 ();
+extern "C" void TMP_InputField_Backspace_m5DB3D076711BBE731F7575A8F400E7C515A1EDF6 ();
+extern "C" void TMP_InputField_CalculateLayoutInputHorizontal_mAAC4589E14F4E325B5E48BA04FB1A12B3167ADA2 ();
+extern "C" void TMP_InputField_CalculateLayoutInputVertical_m190077ADE1063FE1B8DDB5E51C1C895B851165FC ();
+extern "C" void TMP_InputField_ClampCaretPos_m8E0BB18793A0DD86842F2D713C0AD29A91AC1F62 ();
+extern "C" void TMP_InputField_ClampStringPos_m47559C118F1F0BEA296A7107C6E97650DCCFA516 ();
+extern "C" void TMP_InputField_CreateCursorVerts_mA2E6A4F13FC4559B68BC77D239A4176034A93081 ();
+extern "C" void TMP_InputField_DeactivateInputField_mFE03AFA5FA0BB2B4E16F724174263A7FF410A2C3 ();
+extern "C" void TMP_InputField_Delete_m68544090E96FA6745928F644B5BA8285A908A644 ();
+extern "C" void TMP_InputField_DeleteKey_m81A690E2D917D772B5DC698129207DD645F9630D ();
+extern "C" void TMP_InputField_DoStateTransition_m4772BC053176C14591A2F40CAD15911F53625700 ();
+extern "C" void TMP_InputField_EnforceContentType_m59EB09C7D8B6F5800EC549F64621C79224AE6859 ();
+extern "C" void TMP_InputField_ForceLabelUpdate_m64A9CE0383C82B595437F9D1BEF61AC9B7B0C5DB ();
+extern "C" void TMP_InputField_GenerateCaret_m7AD5AFB001E4C41CE0108FBD8F1153F8860E47D8 ();
+extern "C" void TMP_InputField_GenerateHightlight_mDE2194997C2D1E45D83F68A1F2BC329D6E0D6827 ();
+extern "C" void TMP_InputField_GraphicUpdateComplete_m060885B2AC9C2B6BD61A64B223AB4F7600814FBF ();
+extern "C" void TMP_InputField_Insert_m2FFEF28CBACC44053B06EB191BF059C5BAD1105C ();
+extern "C" void TMP_InputField_LateUpdate_m88C7B9A4318CD78B77145AD045B56B5DAC78FF4C ();
+extern "C" void TMP_InputField_LayoutComplete_mA3DF9791D0DA69309E5956B2C0A243BB7EB85D8D ();
+extern "C" void TMP_InputField_MarkGeometryAsDirty_mFB94D8F7F042A4BB1B247A0731DABA6350E6B45F ();
+extern "C" void TMP_InputField_MoveDown_mFAA5591109F89E9FABE71676DFBC96635F79D3A7 ();
+extern "C" void TMP_InputField_MoveDown_m14F75BACAB710DD1AB04C6BBA1C277BD86CD6E58 ();
+extern "C" void TMP_InputField_MoveLeft_m83710D2E07767B1A23F0579537FBD4F75EFE0A41 ();
+extern "C" void TMP_InputField_MovePageDown_m7A468BB79B71C377E15F6CE48A6E6F567DEAC436 ();
+extern "C" void TMP_InputField_MovePageDown_m307E831B04435658B986CD963F9745CB9561034D ();
+extern "C" void TMP_InputField_MovePageUp_m858E89B8228263A1DA49277BBDB72C83B2169094 ();
+extern "C" void TMP_InputField_MovePageUp_mC7F2A8E76B8A28DD6C32C829F6A757EF343C5D8F ();
+extern "C" void TMP_InputField_MoveRight_m2A9DFFF076F9A881982904EF397FEEE0EE5E4A85 ();
+extern "C" void TMP_InputField_MoveTextEnd_m1DEFE60D84EDF06CE7F17632AE4BB8331DABECDF ();
+extern "C" void TMP_InputField_MoveTextStart_m2D8ED1B1994B184FE7B00252874E5E02F1FC6283 ();
+extern "C" void TMP_InputField_MoveToEndOfLine_mAB25E7ACB304DD1148B25DF5CAF982CF91B72D42 ();
+extern "C" void TMP_InputField_MoveToStartOfLine_m80915B0041DE0935D27F7B6C56683B4DA83D8825 ();
+extern "C" void TMP_InputField_MoveUp_m88AC4C9A0CF6FE37663AB9CEA48BC9925D29BD35 ();
+extern "C" void TMP_InputField_MoveUp_m2E2C007B705344ECD5656FA9EB6A2B5D5AA148AD ();
+extern "C" void TMP_InputField_ON_TEXT_CHANGED_mBF7C2BEB84E8A67DF73A9EAFAF8B172F377C28CD ();
+extern "C" void TMP_InputField_OnBeginDrag_m20CB228BBE3E6A3AAC961C66EFDA787634571B68 ();
+extern "C" void TMP_InputField_OnControlClick_m670288DB3BA7CFE67997292AF3A2F28F31D9817C ();
+extern "C" void TMP_InputField_OnDeselect_m9F47D1C9B5120BB8D0DB7EB459FCCDE109F2D477 ();
+extern "C" void TMP_InputField_OnDisable_m1B89D908720DB8FB6F8FA9A4644A9B172CC470E6 ();
+extern "C" void TMP_InputField_OnDrag_mD55760E4037E79D28A0166DE58DE0EF7A44EDDF7 ();
+extern "C" void TMP_InputField_OnEnable_m9E31E6218CA50A292F39FD26363A6BED17778F0E ();
+extern "C" void TMP_InputField_OnEndDrag_m395BB2B926B644BB1B5B06E274BA22D052B3964C ();
+extern "C" void TMP_InputField_OnFillVBO_m8481B6A4B13D38CE2DE4F3A44ACF106C28FB7883 ();
+extern "C" void TMP_InputField_OnFocus_m75A70BF833B737F034065CA146C8A14C95200262 ();
+extern "C" void TMP_InputField_OnPointerClick_mAFB40B098932E7713801B18BEB5AA63DD5E67F69 ();
+extern "C" void TMP_InputField_OnPointerDown_m135D44B4B85BE3FC522707DFA527CD281C36AD8C ();
+extern "C" void TMP_InputField_OnScroll_m145E8A2909EBF1C5B53099E047E229DBD2F5F992 ();
+extern "C" void TMP_InputField_OnScrollbarValueChange_mE571EA0D41D708D4CA052611DD57450FFD1BFA41 ();
+extern "C" void TMP_InputField_OnSelect_m2E24E9182A21B7F555CCB6614B223FB1B89DD8DD ();
+extern "C" void TMP_InputField_OnSubmit_mE17833F0E50DC0ABEC040E6630C5EC27F183DB9A ();
+extern "C" void TMP_InputField_OnUpdateSelected_m3F83CE47C35F039FD7337ADECCEC972F27EBD52C ();
+extern "C" void TMP_InputField_ProcessEvent_m3D9BE20C2667DA3D6600539CB3C88B959F3928EE ();
+extern "C" void TMP_InputField_Rebuild_m4E3A79E1FB3E92B03849E0903D83DAC1867ACB5C ();
+extern "C" void TMP_InputField_ReleaseSelection_m74D88BD5A50D66D13831A0463219889A050714DC ();
+extern "C" void TMP_InputField_SelectAll_m410919EBE8CCF14DB25ACE47A3513EA9AC2D6338 ();
+extern "C" void TMP_InputField_SendOnEndEdit_m4B3375F6988CC98D780D7654DFE2EC773D4DC2E8 ();
+extern "C" void TMP_InputField_SendOnEndTextSelection_m5DD285320AB9D6606A7A70FCFE7C5302081E3958 ();
+extern "C" void TMP_InputField_SendOnFocus_m81CB408D3184EEE5E04577FD312EDCC609075016 ();
+extern "C" void TMP_InputField_SendOnFocusLost_m512CC37D236E7B8C4C653D8A138445CF8FD7032E ();
+extern "C" void TMP_InputField_SendOnSubmit_m7E2E48E4E0EEEB82BEED3CCE3BE5CA08E73E72F3 ();
+extern "C" void TMP_InputField_SendOnTextSelection_m8AEB9CD114A0725302EF9EC5C763FE0E0B6AD902 ();
+extern "C" void TMP_InputField_SendOnValueChanged_mBA12B8B93B5DCC5FBFED959FCF2B02E19A6D4DD3 ();
+extern "C" void TMP_InputField_SendOnValueChangedAndUpdateLabel_mE69F70C953F8EE163740F20FEEE337573D92670F ();
+extern "C" void TMP_InputField_SendTouchScreenKeyboardStatusChanged_mEB6A50DCE87564F3FCC3030BFB0AA8FB717C67E0 ();
+extern "C" void TMP_InputField_SetCaretActive_m1505AFE8A6341F9251F86D3C73C1DD9DD0B54AF8 ();
+extern "C" void TMP_InputField_SetCaretVisible_mB8F009AC0299907B1C1325DB3AD070E0DCF78545 ();
+extern "C" void TMP_InputField_SetGlobalFontAsset_m0EFEDE76398C47B2CD565379B465003E5CB92461 ();
+extern "C" void TMP_InputField_SetGlobalPointSize_mFC69E156D07268401BC2F914DD0D956EDA85D5D1 ();
+extern "C" void TMP_InputField_SetText_mD1575DAF69D1DDF88A61D46F8FD6A119B91D65C1 ();
+extern "C" void TMP_InputField_SetTextComponentRichTextMode_m91ACFB7DE6C22070C41A8D02C5DA40F888BABA73 ();
+extern "C" void TMP_InputField_SetTextComponentWrapMode_m9C06D6329AEC07A8FB0A6DC90A941AACB293A21C ();
+extern "C" void TMP_InputField_SetTextWithoutNotify_m03109ED79C9A5313E74A91CAC7A6F7DD1E04648D ();
+extern "C" void TMP_InputField_SetToCustom_mE22AA4893C1802A0F07DE3D298244350B3AFA87F ();
+extern "C" void TMP_InputField_SetToCustom_m3A3B49D63ADEF96FB5E96F3EBA387C4262230FE2 ();
+extern "C" void TMP_InputField_SetToCustomIfContentTypeIsNot_mCF7E89C76039296CEEF106D3C45E671A436AC96D ();
+extern "C" void TMP_InputField_UpdateGeometry_m276135D6071D582B5DE51D6588D796A9F1D02CC8 ();
+extern "C" void TMP_InputField_UpdateLabel_m1361CF967D63717955D4B9062DDBAC157CE20D73 ();
+extern "C" void TMP_InputField_UpdateScrollbar_m79E5DD92F02A613008520F1A225FD19C4118A078 ();
+extern "C" void TMP_InputField_UpdateStringPositionFromKeyboard_m02E8D4DE59F5348018DEF896D12967410A8170D1 ();
+extern "C" void TMP_InputField_UpdateTouchKeyboardFromEditChanges_m062D39378608BA90B22E8903FD8261486747E8A6 ();
+extern "C" void TMP_InputField_set_asteriskChar_m2C53FA48CC322E3B0574ADA58D0358EBA461AFE1 ();
+extern "C" void TMP_InputField_set_caretBlinkRate_m794ED12DB58B63924CC3693865114808DA516DD4 ();
+extern "C" void TMP_InputField_set_caretColor_m4D5434F49390E7B3C6CF826DD84E9C2BF7E62B8F ();
+extern "C" void TMP_InputField_set_caretPosition_m2FF6FF6FAE137F455B49EE2D2885640A38ABE5FB ();
+extern "C" void TMP_InputField_set_caretPositionInternal_m357BEEB0F15098712A3D68C185672C2513A84693 ();
+extern "C" void TMP_InputField_set_caretSelectPositionInternal_mA7C5AAAE2F581554B27B54012FBF67CACF711AA1 ();
+extern "C" void TMP_InputField_set_caretWidth_m5D5293B939B0BB6A04FD4C8C4B1F236430DD7689 ();
+extern "C" void TMP_InputField_set_characterLimit_m02AFDCEFFA7334935F039B99B9E5840C54A4A7D9 ();
+extern "C" void TMP_InputField_set_characterValidation_mE4315D78F21531F33AEA73F2D2ECF5B3DDEE9BF2 ();
+extern "C" void TMP_InputField_set_clipboard_mDC9BFC8924CE63F383FD961DB7B9A77C87317460 ();
+extern "C" void TMP_InputField_set_contentType_m5121FE2275440C7C972230687273EF74426C61CE ();
+extern "C" void TMP_InputField_set_customCaretColor_mBE51FB8ED66B3D9315A60134C42CB0B8253E9278 ();
+extern "C" void TMP_InputField_set_fontAsset_m3EB7C4120BA7B697948E21925F28A82085F19996 ();
+extern "C" void TMP_InputField_set_inputType_mE875126C1491475CC3E3EF707F6AA9A8B1716DD5 ();
+extern "C" void TMP_InputField_set_inputValidator_m3BDEF6DF8CCC0DF0BB69373C12F71E2FE64695BD ();
+extern "C" void TMP_InputField_set_isRichTextEditingAllowed_m8C50F1B682588500FDDC59E24B3D15B379420D0F ();
+extern "C" void TMP_InputField_set_keyboardType_mAAA1ED0DD819CFC4D1C7302385DDEC708FAEADE7 ();
+extern "C" void TMP_InputField_set_lineLimit_m6370634626F36FEC518EAABDB7B623158772E94E ();
+extern "C" void TMP_InputField_set_lineType_m2ED0D14820C15CDD64505BF3A8296CC2F3CD98E9 ();
+extern "C" void TMP_InputField_set_onDeselect_m66244D0802C4DE18E74D978219305E67CE1571C2 ();
+extern "C" void TMP_InputField_set_onEndEdit_m3CBC5E1BC9C8461A4AA32DF8D4E5248D0C1F0467 ();
+extern "C" void TMP_InputField_set_onEndTextSelection_m6AEB3827B448931308805E45D1662B14D2FA716A ();
+extern "C" void TMP_InputField_set_onFocusSelectAll_mE279F1B6D7B0E9841811128726BD296ED037ED3F ();
+extern "C" void TMP_InputField_set_onSelect_m04F0423019B44EDD0533F212DD13B62647F864F2 ();
+extern "C" void TMP_InputField_set_onSubmit_mFC73F25348CCC073D3CD58D813A357DD199530D2 ();
+extern "C" void TMP_InputField_set_onTextSelection_mAD8D171DFA19311B5A2DD08E467F3E4795A74EB8 ();
+extern "C" void TMP_InputField_set_onTouchScreenKeyboardStatusChanged_mC684A2B7A4AF58F8CF32E9F493463C036D4288A4 ();
+extern "C" void TMP_InputField_set_onValidateInput_m881E05A6243CAA0F9EB2D3CA3F112AEB557BA87B ();
+extern "C" void TMP_InputField_set_onValueChanged_mC5CFAD51F0BA7ACF1C8AF804183C2C14E0F10E8F ();
+extern "C" void TMP_InputField_set_placeholder_mC65BEA8F22D6EB597E2A0EC91016409C1982F8A9 ();
+extern "C" void TMP_InputField_set_pointSize_m734C40F79638660D7FD772CD6DFBA0A4A54411E4 ();
+extern "C" void TMP_InputField_set_readOnly_m1640459979AE226D786BBF56AB66C8BDB8450BFB ();
+extern "C" void TMP_InputField_set_resetOnDeActivation_m4747CDA0B69F1D6A9D8AB02FDD74382D7C65C8EA ();
+extern "C" void TMP_InputField_set_restoreOriginalTextOnEscape_mA44ECE89E66468AC747B8E0696274884DB23F58B ();
+extern "C" void TMP_InputField_set_richText_mC953E55B33E17DDFDA1838518466A0DB4766FAF3 ();
+extern "C" void TMP_InputField_set_scrollSensitivity_m6C62D55ABA516CB5378FA0BB624620B6AE12DCEF ();
+extern "C" void TMP_InputField_set_selectionAnchorPosition_m0C3BE27511B1FE4DAE4E5106D346E3F7A6DCED8D ();
+extern "C" void TMP_InputField_set_selectionColor_mF6B6E1FF4CB1DD8895B93059A104ADA34C468900 ();
+extern "C" void TMP_InputField_set_selectionFocusPosition_m61ED8A29E61CDB9021CE4A0C7DAC2CAA15C6C8AF ();
+extern "C" void TMP_InputField_set_selectionStringAnchorPosition_m85FE271C135BB0842140623D1B1D3DDBF19C6FE4 ();
+extern "C" void TMP_InputField_set_selectionStringFocusPosition_mE574AD6FA49FC00ED3A466A66C62D2EA7831E5EC ();
+extern "C" void TMP_InputField_set_shouldHideMobileInput_m8ED8627E9A8B0F8D172DB5A4FDDD60C92E9232B3 ();
+extern "C" void TMP_InputField_set_shouldHideSoftKeyboard_mABA034C70D46D0082296188BB8B49DEE9CA24A6F ();
+extern "C" void TMP_InputField_set_stringPosition_m4E009FFA0D5E67D3EF56B2BEE3B408E752B53241 ();
+extern "C" void TMP_InputField_set_stringPositionInternal_m4FB6D1ED9D413B4B0AE6A42E15E8E09B00DBD653 ();
+extern "C" void TMP_InputField_set_stringSelectPositionInternal_m361C741DF367D7295A5A7ED9D4E8C8B71F2E8756 ();
+extern "C" void TMP_InputField_set_text_m2216272F61CDF30B771A8D4C9C847C0370BCBD5B ();
+extern "C" void TMP_InputField_set_textComponent_m081AD29608049FAE5F0D2B09806ED7DA0A49A94A ();
+extern "C" void TMP_InputField_set_textViewport_mD4241A2B3ADA82231A09315F8A1C7D63123CCB60 ();
+extern "C" void TMP_InputField_set_verticalScrollbar_mCCEDEB20C9E289CE53E3AC14AA0E7D08292654E1 ();
+extern "C" void TMP_InputValidator__ctor_m13BF53AE17FC2913362245907E5E68CFDC251BA1 ();
+extern "C" void TMP_LinkInfo_SetLinkID_m20B1AA296BAA576A803F743D7DB6A1CE59C51C05_AdjustorThunk ();
+extern "C" void U3CU3Ec__DisplayClass10_0__ctor_m2371F017B8DE7BA53A47BC83789EB473E29EC57D ();
+extern "C" void U3CU3Ec__DisplayClass12_0__ctor_m4F24E8CE62E0D7D0E838A1726F4A3810E805D937 ();
+extern "C" void U3CU3Ec__DisplayClass13_0__ctor_m0FA0F842624EC8C1B9DECD2706A9D8B7EDDC4474 ();
+extern "C" void U3CU3Ec__DisplayClass14_0__ctor_mB0A41E33B2C5F81D397D387544953862BDC16B8C ();
+extern "C" void FallbackMaterial__ctor_mCF6E7FD9A15BC095C34E314E59E034AD9559795A ();
+extern "C" void MaskingMaterial__ctor_mCBFFFBABEE1ABF7FA9DA1BA8E404FD7D53E928B8 ();
+extern "C" void TMP_MaterialManager__cctor_mA3E01803C3BD9E9804CA874BA82DDB129A781AFF ();
+extern "C" void TMP_MaterialManager_AddFallbackMaterialReference_m716AC60C927EF988F11532ED30BF6436E6E92004 ();
+extern "C" void TMP_MaterialManager_AddMaskingMaterial_m6E756532DBEDCFBB3B3578FB0CBFF6E4255645BD ();
+extern "C" void TMP_MaterialManager_CleanupFallbackMaterials_m350C64087007C419901EB7AE4475F6D6623DDBD2 ();
+extern "C" void TMP_MaterialManager_ClearMaterials_mCB967BE61BDC535C325D74D54EB2ABF43DD904D2 ();
+extern "C" void TMP_MaterialManager_CopyMaterialPresetProperties_mF602C9E3596B526045982B62B267F98CFD9A3D88 ();
+extern "C" void TMP_MaterialManager_OnPreRender_mCB5BC98FDBD1C0B102E811036BF5136DB2FC9A0D ();
+extern "C" void TMP_MaterialManager_OnPreRenderCanvas_m839EA882D14989062273CD1D75D2CF7E047BD3CE ();
+extern "C" void TMP_MaterialManager_ReleaseBaseMaterial_m12A6C5140B13F213B273FBC806C329D4CB750E80 ();
+extern "C" void TMP_MaterialManager_ReleaseFallbackMaterial_m3ED09333A4A060E004D90CEFD34CF568DC378CF6 ();
+extern "C" void TMP_MaterialManager_ReleaseStencilMaterial_m051D54EA3C478101B9B690BD7C120A6CA0FFA7F5 ();
+extern "C" void TMP_MaterialManager_RemoveFallbackMaterialReference_mFD2148F998A6AEE6C4F2386E5A2F9ACB567CD214 ();
+extern "C" void TMP_MaterialManager_RemoveStencilMaterial_mA81B93609BD3B6064AE083D5E203B4DEFCFD81B1 ();
+extern "C" void TMP_Math__cctor_m28B03C0C82CDC26FC7C8F6A1EE2B2FA133E2666B ();
+extern "C" void TMP_MeshInfo__cctor_mE984F1746BAAC39244E0DE17FA28745BAF828388 ();
+extern "C" void TMP_MeshInfo__ctor_mDB589231FFC0C3C8B285210AD214AF55B05BD1CF_AdjustorThunk ();
+extern "C" void TMP_MeshInfo__ctor_m2BB3A745E1C05B28824E997F16AEE1BA2CBEEB84_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_Clear_m5ED3D53714F14FAAF0312E23C0B2F79557B2A4AE_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_Clear_m8AD3382CBB3129497FAEC30AE3B5C8409D0EB953_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_ClearUnusedVertices_mBD5148E5F2036D084431D4064737CEBF0E87C238_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_ClearUnusedVertices_m9CEB29872034C0F9347835545F5D9D09D2130B8C_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_ClearUnusedVertices_mD690CEC2537EF76870AB69FFED4A8DD31A3AC7F0_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_ResizeMeshInfo_mADFC1672F4FA41419EA5973DFBC86F5F2D6F404D_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_ResizeMeshInfo_mF670709E54C8FA2565148D6BAC962280A444A583_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_SortGeometry_m889F420C133A7500E8F8A4A182EB31AD640CD301_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_SortGeometry_mB66F3F360A82794625B04F842DD117987F450998_AdjustorThunk ();
+extern "C" void TMP_MeshInfo_SwapVertexData_m284B24BD252CD2226ADBB7C88321AE77D0BB0A18_AdjustorThunk ();
+extern "C" void TMP_ScrollbarEventHandler__ctor_mE4ABDC5DB065E8DAA88B03FADD8CDC7218B4D0FD ();
+extern "C" void TMP_ScrollbarEventHandler_OnDeselect_m2EE981A8CE435462B07BB798CE4B1B3CB9C31550 ();
+extern "C" void TMP_ScrollbarEventHandler_OnPointerClick_m5A18FC32525899C65F04E8E9FEE8A61975C4B5E8 ();
+extern "C" void TMP_ScrollbarEventHandler_OnSelect_mC6F121BB11C777927D613241A5489FAE38541A4B ();
+extern "C" void TMP_SelectionCaret__ctor_mEA1FD44789FDEC919CCFE0C0EBC0D09A7D6AE70A ();
+extern "C" void TMP_SelectionCaret_Cull_m6A8E285D4E9E0263B971524C150E13BBD72CBF42 ();
+extern "C" void LineBreakingTable__ctor_mC6A4E8E2994E4991D77840BA533EB36B4F4047A3 ();
+extern "C" void TMP_Settings__ctor_m8E9F9AFF202F895E7A355D60C16E8F47C1F2C4E3 ();
+extern "C" void TMP_Settings_LoadLinebreakingRules_m1932F75FD27536A13BA3973E00E483B6C477B6AD ();
+extern "C" void TMP_Settings_set_enableEmojiSupport_m8B1846832B1F5B043B66D59A765FC3B740274E50 ();
+extern "C" void TMP_Settings_set_missingGlyphCharacter_m5D59C0B92063ADDAB5FED64A9D9612454A0595D5 ();
+extern "C" void TMP_Sprite__ctor_mF12AF1F3615015D80983BCF38AE36E563153B077 ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7__ctor_m08F04F4D0C65189C51CDC46BDCC04AF8B1367BA5 ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_IEnumerator_Reset_m02D8195F2DE1EA6A1687D2857FE327783C02DEF1 ();
+extern "C" void U3CDoSpriteAnimationInternalU3Ed__7_System_IDisposable_Dispose_mF034D4BC13285E41BE50EC8F7A9C22040049BDCB ();
+extern "C" void TMP_SpriteAnimator__ctor_m60F7416159A00530BF4FC021FA42E33953D209E3 ();
+extern "C" void TMP_SpriteAnimator_Awake_m6A9BAB89D2307AFD0BCB270890C84744055D6C5E ();
+extern "C" void TMP_SpriteAnimator_DoSpriteAnimation_mFA62CD0D49EB370AE7FA91FF341AAB4A62CDD315 ();
+extern "C" void TMP_SpriteAnimator_OnDisable_m1B0098A55B41DA3B7CE5687CBB67F13C89BA80D6 ();
+extern "C" void TMP_SpriteAnimator_OnEnable_m0B6EBF3D1FD7E986CCB899B7A07F0A358055A583 ();
+extern "C" void TMP_SpriteAnimator_StopAllAnimations_m80939F1E1D0B76FC7983A5715BD1034D44F59AE1 ();
+extern "C" void U3CU3Ec__cctor_mA3D78523CBFA531D45973F0806CAD9E29C2DE543 ();
+extern "C" void U3CU3Ec__ctor_m2BE6091AB2893038573185E15B588E15C54097F3 ();
+extern "C" void TMP_SpriteAsset__ctor_mA1F4EBC822DA5439B75D2A6AE6654E8949BB6BD2 ();
+extern "C" void TMP_SpriteAsset_Awake_m61FB8D32E487ACB8E7E633A66F9229A869841549 ();
+extern "C" void TMP_SpriteAsset_SortCharacterTable_m774139B8EBF28333DABEFA8A3BAE9C9CAC12C798 ();
+extern "C" void TMP_SpriteAsset_SortGlyphAndCharacterTables_m5A47041A0175347BF9098B6C2BF2142E5FB4B92A ();
+extern "C" void TMP_SpriteAsset_SortGlyphTable_m536D62D66E92109C99BF899A95405BCB24B86721 ();
+extern "C" void TMP_SpriteAsset_UpdateLookupTables_m473F3B6B16DDF60B0D4A07036D0965DAC70EA4A5 ();
+extern "C" void TMP_SpriteAsset_UpgradeSpriteAsset_mC0146E0F2BA3308E4F837318C225E578CCF03FA4 ();
+extern "C" void TMP_SpriteAsset_set_spriteCharacterTable_m9D5D288EB24B0509D965BE54750ED1BB04FBACD1 ();
+extern "C" void TMP_SpriteAsset_set_spriteGlyphTable_m1D4C5BE1BC2ACF4F77FA0A82F903B73852FC58F9 ();
+extern "C" void TMP_SpriteAsset_set_version_mF7C5E09C26144013997151806DBBB41089CD10FB ();
+extern "C" void TMP_SpriteCharacter__ctor_mA39F1B6118C4002E580AFCAEDA9C65FB04B2EFA9 ();
+extern "C" void TMP_SpriteCharacter__ctor_m972B04B1D8B275617BA9F99B781E50470395F771 ();
+extern "C" void TMP_SpriteCharacter_set_name_m2C522613B78BDCE6298D080FB3C88F88BD3DFCFF ();
+extern "C" void TMP_SpriteGlyph__ctor_m741C2A4A809B012FFA4B43E6349E3F6A5F982A9C ();
+extern "C" void TMP_SpriteGlyph__ctor_mAAC585918D47B084D489CCB0682387CE9F95EAB3 ();
+extern "C" void TMP_SpriteGlyph__ctor_mCA68612A69F3A5251BBA7D6ED1BD369679292B10 ();
+extern "C" void TMP_Style__ctor_m1149578B62D350F53B1D3933CB055B86F64A7416 ();
+extern "C" void TMP_Style_RefreshStyle_mDA383979A1CF696431A044B7BFB927C973E41CDC ();
+extern "C" void TMP_Style_set_hashCode_m25B62D1C8BCFAF2440D62703584DCB1492CC5F3C ();
+extern "C" void TMP_Style_set_name_mF0C70FCAAE651D5FC702B39C7ABDFBA390F72A33 ();
+extern "C" void TMP_StyleSheet__ctor_m79D60BAFF83CD70D93262BB6E7851A7FF99A17D3 ();
+extern "C" void TMP_StyleSheet_LoadStyleDictionaryInternal_m03FA3CD9BF70427B5A7D578ADFC31A1C1348969D ();
+extern "C" void TMP_StyleSheet_RefreshStyles_mA5B063D7C7F025717E01817C90A7DB7DE3078C2C ();
+extern "C" void TMP_StyleSheet_UpdateStyleDictionaryKey_m377BB2F87B93A92387B51DA1DC782FE1BE0CD2BD ();
+extern "C" void TMP_StyleSheet_UpdateStyleSheet_m43D3D95B330A07CF426419BF19F4C7B44875B77B ();
+extern "C" void TMP_SubMesh__ctor_m1ADF507E28A75DDAF435089F2CF9FBD8F825A21B ();
+extern "C" void TMP_SubMesh_DestroySelf_mD8C31083236F16DB1E9CF02C944D4B85B8D03B2F ();
+extern "C" void TMP_SubMesh_OnDestroy_mCD31CE389300981012099EDFB0083264094EAB00 ();
+extern "C" void TMP_SubMesh_OnDisable_mCC6CF5F9DE6BF4C6093F278FA08A812CD282AA78 ();
+extern "C" void TMP_SubMesh_OnEnable_m6553FA792DE68981F9CB2E3575E43C59794C3A7D ();
+extern "C" void TMP_SubMesh_SetMaterialDirty_m7D8571FCAFFDE2AA37BA30D366C6CB6930796556 ();
+extern "C" void TMP_SubMesh_SetSharedMaterial_mE1F3FBD23BAC6F4BC62DF87D5E646DC52A657F01 ();
+extern "C" void TMP_SubMesh_SetVerticesDirty_m0DCB0817F132B3EC914185DE787786166C34F081 ();
+extern "C" void TMP_SubMesh_UpdateMaterial_m88AFF6F9C91E2ECFC3FC67DB2D2EB414666E4E08 ();
+extern "C" void TMP_SubMesh_UpdateMeshPadding_m0F83AE63A001CA3E837DBD04C3AE812E3BFAD721 ();
+extern "C" void TMP_SubMesh_set_fallbackMaterial_m5AAE65076AB071DB5FF6483571D8DB8D67DFD34D ();
+extern "C" void TMP_SubMesh_set_fallbackSourceMaterial_mB8A3391019E0935B317231B860745DA815C55E13 ();
+extern "C" void TMP_SubMesh_set_fontAsset_m11C09E550D0582F16625C80616615FD92BE1F31B ();
+extern "C" void TMP_SubMesh_set_isDefaultMaterial_mD752FA7B1C178B697AF37DAE91F75CB1CD5A6380 ();
+extern "C" void TMP_SubMesh_set_material_mA6A729528D7FEC2C7CFDBE04B52290A5F3EBF463 ();
+extern "C" void TMP_SubMesh_set_mesh_m510D900B5ED954F89081D62207D30CA79C5D71A9 ();
+extern "C" void TMP_SubMesh_set_padding_m79E33A101555067B8742040B02825F23FDA7AA4B ();
+extern "C" void TMP_SubMesh_set_sharedMaterial_mCB86338B0FB35D25346FF24E157E68D3568D7EBD ();
+extern "C" void TMP_SubMesh_set_spriteAsset_m44DFDB188DFEF5266A673409BCD85A860081979D ();
+extern "C" void TMP_SubMeshUI__ctor_m275F799B19C7801E92BF5D98EEBA6AF5A5EAD85B ();
+extern "C" void TMP_SubMeshUI_Cull_m4F77B427280B5FF4E6865E10394F9EAEC68E25DF ();
+extern "C" void TMP_SubMeshUI_OnDestroy_m08DA023C2E1465331C49DAF46A8CBCA53BE85F14 ();
+extern "C" void TMP_SubMeshUI_OnDisable_mC4F0D0768E150EFCB43933F3D1A2924C8F152DEC ();
+extern "C" void TMP_SubMeshUI_OnEnable_m6B0440FDC293BC35CA11F08EA1CD277776084DE2 ();
+extern "C" void TMP_SubMeshUI_OnTransformParentChanged_m2CB68442B7E42D9970353B0436D021B6B9343EE3 ();
+extern "C" void TMP_SubMeshUI_Rebuild_m833FA47F3D5403A5FA4E477373787007BD1ABF9C ();
+extern "C" void TMP_SubMeshUI_RecalculateClipping_m0BD1B93003BFB969506393EABB9FA9E3DFB494E7 ();
+extern "C" void TMP_SubMeshUI_RecalculateMasking_m2B143005F268C227CA80869E7634EA30D267A3F6 ();
+extern "C" void TMP_SubMeshUI_RefreshMaterial_m84941526413E70CA592AAD68EB22EF8A851E8175 ();
+extern "C" void TMP_SubMeshUI_SetAllDirty_m9022CC950A08C6FA4382102D9C226AF2FC45B4A1 ();
+extern "C" void TMP_SubMeshUI_SetLayoutDirty_m2908A8725B2343069A6FC6B02B8A43A08400F8CD ();
+extern "C" void TMP_SubMeshUI_SetMaterialDirty_mDE21BF922CF7E76F5BF47EA05532E4A68603F182 ();
+extern "C" void TMP_SubMeshUI_SetPivotDirty_mF3B09B9B40DC7B0EC7CFA82B37633A7548BD327C ();
+extern "C" void TMP_SubMeshUI_SetSharedMaterial_mC2D28565EDA3BF176AC18567DD484DC1A16E3872 ();
+extern "C" void TMP_SubMeshUI_SetVerticesDirty_m78F45A53C0B18BDF80866FA3B35DB5C0F76E010B ();
+extern "C" void TMP_SubMeshUI_UpdateGeometry_m99688341598A7360DD3BEC3BCEC826BD4B767028 ();
+extern "C" void TMP_SubMeshUI_UpdateMaterial_mF0F5647995D3B781F2D170FB951C26BB9200C747 ();
+extern "C" void TMP_SubMeshUI_UpdateMeshPadding_mD3CCCD0DE1D1C463479C52F6A9BE9F52279A7B96 ();
+extern "C" void TMP_SubMeshUI_set_fallbackMaterial_m6F0E2367FBCD108AE3716BF44B6E13DD9C590162 ();
+extern "C" void TMP_SubMeshUI_set_fallbackSourceMaterial_m4F856EBBA2B8B7C4CAC314742995AE6EFB528F62 ();
+extern "C" void TMP_SubMeshUI_set_fontAsset_mFD359974A411A54D0C3177BDD54562CF64E84C57 ();
+extern "C" void TMP_SubMeshUI_set_isDefaultMaterial_m9FE7C3C1AA04CF137D9F9F39725D8D1DE6F315C3 ();
+extern "C" void TMP_SubMeshUI_set_material_m4EA71447E0C2293251DAD48F614DE6C80BE42285 ();
+extern "C" void TMP_SubMeshUI_set_mesh_m5DE44F27BCDA9E6E716E970977A58D9C3EC84A47 ();
+extern "C" void TMP_SubMeshUI_set_padding_mBB5CA628AE09EF49AE9C3979AC56450B9FDB2BF4 ();
+extern "C" void TMP_SubMeshUI_set_sharedMaterial_mA6BDB53634C5F61810CBAA2E7D13FCE2EF78A7C1 ();
+extern "C" void TMP_SubMeshUI_set_spriteAsset_m1E43411260761CF327662C64A747A2B41A6F44D6 ();
+extern "C" void TMP_Text__cctor_m29A610CEFE37029538BFDD4B42DD53C36CF95390 ();
+extern "C" void TMP_Text__ctor_m6444C2C1FB1948F2597F8A1AB77FB239A81E5CA2 ();
+extern "C" void TMP_Text_AddFloatToCharArray_m90938B5E7E0BCF694B33BCCC2351C58255B38787 ();
+extern "C" void TMP_Text_AddIntToCharArray_m65F252E20CD1A2F95B3E27C25A4EF9054A2C0D41 ();
+extern "C" void TMP_Text_AdjustLineOffset_mF8655C0D3F94497F974E6927BFEEB48FE9BB0B39 ();
+extern "C" void TMP_Text_ClearMesh_mC95610B9FB0CC69117865017D087E657F6099B3A ();
+extern "C" void TMP_Text_ClearMesh_m0FCF4061B557A919ACE12D6B7E899AE597AD4096 ();
+extern "C" void TMP_Text_ClearSubMeshObjects_mF2DBF6C9C56368EB8011796B57645BB2E4CBA3A4 ();
+extern "C" void TMP_Text_ComputeMarginSize_m7F2EF19E150F013762C13D40C0BDBBBE62870C49 ();
+extern "C" void TMP_Text_CrossFadeAlpha_m9BE15DAA17DCF9AE8C3EA0EE1EF911FE32E85CD0 ();
+extern "C" void TMP_Text_CrossFadeColor_mDCD43C5F580DACCE75032513A6A8658B3A24F121 ();
+extern "C" void TMP_Text_DrawTextHighlight_mBB66188D449A5056466A7E87C0DB6A62786E4F6E ();
+extern "C" void TMP_Text_DrawUnderlineMesh_mAC0C99B6E0E054743903E252910B0D03AA20F059 ();
+extern "C" void TMP_Text_FillCharacterVertexBuffers_m430F7556BD9CDBBC0C4EA5A50C69D02F77880A7D ();
+extern "C" void TMP_Text_FillCharacterVertexBuffers_mC4D58D84C4B6901054E14E77F8ACFF32E5062CDF ();
+extern "C" void TMP_Text_FillSpriteVertexBuffers_m76C3C465812AF5687B535CBF84F2B022CE2AFABC ();
+extern "C" void TMP_Text_ForceMeshUpdate_m613E9ADA7FC88A86E116D12CDFC7C90F988CCD2E ();
+extern "C" void TMP_Text_ForceMeshUpdate_m73C62676192C3884D169BE89FC113E49A2881815 ();
+extern "C" void TMP_Text_GenerateTextMesh_m0855579D8FEF01CB75B57DCA8580350D2FF2C222 ();
+extern "C" void TMP_Text_GetSpecialCharacters_m113088313670FA27611D4B80E3B716188CD764D2 ();
+extern "C" void TMP_Text_InternalCrossFadeAlpha_m495A8C3BB741FE910DA709272089A396BD0C41CB ();
+extern "C" void TMP_Text_InternalCrossFadeColor_mB447286CE6DDF08F02AF0D51F37BA001CC549B91 ();
+extern "C" void TMP_Text_InternalUpdate_m68E4047E5EB540A055DBB25D6C40408AD3E0DB8F ();
+extern "C" void TMP_Text_LoadDefaultSettings_mF25E632EF6893FC8F21015016A41ECAC84F65070 ();
+extern "C" void TMP_Text_LoadFontAsset_mD54AC24C71FB6E303C04E50C7EFCA7BDA9A23ABA ();
+extern "C" void TMP_Text_ParseInputText_m35CFE982D3C252C472A1FD8C1E64429E5F98CA79 ();
+extern "C" void TMP_Text_ReplaceTagWithCharacter_m4EBA8E9E1246417B03EABBD17DA42570C31D7BEC ();
+extern "C" void TMP_Text_ResizeLineExtents_m4B2D1137863B76A03199E9ED042FEE7C1A1220CC ();
+extern "C" void TMP_Text_SaveGlyphVertexInfo_m5B17CDF9884DBF375C572E6F81893E10A6DD3C6C ();
+extern "C" void TMP_Text_SaveSpriteVertexInfo_m591F4C69A4869D42745398DA7E32A2523CDA183D ();
+extern "C" void TMP_Text_SaveWordWrappingState_m8F1A1BEB7D9D7801ABD343213416CA89E9476CE3 ();
+extern "C" void TMP_Text_SetActiveSubMeshes_m9F91C76D759E2FF69700A71437B4F04C0317F786 ();
+extern "C" void TMP_Text_SetCharArray_m533103FA8E3649D58EB0D266CDE6AA4B06F7CBCF ();
+extern "C" void TMP_Text_SetCharArray_mC32F52335F38CC32E1221AC47362A58C279D1413 ();
+extern "C" void TMP_Text_SetCharArray_m9FAB24E5F518356DE8C4B8C0BB553141920CDDDE ();
+extern "C" void TMP_Text_SetCulling_mD89ADEAA7558083BFB65A6756E92F6D3DB85BEB9 ();
+extern "C" void TMP_Text_SetFaceColor_mBE6F2CE59F3C4B855AC24871229B56166161BFA2 ();
+extern "C" void TMP_Text_SetFontBaseMaterial_m461962576CBEF0A7DF56BD124B60C87FC1B26C67 ();
+extern "C" void TMP_Text_SetOutlineColor_mC054BE8E9F7A79954B20FB41D348EBFC47DE1D80 ();
+extern "C" void TMP_Text_SetOutlineThickness_mFD9DAC528A6FE2392BC1E893A91DAFD586C89793 ();
+extern "C" void TMP_Text_SetShaderDepth_m8F9F3BA9D3679B1A4C4360B0811930D4C7B2FC09 ();
+extern "C" void TMP_Text_SetSharedMaterial_mC61403BE41BD66A4446FC3C42E893A814DD38A78 ();
+extern "C" void TMP_Text_SetSharedMaterials_m9527A8BBBA8BCBABAA664DD0DB21267A218D4D58 ();
+extern "C" void TMP_Text_SetText_m2EEB1DF5B0CB980253EC850A0F13AA56904FFA70 ();
+extern "C" void TMP_Text_SetText_mE32BA75B23EADDAA9DCB4B7EB6E9AF7C5EE5A379 ();
+extern "C" void TMP_Text_SetText_m98B5C09DFCA9EC4189283172512C606A75187DC3 ();
+extern "C" void TMP_Text_SetText_m97A4A792EE5247905AB8256CF1945489227F75D6 ();
+extern "C" void TMP_Text_SetText_mAF0CF7B54C89EBED5402A3782B259C37686CBF74 ();
+extern "C" void TMP_Text_SetText_m2F480412300ED72CA0B1195C0C64C38D56F1F5A8 ();
+extern "C" void TMP_Text_SetTextArrayToCharArray_mB37FD1798AFE8DB899335E39C1B531BF16DB1A5B ();
+extern "C" void TMP_Text_SetTextInternal_mA5A53B531F03D1E1665FEC9F09BB70A66534F068 ();
+extern "C" void TMP_Text_SetTextSortingOrder_m94EC7C47B50FF0E3EE6674F207C69AC551722F6A ();
+extern "C" void TMP_Text_SetTextSortingOrder_mCA46CE0A42648415D5601332BBD53E7641535939 ();
+extern "C" void TMP_Text_SetVertexColorGradient_m75210CF17159C4624ED7CA86B25100D7E621E458 ();
+extern "C" void TMP_Text_SetVertices_mDE2EF960ED878DE7D4A09048ECDBD1307F53900C ();
+extern "C" void TMP_Text_StringBuilderToIntArray_m141E814F8786FF34C240F2397DCB7ECDCDA73C14 ();
+extern "C" void TMP_Text_StringToCharArray_m9C7FED4835F2449022776FD58C44F9270E2F35DF ();
+extern "C" void TMP_Text_UpdateGeometry_mD9C8CAC06C5698122C2CE5ADEA1AC6E5C2AB151A ();
+extern "C" void TMP_Text_UpdateMeshPadding_mA624223D7A36957E5BFDC6BB1576CB24487E60E8 ();
+extern "C" void TMP_Text_UpdateVertexData_mF7AA1914D4AED3B025D7E1BB2A10FB7491784C1F ();
+extern "C" void TMP_Text_UpdateVertexData_m21C3BDEF873C6FD4A0E73113AF55D8070F7B9AC5 ();
+extern "C" void TMP_Text_set_alignment_mC56F6D5F0AF9996F977B8DE999911A0C36F458BD ();
+extern "C" void TMP_Text_set_alpha_mFF33995D9FB8FA28C71E9542E9CD0282EBA413D0 ();
+extern "C" void TMP_Text_set_autoSizeTextContainer_mEE6566FD6355099A4E977925C87BB8026C2069B9 ();
+extern "C" void TMP_Text_set_characterSpacing_m6E04070632B73B9BD2E83FEA57D7FBB4BCC88351 ();
+extern "C" void TMP_Text_set_characterWidthAdjustment_m922AB532464282BB84A68C17BE52E3996CF9EA80 ();
+extern "C" void TMP_Text_set_color_mD588B300B53B5C43018D71A6CD264B594766031C ();
+extern "C" void TMP_Text_set_colorGradient_m66E509F13AF891C7EC178F5201D64CBC6BF3E541 ();
+extern "C" void TMP_Text_set_colorGradientPreset_mC45FBDDBE173C577B8B951E5FCA9DE20F1478502 ();
+extern "C" void TMP_Text_set_enableAutoSizing_m800CA62F5E5F8DFACAFBFCE0F2EDEBA67711273F ();
+extern "C" void TMP_Text_set_enableCulling_m0753EC66C95CB7D48B856EAADD3742EAA6A76C5C ();
+extern "C" void TMP_Text_set_enableKerning_mB37CD958669E5E7D8C186F0DE027E86DB79BD31E ();
+extern "C" void TMP_Text_set_enableVertexGradient_m99548A0B934B629166CDC84115E2AD58D5863692 ();
+extern "C" void TMP_Text_set_enableWordWrapping_m4AFFA9D95B58FDE11164D7548087A5E611600DC5 ();
+extern "C" void TMP_Text_set_extraPadding_m37A9AE68168551DB0DEAFDBE31062B74DD01E582 ();
+extern "C" void TMP_Text_set_faceColor_mA7E84875B26E980BDF9472FE5EA84F78E351C51E ();
+extern "C" void TMP_Text_set_firstVisibleCharacter_m869CC3BE6B29F86CE0CE6E0C7E53DDAFDA423179 ();
+extern "C" void TMP_Text_set_font_mA12EB3B05A3E13AA1A419E41D703565FA38CD93F ();
+extern "C" void TMP_Text_set_fontMaterial_m19DDF984AC62E246FEB3BE7CEAB0223F31D2820D ();
+extern "C" void TMP_Text_set_fontMaterials_m075BC9E192D6D110B4E9AE924AEAF222D2933CD7 ();
+extern "C" void TMP_Text_set_fontSharedMaterial_m00766CC7424BC54B8761A45ED472472C94985A3C ();
+extern "C" void TMP_Text_set_fontSharedMaterials_m96E23908758F3F76845E89B814A4EBEFA2E292F1 ();
+extern "C" void TMP_Text_set_fontSize_m65AA86AAA1DCCDB50F1AF6E9990F5B24F6655E6A ();
+extern "C" void TMP_Text_set_fontSizeMax_m31B146BB88FD3875FF16D2FDF480E06FB28A1813 ();
+extern "C" void TMP_Text_set_fontSizeMin_mA173E8771EC05B1A17C9AD51EE82DF4D1DAEE10F ();
+extern "C" void TMP_Text_set_fontStyle_m45473CFBA98058E820971DBD81DB157D2BCEC884 ();
+extern "C" void TMP_Text_set_fontWeight_m9990C6AE0EA18C7A5BEBF3151782B055E6B5FA5E ();
+extern "C" void TMP_Text_set_geometrySortingOrder_m8AFA5991F8276345A552CE8A06269C5307CA6B94 ();
+extern "C" void TMP_Text_set_havePropertiesChanged_mFE7AE3C0AD44DC45A9A0160A1EDE0DDAEF810B49 ();
+extern "C" void TMP_Text_set_horizontalMapping_m787923BD586D18085D8BD7E6716A4B87D54BC748 ();
+extern "C" void TMP_Text_set_ignoreRectMaskCulling_mE6E1445C52ECF43F3BBE3459244A98872FA88E2E ();
+extern "C" void TMP_Text_set_ignoreVisibility_mDE9831D1E8D5B1D0C5FA2A84209CC91019C84427 ();
+extern "C" void TMP_Text_set_isLinkedTextComponent_m6CCA8C8F4167929FC0762D8C24E445AE209279FB ();
+extern "C" void TMP_Text_set_isOrthographic_m7024C45A40C5E29A537608D96B833BC9AE9E63E5 ();
+extern "C" void TMP_Text_set_isOverlay_mDC3FC2B8935E281D871CB5E69685CC8B67BCEBDB ();
+extern "C" void TMP_Text_set_isRightToLeftText_m33340F6AFAFA1EBE5D167AC0F2633191F80FB7C5 ();
+extern "C" void TMP_Text_set_isUsingLegacyAnimationComponent_mCAA8E948EC34802EC2F3C45D3A2643ADB84B233A ();
+extern "C" void TMP_Text_set_isVolumetricText_m4382357B4BB94E779A34755DB216914B0FCD2A59 ();
+extern "C" void TMP_Text_set_lineSpacing_m398CBDC0EE7380C4107A2C5D3D77113551DC2CAA ();
+extern "C" void TMP_Text_set_lineSpacingAdjustment_mBDB525BB33F7D56959C2940A0F91E6EF75179C92 ();
+extern "C" void TMP_Text_set_linkedTextComponent_m7A420A57136DFBD6B2E792AC0386A7AFE7DFC742 ();
+extern "C" void TMP_Text_set_mappingUvLineOffset_mA718E8C4399C0CFAAA185B77B01D10888D640C30 ();
+extern "C" void TMP_Text_set_margin_mC256DE10A2D8A26A631D7065CDE64F32AED1B9AB ();
+extern "C" void TMP_Text_set_maxVisibleCharacters_mAEF085DC0D75235AF4C533311A9248C1FBD6D9B6 ();
+extern "C" void TMP_Text_set_maxVisibleLines_mF6FB4DDE8126332606D40235C7D9929E4E4F3D51 ();
+extern "C" void TMP_Text_set_maxVisibleWords_mC17A09BD5832843EFF0892329F3EBC74D3F93499 ();
+extern "C" void TMP_Text_set_outlineColor_mFA1C39E129CBF0DF9AD16CAEC8CF1089BECB5D18 ();
+extern "C" void TMP_Text_set_outlineWidth_m152D711479C16DD16F4CFF1F0F62E850C6A4B2D4 ();
+extern "C" void TMP_Text_set_overflowMode_m49CCD6EF8B9A150581703F8C8CC971E70C6D99B8 ();
+extern "C" void TMP_Text_set_overrideColorTags_mC23F3EF47BB9CCE97B659B62F0DDEF9ADCECBEEF ();
+extern "C" void TMP_Text_set_pageToDisplay_m5AC9C27080737EC057DFC30DDD48060378605872 ();
+extern "C" void TMP_Text_set_paragraphSpacing_mFD793C9787CF3F75C56E1969FD136FD10E638067 ();
+extern "C" void TMP_Text_set_parseCtrlCharacters_mF08487262983C4256C5307793E59B4F97561BB97 ();
+extern "C" void TMP_Text_set_renderMode_mAA70ED3023B598E47B362C1C3A98B5EEFC25D880 ();
+extern "C" void TMP_Text_set_richText_m3D51ED9DC0254FAAE687B63C0F3914E59325D2ED ();
+extern "C" void TMP_Text_set_spriteAsset_m0DC109F55710D3DAFE660927BEF63A116869E35D ();
+extern "C" void TMP_Text_set_text_m5CFCFE6E69321D9E6B6BAEAF92AE153C3484A960 ();
+extern "C" void TMP_Text_set_tintAllSprites_m29C7254A59E55C3BA6983E9E00175E91A15412AF ();
+extern "C" void TMP_Text_set_useMaxVisibleDescender_m9701F6F44DB46F6D93386D7A97AB50245D29C28F ();
+extern "C" void TMP_Text_set_vertexBufferAutoSizeReduction_mF2EF4DEC27FB0FF03686A1E4FE607C5797C68701 ();
+extern "C" void TMP_Text_set_verticalMapping_mE4D1BFF7CABFCF2916818FE5D01C85A9C68301A6 ();
+extern "C" void TMP_Text_set_wordSpacing_mF4C4ED004D3EBB8B8D2F0384768051352B02251F ();
+extern "C" void TMP_Text_set_wordWrappingRatios_m6F03BAD11970220DC1CF07B0C23E22B1BB28C896 ();
+extern "C" void TMP_TextElement__ctor_mFE79DDEA4E85B8E0DC4313882351CA197A8550C1 ();
+extern "C" void TMP_TextElement_set_glyph_mBF78A26600836A3A9938BB5F43D63C180027AFEE ();
+extern "C" void TMP_TextElement_set_glyphIndex_mDA12F474FC95D2D4B3229459C7C6FFC9968B42C4 ();
+extern "C" void TMP_TextElement_set_scale_m8F560287155DCE2ED4A0E69DA983DAF2FCCD2F38 ();
+extern "C" void TMP_TextElement_set_unicode_m3E2547D4FA653B812378A5606F3B963F72237DEF ();
+extern "C" void TMP_TextElement_Legacy__ctor_m43ED3C88A1227B77B614A37181E073A222DA90A4 ();
+extern "C" void TMP_TextInfo__cctor_mD2C9864BA68C11DE6989DC59C8F3F73B4F4B31E9 ();
+extern "C" void TMP_TextInfo__ctor_mF39F1C7955515DA7FF63D7D3AB5EA580A0E2449C ();
+extern "C" void TMP_TextInfo__ctor_m2A240B71105AF53F8A24C1BDB5C7A78E166DD57E ();
+extern "C" void TMP_TextInfo_Clear_m1CDBF30EE7548387764B806645D7910E512C7E88 ();
+extern "C" void TMP_TextInfo_ClearAllMeshInfo_m7DD7B5114DFACBABDDE7D7B27C728C34E5EF05A9 ();
+extern "C" void TMP_TextInfo_ClearLineInfo_m7BF5E63C7B49C5FB7EBB116D5C94DD3901B0B03B ();
+extern "C" void TMP_TextInfo_ClearMeshInfo_m90F088957B6778FA4278D50432323F0C2A83B483 ();
+extern "C" void TMP_TextInfo_ClearUnusedVertices_m7645AF7AB94651BA920CF6FC7E4D7E4105E9DE54 ();
+extern "C" void TMP_TextInfo_ResetVertexLayout_m39014C2A2F811ED9C67A7532E5A3CB45FECD3799 ();
+extern "C" void TMP_TextParsingUtilities__cctor_mDC279E0ABC1835CC429A36CB85BC1A1EC6E7C9FC ();
+extern "C" void TMP_TextParsingUtilities__ctor_m6395312107C3C35C3578D843A4F19E521DE481ED ();
+extern "C" void LineSegment__ctor_m3FE30DA4047C714B588477076617C5812064ABAC_AdjustorThunk ();
+extern "C" void TMP_TextUtilities__cctor_m3858383B99A5C79C62DC5DD5DE593E67C2599382 ();
+extern "C" void TMP_UpdateManager__ctor_m5E12CCE949D7259442974D1A7D6900AA25F136B0 ();
+extern "C" void TMP_UpdateManager_DoRebuilds_m234D33DCEBB0C9559D53E153A59A1A005A9D6A86 ();
+extern "C" void TMP_UpdateManager_InternalRegisterTextObjectForUpdate_m91657EDEA9E610389658252EFE741DD382CB5693 ();
+extern "C" void TMP_UpdateManager_InternalUnRegisterTextElementForGraphicRebuild_m2F52786882934428AEF607CCCE755A8D6D88820B ();
+extern "C" void TMP_UpdateManager_InternalUnRegisterTextElementForLayoutRebuild_mDB68AE152179562FC92E7DA9B53E1E1437A8024A ();
+extern "C" void TMP_UpdateManager_InternalUnRegisterTextObjectForUpdate_mC772067A6F9FAE06B5E9AAB1EF78E77B63233D10 ();
+extern "C" void TMP_UpdateManager_OnBeginFrameRendering_mF0DF312CF368AFC386DA367F37BBC0A706F61FC6 ();
+extern "C" void TMP_UpdateManager_OnCameraPreCull_m5DE3D79212A60E0310878EE7A1EC56B52539BB3C ();
+extern "C" void TMP_UpdateManager_RegisterTextElementForGraphicRebuild_m3D34D167DC3FF3E09A9D6DE1493C3969751636AB ();
+extern "C" void TMP_UpdateManager_RegisterTextElementForLayoutRebuild_m8F55EC6B0A9CC4BEAC5AD2E95E64268597BE47BB ();
+extern "C" void TMP_UpdateManager_RegisterTextObjectForUpdate_m9DF5E044B54B3EEA77ED895B43C65757FA05ABC9 ();
+extern "C" void TMP_UpdateManager_UnRegisterTextElementForRebuild_mCB1E447E215194B09F38F3A2221C82C07FE0CB02 ();
+extern "C" void TMP_UpdateManager_UnRegisterTextObjectForUpdate_mF2A6084A1F39167B7B76774614BB4FF40DC72C20 ();
+extern "C" void TMP_UpdateRegistry__ctor_m4C1958E39CFA299F7CA163AD35DDFB4A0E87E3B5 ();
+extern "C" void TMP_UpdateRegistry_InternalUnRegisterCanvasElementForGraphicRebuild_m6A1F61221822AAA3E67E07DA4417C23D9B6E6849 ();
+extern "C" void TMP_UpdateRegistry_InternalUnRegisterCanvasElementForLayoutRebuild_mC1CB8E5E893EE96B5D429661128AE482D90F4A94 ();
+extern "C" void TMP_UpdateRegistry_PerformUpdateForCanvasRendererObjects_m7CB26CAAB99D00C370C1647CCCF6B0FBCF3644D2 ();
+extern "C" void TMP_UpdateRegistry_PerformUpdateForMeshRendererObjects_m8C6ED87B4ED13537FAF1694077D81A156CA4ED77 ();
+extern "C" void TMP_UpdateRegistry_RegisterCanvasElementForGraphicRebuild_m30D79014737D78910B19A8F97A508AEFD506D423 ();
+extern "C" void TMP_UpdateRegistry_RegisterCanvasElementForLayoutRebuild_m8621A5736D568569C6325487CD6F0B300A0C3488 ();
+extern "C" void TMP_UpdateRegistry_UnRegisterCanvasElementForRebuild_m68958A25BB03374F69AC08C3FD8782B6426BC853 ();
+extern "C" void TMPro_EventManager__cctor_mCA21D908D041480E45EE10BB50C9E355012BCD6C ();
+extern "C" void TMPro_EventManager_ON_COLOR_GRAIDENT_PROPERTY_CHANGED_m1D28B23D29418E7E89B572F178FEEA19B765DBC3 ();
+extern "C" void TMPro_EventManager_ON_COMPUTE_DT_EVENT_m893D8FF31C23EAF115A365AC0AFFCB84E4EB3FC8 ();
+extern "C" void TMPro_EventManager_ON_DRAG_AND_DROP_MATERIAL_CHANGED_mEEAA4879052134D8CB89772E9630F2D5D9352B1C ();
+extern "C" void TMPro_EventManager_ON_FONT_PROPERTY_CHANGED_mA119E6DF11D0E33F257E9AB3BD6335509D810CB5 ();
+extern "C" void TMPro_EventManager_ON_MATERIAL_PROPERTY_CHANGED_m64111F5FE1A3B780301C9D9934F6B6C0DD655D97 ();
+extern "C" void TMPro_EventManager_ON_PRE_RENDER_OBJECT_CHANGED_m01D8F14A61481E705720BCD2F3CD2D191A434121 ();
+extern "C" void TMPro_EventManager_ON_RESOURCES_LOADED_mF3C17118C632424A69A43353DDE7076AC1BD6C28 ();
+extern "C" void TMPro_EventManager_ON_SPRITE_ASSET_PROPERTY_CHANGED_m14F4BF7FD9A0CD0A1BEE5619CF388D512105EBF6 ();
+extern "C" void TMPro_EventManager_ON_TEXTMESHPRO_PROPERTY_CHANGED_m0EF943AD6E0AB434C981A8CE12B5FFBBFF55635E ();
+extern "C" void TMPro_EventManager_ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED_mD3DDF1D0080955E9475ABDC2E0E06DC078D82BB6 ();
+extern "C" void TMPro_EventManager_ON_TEXT_CHANGED_m950F4ADB007127B72E57303060C7F6405563E051 ();
+extern "C" void TMPro_EventManager_ON_TEXT_STYLE_PROPERTY_CHANGED_m5C2496CFFEC96D62063E980EC1CACC2B17EAEFD7 ();
+extern "C" void TMPro_EventManager_ON_TMP_SETTINGS_CHANGED_m49D6B3DEE0A12BD84519D29859276E9C3069B1BE ();
+extern "C" void TextContainer__cctor_m3B5C9B4C82881CC2B5411E29E2C9390BABE2746F ();
+extern "C" void TextContainer__ctor_mBEF5E1C96827C11C21C024C3E47D88F2842C86D7 ();
+extern "C" void TextContainer_Awake_m391E508A8F576247DC01EFA007AB10455CE3262A ();
+extern "C" void TextContainer_OnContainerChanged_mA4756AD378D89899F0104FADB78E9C0DEB17B642 ();
+extern "C" void TextContainer_OnDisable_m2DE78D6020E43D6B6936A0E5A5B6E0789B0B66B7 ();
+extern "C" void TextContainer_OnEnable_m3EFBC18262089B28E86AB0113A3EA9877D39C76F ();
+extern "C" void TextContainer_OnRectTransformDimensionsChange_m269F9BEF3904A73D7A81FE711C9DB8DE7E1D0D63 ();
+extern "C" void TextContainer_SetRect_m1A423889E2E0A1E2CD284CEA2F5161DB76B1D7EE ();
+extern "C" void TextContainer_UpdateCorners_m8CA2EA7F3EF7F862E7AE0E718FA1A683A02BDD65 ();
+extern "C" void TextContainer_set_anchorPosition_m0B5397BE986F6FDE4E6F7D1C3C41BBF07F2D17CA ();
+extern "C" void TextContainer_set_hasChanged_m95DAC2C59558680E0CAEF26159EC3B8D67C3A720 ();
+extern "C" void TextContainer_set_height_m6CB957A4807F81C3B27002B5CF5B050806D74FE2 ();
+extern "C" void TextContainer_set_isAutoFitting_m03D5D5AFE1CC6F5EC53A137FA768E66F3068E965 ();
+extern "C" void TextContainer_set_margins_mE83338B5A002652CF7C30AEDCC0870A7A1A68217 ();
+extern "C" void TextContainer_set_pivot_m1F84BF8C34F992D8CFEBB3169D92DDA12FE0E9D1 ();
+extern "C" void TextContainer_set_rect_m69AE2FF8B8C3F9B4D3D183307A1DDF28FD8179F9 ();
+extern "C" void TextContainer_set_size_mA2BA9DA2DF2914014657E454BFE50219E669160B ();
+extern "C" void TextContainer_set_width_mEE968C4EDF5BAF31082A3170B533B276C7A82D16 ();
+extern "C" void TextMeshPro__ctor_mA698AF49114D85F9AF454AE3A99D0A651A86169C ();
+extern "C" void TextMeshPro_AdjustLineOffset_m55ACDBE58E15D562080A2658A20CE7E86C527B42 ();
+extern "C" void TextMeshPro_Awake_m5E38656FAAB13872824A91BD73BA320E81AC6A4F ();
+extern "C" void TextMeshPro_CalculateLayoutInputHorizontal_mC0EB6F288F991A967D418AFA3564D06C3A5E3A09 ();
+extern "C" void TextMeshPro_CalculateLayoutInputVertical_m2E5ECD15D93BA1F83AFA8DF4014DB7D71941C1EE ();
+extern "C" void TextMeshPro_ClearMesh_m1B71E176AD8D9B36DCA1004F7FF17DC641292C8C ();
+extern "C" void TextMeshPro_ClearSubMeshObjects_mE9E5362F096A0534D87DB22F112B7E83B3B80E48 ();
+extern "C" void TextMeshPro_ComputeMarginSize_m20E3FE09C37BBD17C4D91EF80A837AE5A50B1949 ();
+extern "C" void TextMeshPro_CreateMaterialInstance_m2009255A68E0B7D6EC30BD04C39FD09BB00FC054 ();
+extern "C" void TextMeshPro_DisableMasking_m8F66A13948C460CFB5AF46A8ED39F06BEC306E2C ();
+extern "C" void TextMeshPro_EnableMasking_mE1A96C9396D808908FAAD78EAA2FB1F31C66EDA3 ();
+extern "C" void TextMeshPro_ForceMeshUpdate_m7A0B9D97E01D4400E37C6ABF1D61E48FB2C6C3E8 ();
+extern "C" void TextMeshPro_ForceMeshUpdate_mE9EC335438D424BB1640ABD6E2E7BA705301751B ();
+extern "C" void TextMeshPro_GenerateTextMesh_mCD97FC04394E61D8CE6EE25BCFE74DCE0697528D ();
+extern "C" void TextMeshPro_InternalUpdate_m8DCC879859E90C68FACE7504A7AAD3B8F066A5A9 ();
+extern "C" void TextMeshPro_LoadFontAsset_m7A4B00199E6238F1738B4FA4E33CBC1163F807EC ();
+extern "C" void TextMeshPro_OnDestroy_m42F5F590CC94C5C01A2C13C0A2F912B4BBC9B867 ();
+extern "C" void TextMeshPro_OnDidApplyAnimationProperties_m585B92367BF647D817F240128FA1208DFDEE817B ();
+extern "C" void TextMeshPro_OnDisable_m5C41B70FEC1E34E156FDEA975B1E2C386D1FB80D ();
+extern "C" void TextMeshPro_OnEnable_m25C8A802905989C75A9FDCA3625954A6193E14CA ();
+extern "C" void TextMeshPro_OnPreRenderObject_m76401AE06F024952C6C61FCF3F996597AFAB7D60 ();
+extern "C" void TextMeshPro_OnRectTransformDimensionsChange_m0415026A8B66522899CA3C4B2BFA8B7B3B9A6C96 ();
+extern "C" void TextMeshPro_OnTransformParentChanged_mDAAA55A4C44868F4AE50584AA0432A4DD962E2CF ();
+extern "C" void TextMeshPro_Rebuild_m56AD9C3DB6074B97404F8DA5B3F6989102EF59AD ();
+extern "C" void TextMeshPro_SetActiveSubMeshes_m5E2DC5A77251F44F0E9CB7468BB34A2A1CB6697F ();
+extern "C" void TextMeshPro_SetAllDirty_m07F868E653AEC8C3DD223468C4F5F2A265A12758 ();
+extern "C" void TextMeshPro_SetCulling_mBAAFB0E5E8A2CE2691BD0238CBC3BD48AF3C8D2B ();
+extern "C" void TextMeshPro_SetFaceColor_mB4AC4FE0254CBC5824E392DF1893AEE76F3937C9 ();
+extern "C" void TextMeshPro_SetLayoutDirty_mF303356F28966ECC5B9D44F134D104F16ED7FD00 ();
+extern "C" void TextMeshPro_SetMask_m3B3CE88AF40CA51EE3871ECF7E004A449F5B36E4 ();
+extern "C" void TextMeshPro_SetMask_m44F7488A9B0B3B4ACF27B5D18AB5E32EB37D6AD2 ();
+extern "C" void TextMeshPro_SetMask_m3D94FFE674A91AAFD41139268508536E1BE05B28 ();
+extern "C" void TextMeshPro_SetMaskCoordinates_m54C7DBCEAB18454A6F75C84E00B1128E3ED943CC ();
+extern "C" void TextMeshPro_SetMaskCoordinates_mB715DBA84F3E9321E46843C35D2AB818907CB8FF ();
+extern "C" void TextMeshPro_SetMaterialDirty_mFD1FE415AB92B60D66F93EA9BD4621FE15511778 ();
+extern "C" void TextMeshPro_SetMeshFilters_m9138A0F9DFBCFAE3F5466F69B81163BABD383377 ();
+extern "C" void TextMeshPro_SetOutlineColor_m2B22937897B62C54583EAAE236E70F56AE7E6C0F ();
+extern "C" void TextMeshPro_SetOutlineThickness_mC58D5697D1432E6106CB5E86D7DB322E96EEBC2B ();
+extern "C" void TextMeshPro_SetPerspectiveCorrection_m2EC45FE3A22D0A2D495C4EF6F4502406BCECABBC ();
+extern "C" void TextMeshPro_SetShaderDepth_m67FD78A78E77FF5819D01AD6AD6E8CF151F6C9DC ();
+extern "C" void TextMeshPro_SetSharedMaterial_m7C16CFF7332B01C6FBFC1F4BEC8EA16D48B47266 ();
+extern "C" void TextMeshPro_SetSharedMaterials_m0277C4410B3BE554AA1BA4BCA9D85B7CB090B33F ();
+extern "C" void TextMeshPro_SetVerticesDirty_m9330F902CB5ED4B2CF7D080D4C1FCA1B10AD8E43 ();
+extern "C" void TextMeshPro_UpdateEnvMapMatrix_m5CFCB2AB07790DF1147A7FF8EDDC9361BF9A7E8B ();
+extern "C" void TextMeshPro_UpdateFontAsset_m386F86E8253E20A750757117EA0B236824C54849 ();
+extern "C" void TextMeshPro_UpdateGeometry_m09FFA9E3B3F40C8E35512039C477923B2437AEC0 ();
+extern "C" void TextMeshPro_UpdateMask_m3D0E6B7DF4B8E946CB7B0647C779072799B8B344 ();
+extern "C" void TextMeshPro_UpdateMaterial_m7ABB7C6E9AC4CF1BE4A443AEEB15D2A0E6B3073C ();
+extern "C" void TextMeshPro_UpdateMeshPadding_mA249FBD76F21EBEEB8D503AC7DD760AFCFDC6B38 ();
+extern "C" void TextMeshPro_UpdateSDFScale_m5DB958114C9CA327E6130093740887F476928376 ();
+extern "C" void TextMeshPro_UpdateVertexData_mEFC59291A16EB76F1E9DB883254B6FA51C45AE3A ();
+extern "C" void TextMeshPro_UpdateVertexData_m4732758FF09BA1B25D50CA2416CDB732406434C2 ();
+extern "C" void TextMeshPro_set_autoSizeTextContainer_m51DB85ECFAACBD2C1021C4035DB231053D3696C4 ();
+extern "C" void TextMeshPro_set_maskType_m234C8751848A3603345D67A5D1E741E3F8D4C458 ();
+extern "C" void TextMeshPro_set_sortingLayerID_mB66B1467EC5FFE9321B1797471013B9E4EA7F67B ();
+extern "C" void TextMeshPro_set_sortingOrder_m57BA7A34D6AE109F81460F77E8098A43A3D9C8F6 ();
+extern "C" void TextMeshProUGUI__ctor_mBD29AC494F8EE3D93174D945170B70DEF66E338B ();
+extern "C" void TextMeshProUGUI_AdjustLineOffset_mC67B89AD7902F828CC598D1B9F4ABDE004EF898C ();
+extern "C" void TextMeshProUGUI_Awake_mFA110CE8FD9EB87CD84222FB4ECEE37BD61E410D ();
+extern "C" void TextMeshProUGUI_CalculateLayoutInputHorizontal_m85089D4DAFB4077227DDE7D159288304142D72F2 ();
+extern "C" void TextMeshProUGUI_CalculateLayoutInputVertical_mB3F5E82FD3E1176836E7DD155CECAE958E2CD262 ();
+extern "C" void TextMeshProUGUI_ClearMesh_m9D06AC60464E17518DE0F886B54E9D181F34FA76 ();
+extern "C" void TextMeshProUGUI_ComputeMarginSize_mA89DD6FB8F7D8AC4B0D15A8DDEF2C529629F97E9 ();
+extern "C" void TextMeshProUGUI_Cull_m3B3D1918E11C2EB162BD88596DA2665D346DA775 ();
+extern "C" void TextMeshProUGUI_DisableMasking_m091E471BDEC2D447B59CAB262BAD47388AA0AF8B ();
+extern "C" void TextMeshProUGUI_EnableMasking_m30D8389D5F11655BB87206EB8C5748F5C4C6A9F4 ();
+extern "C" void TextMeshProUGUI_ForceMeshUpdate_mB3553EEC8F8074DFE42F3F8E7FDCA8EFADD48B36 ();
+extern "C" void TextMeshProUGUI_ForceMeshUpdate_m7A36662E237EFDCB114C52D378F29C04BB17441C ();
+extern "C" void TextMeshProUGUI_GenerateTextMesh_m28F6F3927D00EE31CA0016D955FA94AC170CBC64 ();
+extern "C" void TextMeshProUGUI_InternalCrossFadeAlpha_mC3C3AB4AA2394F5876E2E1341D172D2892CA695B ();
+extern "C" void TextMeshProUGUI_InternalCrossFadeColor_m98973DC3EFB682C3E7F78F99322386D72F1F2C8F ();
+extern "C" void TextMeshProUGUI_InternalUpdate_m54B35F28AD033F2FEB952AF38E26A3EDC4877573 ();
+extern "C" void TextMeshProUGUI_LoadFontAsset_m16A0DBB50FD14E10C497FA5663BADAE7AC319046 ();
+extern "C" void TextMeshProUGUI_OnCanvasHierarchyChanged_m52EA0B289457A26C6A600C5245149FCD221AD51B ();
+extern "C" void TextMeshProUGUI_OnDestroy_m83B1CFF16029CFF5FAC593A2473D7458E19006A8 ();
+extern "C" void TextMeshProUGUI_OnDidApplyAnimationProperties_mBDADC3B7363F3AC0C25301DFB30EA5E4D158AFB2 ();
+extern "C" void TextMeshProUGUI_OnDisable_mCFB9B94B69DFDF5860EBFF1732CB41453E68AB5B ();
+extern "C" void TextMeshProUGUI_OnEnable_m1438F6B03B5D9894EACB591FE7DD97C7208323CF ();
+extern "C" void TextMeshProUGUI_OnPreRenderCanvas_mA1BB76D11387DF804E68A7C05BA58651ADAC825E ();
+extern "C" void TextMeshProUGUI_OnRectTransformDimensionsChange_m3A188028580A332B0BF015660E88D8D933E6873E ();
+extern "C" void TextMeshProUGUI_OnTransformParentChanged_m6B64607E1AAEFF5E1C6A11B8508A7AB351B268DC ();
+extern "C" void TextMeshProUGUI_Rebuild_m7BA4E1445DB42FD1EC2DB0A92324458BD178F610 ();
+extern "C" void TextMeshProUGUI_RecalculateClipping_mEBFDA7832A48955DDF15D506DEEA0A5D4DD006AA ();
+extern "C" void TextMeshProUGUI_RecalculateMasking_m61D20B962F888AFA00A0ED56F63BAEECEAE90B15 ();
+extern "C" void TextMeshProUGUI_SetActiveSubMeshes_m2BF988D6B0B5906D6E595DB4AAAF943EA295CDE4 ();
+extern "C" void TextMeshProUGUI_SetAllDirty_mB1EAEFBFDC8FE1429BBEFD2A8FC7579DB29CC769 ();
+extern "C" void TextMeshProUGUI_SetCulling_m48BABBF3B53A65758683EC9F67DCBD371BFFAEC1 ();
+extern "C" void TextMeshProUGUI_SetFaceColor_mD488E7CCE4AB5EDD398058B56499B938F5113BA5 ();
+extern "C" void TextMeshProUGUI_SetLayoutDirty_m8953EAA49BE07C70E8E9417E9B6C1D1A3324387E ();
+extern "C" void TextMeshProUGUI_SetMaterialDirty_mEDE19230B1968C34645971133693D4B48234FBC9 ();
+extern "C" void TextMeshProUGUI_SetMeshArrays_m29F4A61043C149DBD9279840FAFF324ED70ED007 ();
+extern "C" void TextMeshProUGUI_SetOutlineColor_m2F4C6E3CFA36F8517B49C8736565856151D8431A ();
+extern "C" void TextMeshProUGUI_SetOutlineThickness_mBDF9D974779F900058E296C372109AC499970700 ();
+extern "C" void TextMeshProUGUI_SetPerspectiveCorrection_m723D78DE61D839E290D8FA77264AA5EB5B354DCD ();
+extern "C" void TextMeshProUGUI_SetShaderDepth_mA210ECD97359D897C69D13FFDA01E066C73645C1 ();
+extern "C" void TextMeshProUGUI_SetSharedMaterial_m75E3B7721A5598D6B0BB1E309E260F8C5064B741 ();
+extern "C" void TextMeshProUGUI_SetSharedMaterials_m6FAD51D7D4568F252B4CE716FE2C5B74039435B9 ();
+extern "C" void TextMeshProUGUI_SetVerticesDirty_m0CAD96328132622440BF8CE5790489A88F5823AD ();
+extern "C" void TextMeshProUGUI_UpdateEnvMapMatrix_m935C1793F9F3C08994930DCB35A530269DDC5D0F ();
+extern "C" void TextMeshProUGUI_UpdateFontAsset_m33A9B5FAB14788A93B68FBB6DB2FFE84E4E53F8C ();
+extern "C" void TextMeshProUGUI_UpdateGeometry_mD403AB070018706FBB17B64F92F31FAD9F76491A ();
+extern "C" void TextMeshProUGUI_UpdateMask_m966107DE699266CE2B33BD1FF36FF9AAC6ACB30B ();
+extern "C" void TextMeshProUGUI_UpdateMaterial_mDBD372789086439AB59B43220B1EBD9303AC4238 ();
+extern "C" void TextMeshProUGUI_UpdateMeshPadding_m49A6EDDB84193BE5C7B5D9EA9A8A59C4FA4D6E9B ();
+extern "C" void TextMeshProUGUI_UpdateSDFScale_mE095308C38511257FC16EA6DC60C949FF4CC604D ();
+extern "C" void TextMeshProUGUI_UpdateSubObjectPivot_mB69AE45DEB3F545B0525116763FBCF9661194A73 ();
+extern "C" void TextMeshProUGUI_UpdateVertexData_m0BD656588435B103300D64099FBD328B0025A3C0 ();
+extern "C" void TextMeshProUGUI_UpdateVertexData_m08B88C1AAC495EC0647616D5225DF0C980E04E09 ();
+extern "C" void TextMeshProUGUI_set_autoSizeTextContainer_m0E7363B40B89938A34BF34CDC6F1FCE2E0C2FD62 ();
+extern "C" void TextMeshProUGUI_set_maskOffset_m897D6C97F9FA6A7ECE0FE5308C581F34D0067CE5 ();
+extern "C" void VertexGradient__ctor_m8EF36DB1F57E99DEDCEA45F3669BA6830F7D5677_AdjustorThunk ();
+extern "C" void VertexGradient__ctor_mFB456877435DCACDB401EC1CA3FAC38D2777EEAB_AdjustorThunk ();
+extern "C" void ThrowStub_ThrowNotSupportedException_mF0DAFE591641D359313AB87E6900E4B05E42390A ();
 extern "C" void ThrowStub_ThrowNotSupportedException_mA248D7D785682F31CDF02FDC1FAB3173EE1B1E19 ();
 extern "C" void ThrowStub_ThrowNotSupportedException_mF1DE187697F740D8C18B8966BBEB276878CD86FD ();
-extern "C" void ThrowStub_ThrowNotSupportedException_mF0DAFE591641D359313AB87E6900E4B05E42390A ();
 extern "C" void AddComponentMenu__ctor_m33A9DE8FEE9BC9C12F67CF58BFEBECA372C236A3 ();
 extern "C" void AddComponentMenu__ctor_m78D1D62B91D88424AE2175501B17E4609EF645EA ();
 extern "C" void AnimationCurve__ctor_mA12B39D1FD275B9A8150227B24805C7B218CDF2C ();
@@ -10122,6 +11679,7 @@ extern "C" void StaticAccessorAttribute__ctor_m6698A0204830E258A0D9881AFA7368196
 extern "C" void StaticAccessorAttribute__ctor_m8F492CF3D710FAE0D63BB8C2640D271264C84448 ();
 extern "C" void StaticAccessorAttribute_set_Name_mBFD8EFC09BA63B0CE005B306037E564B530377D0 ();
 extern "C" void StaticAccessorAttribute_set_Type_m85233B66B145700BD66145EB0AA31D0960896AE2 ();
+extern "C" void ThreadSafeAttribute__ctor_mC3058002BD52E2EB8475B8115A1AC5FFCA53E1DD ();
 extern "C" void UnmarshalledAttribute__ctor_m7E224B875755FD7109EDFB2CBA2A2F7F617A1191 ();
 extern "C" void VisibleToOtherModulesAttribute__ctor_m82D98B6D202548277D803878EB2BE3A82722CC74 ();
 extern "C" void VisibleToOtherModulesAttribute__ctor_mEC52A33ADE6FEA527A467F9F64BF966F2A63A942 ();
@@ -10151,6 +11709,7 @@ extern "C" void Canvas_ForceUpdateCanvases_mB23FF44265E49BE388A79267533EA482F08C
 extern "C" void Canvas_SendWillRenderCanvases_mD38081FE3172AC7A884B8ED459E90633167B2D10 ();
 extern "C" void Canvas_add_willRenderCanvases_mACABFF4EAFB7DCFF4B9A33357D496EC3010D7E6B ();
 extern "C" void Canvas_remove_willRenderCanvases_m9A5F0E946B4549D576EDAD5618FEA2D532377831 ();
+extern "C" void Canvas_set_additionalShaderChannels_m0A3CB0D3137C41915E293268BA95920404921FE2 ();
 extern "C" void Canvas_set_overrideSorting_m446842097ED576AB8706B9980E85AECC24C13015 ();
 extern "C" void Canvas_set_referencePixelsPerUnit_m16AF69DA4801579FD03A220D3D6293421671F341 ();
 extern "C" void Canvas_set_scaleFactor_m40359EE941E1573107542A2377E87BEB17C10163 ();
@@ -10209,8 +11768,10 @@ extern "C" void CullingGroup_Finalize_m67D1F84462EC91AACBB9899B859D26CAD5BE24AB 
 extern "C" void CullingGroup_FinalizerFailure_mB9C9DC09F2124724B22C0726B6B1EA2957D87973 ();
 extern "C" void CullingGroup_SendEvents_m08EBF10EEFF49CF9894BA940FD969C8F53F807E7 ();
 extern "C" void CustomYieldInstruction__ctor_m06E2B5BC73763FE2E734FAA600D567701EA21EC5 ();
+extern "C" void CustomYieldInstruction_Reset_m9B3349022DFDDA3A059F14D199F2408725727290 ();
 extern "C" void Debug__cctor_m9BFDFB65B30AA2962FDACD15F36FC666471D1C5E ();
 extern "C" void Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708 ();
+extern "C" void Debug_Log_mCF5342DCBD53044ABDE6377C236B9E40EC26BF3F ();
 extern "C" void Debug_LogAssertion_m2A8940871EC1BD01A405103429F2FCE2AFB12506 ();
 extern "C" void Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29 ();
 extern "C" void Debug_LogError_m97139CB2EE76D5CD8308C1AD0499A5F163FC7F51 ();
@@ -10464,6 +12025,11 @@ extern "C" void UpdateFunction_Invoke_m947E91D565C20FCCD7681BBD18998152C70EF0A6 
 extern "C" void BuiltinRuntimeReflectionSystem__ctor_mB95177E1C8083A75B0980623778F2B6F3A80FE52 ();
 extern "C" void BuiltinRuntimeReflectionSystem_Dispose_m60454D78E8492E739E2537F0B80FC76AC5DA1FCC ();
 extern "C" void BuiltinRuntimeReflectionSystem_Dispose_m46A331A4A718F67B97CC07E98D419C0BBF38A8B0 ();
+extern "C" void RenderPipeline_Dispose_m4A30E310454FB6DF50E82F62280D294D201A4D62 ();
+extern "C" void RenderPipeline_Render_m6F569FDF85F276FDA96400155E4F976BBAA92B91 ();
+extern "C" void RenderPipeline_add_beginFrameRendering_mE76FE94AB2A3E3800137B82D68292DBF285B7021 ();
+extern "C" void RenderPipeline_remove_beginFrameRendering_m2D94B925AC426D31B758068A1AF8BF885DC58CCA ();
+extern "C" void RenderPipeline_set_disposed_m1B33C088D39CA3A20464959E2315E6F5C59F7537 ();
 extern "C" void RenderPipelineManager_CleanupRenderPipeline_m209FE4EF1B83336A0BB3A6B72E2FAF010582FDDF ();
 extern "C" void RenderPipelineManager_DoRenderLoop_Internal_m551CD3D0CB1F6637554368823EB7328471762734 ();
 extern "C" void RenderPipelineManager_PrepareRenderPipeline_m4D6608C1501BE2B79B2CA191005F29EA8871C7CF ();
@@ -10633,23 +12199,41 @@ extern "C" void ManagedStreamHelpers_ValidateLoadFromStream_m550BE5DED66EC83AF33
 extern "C" void Material__ctor_m02F4232D67F46B1EE84441089306E867B1788924 ();
 extern "C" void Material__ctor_m0171C6D4D3FD04D58C70808F255DBA67D0ED2BDE ();
 extern "C" void Material__ctor_m81E76B5C1316004F25D4FE9CEC0E78A7428DABA8 ();
+extern "C" void Material_CopyPropertiesFromMaterial_mC80A6EB2A756B079CEEDEBD5F03A36A6DD18227A ();
 extern "C" void Material_CreateWithMaterial_mD3140BCB57EBB406D063C7A7B0B9D1A4C74DA3F2 ();
 extern "C" void Material_CreateWithShader_m41F159D25DC785C3BB43E6908057BB2BD1D2CB7F ();
 extern "C" void Material_CreateWithString_mCF4047522DD7D38087CF9AF121766E0D69B9BB55 ();
 extern "C" void Material_DisableKeyword_m2ACBFC5D28ED46FF2CF5532F00D702FF62C02ED3 ();
 extern "C" void Material_EnableKeyword_m7466758182CBBC40134C9048CDF682DF46F32FA9 ();
+extern "C" void Material_GetColorImpl_Injected_m22325A32C4B5AAEA791AED50195F66CDBAE93C82 ();
+extern "C" void Material_SetColor_m48FBB701F6177B367EDFAC6BE896D183EF640725 ();
 extern "C" void Material_SetColor_mB91EF8CAC3AB3B39D2535BF9F7FECECF3EC2161C ();
 extern "C" void Material_SetColorImpl_m0779CF8FCCFC298AAF42A9E9FF6503C9FDC43CFE ();
 extern "C" void Material_SetColorImpl_Injected_mEE762DBD0B37ACA313061179B3CB767B59E4B0FB ();
+extern "C" void Material_SetFloat_mC2FDDF0798373DEE6BBA9B9FFFE03EC3CFB9BF47 ();
+extern "C" void Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2 ();
 extern "C" void Material_SetFloatImpl_mFD6022220F625E704EC4F27691F496166E590094 ();
 extern "C" void Material_SetInt_m1FCBDBB985E6A299AE11C3D8AF29BB4D7C7DF278 ();
+extern "C" void Material_SetMatrix_m6C552C454B30BA42F5972F65403B2EED62D68D81 ();
+extern "C" void Material_SetMatrixImpl_mAC50A1E655FF577F6AEB3C67F14DAE7D1AA60C4B ();
+extern "C" void Material_SetMatrixImpl_Injected_mD2486E408D7547B08CC36A2DE70520F97A68529C ();
+extern "C" void Material_SetShaderKeywords_m32714E17C5D17AAE15927F89624416E14B044A82 ();
+extern "C" void Material_SetTexture_m4FFF0B403A64253B83534701104F017840142ACA ();
+extern "C" void Material_SetTextureImpl_mBCF204C1FAD811B00DBAE98847D6D533EE05B135 ();
+extern "C" void Material_SetVector_m95B7CB07B91F004B4DD9DB5DFA5146472737B8EA ();
+extern "C" void Material_set_renderQueue_m02A0C73EC4B9C9D2C2ABFFD777EBDA45C1E1BD4D ();
+extern "C" void Material_set_shaderKeywords_m336EBA03D542BE657FEBDD62C7546568CD3081C9 ();
 extern "C" void Mathf__cctor_m4855BF06F66120E2029CFA4F3E82FBDB197A86EC ();
 extern "C" void Matrix4x4__cctor_mC5A7950045F0C8DBAD83A45D08812BEDBC6E159E ();
 extern "C" void Matrix4x4__ctor_mC7C5A4F0791B2A3ADAFE1E6C491B7705B6492B12_AdjustorThunk ();
+extern "C" void Matrix4x4_GetLossyScale_Injected_m3FC1B3C317274522F89E7BBD28D60C0B9AA2A8D1 ();
+extern "C" void Matrix4x4_TRS_Injected_mADF67489B3C6715B6BA35E22B0BA6713784100CC ();
 extern "C" void Mesh__ctor_m3AEBC82AB71D4F9498F6E254174BEBA8372834B4 ();
 extern "C" void Mesh_Clear_mB750E1DCAB658124AAD81A02B93DED7601047B60 ();
 extern "C" void Mesh_ClearImpl_mFFD3A4748AF067B75DBD646B4A64B3D9A2F3EE14 ();
 extern "C" void Mesh_Internal_Create_mF1F8E9F726EAC9A087D49C81E2F1609E8266649E ();
+extern "C" void Mesh_MarkDynamic_m554A9D7214E30E4F8F0515B712F3E3FA6D695A5F ();
+extern "C" void Mesh_MarkDynamicImpl_m439AACE205D2202AD4E5D4A12191F4CCCC031876 ();
 extern "C" void Mesh_PrintErrorCantAccessChannel_m2E8A25959739B006557A94F7E460E8BE0B3ABB19 ();
 extern "C" void Mesh_PrintErrorCantAccessIndices_mA45D3609288655A328AEB0F2F436403B1ECE5077 ();
 extern "C" void Mesh_RecalculateBounds_m1BF701FE2CEA4E8E1183FF878B812808ED1EBA49 ();
@@ -10665,7 +12249,19 @@ extern "C" void Mesh_SetTriangles_m39FB983B90F36D724CC1C21BA7821C9697F86116 ();
 extern "C" void Mesh_SetTrianglesImpl_m8EDF09F91CF1F2FE8B6095E7C73685FA36ABCECD ();
 extern "C" void Mesh_SetUVs_m0210150B0387289B823488D421BDF9CBF9769116 ();
 extern "C" void Mesh_SetVertices_m5F487FC255C9CAF4005B75CFE67A88C8C0E7BB06 ();
+extern "C" void Mesh_get_bounds_Injected_mA4338C67E67FC449E1344556D073855ACB4E9DED ();
+extern "C" void Mesh_set_bounds_mB09338F622466456ADBCC449BB1F62F2EF1731B6 ();
+extern "C" void Mesh_set_bounds_Injected_mFA253839FEEC7CDF976FE740CA3C2712F491BB8B ();
+extern "C" void Mesh_set_colors32_m29459AFE2843D67E95D60E5A13B6F6AF7670230C ();
+extern "C" void Mesh_set_normals_m4054D319A67DAAA25A794D67AD37278A84406589 ();
+extern "C" void Mesh_set_tangents_mE66D8020B76E43A5CA3C4E60DB61CD962D7D3C57 ();
+extern "C" void Mesh_set_triangles_m143A1C262BADCFACE43587EBA2CDC6EBEB5DFAED ();
+extern "C" void Mesh_set_uv_m56E4B52315669FBDA89DC9C550AC89EEE8A4E7C8 ();
+extern "C" void Mesh_set_uv2_m8D37F9622B68D4CEA7FCF96BE4F8E442155DB038 ();
+extern "C" void Mesh_set_vertices_mC1406AE08BC3495F3B0E29B53BACC9FD7BA685C6 ();
 extern "C" void MeshFilter_DontStripMeshFilter_m7FBA33F8214DB646F74E00F7CEFFDF2D0018004C ();
+extern "C" void MeshFilter_set_mesh_mA18AA96C75CC91CF0917BA1F437626499FAAF496 ();
+extern "C" void MeshFilter_set_sharedMesh_mFE8D12C35148063EB287951C7BFFB0328AAA7C5D ();
 extern "C" void MeshRenderer_DontStripMeshRenderer_mC5359CA39BA768EBDB3C90D4FAE999F4EB1B6B24 ();
 extern "C" void MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97 ();
 extern "C" void MonoBehaviour_CancelInvoke_m6ACF5FC83F8FE5A6E744CE1E83A94CB3B0A8B7EF ();
@@ -10860,6 +12456,12 @@ extern "C" void RenderTexture_set_format_m13C719F83DE81A973984797D890CC84A6B74CD
 extern "C" void RenderTexture_set_height_m4402FEFDF6D35ABE3FBA485FE9A144FB4204B561 ();
 extern "C" void RenderTexture_set_width_m10EF29F6167493A1C5826869ACB10EA9C7A5BDCE ();
 extern "C" void RenderTextureDescriptor__cctor_mA5675E6684E1E8C26E848D2390FB2ABE8E3C11FD ();
+extern "C" void Renderer_SetMaterial_m68B4F4BB5C58FB88AE7AF3829B532869C781FD0F ();
+extern "C" void Renderer_set_receiveShadows_mD2BD2FF58156E328677EAE5E175D2069BC2925A0 ();
+extern "C" void Renderer_set_shadowCastingMode_mC7E601EE9B32B63097B216C78ED4F854B0AF21EC ();
+extern "C" void Renderer_set_sharedMaterial_mC94A354D9B0FCA081754A7CB51AEE5A9AD3946A3 ();
+extern "C" void Renderer_set_sortingLayerID_mF2A52A5697C3A9288DEAC949F54C4CCA97716526 ();
+extern "C" void Renderer_set_sortingOrder_mBCE1207CDB46CB6BA4583B9C3FB4A2D28DC27D81 ();
 extern "C" void RequireComponent__ctor_m27819B55F8BD1517378CEFECA00FB183A13D9397 ();
 extern "C" void Rigidbody_AddForce_mD64ACF772614FE36CFD8A477A07A407B35DF1A54 ();
 extern "C" void Rigidbody_AddForce_Injected_mEB8DB621D03BE740C5CBD472E873FF8B6EF6C119 ();
@@ -10899,6 +12501,7 @@ extern "C" void SendMouseEvents_SetMouseMoved_m860C81AB05FE646EB58219CE6AF1C5AE1
 extern "C" void FormerlySerializedAsAttribute__ctor_m770651B828F499F804DB06A777E8A4103A3ED2BD ();
 extern "C" void SerializeField__ctor_mEE7F6BB7A9643562D8CEF189848925B74F87DA27 ();
 extern "C" void SetupCoroutine_InvokeMoveNext_m9106BA4E8AE0E794B17F184F1021A53F1D071F31 ();
+extern "C" void Shader__ctor_m6D011DE6D578D5F19FBF7EAED326C7209C419E21 ();
 extern "C" void SliderState__ctor_m8CBFEE8D20C2D8EB0B68B1B171D9396DE84B605E ();
 extern "C" void U3CUnityEngine_SocialPlatforms_ISocialPlatform_AuthenticateU3Ec__AnonStorey0__ctor_m3DDB5F2C53FE0FD0CDA1EC3CB48DFF2D84FFEE55 ();
 extern "C" void U3CUnityEngine_SocialPlatforms_ISocialPlatform_AuthenticateU3Ec__AnonStorey0_U3CU3Em__0_mAE3CBA445CA0E4065D9B08741339C4ED0AFED9EF ();
@@ -11025,6 +12628,40 @@ extern "C" void StateMachineBehaviour_OnStateMove_mD8060C6C70456CDC4D678184723C0
 extern "C" void StateMachineBehaviour_OnStateUpdate_mE12079F72B209DDFFAB4088B2B210EA20C2C4266 ();
 extern "C" void StateMachineBehaviour_OnStateUpdate_mF1E4E77449D427AE5DDD68FD8EECCAD1E54E1EE9 ();
 extern "C" void TextAreaAttribute__ctor_m6134ACE5D232B16A9433AA1F47081FAA9BAC1BA1 ();
+extern "C" void FaceInfo_set_ascentLine_m4A223B740073EE53058578E0B243447CC05F06E6_AdjustorThunk ();
+extern "C" void FaceInfo_set_baseline_m413E9CF838D3116208742B77DA439AA19B1153B2_AdjustorThunk ();
+extern "C" void FaceInfo_set_capLine_m0E9C415B4B4CF8CAA5DDF415D23D57723A5E4DB3_AdjustorThunk ();
+extern "C" void FaceInfo_set_descentLine_mCCECAE131BAEE9D0F6AE5BD788CD15BC25CDBDEE_AdjustorThunk ();
+extern "C" void FaceInfo_set_familyName_m070B9D53BD86AF04CD44A193236472B863B2A5AD_AdjustorThunk ();
+extern "C" void FaceInfo_set_lineHeight_mDD90F9FD3601ECCC584619250EE463F1587F11AA_AdjustorThunk ();
+extern "C" void FaceInfo_set_meanLine_m9296408D9FB6DC29479C9011118E0C0A07C36EF0_AdjustorThunk ();
+extern "C" void FaceInfo_set_pointSize_m78055606128C35E03B858125ACE7D433EB282949_AdjustorThunk ();
+extern "C" void FaceInfo_set_scale_m785FEBD05216CE8D6A125CFBEFE0D107ACFA7267_AdjustorThunk ();
+extern "C" void FaceInfo_set_strikethroughOffset_m2DE60E5C276D6016FE4CAE20734D43E48A5DEBF1_AdjustorThunk ();
+extern "C" void FaceInfo_set_strikethroughThickness_m116BE386CDB6944650E86BD29B1ECC6DB9DEF87A_AdjustorThunk ();
+extern "C" void FaceInfo_set_styleName_m178E36C8E91C5F733CC14C8F1C72D9261DF75689_AdjustorThunk ();
+extern "C" void FaceInfo_set_subscriptOffset_m069A0EA04A5BD2C227C9635CD7A50FA850BF74A2_AdjustorThunk ();
+extern "C" void FaceInfo_set_subscriptSize_m894DD0EFAF75BF99D54FCD344D7B908BC1197F70_AdjustorThunk ();
+extern "C" void FaceInfo_set_superscriptOffset_m028955D8EB3CD9C2BE99165C06B6BE4A769F6C9C_AdjustorThunk ();
+extern "C" void FaceInfo_set_superscriptSize_m8CAC9E06CDC52C00323E723CAA1199D238E7142C_AdjustorThunk ();
+extern "C" void FaceInfo_set_tabWidth_mB3A1AF9DB93C0E354608E2AADE9451CF5737B4C5_AdjustorThunk ();
+extern "C" void FaceInfo_set_underlineOffset_m199A2AC207C84BC63EBEA6A959329222D441111E_AdjustorThunk ();
+extern "C" void FaceInfo_set_underlineThickness_mA53F991E6ADC225E7CDD319D733FCB88E9B3C2F9_AdjustorThunk ();
+extern "C" void Glyph__ctor_m21EF1BF22F642135C7C98A7F3E4A025F069A5BA9 ();
+extern "C" void Glyph__ctor_m138B15C3C7EF727A502378428EE4262C57E7518E ();
+extern "C" void Glyph__ctor_mDE5144A797FA0EF0136512443E10B649F3D101BF ();
+extern "C" void Glyph_set_atlasIndex_m29899906406A5F1F909359F9F8CB0ED15C64D5E8 ();
+extern "C" void Glyph_set_glyphRect_m5D45BF2EF4A7738AF7158D49DEDB5E09E034742C ();
+extern "C" void Glyph_set_index_m188CF50CD0658F2312AF3EA620A7BC8640AAFF1A ();
+extern "C" void Glyph_set_metrics_m94E3778C5179B44C6141DFC75202C295ADF00DD9 ();
+extern "C" void Glyph_set_scale_m649B0F686653E1B9F9EA247C8F9F975EADABCF6C ();
+extern "C" void GlyphMetrics__ctor_m7A9438A14ED6BF7418634DB6FE23052FDB12BE23_AdjustorThunk ();
+extern "C" void GlyphRect__cctor_m5AD2AC6BB42D6536F8F6E2F4369BA400354BFC35 ();
+extern "C" void GlyphRect__ctor_mFDDDD22BF8B61E1DE7B24BE8957D918F213AAEC0_AdjustorThunk ();
+extern "C" void FontEngine__cctor_m17164EA5533727BA15D0E56719925E8AA986F7BC ();
+extern "C" void FontEngine__ctor_m90CBF12264B15BCA2368C372FC2062A06B0E788F ();
+extern "C" void FontEngine_ResetAtlasTexture_mAC70CAE4652D8D5F7F2A623DB2CA5F7DB6C5293E ();
+extern "C" void GlyphMarshallingStruct__ctor_mC65A885AB9C9D04B45FB90DF913C6404DA655220_AdjustorThunk ();
 extern "C" void TextEditor__ctor_m279158A237B393882E3CC2834C1F7CA7679F79CC ();
 extern "C" void TextGenerator__ctor_mD3956FF7D10DC470522A6363E7D6EC243415098A ();
 extern "C" void TextGenerator__ctor_m86E01E7BB9DC1B28F04961E482ED4D7065062BCE ();
@@ -11040,7 +12677,11 @@ extern "C" void TextGenerator_Invalidate_m5C360AB470CB728BAA03B34BE33C75CBB55B67
 extern "C" void TextGenerator_System_IDisposable_Dispose_m9D3291DC086282AF57A115B39D3C17BD0074FA3D ();
 extern "C" void TextGenerator_get_rectExtents_Injected_mD8FC9E47642590C7AC78DA83B583E5F4271842D0 ();
 extern "C" void Texture2D__ctor_m0C86A87871AA8075791EF98499D34DA95ACB0E35 ();
+extern "C" void Texture2D__ctor_m22561E039BC96019757E6B2427BE09734AE2C44A ();
 extern "C" void Texture2D__ctor_m185B87D9FE6E39A890C667FCAA8A15A0D93AFCA6 ();
+extern "C" void Texture2D_Apply_m0F3B4A4B1B89E44E2AF60ABDEFAA18D93735B5CA ();
+extern "C" void Texture2D_Apply_mCC17B1895AEB420CF75B1A50A62AB623C225A6C1 ();
+extern "C" void Texture2D_ApplyImpl_mEFE072AD63B1B7B317225DAEDDB1FF9012DB398B ();
 extern "C" void Texture2D_GetPixelBilinearImpl_Injected_m120BD9810D176C39E874FFDAF53AD3AC3B6ADF85 ();
 extern "C" void Texture2D_Internal_Create_m8CD51387F8BEF8ACCBC2BACA532EE7C6DC7F0E10 ();
 extern "C" void Texture2DArray__ctor_mD92521FF6DA05FF47471B741DDC7E4D5B3C3F4E2 ();
@@ -11068,6 +12709,7 @@ extern "C" void TouchScreenKeyboard_set_hideInput_mA9729B01B360BF98153F40B96DDED
 extern "C" void TouchScreenKeyboard_set_selection_m27C5DE6B9DBBBFE2CCA68FA80A600D94337215C7 ();
 extern "C" void TouchScreenKeyboard_set_text_mF72A794EEC3FC19A9701B61A70BCF392D53B0D38 ();
 extern "C" void Enumerator__ctor_mBF5A46090D26A1DD98484C00389566FD8CB80770 ();
+extern "C" void Enumerator_Reset_mA4AD59858E0D61FE247C0E158737A4C02FCE244F ();
 extern "C" void Transform__ctor_mE8E10A06C8922623BAC6053550D19B2E297C2F35 ();
 extern "C" void Transform_InverseTransformPoint_Injected_m320ED08EABA9713FDF7BDAD425630D567D39AB1D ();
 extern "C" void Transform_SetAsFirstSibling_m2CAD80F7C9D89EE145BC9D3D0937D6EBEE909531 ();
@@ -11081,9 +12723,11 @@ extern "C" void Transform_get_localPosition_Injected_mC1E8F9DAC652621188ABFB5857
 extern "C" void Transform_get_localRotation_Injected_m1ADF4910B326BAA828892B3ADC5AD1A332DE963B ();
 extern "C" void Transform_get_localScale_Injected_mA8987BAB5DA11154A22E2B36995C7328792371BE ();
 extern "C" void Transform_get_localToWorldMatrix_Injected_mF5629FA21895EB6851367E1636283C7FB70333A9 ();
+extern "C" void Transform_get_lossyScale_Injected_m6521BCE12BE0D202E15CDC24EC11304CD837EAE4 ();
 extern "C" void Transform_get_position_Injected_mFD1BD0E2D17761BA08289ABBB4F87EDFFF7C1EBB ();
 extern "C" void Transform_get_rotation_Injected_m41BEC8ACE323E571978CED341997B1174340701B ();
 extern "C" void Transform_get_worldToLocalMatrix_Injected_mFEC701DE6F97A22DF1718EB82FBE3C3E62447936 ();
+extern "C" void Transform_set_hasChanged_mA2BDCABEEF63468A4CF354CB7ACFDCC8E910A3D9 ();
 extern "C" void Transform_set_localPosition_m275F5550DD939F83AFEB5E8D681131172E2E1728 ();
 extern "C" void Transform_set_localPosition_Injected_m8B4E45BAADCDD69683EB6424992FC9B9045927DE ();
 extern "C" void Transform_set_localRotation_mE2BECB0954FFC1D93FB631600D9A9BEFF41D9C8A ();
@@ -11901,6 +13545,112 @@ extern "C" void XmlLinkedNode_get_NextSibling_m6F858A5E1ED045F63D7885A243CD10FFD
 extern "C" void XmlNode_get_FirstChild_m43F741CF5C0565011D515B92103F04E033952410 ();
 extern "C" void XmlNode_get_NextSibling_m86E032192785FDB070EE88E07675B2FF304E383B ();
 extern "C" void XmlNode_get_ParentNode_m6AC4A7F4FEE5B469A86490C129F011C12201C3E6 ();
+extern "C" void TMP_FontAsset_get_atlasPopulationMode_m57AAEECB2BB22BFB7E2038E365D2E934906B6925 ();
+extern "C" void ColorTween_get_tweenMode_m768147B7D6714EAAFD670793B7CF7A6CF01C6379_AdjustorThunk ();
+extern "C" void TMP_FontAsset_get_fontInfo_m5A3D9B948135E63A8AE282AC93103A9E5580377B ();
+extern "C" void TMP_FontAsset_get_creationSettings_mCF7ADFA64ACB21CCEB6AC5845A09ACFCE4147495 ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_get_featureLookupFlags_mC5415458162FC51DC4DF4E6C623C6738798B5CA0 ();
+extern "C" void TMP_Text_get_fontStyle_mFC0D0C2CF512294F2831B4F71BC5A3B07998B714 ();
+extern "C" void TMP_Text_get_fontWeight_m399E43CF1C66161323A6D3F1FA085B012FE2D576 ();
+extern "C" void GlyphValueRecord_Legacy_op_Addition_m6297D838D9AFA09202A110280AF5DF4AC6DEE43E ();
+extern "C" void KerningPair_get_firstGlyphAdjustments_mF200C94EABF1CFE65CCBEAB7BCACFF3C647C4A97 ();
+extern "C" void KerningPair_get_secondGlyphAdjustments_mE99FDCA643F45AB660D4936D4AFA9B8FFED09A70 ();
+extern "C" void TextMeshPro_get_maskType_m9D4C7069FDEB33C53E364E11A21975E5D28837A8 ();
+extern "C" void MaterialReferenceManager_get_instance_m31EBCEAB3974E3419683B3CD41890D503971AA0D ();
+extern "C" void TMP_FontAsset_AddCharacter_Internal_m708BC9928BAEBC5FDD92EC918B82F956BB9A66FE ();
+extern "C" void TMP_FontAssetUtilities_GetCharacterFromFontAsset_mD7AF396D69656557F5AA2E35EF4A83609EC112E4 ();
+extern "C" void TMP_FontAssetUtilities_GetCharacterFromFontAsset_Internal_m3662D85539391D668E745E0178FEAE668B769391 ();
+extern "C" void TMP_FontAssetUtilities_GetCharacterFromFontAssets_m0F8ECBEF901AC2E15CF6E14F3BD38A6E3CC456BA ();
+extern "C" void TMP_Text_get_colorGradientPreset_mE4BCD0314D0DD635DE4CB9D755D4AE5DF832631F ();
+extern "C" void TMP_Dropdown_get_onValueChanged_mB5CDDACD9AA95837D6305648143E308C2CAB8576 ();
+extern "C" void TMP_Dropdown_AddItem_m9DA72E46C8B2F9DF68AE25E18EC06AA9C03E2EE7 ();
+extern "C" void TMP_Dropdown_CreateItem_mA5038ADA189AC780133B66865A6B6935D6A71046 ();
+extern "C" void TMP_FontAsset_CreateFontAsset_m5F1E1D3F57CA57EABFC1F2150F94CD7AE2130798 ();
+extern "C" void TMP_FontAsset_CreateFontAsset_m8832E7EECA89A0E69BCF8FA39F75DFFBC19A4A77 ();
+extern "C" void TMP_FontUtilities_SearchForCharacter_m81ECBBFAFD675A9824202E906CFF5826AD9D6D4F ();
+extern "C" void TMP_FontUtilities_SearchForCharacter_mE7AFA3CC33219338EF21869F56D4F0B83E131B55 ();
+extern "C" void TMP_FontUtilities_SearchForCharacterInternal_m89D59FCB239880FED174F0D9401A5D6329C31A60 ();
+extern "C" void TMP_FontUtilities_SearchForCharacterInternal_mE51DC046B0FD7574620007581DC37B855A0CABDB ();
+extern "C" void TMP_InputField_get_fontAsset_m4DB4DEA9E4609F417C59E6BFD559EEE5F804159A ();
+extern "C" void TMP_Settings_GetFontAsset_m723CC48F271386FBA75E539EC26CC4866A01F804 ();
+extern "C" void TMP_Settings_get_defaultFontAsset_m6C11675A47E6635F6A67B65761B554C3D3E12264 ();
+extern "C" void TMP_SubMesh_get_fontAsset_mBB13A69923BE33D806849B0BA227773F4AE48BA2 ();
+extern "C" void TMP_SubMeshUI_get_fontAsset_mEECD9EA301A5A3FDBF8A1D0442C300487547324A ();
+extern "C" void TMP_Text_GetFontAssetForWeight_m5E06C7CABBE01581573EE9C61B81DAD2879237CC ();
+extern "C" void TMP_Text_get_font_m8F42703EF2164110D2ADD1F299209EF348FC146C ();
+extern "C" void TMP_FontAssetUtilities_get_instance_m6FBCC27B6A3FFDD1447E2031F4FA9C11ECACE7E9 ();
+extern "C" void TMP_FontAsset_get_fontFeatureTable_m7C0C0CC2EC91D89D8D6FB734A9A5F0A1D953161F ();
+extern "C" void TMP_FontAsset_get_fontWeightTable_mE529682F047751A84A0C7B7BB7333DBBD6882551 ();
+extern "C" void TMP_Glyph_Clone_mF464BF08B6C0729452C76A3FB3BA415D34BC8B95 ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_m3D2D29FD06EC99FB5D290E86A8B48C926508BBDF ();
+extern "C" void TMP_GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m76F782AA89B22791AC5B452509F241D1E86A96A8 ();
+extern "C" void TMP_GlyphAdjustmentRecord_get_glyphValueRecord_m4CF829EF02D359F77A9A6542F9ABF2555F367A94_AdjustorThunk ();
+extern "C" void TMP_GlyphValueRecord_op_Addition_m84B89D0F31EC63BF8D2953D50DF0616900789A75 ();
+extern "C" void TMP_InputField_get_characterValidation_mE9761B78E3A1A9F889A0E945BA9704405D84C14E ();
+extern "C" void TMP_InputField_get_contentType_mF8BF483423065F1F6C037ED9306C4DB3F9ED3806 ();
+extern "C" void TMP_InputField_KeyPressed_m2BEC2846C67990B855652138D9A726A8E3944783 ();
+extern "C" void TMP_InputField_get_inputType_mFF56880328B9DF2F42CA3CE2E2FCF47DD251486A ();
+extern "C" void TMP_InputField_get_lineType_mB84156D88F036BBBEA54DBA9A2DC4C696C6D5ADA ();
+extern "C" void TMP_InputField_get_onValueChanged_mD17CC6295CE93EF4D2F7A4C19F73E837214B725D ();
+extern "C" void TMP_InputField_get_onValidateInput_m22A1437592B32640790C4A4C5F0BF2861CFAA1B0 ();
+extern "C" void TMP_InputField_get_onDeselect_mD666ADC8DE452860618902F189943E005D18D6D8 ();
+extern "C" void TMP_InputField_get_onSelect_m01C3A1948C9C8A2E4A96BB28BD7458C3A221A051 ();
+extern "C" void TMP_InputField_get_onEndEdit_m2D1630CDCE0A49EBD0D934E349116BBE73124938 ();
+extern "C" void TMP_InputField_get_onSubmit_m32478BB548DFCDAFC4B0EE7DEC8A8AA1B9BB92F1 ();
+extern "C" void TMP_InputField_get_onEndTextSelection_m8767C4F7152128E2EE8BF2856A2FF997A4DF99C4 ();
+extern "C" void TMP_InputField_get_onTextSelection_mCCAF739E6B46A3405202CF91910320DF42F5862D ();
+extern "C" void TMP_InputField_get_onTouchScreenKeyboardStatusChanged_mE8E40D1CB46176A21A83BDAFC9178A8ED805256E ();
+extern "C" void TMP_InputField_get_inputValidator_mC717418E121B68C0DD1DCDADF20F5B14A1C1FEF3 ();
+extern "C" void TMP_TextInfo_CopyMeshInfoVertexData_m7159403DDF762D7F1A0A24B75FF917B73E3F42E3 ();
+extern "C" void TMP_Settings_GetSettings_mFA0AD57A559BE629AA9DF66493A606D91B4CEC41 ();
+extern "C" void TMP_Settings_LoadDefaultSettings_m2EA42466A832FF963D2CF8F34B3F24F5C7500900 ();
+extern "C" void TMP_Settings_get_instance_mED364A86AB8411EEB0C7A458A66484B1C98B7CB9 ();
+extern "C" void TMP_Settings_get_linebreakingRules_m8F2BFCE7A88AA20EFE38B4EF93A0FF098B022F83 ();
+extern "C" void TMP_Text_get_spriteAnimator_mA468A6CCBAB56268107BACABE9F050CA8FCE1DC9 ();
+extern "C" void TMP_Settings_GetSpriteAsset_mD926A79E5BE12B90F764CC2962891F16B8F41884 ();
+extern "C" void TMP_Settings_get_defaultSpriteAsset_m0B4889176371220F24AB38A0B153BA2B7FCBB411 ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByHashCode_mED6A9B28B532508D0C43989005C3E394DDFD2206 ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByHashCodeInternal_mF9C5148D00B7AA13937D2ED2DC79EF6ADC319BDD ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByHashCodeInternal_mD6F8AE0031CD58440EEA4FA716D7FA146AF3B039 ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByUnicode_mFB42B51B2EA9864ABCD401149178A76E2A25DF3C ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByUnicodeInternal_m2ED48F8352E35BC09537CC58871EDC304E0D6952 ();
+extern "C" void TMP_SpriteAsset_SearchForSpriteByUnicodeInternal_mD079A193F2CB6CC326300656F766CA9B547EE1A7 ();
+extern "C" void TMP_SubMesh_get_spriteAsset_mA790CB32DEA074BB375E26CE13694AF3A4E807EB ();
+extern "C" void TMP_SubMeshUI_get_spriteAsset_mFEA02B3B2892E5D1B1854A2EB4FCD96D4855BAAB ();
+extern "C" void TMP_Text_get_spriteAsset_m0939FBB1F14E44E227B5AA1D9E0ADCF049788800 ();
+extern "C" void TMP_StyleSheet_GetStyle_mE59C1E3867AE5F59AB11071B0982654026D9F661 ();
+extern "C" void TMP_StyleSheet_GetStyleInternal_m0D35B4B992B4480E62319981E1EB36F886E62CD7 ();
+extern "C" void TMP_Settings_GetStyleSheet_m5BC59BCA8BD19C004CC6ADA6C39B0FE33998064A ();
+extern "C" void TMP_Settings_get_defaultStyleSheet_mF847DA769F2CBC247F67DBECEF1DDF52DC8C39BC ();
+extern "C" void TMP_StyleSheet_LoadDefaultStyleSheet_m5E71E4115A7E388BE5F384EE85CE45659D803E20 ();
+extern "C" void TMP_StyleSheet_get_instance_mDCFB261DE16AE3D3FEE5A2FC55ED82E65ED6752B ();
+extern "C" void TMP_SubMesh_AddSubTextObject_mB7B7238D8F39F657241137CC37465938DEAF738E ();
+extern "C" void TMP_SubMeshUI_AddSubTextObject_mE3BE58DD1E65F547250AC7534F0E985896473635 ();
+extern "C" void DropdownItem_get_text_m265E86336F652B2361FD8B4D81C3ED5D03FE261A ();
+extern "C" void TMP_Dropdown_get_captionText_mA636E3C115398DC194B373AEA4CB07C4EAFC70B6 ();
+extern "C" void TMP_Dropdown_get_itemText_mD384510C02A61B60E19FC782313FE7DFE91078E9 ();
+extern "C" void TMP_InputField_get_textComponent_m0205792D74056E25704359D5490B2811547FC261 ();
+extern "C" void TMP_Text_get_linkedTextComponent_mEBC0A6312F1F76DD58FBD46F11E6ED2483F2BB50 ();
+extern "C" void TMP_Text_GetTextInfo_m889BAC9C4939DBD7AC845A0A66FE6CEDF56F60DD ();
+extern "C" void TMP_Text_get_textInfo_m773CC543D209B2EDEE8C8DF086F0A19803A40D78 ();
+extern "C" void TextMeshPro_GetTextInfo_mE18AA90B2F0E79E2E5B6C468070DE3C3260DED0F ();
+extern "C" void TextMeshProUGUI_GetTextInfo_m19814343E57187FBD6A02B49B14DFA1662C000D7 ();
+extern "C" void TMP_TextParsingUtilities_get_instance_m3303FC0ED28CC76652A53C31584A642A330F5510 ();
+extern "C" void TMP_UpdateManager_get_instance_mDE5A6E7F4AFD283F90126FC490DE60B3395093CC ();
+extern "C" void TMP_UpdateRegistry_get_instance_mC74D0724B4403A8181C565E0C541F11CA13999BE ();
+extern "C" void TMP_Text_get_alignment_m078C6E7DBA5490966E214EECDB728B3B7A10CDB4 ();
+extern "C" void TextMeshPro_get_textContainer_m0A69AFD8B1199D3410B173222890283EF58DBF17 ();
+extern "C" void TextContainer_GetAnchorPosition_m0028A214C1133E5D363A22952B54063F868B060E ();
+extern "C" void TextContainer_get_anchorPosition_m8C546539F3E0A9AACBD3020C61809C27C3CEEF3B ();
+extern "C" void TMP_TextElement_get_elementType_m67A2AB2A7F6828054EACBAF1F4EF10D5B8942C23 ();
+extern "C" void TextContainer_get_textMeshPro_m527309EE3FF9CF11DFB2CA9FFCDBB52B33BEC992 ();
+extern "C" void TMP_Text_get_overflowMode_m9AEA255E92E7DE938E35BBC4DAEF3542E584FD47 ();
+extern "C" void TMP_Text_get_renderMode_m4655208F83894082E76CEA66BD0692EE200DD99B ();
+extern "C" void TMP_Text_get_horizontalMapping_m6C162F60AC4D96E99C2E1EB4A509BC8947348BF8 ();
+extern "C" void TMP_Text_get_verticalMapping_m8131351A7EB12A1D5836CCD7472214AF65D46454 ();
+extern "C" void TMP_Text_get_colorGradient_mE89A53E934DC9C01DAB09340FC1801091D5F32AA ();
+extern "C" void TMP_Text_get_geometrySortingOrder_m48398428297E54FEFEF54B0512FB52771EFD8A4C ();
+extern "C" void Canvas_get_additionalShaderChannels_m703769513A111C46DC0F0B32864A69E54C085BEC ();
 extern "C" void Selectable_get_animator_m44D968240801D850FE50F5B95C95D394448AA58D ();
 extern "C" void SceneManager_LoadSceneAsyncNameIndexInternal_m542937B4FCCE8B1AAC326E1E1F9060ECEDCB6159 ();
 extern "C" void SceneManager_LoadSceneAsyncNameIndexInternal_Injected_mD19FD493D2C36D33EE8E8A997467DB05C10CE6D1 ();
@@ -11914,6 +13664,14 @@ extern "C" void AudioExtensionManager_AddSpatializerExtension_m308292561D9B4CAF4
 extern "C" void AudioSource_AddAmbisonicExtension_m7D073528C0FAF70863AF8F14761ED4DA2CD986EF ();
 extern "C" void AudioSource_AddSpatializerExtension_mEA48D6DCCBFA6EF941158C6A0AF5844519AC3DA7 ();
 extern "C" void BootConfigData_WrapBootConfigData_m7C2DCB60E1456C2B7748ECFAAEB492611A5D7690 ();
+extern "C" void TMP_Text_GetCompoundBounds_m49676C9FE6A20B1A550F9AFE771600739EFC5A75 ();
+extern "C" void TMP_Text_GetTextBounds_m356167ABEF50B830CC5CF0838F419C5AA712F70E ();
+extern "C" void TMP_Text_GetTextBounds_m02E9B122F3E4F9CBFCA04674978EF7A0FECEA45F ();
+extern "C" void TMP_Text_get_bounds_m7E7F2C8D0DD7CC68CE034CF5423F996D69CBEFE7 ();
+extern "C" void TMP_Text_get_textBounds_mE845DE75A8E1B0DEBBD12878AB68815CF7672C48 ();
+extern "C" void TextMeshPro_GetCompoundBounds_m18E56D6B652F122B7F6D997E23B4D45BA44DA8E3 ();
+extern "C" void TextMeshProUGUI_GetCompoundBounds_m6750D03D68E27D7283F3923B75CAC60B661F3535 ();
+extern "C" void Mesh_get_bounds_m15A146B9397AA62A81986030D289320EDE4B3037 ();
 extern "C" void Sprite_get_bounds_mD440465B889CCD2D80D118F9174FD5EAB19AE874 ();
 extern "C" void ScrollRect_GetBounds_m1434EA6AC230851FBEEE36B1293EA41174124807 ();
 extern "C" void ScrollRect_InternalGetBounds_m7470ECE11BD59E50A86CFAB8BAD2A3D681936484 ();
@@ -11924,10 +13682,13 @@ extern "C" void PointerEventData_get_enterEventCamera_m577E1776C18402B74EA29030B
 extern "C" void PointerEventData_get_pressEventCamera_m67D6A0046313FF44CD3071EA68691846203C1756 ();
 extern "C" void GraphicRaycaster_get_eventCamera_mC92A047B1C0ECD373E1531BB04472EA6B9C4EF1A ();
 extern "C" void Camera_get_clearFlags_m1D02BA1ABD7310269F6121C58AF41DCDEF1E0266 ();
+extern "C" void TextMeshProUGUI_GetCanvas_m2C00EBAF20D256374F2615D6AEEB19FC78B0D377 ();
 extern "C" void Canvas_get_rootCanvas_mFC5752C1955AF10E71AA6160A3A1880586116123 ();
 extern "C" void Graphic_get_canvas_m318739758379A567A35585728E2E1361599199F8 ();
 extern "C" void GraphicRaycaster_get_canvas_m4F25BBF846EB4BAB9E9F509E92D1B05F49626933 ();
 extern "C" void RectMask2D_get_Canvas_m191FA3C371666B3D37727E7737AC0778AE61B3E2 ();
+extern "C" void TMP_SubMeshUI_get_canvasRenderer_mE49DFC3D69EFAC885E3619B4B2C7A518B06C4738 ();
+extern "C" void TextMeshProUGUI_get_canvasRenderer_mE509219D3CDEEB5CD12E635234838CFC845DC21E ();
 extern "C" void Graphic_get_canvasRenderer_m3CCAFCDBCEB38A281BAAB89F2832171BB3D348A6 ();
 extern "C" void RaycastHit_get_collider_mE70B84C4312B567344F60992A6067855F2C3A7A9_AdjustorThunk ();
 extern "C" void RaycastHit2D_get_collider_m6A7EC53B2E179C2EFF4F29018A132B2979CBE976_AdjustorThunk ();
@@ -11935,6 +13696,11 @@ extern "C" void Physics_OverlapSphere_m354A92672F7A6DE59EF1285D02D62247F46A5D84 
 extern "C" void Physics_OverlapSphere_m73878904F621A28F8DD8855CB113C690CF1E89C0 ();
 extern "C" void Physics_OverlapSphere_Internal_m10C15A0F86303EF92B205F16591E344E5728B6D0 ();
 extern "C" void Physics_OverlapSphere_Internal_Injected_m315C4BB796FD73B41F5710D1DB52A6BCB57C344D ();
+extern "C" void ColorTween_get_startColor_m79C9747E3C651BC5D1123AB25863EE23008175A8_AdjustorThunk ();
+extern "C" void ColorTween_get_targetColor_m9FC04D007878395E9C323188AF2B1BC2177E787F_AdjustorThunk ();
+extern "C" void TMP_InputField_get_caretColor_mDD74F2E13C6F7B79628598D575CE53B5615846B4 ();
+extern "C" void TMP_InputField_get_selectionColor_m3EB3B8AB2C2011FFE82890BE0EDC8BD273DBCDD3 ();
+extern "C" void TMP_Text_get_color_mDB0E771C63F8D54035885C69B8342DC4E1932CB1 ();
 extern "C" void CanvasRenderer_GetColor_m841EC074805A87FBD6D3EF7A17BEA2476AEBA31D ();
 extern "C" void Color32_op_Implicit_mA89CAD76E78975F51DF7374A67D18A5F6EF8DA61 ();
 extern "C" void Color_Lerp_mD37EF718F1BAC65A7416655F0BC902CE76559C46 ();
@@ -11942,11 +13708,17 @@ extern "C" void Color_get_black_mEB3C91F45F8AA7E4842238DFCC578BB322723DAF ();
 extern "C" void Color_get_blue_m5449DCBB31EEB2324489989754C00123982EBABA ();
 extern "C" void Color_get_clear_m419239BDAEB3D3C4B4291BF2C6EF09A7D7D81360 ();
 extern "C" void Color_get_cyan_m4E9C84C7E1003311C2D4BDB281F2D11DF5F7FDE2 ();
+extern "C" void Color_get_green_mD53D8F980E92A0755759FBB2981E3DDEFCD084C0 ();
 extern "C" void Color_get_grey_mC37E72622FEB89E52EBCB5245D42DBF63E4FE3B7 ();
 extern "C" void Color_get_magenta_m04E2DDB63AA6288C701A93E248643A06EBD2D7AD ();
 extern "C" void Color_get_red_m5562DD438931CF0D1FBBBB29BF7F8B752AF38957 ();
 extern "C" void Color_get_white_mE7F3AC4FF0D6F35E48049C73116A222CBE96D905 ();
+extern "C" void Color_get_yellow_mC8BD62CCC364EA5FC4273D4C2E116D0E2DE135AE ();
+extern "C" void Color_op_Implicit_m51CEC50D37ABC484073AECE7EB958B414F2B6E7B ();
 extern "C" void Color_op_Multiply_mF36917AD6235221537542FD079817CAB06CB1934 ();
+extern "C" void Color_op_Multiply_mA6BEAF09F1E0468B0557CEDFF1D228248F7D02B5 ();
+extern "C" void Material_GetColor_m1FFF5ECB4967771D751C60205635A0D3F7AA2F0E ();
+extern "C" void Material_GetColorImpl_m46381ED49C354AEB9FEFCE5BF410A1909E867E76 ();
 extern "C" void Texture2D_GetPixelBilinear_m3E0E9A22A0989E99A7295BC6FE6999728F290A78 ();
 extern "C" void Texture2D_GetPixelBilinearImpl_m950AB40E4151F10B6AA6C5759903BA07348114FB ();
 extern "C" void ColorBlock_get_disabledColor_m92AA8A3A936AA2F5BCB49A6ED24A7DA18D710856_AdjustorThunk ();
@@ -11960,6 +13732,13 @@ extern "C" void Graphic_get_color_mD59FBB0BF5D0F358A4AD18CFB0621EA9194C1778 ();
 extern "C" void InputField_get_caretColor_m4ACCD57D727CF29B21159403AA20621893679049 ();
 extern "C" void InputField_get_selectionColor_m6DF998776B7FCF8EC7D4EC218D24A84A3C352439 ();
 extern "C" void Shadow_get_effectColor_mF2BFAE37844448601DE6F2DB6C3ED8DAE0542DD5 ();
+extern "C" void TMP_Text_HexCharsToColor_m41FE6A82A09B68AFDCBD7E0613C008EC79003A99 ();
+extern "C" void TMP_Text_HexCharsToColor_mDA26BEC23AC05B301874BE980B871C25C9572030 ();
+extern "C" void TMP_Text_get_faceColor_m4F272162906C7A1671177D8A7205E046C34FA070 ();
+extern "C" void TMP_Text_get_outlineColor_mF14BC9C22F2A61B8FF3C3225DD8393D8D58EB78C ();
+extern "C" void TMPro_ExtensionMethods_Multiply_m47B92957322D6D195B0F3221836D25B661CA52A4 ();
+extern "C" void TMPro_ExtensionMethods_Tint_m0052477E0F651026A9ACC4945755ADA979683020 ();
+extern "C" void TMPro_ExtensionMethods_Tint_m3CE518D39299107D4D33B5E7671B935356D77E4F ();
 extern "C" void Color32_op_Implicit_m52B034473369A651C8952BD916A2AB193E0E5B30 ();
 extern "C" void Mesh_get_colors32_m24C6C6BC1A40B7F09FF390F304A96728A4C99246 ();
 extern "C" void QualitySettings_get_activeColorSpace_m13DBB3B679AA5D5CEA05C2B4517A1FDE1B2CF9B0 ();
@@ -11984,6 +13763,7 @@ extern "C" void Event_get_modifiers_m4D1BDE843A9379F50C3F32CB78CCDAD84B779108 ()
 extern "C" void BaseInputModule_GetAxisEventData_m7C98B82EDBDE4A002728A5EAB569B23F9EE6C6E1 ();
 extern "C" void BaseInputModule_GetBaseEventData_mB945B5DF7A5C2B825C7D542D944A7795D8F5F93F ();
 extern "C" void EventSystem_get_baseEventDataCache_m2B14076E5EF918BE1A94F16DE1A827AC1401BC89 ();
+extern "C" void TMP_InputField_get_inputSystem_mD5B5E9EFA905368372A8159A7A08C644FCF24028 ();
 extern "C" void BaseInputModule_get_input_m385A99609A705346D5288D047EE17374ED406BE7 ();
 extern "C" void BaseInputModule_get_inputOverride_m3C63C410A33009ACB7EAFB776066F734110391B8 ();
 extern "C" void InputField_get_input_mAF4210F766099F23FA8695F12CA970CC8E5CA80A ();
@@ -12042,6 +13822,7 @@ extern "C" void ScriptableRuntimeReflectionSystemSettings_get_Internal_Scriptabl
 extern "C" void SupportedRenderingFeatures_get_active_mC122A0A25049511A9E7BE571D825FDE533836957 ();
 extern "C" void SupportedRenderingFeatures_get_defaultMixedLightingMode_m3EC298E6D422433F0EAF5A7E0176BFE8C5A9BF07 ();
 extern "C" void SupportedRenderingFeatures_get_supportedMixedLightingModes_m328FAF1059311E7D64585D49974C973B68EEF87F ();
+extern "C" void TMP_FontAsset_get_sourceFontFile_m62799B42E36BEEA1B7162D0FDE5B11A482E053FF ();
 extern "C" void GUISkin_get_font_m54200DFAF834B835CE6598E1BA5B41382BC33AD5 ();
 extern "C" void FontData_get_font_m7ED4B63312F1F12B743447B796580049AE9563B2 ();
 extern "C" void Text_get_font_m2C5D760FE226B7AD1B8340FE827945B44B817E8F ();
@@ -12084,6 +13865,15 @@ extern "C" void GUIStyle_get_none_m2B48FA4E2FA2B9BB7A458DF25B1391F9C7BB8B7B ();
 extern "C" void GUIStyle_get_normal_mC5CB22EED8113DEC86C54FB42F757B635D09DD2F ();
 extern "C" void GUIStyleState_GetGUIStyleState_m207443170D2CA9E48BAB05FF74B30C76C6D63F68 ();
 extern "C" void GUISkin_get_customStyles_mC004E300635814033B6074ADCCCCCCC2B8F56D3C ();
+extern "C" void TMP_DefaultControls_CreateButton_m98AF4DEDCC0EABBEB5F30D53BFFBE601BF190A51 ();
+extern "C" void TMP_DefaultControls_CreateDropdown_m34AF012613C6D85C4FE2A75CEF81026497AA7B28 ();
+extern "C" void TMP_DefaultControls_CreateInputField_m4E19E547CE8951B0BA05437CCA3691BB01FA4E34 ();
+extern "C" void TMP_DefaultControls_CreateScrollbar_m747F36EF9FC7A7119F67A12F03BD7059DD07B44E ();
+extern "C" void TMP_DefaultControls_CreateText_m28427FDD1065C39A07A7AACCE346AA5DE55CA9E6 ();
+extern "C" void TMP_DefaultControls_CreateUIElementRoot_m4D9708BA51AC9855444C89F27EC90D88CF0A1B7E ();
+extern "C" void TMP_DefaultControls_CreateUIObject_m5DDAF5FBEFA1490ACA35BC08F753CF9664F0B9D8 ();
+extern "C" void TMP_Dropdown_CreateBlocker_mA85EAB1FBBF841199FF2B17CB36C6D2FBAE3CF82 ();
+extern "C" void TMP_Dropdown_CreateDropdownList_mDD27064E69DF4722A378C0AD1B025028504C38EB ();
 extern "C" void Camera_RaycastTry_m7D27141875E309214FED1E3F1D0E3DE580183C0A ();
 extern "C" void Camera_RaycastTry2D_m5C5FE62B732A123048EBFA3241BBBEC7BA409C0F ();
 extern "C" void Camera_RaycastTry2D_Injected_m080224D8887AEBF79BE0BCE901072165FDE9689C ();
@@ -12133,11 +13923,46 @@ extern "C" void LayerMask_op_Implicit_m3F256A7D96C66548F5B62C4621B9725301850300 
 extern "C" void SupportedRenderingFeatures_get_supportedLightmapBakeTypes_m1F326CD46A9A786B67FA91B72EE6A93BD709325F ();
 extern "C" void SupportedRenderingFeatures_get_supportedLightmapsModes_m9BA71EDABDFB79F5613A65BB951064009BF438AE ();
 extern "C" void Logger_get_filterLogType_mD850DE3FD8CC67E4B076FCC6B05F8FA603B5B38B ();
+extern "C" void TMP_MaterialManager_GetBaseMaterial_mC2B7B711E49103ECE017B2AFE2E93E6847CFC4AD ();
+extern "C" void TMP_MaterialManager_GetFallbackMaterial_m54C7394AEF6C09254D42E35C6E291E5C6BE85D97 ();
+extern "C" void TMP_MaterialManager_GetMaterialForRendering_m6533DE515A114559DEEEEA48439DFD248B6DD17D ();
+extern "C" void TMP_MaterialManager_GetStencilMaterial_mBC5160EDE5C5E78D2A836BB8C0EF03282045F729 ();
+extern "C" void TMP_MaterialManager_SetStencil_mDA4E5E847232AF2335878BA9F7EDEDB48C8DED80 ();
+extern "C" void TMP_SpriteAsset_GetDefaultSpriteMaterial_m845A6273ED57DAF047CBD43341F29454FE19ED1A ();
+extern "C" void TMP_SubMesh_CreateMaterialInstance_mA343250B63F0480986C539DD7A8BB91991C7A1A3 ();
+extern "C" void TMP_SubMesh_GetMaterial_m8474E2B4A097E31B172D4830B26EB8C662E2F7F4 ();
+extern "C" void TMP_SubMesh_GetSharedMaterial_m5132D5C66C31AEE52A4503C5A3DB673455FD4D04 ();
+extern "C" void TMP_SubMesh_get_fallbackMaterial_m0C76B23E26DC19F8D8F3A7963E9AF34A0C77CC11 ();
+extern "C" void TMP_SubMesh_get_fallbackSourceMaterial_m8B0A23A3D8C1C45E4ACBFAC5D8CAE600B229B3BE ();
+extern "C" void TMP_SubMesh_get_material_m466677FA4475AA84E45C0B9CA8E290B2F24750C4 ();
+extern "C" void TMP_SubMesh_get_sharedMaterial_m62E104C664FCE465060F92F02C544B69E91497B2 ();
+extern "C" void TMP_SubMeshUI_CreateMaterialInstance_m97A8EF7732C8A4DC78E722DEE259802114824A0B ();
+extern "C" void TMP_SubMeshUI_GetMaterial_m68785DD9CF7C3395A39F6D02B7EFBC3A0E226117 ();
+extern "C" void TMP_SubMeshUI_GetMaterial_m46EE1E480485814ADB252DA1DA9530097651C209 ();
+extern "C" void TMP_SubMeshUI_GetModifiedMaterial_m924A0ADD80340624FBDDC1C79E02EE44EADE182D ();
+extern "C" void TMP_SubMeshUI_GetSharedMaterial_m68FE901F3890B4CC93C0B6612EB87B02C4263A8D ();
+extern "C" void TMP_SubMeshUI_get_fallbackMaterial_mDB20A24E1008038FE3944076B89840749F806B45 ();
+extern "C" void TMP_SubMeshUI_get_fallbackSourceMaterial_m9E08705F8B4AF3770E8E6BAE54EEC730255E1858 ();
+extern "C" void TMP_SubMeshUI_get_material_m4ADD56071A0368AE718D61F0B56D456E7E02BF69 ();
+extern "C" void TMP_SubMeshUI_get_materialForRendering_mC24A045110E8E98310469BCA5A34DEE254CFB498 ();
+extern "C" void TMP_SubMeshUI_get_sharedMaterial_mE6DA34C068C076131D6A5AD5CA91F337D1652380 ();
+extern "C" void TMP_Text_CreateMaterialInstance_m5C75A42D058ECD5AA55546EF76AEC63C13B5D48A ();
+extern "C" void TMP_Text_GetMaterial_mFD7E1D66B90C7D4264BF6A13E1C96AAEEE566036 ();
+extern "C" void TMP_Text_get_fontMaterial_m20DE45A2E6B9A042F8871B6DB45C1F1266673E41 ();
+extern "C" void TMP_Text_get_fontSharedMaterial_m76330C51EF15753A8DA0ED8EFAD1FF5C51FCD67B ();
+extern "C" void TextMeshPro_GetMaterial_mDD921EE1D1B7F24BC3BBAB02DEB74B9D35A8C83D ();
+extern "C" void TextMeshProUGUI_GetMaterial_m51EFD2A903A5F41CFE82183FC1D2E5409DD3CDAE ();
+extern "C" void TextMeshProUGUI_GetModifiedMaterial_mDA4231D9F6A8F91FAAC84D2B639911755A9919F3 ();
+extern "C" void TextMeshProUGUI_get_materialForRendering_m44B371F6DF42D77E86963B4D41A9DD2BF8665130 ();
 extern "C" void Canvas_GetDefaultCanvasMaterial_m972CD867F8C777A55C35A735ACE85BADC628233B ();
 extern "C" void Canvas_GetETC1SupportedCanvasMaterial_m99A6CABFF2B919C2B84F703A8DAC64C76F5E2C52 ();
+extern "C" void CanvasRenderer_GetMaterial_m7B757917B67B57B55EEE2E0451935B4B139E06F3 ();
+extern "C" void CanvasRenderer_GetMaterial_m86FB9F04CBD33AD7FC3FCE1B55CB8C79FAEFC7CC ();
 extern "C" void Font_get_material_m92A995029540A5FACAEA3A2FE792FFDAC294827D ();
 extern "C" void Renderer_GetMaterial_m370ADC0227BC648BEFAAF85AFB09722E8B20024B ();
+extern "C" void Renderer_GetSharedMaterial_m3819AC6D141381FD4C99793E855D2ACED6FB3071 ();
 extern "C" void Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617 ();
+extern "C" void Renderer_get_sharedMaterial_m2BE9FF3D269968F2E323AC60EFBBCC0B26E7E6F9 ();
 extern "C" void Graphic_get_defaultGraphicMaterial_mED2DFEBA683470F883848ECAD8BDAED9B2ADB1F8 ();
 extern "C" void Graphic_get_defaultMaterial_m71DC530DC5B2CD334275F8C4D043652DA81984DF ();
 extern "C" void Graphic_get_material_mF883FC0B18E59FEBFAB2411F9E30BE8062763AF8 ();
@@ -12149,10 +13974,27 @@ extern "C" void MaskableGraphic_GetModifiedMaterial_m67C4BCE8DAF19DFBA6C06EC2FD6
 extern "C" void StencilMaterial_Add_m4F9F65E2FC1C15A75FE8FF7B7DDAB10CA54DCB40 ();
 extern "C" void StencilMaterial_Add_m5F37EE6B20F3CE476A00BB21BE2612500365BA46 ();
 extern "C" void StencilMaterial_Add_mC19552F6DF05D4C1E20F41BA0AAED09883058053 ();
+extern "C" void TMP_Text_GetMaterials_mFD565E68B8CB9DA9DD067F2D18EC005A81DCD2CA ();
+extern "C" void TMP_Text_GetSharedMaterials_mEDE18DFA628E64CB02E05C7374E1D40600BCDB4A ();
+extern "C" void TMP_Text_get_fontMaterials_mB98DFD5FA2D01DC989E5441B3CDF795BDD664489 ();
+extern "C" void TMP_Text_get_fontSharedMaterials_m2D7358B0C12143FAF84059D5EB6973A7FFE63FF5 ();
+extern "C" void TextMeshPro_GetMaterials_m02B85E8BBF5811F60A2F6C671E158FC58470A3E3 ();
+extern "C" void TextMeshPro_GetSharedMaterials_m09323E9D43C67F0A33A7942BE53B0E106D823208 ();
+extern "C" void TextMeshProUGUI_GetMaterials_mCB0EE55A20C663A2EEB60ADB3DA15DF968CB1697 ();
+extern "C" void TextMeshProUGUI_GetSharedMaterials_m6EA59DACE8917537122F9AD52BF2761D3D639A1F ();
+extern "C" void Matrix4x4_TRS_m5BB2EBA1152301BAC92FDC7F33ECA732BAE57990 ();
 extern "C" void Transform_get_localToWorldMatrix_mBC86B8C7BA6F53DAB8E0120D77729166399A0EED ();
 extern "C" void Transform_get_worldToLocalMatrix_m4791F881839B1087B17DC126FC0CA7F9A596073E ();
+extern "C" void TMP_InputField_get_mesh_m73BDB9DE18208ED4B78968F05BA2B27072467481 ();
+extern "C" void TMP_SubMesh_get_mesh_m97B26133112C9C2B950F614CD2ECBD2517FB96AE ();
+extern "C" void TMP_SubMeshUI_get_mesh_mCBCF215077B2044CAC4CB91585C0EAFB376FB788 ();
+extern "C" void TMP_Text_get_mesh_m7515CFACE1C9FD48D56A80BF979E7715E4BE99F7 ();
+extern "C" void TextMeshPro_get_mesh_m59B2615FE72E691B3DC5AE938E2E7B334D9F6D91 ();
+extern "C" void TextMeshProUGUI_get_mesh_m5DEADCE67913DEA23A6B4D4AFDA802875EBB6E9E ();
 extern "C" void Graphic_get_workerMesh_m7CAD6B3E0D973514DB740D89EBACEC1CD8AFEDD5 ();
 extern "C" void InputField_get_mesh_m6EC79273A8D5D2B44E255189FAA8F492FFAFA3EA ();
+extern "C" void TMP_SubMesh_get_meshFilter_mA62434D5993EAEEEDA2656BFC820EAD453E05ED7 ();
+extern "C" void TextMeshPro_get_meshFilter_m38BAEBB3D31284FE6B762E6D5F71CAD0AE0A6EDE ();
 extern "C" void PlayerConnection_CreateInstance_m6325767D9D05B530116767E164CDCBE613A5787F ();
 extern "C" void PlayerConnection_get_instance_mF51FB76C702C7CDD0BAEAD466060E3BDF23D390F ();
 extern "C" void AudioExtensionManager_GetAudioListener_mF0FA3E4A19A7785E698D33E163CFBCBB882C3595 ();
@@ -12164,6 +14006,7 @@ extern "C" void Object_Internal_CloneSingle_m4231A0B9138AC40B76655B772F687CC7E61
 extern "C" void Object_Internal_InstantiateSingle_mCC3EB0F918934D233D43DFDB457605C4B248738D ();
 extern "C" void Object_Internal_InstantiateSingle_Injected_m04E25C97D5848B7AA54178A5448744A0DEB1B62E ();
 extern "C" void Resources_GetBuiltinResource_m73DDAC485E1E06C925628AA7285AC63D0797BD0A ();
+extern "C" void Resources_Load_mF0FA033BF566CDDA6A0E69BB97283B44C40726E7 ();
 extern "C" void SystemInfo_GetOperatingSystemFamily_mD20DAFF3A6E6649299A3BCFC845E7EB41BFA1D93 ();
 extern "C" void SystemInfo_get_operatingSystemFamily_mA35FE1FF2DD6240B2880DC5F642D4A0CC2B58D8D ();
 extern "C" void Physics_get_defaultPhysicsScene_mEA96CE906577479223C956BFF0B8D0B79BB47B30 ();
@@ -12196,6 +14039,7 @@ extern "C" void PropertyName_op_Implicit_m037981C0855974C6FF5D946E53387BCAC8AA17
 extern "C" void PropertyName_op_Implicit_mAC7E93673BED899446D260154297F91C8D8EEF78 ();
 extern "C" void PropertyNameUtils_PropertyNameFromString_m38F9FC2E83C99C0723DAC4BBC5A2A7EA87752174 ();
 extern "C" void Quaternion_Euler_m537DD6CEAE0AD4274D8A84414C24C30730427D05 ();
+extern "C" void Quaternion_Euler_m55C96FCD397CC69109261572710608D12A4CBD2B ();
 extern "C" void Quaternion_Internal_FromEulerRad_mC6AB58E2F3C37DFE2089A38D578E862B3430E755 ();
 extern "C" void Quaternion_Inverse_mC3A78571A826F05CE179637E675BD25F8B203E0C ();
 extern "C" void Quaternion_LookRotation_m465C08262650385D02ADDE78C9791AED47D2155F ();
@@ -12226,6 +14070,7 @@ extern "C" void Physics_RaycastAll_m4FC397E4B7FEF7B5C9D172F95D6FB32CFC0F66FC ();
 extern "C" void Physics_RaycastAll_m6627435AE46B6720066FEEA5A80923420EE8FD2D ();
 extern "C" void RaycastAllCallback_EndInvoke_m1DB016EE5E5197383DE81060D894473B1649A939 ();
 extern "C" void RaycastAllCallback_Invoke_m1C5BC50A8B21548971D4D3F48CECDDF4F8D2CAD4 ();
+extern "C" void TextContainer_get_rect_mDA13E7E028FEA103B83E918320DF6F77EB3FFF85 ();
 extern "C" void Camera_get_pixelRect_mBA87D6C23FD7A5E1A7F3CE0E8F9B86A9318B5317 ();
 extern "C" void GUILayoutUtility_Internal_GetWindowRect_mE35BED0433EE8BD928CD52681620519E647A1DA9 ();
 extern "C" void Rect_OrderMinMax_m1BE37D433FE6B7FB0FB73652E166A4FB887214CD ();
@@ -12247,6 +14092,11 @@ extern "C" void RectangularVertexClipper_GetCanvasRect_m1368CD1A7984C6BA00C6550E
 extern "C" void GUIStyle_get_margin_mFC3EA0FA030A6334AC03BDDFA4AC80419C9E5BAA ();
 extern "C" void GUIStyle_get_padding_m5DF76AA03A313366D0DD8D577731DAC4FB83053A ();
 extern "C" void LayoutGroup_get_padding_mCCAD817837EE81B5208C934F15108D57FB0BFFD5 ();
+extern "C" void DropdownItem_get_rectTransform_mF0F78A3EE59C906576CE2AFADBE3808A7CCB661D ();
+extern "C" void TMP_Dropdown_get_template_m1D6D3A3617FD3BF1FD751396A53F5E43928D53DB ();
+extern "C" void TMP_InputField_get_textViewport_mA36B5AF9BE40271D7B40B0C78C0AB91013C09503 ();
+extern "C" void TMP_Text_get_rectTransform_m7D5ABF7B98E93576BDA8F7E1A2A7415284D4F05E ();
+extern "C" void TextContainer_get_rectTransform_mA53A93644407F8DD7D8DA4486D259A5B6025ADD7 ();
 extern "C" void AspectRatioFitter_get_rectTransform_mE1041AD9708EF0E2B89485FF0CCF9C52630A5D29 ();
 extern "C" void ContentSizeFitter_get_rectTransform_mE621E002E8AD09040752E78F4E9FCA09C3C0AAAC ();
 extern "C" void DropdownItem_get_rectTransform_mBEE0135D6E76F71A5D5FD1D8EB0813BAF8DDA4AB ();
@@ -12267,6 +14117,8 @@ extern "C" void Camera_get_targetTexture_m1E776560FAC888D8210D49CEE310BB39D34A3F
 extern "C" void RenderTexture_GetDescriptor_mBDAE7C44038663205A31293B7C4C5AE763CD1128 ();
 extern "C" void RenderTexture_get_descriptor_m67E7BCFA6A50634F6E3863E2F5BA1D4923E4DD00 ();
 extern "C" void GraphicsFormatUtility_GetRenderTextureFormat_m4A8B97E7A7BD031B38EE1C5DA0C93B0F65016468 ();
+extern "C" void TMP_SubMesh_get_renderer_m41AAA8AA7765A2B0A722B0C7BE4D0CFB456B50BE ();
+extern "C" void TextMeshPro_get_renderer_mF8CD651E1D88C0C5E8A08C0930835B2DF7EE59F7 ();
 extern "C" void Mesh_GetUVChannel_m15BB0A6CC8E32867621A78627CD5FF2CAEA163CC ();
 extern "C" void Application_get_platform_m6AFFFF3B077F4D5CA1F71CF14ABA86A83FC71672 ();
 extern "C" void SceneManager_GetActiveScene_mD583193D329EBF540D8AB8A062681B1C2AB5EA51 ();
@@ -12274,6 +14126,9 @@ extern "C" void SceneManager_GetSceneAt_m2D4105040A31A5A42E79A4E617028E84FC357C8
 extern "C" void SceneManager_LoadScene_m8C95E38F5497F502DAEDC316F6E1C64B36EDC652 ();
 extern "C" void ScriptableObject_CreateInstance_mDC77B7257A5E276CB272D3475B9B473B23A7128D ();
 extern "C" void ScriptableObject_CreateScriptableObjectInstanceFromType_mD6C4C28F14371B87C376B4AD30F95FC24963E696 ();
+extern "C" void ShaderUtilities_get_ShaderRef_MobileBitmap_m09926A9F4E9B3EF4F9631D37A77898DEFD772F32 ();
+extern "C" void ShaderUtilities_get_ShaderRef_MobileSDF_m55D5F69AEB13C08B9445CA1403E312AE38472393 ();
+extern "C" void Shader_Find_m755654AA68D1C663A3E20A10E00CDC10F96C962B ();
 extern "C" void GameCenterPlatform_CreateAchievement_mF3ED9EBCBA43285AB66906263F3BAF0FE24360CE ();
 extern "C" void GameCenterPlatform_CreateLeaderboard_mDD16B8197C722D505E85353BCC83C70CBD30ECD1 ();
 extern "C" void GameCenterPlatform_get_localUser_m8F93A5D52B7DDA95087457B93FE5896A3D617574 ();
@@ -12285,6 +14140,7 @@ extern "C" void Leaderboard_get_range_m5E964AEA16E5A443357BA8656DA09CCF8283B4F3 
 extern "C" void Leaderboard_get_timeScope_mEC73B36FA70E5C16B86EFB1F589791990D55939C ();
 extern "C" void Leaderboard_get_userScope_m861E532FA53D0C073A0CFD53E94978C008233F22 ();
 extern "C" void UserProfile_get_state_m5804D7408C593440C394DFCE25738F87F84A7083 ();
+extern "C" void OptionData_get_image_m40827FAD87A1F471CE5C566BF057829D8F5DD555 ();
 extern "C" void OptionData_get_image_m3942EBED87375AED7D4DB0DC44A3223878355BCA ();
 extern "C" void Image_get_activeSprite_m34F21C0982888A580F01003122421D40F45A536E ();
 extern "C" void Image_get_overrideSprite_mCBFEB26E00A6EEDFBFE10CA12875BB952DD62C8D ();
@@ -12296,6 +14152,22 @@ extern "C" void Sprite_get_packingMode_m1B5AA0F5476DAEADFF14F65E99944B54940D869F
 extern "C" void FontData_get_alignment_m8236D7F26B81D591DDD09971B762915EB2115E7C ();
 extern "C" void LayoutGroup_get_childAlignment_mA35B9D37B4CF14AA1830ECB48CE7EDC6A604A2D5 ();
 extern "C" void Text_get_alignment_mE7785D3AE08A958FC2504F9B10A5C702A4CC3384 ();
+extern "C" void TMP_Settings_get_followingCharacters_m5F087720CC241CF188D79D55D6E5D5F862EEA7FA ();
+extern "C" void TMP_Settings_get_leadingCharacters_m95154CD657757BC593FBBF37B378A21D2471E702 ();
+extern "C" void TMP_FontAsset_get_faceInfo_m96E66C8F54B8BF428E68564FA871C2D0698A9BFD ();
+extern "C" void FontEngine_GetFaceInfo_mB4B6045A34FEBFE58EB401216E930F50364B0A41 ();
+extern "C" void TMP_TextElement_get_glyph_mA2A19945696242D52143E3DF49BDC49F1E8A2153 ();
+extern "C" void Glyph_get_metrics_m25A3C9DDEA15A3EC461A53F194F549699322A811 ();
+extern "C" void Glyph_get_glyphRect_mD937109DC8AE147EED30E0CEB667ACAAE281D4F0 ();
+extern "C" void GlyphRect_get_zero_mA40D939BFBFB8D3A7301CA4A6D99A1DBDFC34736 ();
+extern "C" void FontEngine_InitializeFontEngine_m1C7695D66160277DE576EB9D8BA749849BDC24B7 ();
+extern "C" void FontEngine_LoadFontFace_mFEBC3184605C0BD37A83021F6B47E5C3FA3FAD3C ();
+extern "C" void FontEngine_RenderGlyphsToTexture_m6A61FED7FC28A80B730C4B2C492A8E802DD2EB80 ();
+extern "C" void GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_mDEF2D51630A188E44897AE311E31D2759C4DEF46_AdjustorThunk ();
+extern "C" void GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m51AFEB36698BA7BD73C96B239F8461374736BB66_AdjustorThunk ();
+extern "C" void FontEngine_GetGlyphPairAdjustmentTable_m1FC9B74860076DCCECBCE77EEA38737FB32DF24B ();
+extern "C" void TMP_FontAsset_get_atlasRenderMode_m1D90578DEC281C1E12CD8FE875B72A5DFC6814EB ();
+extern "C" void GlyphAdjustmentRecord_get_glyphValueRecord_m8F2643EF5E5FCD7683AF53BA831603817709E3CC_AdjustorThunk ();
 extern "C" void TextGenerator_PopulateAlways_m8DCF389A51877975F29FAB9B6E800DFDC1E0B8DF ();
 extern "C" void TextGenerator_PopulateWithError_m24D1DA75F0563582E228C6F4982D0913C58E1D7D ();
 extern "C" void TextGenerator_ValidatedSettings_m167131680BB6CD53B929EF189520F9FCF71FB1D3 ();
@@ -12303,6 +14175,8 @@ extern "C" void Text_GetGenerationSettings_m594A7D1505D89B4FA343E25A36D4656F79E5
 extern "C" void InputField_get_cachedInputTextGenerator_m5A9C4630C95E6F1E4F97872521E60F3D51A53E70 ();
 extern "C" void Text_get_cachedTextGenerator_m8BB75D38962D0D11C0095A1D20FDBDE8465362C6 ();
 extern "C" void Text_get_cachedTextGeneratorForLayout_m636D4317F3A3E0E62C9A9F1B5CD1D00E1ED6F277 ();
+extern "C" void TMP_SubMeshUI_get_mainTexture_m75EBC20D6DF2EB308E2CF25DA453696AF9EDA2D8 ();
+extern "C" void Material_GetTexture_mDB1B89D76D44AD07BD214224C59A6FE0B62F6477 ();
 extern "C" void Material_GetTexture_mCD6B822EA19773B8D39368FF1A285E7B69043896 ();
 extern "C" void Material_GetTextureImpl_m19D8CE6C5701AC4B69A6D5354E08240DF6C036D2 ();
 extern "C" void Material_get_mainTexture_mE85CF647728AD145D7E03A172EFD5930773E514E ();
@@ -12311,10 +14185,12 @@ extern "C" void Image_get_mainTexture_m85D29E76ADD44FFDC999A2470C89BC6101F2F0BF 
 extern "C" void RawImage_get_mainTexture_m74EDB2F5CF7A15C414AB4C1B5ADC8CF7A637EA06 ();
 extern "C" void RawImage_get_texture_mA902F1297E6D0EB804AB7F8FF211C377A69C61AD ();
 extern "C" void Text_get_mainTexture_m41C2BF53D45482A684903DBBE46EA4AC2AEBF3DA ();
+extern "C" void TMP_FontAsset_get_atlasTexture_m8961567D6F382F5B6465CAFEFCDB44F8428D5601 ();
 extern "C" void GameCenterPlatform_GetUserImage_m71B11BAA34D99DEF16629C8B825AF0CBD319ABE3 ();
 extern "C" void Sprite_get_associatedAlphaSplitTexture_m2EF38CF62616FBBBBAE7876ECBCC596DB3F42156 ();
 extern "C" void Sprite_get_texture_mA1FF8462BBB398DC8B3F0F92B2AB41BDA6AF69A5 ();
 extern "C" void Texture2D_get_whiteTexture_mF447523DE8957109355641ECE0DD3D3C8D2F6C41 ();
+extern "C" void TMP_FontAsset_get_atlasTextures_m56381033C0E2CF0672B11910F5749D8C64F5AA7C ();
 extern "C" void Texture2D_get_format_mF0EE5CEB9F84280D4E722B71546BBBA577101E9F ();
 extern "C" void Texture_get_wrapMode_mC21054C7BC6E958937B7459DAF1D17654284B07A ();
 extern "C" void BaseInput_GetTouch_mE216B2EE2C34A28BA06DF122E1601EE628178A0C ();
@@ -12323,8 +14199,13 @@ extern "C" void Touch_get_phase_m667014ED67F37A6EB459FB904D2041E270995419_Adjust
 extern "C" void TouchScreenKeyboard_Open_mF795EEBFEF7DF5E5418CF2BACA02D1C62291B93A ();
 extern "C" void InputField_get_touchScreenKeyboard_m0FFFD0CE4AC573DC5A91ABEC8A0B3607966F2607 ();
 extern "C" void TouchScreenKeyboard_get_status_m17CF606283E9BAF02D76ADC813F63F036FAE33F2 ();
+extern "C" void TMP_InputField_get_keyboardType_mC950A01BDA84084B48DA2C4207FD8CBB6D688624 ();
 extern "C" void InputField_get_keyboardType_m4498894CD489D1C71EC55C8E5BD8D98C068CB7E7 ();
 extern "C" void Touch_get_type_m24677B3E265C31B31BF4C55CF874272D28EB0AEC_AdjustorThunk ();
+extern "C" void TMP_InputField_UnityEngine_UI_ICanvasElement_get_transform_m26B2C64E495FEF8746181E8478AABFED37C93DF2 ();
+extern "C" void TMP_MaterialManager_FindRootSortOverrideCanvas_m5F5ED571F5FBB7F02E17DD0B667FD8A37E160AEF ();
+extern "C" void TMP_Text_get_transform_m9AEC630AEC329A1A36760BC203AFF907027B5B1C ();
+extern "C" void TextMeshPro_get_transform_m14B36D05C2CCC150141AED87F5A38536373BC23D ();
 extern "C" void Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9 ();
 extern "C" void GameObject_get_transform_mA5C38857137F137CB96C69FAA624199EB1C2FB2C ();
 extern "C" void Transform_GetChild_mC86B9B61E4EC086A571B09EA7A33FFBF50DF52D3 ();
@@ -12356,6 +14237,7 @@ extern "C" void Dropdown_get_onValueChanged_m4EE82DC9AE8618C52CECA362EBDE6284F41
 extern "C" void Dropdown_AddItem_mF1368C1AC4667C050C8EE4AA3FFD7C6B2765990A ();
 extern "C" void Dropdown_CreateItem_m591B3B4546D13786893F9930BE702F3A9AAE3CDC ();
 extern "C" void FontData_get_defaultFontData_m395A2BA13B11A53C4BD4E8F1B7D97E9E278D6063 ();
+extern "C" void TMP_InputField_get_placeholder_mFDF56D3C20AA417F5423FDAFB0CB6ED32A6F275A ();
 extern "C" void BaseMeshEffect_get_graphic_mDD7D8CD6F220B9DE656145A1346EA9799255BE21 ();
 extern "C" void InputField_get_placeholder_mBDB090222F665AE8A1C96F1F375732346F177EEB ();
 extern "C" void Mask_get_graphic_m5B49E746A9E93A4D1BAAFD83F9ACB7C90633B5B3 ();
@@ -12365,6 +14247,9 @@ extern "C" void GraphicRegistry_get_instance_mC44355C0B339CE448FE227149CEE9E1469
 extern "C" void GridLayoutGroup_get_startAxis_mAA66BAC768514A784F891AF3771952CFDE713E7D ();
 extern "C" void GridLayoutGroup_get_constraint_mD3C4128F573301158661CC38EB13105D2A3CD0F8 ();
 extern "C" void GridLayoutGroup_get_startCorner_m8D842137857E7AD45EE6AC346E0413A8F392729F ();
+extern "C" void DropdownItem_get_image_m49AB0D285796A7BB112B3640E44B8F8F70C73070 ();
+extern "C" void TMP_Dropdown_get_captionImage_mB9137BB407BB4169C7779E4206FD10E6F9A679DE ();
+extern "C" void TMP_Dropdown_get_itemImage_mFAF67CACDA6587BF56BC790E5749DC4A40751082 ();
 extern "C" void DropdownItem_get_image_m2879EEFCAB097FBA79BC4DA41ECBA4EBE3CB6185 ();
 extern "C" void Dropdown_get_captionImage_mB846CCDC2F81DEC05EFC9FA1E38505409B428253 ();
 extern "C" void Dropdown_get_itemImage_m3B115ACA023FC279CAE1757FD4AB0DF91242BA50 ();
@@ -12380,6 +14265,7 @@ extern "C" void InputField_get_onValueChange_mC6364A9208DD2811E7DFF5F0A1225246A2
 extern "C" void InputField_get_onValueChanged_m1AE46D57FF8D96F53F2039722DE9CDDB6AB58CA1 ();
 extern "C" void InputField_get_onValidateInput_mCF04910E2F6920903CD095B86C1D61DA4C01B553 ();
 extern "C" void InputField_get_onEndEdit_m912D9CA48D579EE1A68544EA58EF5EEB633148C1 ();
+extern "C" void TMP_Text_get_layoutElement_mF2543803B3125A200614ACFD15986D76994018AD ();
 extern "C" void MaskableGraphic_get_onCullStateChanged_m9CF82537F28EEEC73E48B437DF49EA0B2312BDE8 ();
 extern "C" void Navigation_get_defaultNavigation_m00087A1157696556EB1D34E20D7324DE4788F6C6 ();
 extern "C" void Selectable_get_navigation_mE0FE811B11269EFDEE21C98701059F786580FB50 ();
@@ -12390,6 +14276,7 @@ extern "C" void ScrollRect_get_movementType_m96D7F76863CD4288A6E36481A9ED3028EA3
 extern "C" void ScrollRect_get_onValueChanged_mB59CCC8D8CD14BEB23018EDEE69EDB1EEE32C08B ();
 extern "C" void ScrollRect_get_horizontalScrollbarVisibility_mC43D0E4908D8876D399B15F36A8D98B827C77DDC ();
 extern "C" void ScrollRect_get_verticalScrollbarVisibility_m8D671BA3821D2F3F263DAC0C7FE1487333326DA9 ();
+extern "C" void TMP_InputField_get_verticalScrollbar_m0A136C0022A4F242CC1D987D44CC2B964021874B ();
 extern "C" void ScrollRect_get_horizontalScrollbar_m258E5BA6988FD113301575E1107A37D506515273 ();
 extern "C" void ScrollRect_get_verticalScrollbar_m0A9EBD87C90FBC567C11D37ECEBD2E6A7218BD0E ();
 extern "C" void Scrollbar_get_axis_m45122AD4E1A73A6555181B4A6A9C86DE2EE07EE3 ();
@@ -12422,11 +14309,25 @@ extern "C" void DropdownItem_get_text_mABB014D2DEE9F6B24515DE71A08EBFA82BB44829 
 extern "C" void Dropdown_get_captionText_m3E3FF20006F7EC8A8FD7ABBB7F9F723A0E3CD5FF ();
 extern "C" void Dropdown_get_itemText_m1AEEFE1ACF751CD3483659F5E5B703239C28C7D5 ();
 extern "C" void InputField_get_textComponent_mC1FC063C41D84947A3B0BE349C6E937EDF0EB19E ();
+extern "C" void DropdownItem_get_toggle_mEBCC39E603EAAE9541A7BB816EE35B82A4EDF696 ();
 extern "C" void DropdownItem_get_toggle_m6DAC29FD2E711343DBCDF240B3218BD6211886DE ();
 extern "C" void Toggle_get_group_m8A53B9EF413E699F639789C84035237AA9E6F614 ();
 extern "C" void Texture_CreateNonReadableException_m66E69BE853119A5A9FE2C27EA788B62BF7CFE34D ();
 extern "C" void Joystick_ScreenPointToAnchoredPosition_mE4C429E76D0FA78FD1567EB1361AF68141706201 ();
 extern "C" void Joystick_get_Direction_mF64961ED5359C8E31E79CAA306019CB66DF50F3E ();
+extern "C" void TMP_Settings_get_defaultTextMeshProTextContainerSize_m01600094D151635E225CBD97DB1E115572C1EF1A ();
+extern "C" void TMP_Settings_get_defaultTextMeshProUITextContainerSize_mE0C18E7E6F4C137D2B677102864809064F313724 ();
+extern "C" void TMP_Text_CalculatePreferredValues_mAD41359339EAB2AC14C01547C87B58C43AA26055 ();
+extern "C" void TMP_Text_GetPreferredValues_m57114EE0A6F11067CA2861AD40203E7606F45FA8 ();
+extern "C" void TMP_Text_GetPreferredValues_m5CF4F98B9C42862B02414FCA6AC14D08D69F588D ();
+extern "C" void TMP_Text_GetPreferredValues_m5A655DB26C49A177628B3FF46B581245051C8A7F ();
+extern "C" void TMP_Text_GetPreferredValues_m6F0CB998DBE6BFD05B390E8B40861E9415E40EBE ();
+extern "C" void TMP_Text_GetRenderedValues_m9B822CE403B2DE4A087568B4793BB0C1F4D9093D ();
+extern "C" void TMP_Text_GetRenderedValues_m0054DC6EDB8AF7780B071DA2D68B61BF5F24410B ();
+extern "C" void TMP_Text_PackUV_m1AF0DCCB6321FE0E7BF4901291B725DBAB085F75 ();
+extern "C" void TextContainer_GetPivot_m5379B14582E6BBB6F666455E698386042CBCE3DD ();
+extern "C" void TextContainer_get_pivot_m5181134E03A8BF8E3D40C13755B9477DDD1DE01D ();
+extern "C" void TextContainer_get_size_mF0E4195DC3BCD588620BCA6942849F9A6CAC9868 ();
 extern "C" void Event_get_mousePosition_m92AD98489A626864E9B179273270802EB1D2C085 ();
 extern "C" void AxisEventData_get_moveVector_m53A58D79217EDB5A9929EEDC00E3AB826985D02B ();
 extern "C" void BaseInput_get_compositionCursorPos_mB42FA4200B70CEA2F13B2E6957A22DB7F98B9BC7 ();
@@ -12504,8 +14405,10 @@ extern "C" void Display_RelativeMouseAt_mABDA4BAC2C1B328A2C6A205D552AA5488BFFAA9
 extern "C" void PointerEventData_get_worldNormal_m097228E46EC400D658261A050E03DCF31D8C4866 ();
 extern "C" void PointerEventData_get_worldPosition_mCEE3389DFE9AC3C853FA7AF7CD93C33E2A0223E6 ();
 extern "C" void Input_get_mousePosition_mC8B181E5125330ECFB9F8C5D94AA8F4AD1ABD10C ();
+extern "C" void Matrix4x4_GetLossyScale_m0FB088456F10D189CDBAD737670B053EE644BB5C_AdjustorThunk ();
 extern "C" void Matrix4x4_MultiplyPoint_mD5D082585C5B3564A5EFC90A3C5CAFFE47E45B65_AdjustorThunk ();
 extern "C" void Matrix4x4_MultiplyPoint3x4_m7C872FDCC9E3378E00A40977F641A45A24994E9A_AdjustorThunk ();
+extern "C" void Matrix4x4_get_lossyScale_m6E184C6942DA569CE4427C967501B3B4029A655E_AdjustorThunk ();
 extern "C" void Quaternion_op_Multiply_mD5999DE317D808808B72E58E7A978C4C0995879C ();
 extern "C" void Ray_GetPoint_mE8830D3BA68A184AD70514428B75F5664105ED08_AdjustorThunk ();
 extern "C" void Ray_get_direction_m9E6468CD87844B437FC4B93491E63D388322F76E_AdjustorThunk ();
@@ -12518,6 +14421,7 @@ extern "C" void Transform_TransformPoint_mA96DC2A20EE7F4F915F7509863A18D99F5DD76
 extern "C" void Transform_get_forward_m0BE1E88B86049ADA39391C3ACED2314A624BC67F ();
 extern "C" void Transform_get_localPosition_m812D43318E05BDCB78310EB7308785A13D85EFD8 ();
 extern "C" void Transform_get_localScale_mD8F631021C2D62B7C341B1A17FA75491F64E13DA ();
+extern "C" void Transform_get_lossyScale_m9C2597B28BE066FC061B7D7508750E5D5EA9850F ();
 extern "C" void Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294 ();
 extern "C" void Selectable_GetPointOnRectEdge_m8596C7C83FA78419A6FCAFDB64DFF9F7F99172A6 ();
 extern "C" void Vector2_op_Implicit_mD152B6A34B4DB7FFECC2844D74718568FE867D6F ();
@@ -12536,11 +14440,23 @@ extern "C" void Vector3_get_up_m6309EBC4E42D6D0B3D28056BD23D0331275306F7 ();
 extern "C" void Vector3_get_zero_m3CDDCAE94581DF3BB16C4B40A100E28E9C6649C2 ();
 extern "C" void Vector3_op_Addition_m929F9C17E5D11B94D50B4AFF1D730B70CB59B50E ();
 extern "C" void Vector3_op_Division_mDF34F1CC445981B4D1137765BC6277419E561624 ();
+extern "C" void Vector3_op_Multiply_mC7A8D6FD19E58DBF98E30D454F59F142F7BF8839 ();
 extern "C" void Vector3_op_Multiply_m1C5F07723615156ACF035D88A1280A9E8F35A04E ();
 extern "C" void Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3 ();
+extern "C" void Vector4_op_Implicit_mEAB05A77FF8B3EE79C31499F0CF0A0D621A6496C ();
+extern "C" void TMP_Text_GetTextContainerLocalCorners_m7E2AEAB9363EA4F1F23E20F05BEE55B5E9727ABC ();
+extern "C" void TextContainer_get_corners_m318928BC6A86A5FD504C880CE3DFD0FAF15E0E77 ();
+extern "C" void TextContainer_get_worldCorners_mDE95C39ED21538B6179B52533507539921512EFB ();
+extern "C" void TextMeshPro_GetTextContainerLocalCorners_mCDB7EDBD7D66C6BA4C5704961118FE5A0A6F1813 ();
+extern "C" void TextMeshProUGUI_GetTextContainerLocalCorners_m5EAA4EFB8D2D266BC3FBE5DF29B9DDABB0E5D906 ();
 extern "C" void Mesh_get_normals_m3CE4668899836CBD17C3F85EB24261CBCEB3EABB ();
 extern "C" void Mesh_get_vertices_m7D07DC0F071C142B87F675B148FC0F7A243238B9 ();
+extern "C" void ShaderUtilities_GetFontExtent_m11C874EE34C5B9640EED8CF35A3A562E3F79C0F6 ();
+extern "C" void TMP_Text_get_margin_mA6FBABBD6E6F2D09BEAD1F9C5AD43FD8D76F25E6 ();
+extern "C" void TextContainer_get_margins_m5DE3D01777697A4B1417444EF2517BF9507F28CB ();
+extern "C" void TextMeshProUGUI_get_maskOffset_mEA0DE6321C0176A02B25AD4553FA2676244F48CE ();
 extern "C" void Color_op_Implicit_m653C1CE2391B0A04114B9132C37E41AC92B33AFE ();
+extern "C" void Material_GetVector_mDE1F87F355E0ECAD883E4F2CF62DB338C2E00C38 ();
 extern "C" void Matrix4x4_GetColumn_m34D9081FB464BB7CF124C50BB5BE4C22E2DBFA9E_AdjustorThunk ();
 extern "C" void Sprite_GetInnerUVs_m273E051E7DF38ED3D6077781D75A1C1019CABA25 ();
 extern "C" void Sprite_GetOuterUVs_mD78E47470B4D8AD231F194E256136B0094ECEBC5 ();
@@ -12553,11 +14469,12 @@ extern "C" void Image_GetAdjustedBorders_mF1F67092B4B4468C8889DB295BE42BB06F4D83
 extern "C" void Image_GetDrawingDimensions_m706DDDA02781E2AC1BF1A552E4A566EF4D3DE7D8 ();
 extern "C" void Vector4_get_zero_m42821248DDFA4F9A3E0B2E84CBCB737BE9DCE3E9 ();
 extern "C" void Vector4_op_Division_m1D1BD7FFEF0CDBB7CE063CA139C22210A0B76689 ();
+extern "C" void Vector4_op_Multiply_m16A8F11F144C03A8C817AC4FE542689E746043F4 ();
 extern "C" void Vector4_op_Subtraction_m2D5AED6DD0324E479548A9346AE29DAB489A8250 ();
 extern "C" void Mesh_get_tangents_mFF92BD7D6EBA8C7EB8340E1529B1CB98006F44DD ();
 extern "C" void FontData_get_verticalOverflow_m2D3EF54A919DB4D650EE21F343AE96C48974307E ();
 extern "C" void Text_get_verticalOverflow_mE451223DCF16B3E00FB3BD427DDC42885174089C ();
-extern const Il2CppMethodPointer g_MethodPointers[12538] = 
+extern const Il2CppMethodPointer g_MethodPointers[14455] = 
 {
 	U3CPrivateImplementationDetailsU3E_ComputeStringHash_m5C1A2CA6703F0D94CE54FF9003154837BB1CDF9A,
 	Locale_GetText_m41F0CB4E76BAAB1E97D9D92D109C846A8ECC1324,
@@ -12913,6 +14830,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	AppDomain_getFriendlyName_mDCD770AC4B3A0E65C913D412D4EEE4CF38D1D656,
 	AppDomain_getCurDomain_mD7B43429B7B7D7AE59D29F5394B870C170EF53CC,
 	AppDomain_get_CurrentDomain_m3D3D52C9382D6853E49551DA6182DBC5F1118BF0,
+	AppDomain_GetData_mD6C34853507A96159BB1A7773C65E8B21DBC7250,
 	AppDomain_InitializeLifetimeService_m05B608CD854DBFB1FD8919E2B2F0F93EAFF5B8CD,
 	AppDomain_LoadAssembly_m8A7909CB55592A407D523DDDDB3677C191F1D8B9,
 	AppDomain_LoadSatellite_m4DE403FF997A067CB65EFFE5B21CA2673D311014,
@@ -13078,6 +14996,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Array_SortImpl_m69441E6855557430ED59346309E0AAA6BFB2305A,
 	ArrayEnumerator__ctor_mF6431B42D70C8DACACCEC14D1676A6EACA831062,
 	ArrayEnumerator_MoveNext_m9DDF97BFEAE8773FA0CBDFE7DCF39D96A8351121,
+	ArrayEnumerator_Reset_mD816AD0387167D06ACC09E2407F20DD8DF91FF0B,
 	ArrayEnumerator_Clone_m6CE6E38241B4B87AA18C451B3AA79C1FE44A9B46,
 	ArrayEnumerator_get_Current_m16FB2C50F76CFBABA957C7130BD1D2DFB3CF89C1,
 	SorterGenericArray__ctor_m8A0342B35AC3046A24FD7208C6AAEACCEAA6FB89_AdjustorThunk,
@@ -13259,6 +15178,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Char_IsWhiteSpace_m8AE1C4157A1E1D8F5022630F4229AB26223BDC6B,
 	Char_IsUpper_m94DFB4B66A46914F0588FB7EB42E9BB4A14C3513,
 	Char_IsLower_mE89996F09044C07A991164C7E6A4A9C02867CC90,
+	Char_CheckPunctuation_m907FC59526778DAFBD88DCD8B2C262DD73297571,
+	Char_IsPunctuation_m2F82DCD9CE2CBED034F8CF39E247BBB065935D51,
 	Char_CheckLetterOrDigit_m6494ECB3F3B19DC41364285D1E12B83BC0132CB9,
 	Char_IsLetterOrDigit_mD7307B3157DFA4EC20D58F68ACB6A9793D3A8292,
 	Char_ToUpper_m7DB88D6BD4EB66188E540B0BF985DE410B660F02,
@@ -13283,8 +15204,12 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Char_System_IConvertible_ToDecimal_mF8276A811375C288FA03CD4C714BC9216E53B4DB_AdjustorThunk,
 	Char_System_IConvertible_ToDateTime_mFB415440FE78E9348BCB151E3A604FB9EF064533_AdjustorThunk,
 	Char_System_IConvertible_ToType_mF4D9C6B44CF028692C4868CA48B9CC63619836BB_AdjustorThunk,
+	Char_IsControl_m32D58EB3C86758859BA4AC8BC075AB54F166F44E,
 	Char_CheckNumber_m8993FC5CD9BEC2CD77509400615ABAB93118489E,
 	Char_IsNumber_m6B4D661D496A7EBCC142740E91F55B01754FC24F,
+	Char_CheckSeparator_mA37B99B44339849D416C46F29C4159F6EC86969D,
+	Char_IsSeparatorLatin1_m2A5B7CB13D0606CD25210FEDD764898FD86546FD,
+	Char_IsSeparator_m63614CEC080B97A4F9DBC3EE000CFF7BCDC5ED8A,
 	Char_IsSurrogate_m464F9F75070ACD88165EE4734D617622A6667CB1,
 	Char_IsSurrogate_m43C03392CA71985B36FE7EB29B6ECB2DABA2680F,
 	Char_GetUnicodeCategory_m07C2D4BEA7C630EF8D87B2244689C5C315EC4914,
@@ -13301,6 +15226,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	CharEnumerator_Dispose_m953D307BE8FBD5DA4F9D0C10A593B949838EE49C,
 	CharEnumerator_System_Collections_IEnumerator_get_Current_m311AB48412996DAAA979792FC355BA51B1B4F2F1,
 	CharEnumerator_get_Current_m2C9590C1375021CA10C3049823690BB0E26BE3A9,
+	CharEnumerator_Reset_mB10759A262CC6DCEE2203A7D7A38470D4630F36B,
 	CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3,
 	ArrayList__ctor_m481FA7B37620B59B8C0434A764F5705A6ABDEAE6,
 	ArrayList__ctor_m0EEFF564D3B55439C82DC958952CCC98C47ABF4C,
@@ -13333,6 +15259,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	ArrayListEnumeratorSimple_Clone_m66B1798ADE7AC08D1C32D2E95395A5BB3C0EE1C6,
 	ArrayListEnumeratorSimple_MoveNext_m44B1A29111DEB18390CBB7C336575906A0F14ABE,
 	ArrayListEnumeratorSimple_get_Current_m4FC8903C12BB0E5CD964DF7F33573F0AC110C115,
+	ArrayListEnumeratorSimple_Reset_m2589CBC0F391537C700CAF174C29B7E1A8CF9A85,
 	ArrayListEnumeratorSimple__cctor_mDFC4483845B6790B4EF8A2DDAE737A32F7BA5745,
 	CaseInsensitiveComparer__ctor_mF59F5E497B30AB1FC035C293912FB8D4D3AF3D6E,
 	CaseInsensitiveComparer__ctor_mD5DC15C2FD17907674949A807D68DE4A52A3F8B4,
@@ -13439,6 +15366,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	HashtableEnumerator_get_Entry_m09E4C8736E1303C56569896F34943C95F4D62222,
 	HashtableEnumerator_get_Current_m3C665E408D870A47554A7552A087CB881C969618,
 	HashtableEnumerator_get_Value_mEB78D8A682883CABCBAFD20B340BD827CB71561E,
+	HashtableEnumerator_Reset_m1B23469BFCF718FF78AA504A91E93AB733AE4C55,
 	KeyCollection__ctor_m58E48C20C50744A6E711BA0504B8520945C5DD4B,
 	KeyCollection_CopyTo_mAC93A19478D6F9168EF9ADFBE68C5E45C453BC79,
 	KeyCollection_GetEnumerator_mDDD12D3A054E820FB09D8F856F3630766EC5A79B,
@@ -13486,6 +15414,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	QueueEnumerator_Clone_m7FEC8812D05C32AF9CD683028F82AB6F268FFA3C,
 	QueueEnumerator_MoveNext_mD32B729CB15A926B5CD49F1A1227DE43601953F8,
 	QueueEnumerator_get_Current_m0E088D19465BA6CCC423A99857FC563A2E777B1C,
+	QueueEnumerator_Reset_mA1E9C48A119A6E6A98564BD3201D2B5E528986A4,
 	SortedList__ctor_mBF1B7B8D37D3C752EA3F9FA173076B9478A35CEE,
 	SortedList_Init_m117CAD874BDC5E2559B518368A167CD4011F54C5,
 	SortedList__ctor_m8AB9EF2D57A8FDA543258B1B7C885F810D5B9D4D,
@@ -13516,6 +15445,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	SortedListEnumerator_get_Entry_mEDCBB15F075D7D79709D37B9EB395F39252C253E,
 	SortedListEnumerator_get_Current_mD1C66071084DE980DC97EABCE7BFBCCF96066120,
 	SortedListEnumerator_get_Value_mA1FF92895EE42234163A72D61DA3D6CF6C642C14,
+	SortedListEnumerator_Reset_mA0ACBEBFF0955F4BF3B6CA08C028361AE993C1A4,
 	Stack__ctor_m98F99FFBF373762F139506711349267D5354FE08,
 	Stack__ctor_mAA16105AE32299FABCBCCB6D912C220816030193,
 	Stack_get_Count_mA3966F522AE357ACCE3537FBDF82A919B509D6C0,
@@ -13532,6 +15462,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	StackEnumerator_Clone_mA509B6C10DEE0D9D7BB94621F3A5311A49BDBD36,
 	StackEnumerator_MoveNext_m7C00619A440FB2C12C0A5C3C8CEB934250C3DE22,
 	StackEnumerator_get_Current_m648842035EE50845BF314430E0FFBF33A4983C22,
+	StackEnumerator_Reset_m72AB015F4BB163EC9DC19457743EF309A4C24187,
 	CompatibilitySwitches__cctor_m799C886CC771EE2F855A0BE665BCA5EF0FEE2237,
 	Console__cctor_m44FB48190CE1DCE878B95D9D397D29C7527BEE44,
 	Console_SetupStreams_m6CC1706E3A1838A0C710F3053EF589C7BA934065,
@@ -13768,6 +15699,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Convert_ToDecimal_mF2C5F32DF4C8DC0938C223031CDDF4AC1E08A0CC,
 	Convert_ToDateTime_m57803D920D7F8261F00652A19DD01E530A530795,
 	Convert_ToString_m10FC2E5535B944C2DFE83E6D2659122C9408F0FF,
+	Convert_ToString_m19979FD8FCD84DC6CFBF835D7666956E5138467B,
+	Convert_ToString_m013DD2590D9DCBA00A8A4FEEBE7FC2DBD4DDBC70,
 	Convert_ToInt32_m8DC81C7C49EE4A9334E71E45E3A220644E45B4F4,
 	Convert_ToBase64String_mF201749AD724C437524C8A6108519470A0F65B84,
 	Convert_ToBase64String_m86FF376EC650C7A6E85EDD7BCF5BEC23EE5402DF,
@@ -14183,6 +16116,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	U3CGetFilterAsTupleU3Ed__7_System_IDisposable_Dispose_mEDA871B0D34012DD87B7E98D4D8B99736B456012,
 	U3CGetFilterAsTupleU3Ed__7_MoveNext_m5EA36FADB9DB1365E8C4ECA1E1EE7206A2E41FAE,
 	U3CGetFilterAsTupleU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_TupleU3CSystem_Int32U2CSystem_Int32U3EU3E_get_Current_mB8DF7A42EC47199DFD9847142DFEC75581225C30,
+	U3CGetFilterAsTupleU3Ed__7_System_Collections_IEnumerator_Reset_m90DAD077759C760A2A2DFE315532247320FCBDA0,
 	U3CGetFilterAsTupleU3Ed__7_System_Collections_IEnumerator_get_Current_mADE2ACF734941FF617CA4CDFB9BBACA3C91E95AE,
 	U3CGetFilterAsTupleU3Ed__7_System_Collections_Generic_IEnumerableU3CSystem_TupleU3CSystem_Int32U2CSystem_Int32U3EU3E_GetEnumerator_m76C2A9E5353BED7EB8AB5F81DD259C81DC58003C,
 	U3CGetFilterAsTupleU3Ed__7_System_Collections_IEnumerable_GetEnumerator_mC651A84863E461B8C9024EFFFB36B504DA60822B,
@@ -14335,6 +16269,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	U3CGetEnumeratorU3Ed__17_System_IDisposable_Dispose_m9F76E3E5CB1711E1B01C26506CEEA33FEEBF8ECC,
 	U3CGetEnumeratorU3Ed__17_MoveNext_m451A16FB6126749AB11DBD28771761699BFC1681,
 	U3CGetEnumeratorU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_Collections_Generic_KeyValuePairU3CSystem_StringU2CSystem_ObjectU3EU3E_get_Current_mCB8BFBA2C812898BE240722FD9588935DC4CEFD1,
+	U3CGetEnumeratorU3Ed__17_System_Collections_IEnumerator_Reset_mDC045F6D9917B711DDC89E6B9A2EE9CC1DCD2856,
 	U3CGetEnumeratorU3Ed__17_System_Collections_IEnumerator_get_Current_m59F37C7DE26CE9C90711A8C710D37B68038228CF,
 	EventProvider__ctor_m3B50CC1BF097459B596C77B56561A089D9397AD9,
 	EventProvider_Register_m44CAC9D9F9EA2B0E4E3883128A19E1B70C254EE2,
@@ -16188,8 +18123,11 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Math_Ceiling_m379E37FEB7C1DC30F53CBFA8896E0DD0804C44C7,
 	Math_Cos_m2A56736FA0ADF035FA2F54813C6C6E21D6C05F4C,
 	Math_Floor_mC3101A845FDA61AA1E9D4AC3C613F2A3F54332D8,
+	Math_InternalTruncate_mAE5DE69F993E1DF43433F66135A2A80CEF0AC7C2,
 	Math_Sin_m70D30E020E871902B8610553CD000D7826B8B1DF,
 	Math_Round_m92CC19B936A3FC72826AD3950A90E5D9EB7513FE,
+	Math_SplitFractionDouble_m88260C271374C2523447550FAB21BC5EEA603216,
+	Math_Truncate_m44E272770DC7ED9901329E1FC8D0D1F0731C9011,
 	Math_Sqrt_mB2008A97F28A0FC333E8DA31C6B1731D015BF5D2,
 	Math_Log_mD51F54D254E1380E2317F19403E67DFB15008CD9,
 	Math_Pow_m9CD842663B1A2FA4C66EEFFC6F0D705B40BE46F1,
@@ -17231,6 +19169,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	U3CGetEnumeratorU3Ed__5_System_IDisposable_Dispose_m36940C31241B488CDD10B61B0FEC8C9FDE51E7D8,
 	U3CGetEnumeratorU3Ed__5_MoveNext_m3E94DEECDBE03E91C9BFE1F6C6236FEFB4652D15,
 	U3CGetEnumeratorU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_Globalization_CultureInfoU3E_get_Current_m3BC9B52B63C6D25FBEEDE6E44B7F936BB72100C2,
+	U3CGetEnumeratorU3Ed__5_System_Collections_IEnumerator_Reset_m2CE55FE28B086721C27CF3ACD0250953A60DB59F,
 	U3CGetEnumeratorU3Ed__5_System_Collections_IEnumerator_get_Current_m65691B8BB8958621800AB7CACC5969B64182BC0F,
 	ResourceLocator__ctor_m117CC55E99954CC1ED8B8D5138B3BE4E8ED0F694_AdjustorThunk,
 	ResourceLocator_get_DataPosition_mD4231A2CE03010DB5E270120B18F86C13E82F59B_AdjustorThunk,
@@ -17307,6 +19246,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	ResourceEnumerator_get_DataPosition_m3D779FD24325B2CA8F8A8C02405853B43C1A03B1,
 	ResourceEnumerator_get_Entry_mFE1ABE5691EDD95C756BAD75AED222D2CA6FC9C3,
 	ResourceEnumerator_get_Value_m075AD61830CDC9263B4FB5B7002E5E44C0D0EE85,
+	ResourceEnumerator_Reset_m0F5FE16F630FADD76B1B746EBDF42BA492238CD2,
 	ResourceSet__ctor_mCEC4C6E03EAC024887A6C0F818183FA549DC5A0E,
 	ResourceSet__ctor_m9A0002B5C6E94D901E63C0B0CEF4E397FE91F62A,
 	ResourceSet_CommonInit_m668B9A9BA4DB9CB2C3C975BEAC2A8CD54A62493F,
@@ -17879,6 +19819,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	DictionaryEnumerator__ctor_mA7D9DB0B74A0FB195C28FF779A366377D32FCC85,
 	DictionaryEnumerator_get_Current_m6DDDCF2A497034F7A84013A02B3B046CB0AC74C9,
 	DictionaryEnumerator_MoveNext_mB1768E3DC0980322503D658FE95B9443812991C1,
+	DictionaryEnumerator_Reset_m13E09097E0CEBBB90906F8A85DAE7E4B41AF450E,
 	DictionaryEnumerator_get_Entry_m43D72FBF041254775BFFD1B888E35ED32CB6E365,
 	DictionaryEnumerator_get_Key_m6163DE37159F891C0E722A803C3C06A89A09A6B2,
 	DictionaryEnumerator_get_Value_m074C822A494B3676EB679A4F7DA4CDB795766963,
@@ -18813,6 +20754,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	SerializationInfoEnumerator_MoveNext_m74D8DE9528E7DDD141DD45ABF4B54F832DE35701,
 	SerializationInfoEnumerator_System_Collections_IEnumerator_get_Current_m67DC9F21CCB24EC7F5EA120DB19791E5801B7B55,
 	SerializationInfoEnumerator_get_Current_m8C18D86105BD6390B0FB268A1C1E8151D8AF3C33,
+	SerializationInfoEnumerator_Reset_m6AB5305A2ED1A370080E22C4A6D3FD18397F5961,
 	SerializationInfoEnumerator_get_Name_m925E3C668A70982F88C8EBEEB86BA0D45B71857E,
 	SerializationInfoEnumerator_get_Value_m90F91B3AFD43BA00E4A69FC0954761CFD9C55AE1,
 	SerializationInfoEnumerator_get_ObjectType_mC5519645F5E223D319FEA218EE2674EB7C66F675,
@@ -19104,6 +21046,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Evidence_GetEnumerator_m03EB4131E670C6BAFA8C155ABCD98637699AA43E,
 	EvidenceEnumerator__ctor_mD4153081415054237617C4E5AFAA036445E6A43B,
 	EvidenceEnumerator_MoveNext_mC9D2715D6026F22D7A0CE13DB1EC9E1EBAFFC0A6,
+	EvidenceEnumerator_Reset_m7C34F282CC975B8A002C37B26605B31997CEA37C,
 	EvidenceEnumerator_get_Current_m375A68A8EB0A859A10B82241A0A12BDD1904432B,
 	SecurityElement__ctor_m888B01153F0CC19DA06717EBB2E55240669304C6,
 	SecurityElement__ctor_mAFE29568F4B8B5605AAD1A6915B480D8BCABC2CA,
@@ -19230,6 +21173,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	String_CompareTo_mC250D5F34FBB95D3F4BDFA96BE88D1C611913ACA,
 	String_CompareTo_m9FAB33E920810E148EDAA4F64E37F231412312AB,
 	String_CompareOrdinal_m172D84EDDE0823F53EAB60857C07EA7F85600068,
+	String_CompareOrdinal_m3DE819A1E2FB2B4992CFF04CA36921B77A3FC387,
 	String_Contains_m4488034AF8CB3EEA9A205EB8A1F25D438FF8704B,
 	String_EndsWith_mE4F039DCC2A9FCB8C1ED2D04B00A35E3CE16DE99,
 	String_EndsWith_m80B198568050D692B70AD8949AC6EDC3044ED811,
@@ -19247,6 +21191,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	String_LastIndexOfAny_mF62DEBFAAA527076E8B6FA4225F58767BA5DC792,
 	String_LastIndexOf_mA235A9DBC602A4C97D8708F51720E0BAE3CD7D84,
 	String_LastIndexOf_m074A70E0C63246B664CC26F4D0B5203424B2BCF7,
+	String_PadRight_mDC890E71A75C12F96DC1430CF94B1B7C1ED839B0,
 	String_StartsWith_m7D468FB7C801D9C2DBEEEEC86F8BA8F4EC3243C1,
 	String_StartsWith_m844A95C9A205A0F951B0C45634E0C222E73D0B49,
 	String_ToLower_m5287204D93C9DDC4DF84581ADD756D0FDE2BA5A8,
@@ -19318,6 +21263,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	String_ReplaceInternal_mEE1BFD12B1668AFABA8B7B004BB86546AE7ADF66,
 	String_ReplaceUnchecked_mA5FBEF3953C9BE9A458963DBAA648373F9E0C5D7,
 	String_ReplaceFallback_mF545C150D8BF525B3DDD730ED351B69D0956C52D,
+	String_PadHelper_m305F79FF4A52536857473BE831FF880AE58F9F85,
 	String_StartsWithOrdinalUnchecked_mC028BA12B4C1D3EA141134DD13C9DB2F1350CC4B,
 	String_IsAscii_m5C4AA0931EC5E967EED8E9BA02F4CF10C50A78A9,
 	String_CharCopy_m9C765555741AA1DD59062ED13B0A7FB4BEFA1C4A,
@@ -20510,6 +22456,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	ThreadStateException__ctor_m45CB0F9C9BFBAE82CD65CB8AEDB9EE9C1A2027FA,
 	ThreadStateException__ctor_m8269A7EE51BF315AD8C0A4B64C2B2319035BB767,
 	ThreadStateException__ctor_m977994CF05BB56040152C0F84DF00A8426ACCCB4,
+	Timeout__cctor_m9C4BFE11D3494ED5DB59176974B66055093F26D9,
 	TimeoutHelper_GetTime_m6AD4BA5DCA9E4102DC18395A59123E91EB915D98,
 	TimeoutHelper_UpdateTimeOut_mC735C89ED9256E7BD6B8AC2068A8A50DDDB4F45D,
 	Timer__ctor_mD4A4B4616E25E39A422DD8083930951535AE8BA1,
@@ -20616,6 +22563,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	TimeSpan_op_Equality_mEA0A4B7FDCAFA54C636292F7EB76F9A16C44096D,
 	TimeSpan_op_Inequality_mEAE207F8B9A9B42CC33F4DE882E69E98C09065FC,
 	TimeSpan_op_LessThan_mF92FF63DD1E52540977D3B1753D43895F7B0A117,
+	TimeSpan_op_LessThanOrEqual_mFFB6826BC19E5E63E62697EF3A81B84CD529E83B,
 	TimeSpan_op_GreaterThan_mC4CE0AD3057035058479B695ACDC089F3A6EA486,
 	TimeSpan_op_GreaterThanOrEqual_m7FE9830EF2AAD2BB65628A0FE7F7C70161BB4D9B,
 	TimeSpan_GetLegacyFormatMode_m058C62B8FEB05BBD84A5437AEDF60DAF2444EBB8,
@@ -20745,6 +22693,9 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	TimeZoneNotFoundException__ctor_m38A84B100985F5907DE77F71A3B98CD3BF1D9CD3,
 	TimeZoneNotFoundException__ctor_mA8D2277188E55C2B6EA52CEB57A8AD18243CECDE,
 	TimeZoneNotFoundException__ctor_m13C5CB453D2842823AA85B9B4E422C42D659FA19,
+	TimeoutException__ctor_mB870CBFE33BA657A6C7FBFAB77984096ADCA62CF,
+	TimeoutException__ctor_mF1C60F8EDC528DD4115617C3A3ED34CB20175F1A,
+	TimeoutException__ctor_m18609AA35D5F9E6B53E125B2B00D37EBBAB1DB65,
 	Tuple_CombineHashCodes_m45A9FAE45051A42186BE7E768E8482DFC17730E1,
 	Tuple_CombineHashCodes_m96643FBF95312DDB35FAE7A6DF72514EBAA8CF12,
 	Tuple_CombineHashCodes_mEAEECB23FE2646E87123BA8A9D39AE003E8540B9,
@@ -21084,6 +23035,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	XmlChildEnumerator__ctor_m9D966497AE59A0784E4FE7CB883226B7A332F311,
 	XmlChildEnumerator_System_Collections_IEnumerator_MoveNext_m42A648E7F0B79C7F47D7EF9CE5095D54EA372EDB,
 	XmlChildEnumerator_MoveNext_mCF3EB51E714C7F2E5B627F515BF880F9BF1878CE,
+	XmlChildEnumerator_System_Collections_IEnumerator_Reset_m3EF3533A19F3926CDCCD9CD82498D01B5F7EA08A,
 	XmlChildEnumerator_System_Collections_IEnumerator_get_Current_m2E52170DBEF6245A93126D3C7FF60ED17DDE2BD1,
 	XmlChildEnumerator_get_Current_m8ED001FF27613B8D7040CBA88CD1BF9DE3AC9872,
 	XmlLinkedNode_get_NextSibling_m6F858A5E1ED045F63D7885A243CD10FFDA891BA6,
@@ -21097,36 +23049,25 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	XmlReader_Dispose_m56DD3810681D55E0671AC2C7C49649B2B1730E7A,
 	XmlReader_Dispose_m6FF5EAA719F69E11B65EF4F8A8890B201CB94421,
 	XmlReader__cctor_m3EF2489C81E4EEF249A34242FC130A861972991E,
-	ConfigurationCollectionAttribute__ctor_mF41393517164A49C3127C24B1CCBBA3CCBC44A65,
-	ConfigurationElement_get_Properties_mB1F40F2F14D68682556E31C36BEF7B62067C9E98,
-	ConfigurationElement_IsModified_mA046D03044CDCD875C22E34247CE15E7BBC883A5,
-	ConfigurationElement_Reset_m39498D76FA0912DA725E3224537BBF7FA5B0FC1A,
-	ConfigurationElement_ResetModified_m6AAF1F8A88CEF6F993A6666E3B4D4B2456024989,
-	ConfigurationElementCollection_get_Count_m58EFBCAA164C912FEBD007AACF85784B80C54EFA,
-	ConfigurationElementCollection_get_IsSynchronized_m01A1041417359C9558B7BD6BBE38A079B1290C59,
-	ConfigurationElementCollection_get_SyncRoot_m9AF9A3529CAF268BE69B95ACD13FEE0A64FACCAD,
-	ConfigurationElementCollection_GetEnumerator_m9BAC931AF7292090D4A17FB6BE425A87698B615B,
-	ConfigurationElementCollection_IsModified_m8CE9100FF55419730D78D1399847C4AA31596769,
-	ConfigurationElementCollection_Reset_mCAD4115E5753AFD91A9980F1727F19C2820CFC5A,
-	ConfigurationElementCollection_ResetModified_m0E48AB9040D7A874EB16EABBD66DE7A5C9682C3E,
-	ConfigurationElementCollection_System_Collections_ICollection_CopyTo_m0F4E4D3C5BC76BFC9246418F4F9930BCFCB88175,
-	ConfigurationPropertyCollection_get_Count_mCD54D7BF7C9539EC577F6B1AC88C53A67FEFD844,
-	ConfigurationPropertyCollection_get_IsSynchronized_mC9C67CAB13360A77A9EC5DA5474900997EAAC474,
-	ConfigurationPropertyCollection_get_SyncRoot_m9C5F4616FF01536A643161A98B57D8343A1B0876,
-	ConfigurationPropertyCollection_GetEnumerator_mC0049DA2728B41148DB85EA951D5708F732731C3,
-	ConfigurationPropertyCollection_System_Collections_ICollection_CopyTo_mA43D6C442A7E2B71FF5338B36485FAB2861E5E9D,
-	ConfigurationSection_DeserializeSection_mC39769C65F7E36F2B33E155B4D8ACADB83377B5F,
-	ConfigurationSection_IsModified_mDD7D74427E761D9EFAA2629FE71DD83A8B7D1785,
-	ConfigurationSection_ResetModified_mCA8B3DE0DE1903CDB60E70517BEBD92A06C647E4,
-	ConfigurationSection_SerializeSection_m76F991963602BC728C4B22044ED618A42FA3C3E5,
-	IgnoreSection__ctor_m30C69267DD27E85879BA3AE28ABCDAE783B28350,
-	IgnoreSection_get_Properties_m654A228B012E724695AFD79627F13FCF739244E4,
-	IgnoreSection_DeserializeSection_mD4D92311BEF0747F961B3E11BFDC13B56052A0EC,
-	IgnoreSection_IsModified_m0430C7830B3A902BCAE985427CB2FCE1F15EB595,
-	IgnoreSection_Reset_m46C76CCBADF508876E17A2A59778E427E20B7628,
-	IgnoreSection_ResetModified_mE7AEAA166BBA055767C5AFA05C9F223E1D0FB070,
-	IgnoreSection_SerializeSection_m03CB506F46AEA369F5FCAEC048509461D907FEE9,
-	ThrowStub_ThrowNotSupportedException_mF0DAFE591641D359313AB87E6900E4B05E42390A,
+	ASN1__ctor_m6DD2E5BD0B12A6BFA95E1822A55B2294B8C237BC,
+	ASN1__ctor_mAB2593792CB61AD1542F4F9D6FB6E8BB96DE007E,
+	ASN1__ctor_mE005F52336402C3D41EAD9E28A95910B3C0865DA,
+	ASN1_get_Count_m5A0E71B4C4A2257C0875AE1041AAA953C5B12A19,
+	ASN1_get_Tag_m1346989AC839D85A9E0A211525A6B551974E4862,
+	ASN1_get_Value_m9BD6239E12A6148AF9507C2F58058C6B8147A079,
+	ASN1_set_Value_m225FF9AC03EA872809C7742070A34A264C58588E,
+	ASN1_Add_mF6ED0416BB021A1C333F99E42F8B17AF8B26639B,
+	ASN1_GetBytes_m4ABC0EF4CBE8CF6BE65CEC52CDB02BB59E2E9AE4,
+	ASN1_Decode_m94E3A6F94EDACE796521D04E6A832D99592F1149,
+	ASN1_DecodeTLV_m30440B1DE0A8C4236AA9658DEBF2808FD3BC00C3,
+	ASN1_get_Item_m88B75C57A7E130A02A709AE8FFD2E0972E71FC08,
+	ASN1_ToString_mF3953615856548F00889AD245391D09FBE782CBA,
+	ASN1Convert_FromInt32_m59FF0922659B0A323026CCC0876BC33020C4FC9A,
+	ASN1Convert_ToInt32_mA2A8761F965979408D46FBEB946DB59F36137A5E,
+	ASN1Convert_ToOid_mFFA93B4BBEFCA8E4E86DAE87CDB998E78BFB2D5A,
+	BitConverterLE_GetUIntBytes_m871281C3039A5B7DFB56E0F3EBBE22F74135997C,
+	BitConverterLE_GetBytes_m1207548B6BC0E2D49DD06D5B3A3AC19C001BDB35,
+	CryptoConvert_ToHex_m2FB6183AFF3B31424407BB7D767A844E3464B411,
 	U3CPrivateImplementationDetailsU3E_ComputeStringHash_m7C7DB27BC4297A74A96AC53E1EDD3E7415DFB874,
 	SR_GetString_m9548BD6DD52DFDB46372F211078AE57FA2401E39,
 	SR_GetString_m9D671CBA422B18D15B8FF59B22DCCEB32E3D16E2,
@@ -21299,6 +23240,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	OidEnumerator__ctor_mCA4FBC8408E2B04FD0A524E256E284E8A44E0797,
 	OidEnumerator_System_Collections_IEnumerator_get_Current_mF11B1F886842EA79EDB215BD5106D0C4C65EBE53,
 	OidEnumerator_MoveNext_m073D94D5D3254D53DF53429ACAD0AA9BD682221D,
+	OidEnumerator_Reset_m5006C3B1283711E2BDDEA6C25FDF93BBB900195E,
 	PublicKey_get_EncodedKeyValue_m4BD0975B491E89FFE2A75C1ACDEB1DCCAF586D4F,
 	PublicKey_get_EncodedParameters_m629FF8D7E4EEDED96BC455B7B953DC5A46D26F4F,
 	PublicKey_get_Oid_mB0AD65FDF84716726D5C7756E5B50CEAD1E4C2AE,
@@ -21347,6 +23289,306 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	X509SubjectKeyIdentifierExtension_ToString_mB22086D5277B22093240BB9841D32D9008D26AFA,
 	X509Utils_FindOidInfo_mE43E0522988511319B8B9F69AF7D0A10B4AE8FA2,
 	X509Utils_FindOidInfoWithFallback_m98443176879ABC2054619D4AA491FE086D406950,
+	CachedCodeEntry__ctor_m78BCA6060E7D83B172F998AF60D17FB41BE703B8,
+	Capture__ctor_m6CC8A5385C7BD6B8AE63F9812293EC3252A65B3B,
+	Capture_get_Value_m8F739B7E4E173814B0890ECFEA37194D592BE91C,
+	Capture_ToString_mD49A28CAD5727E8F629643EDE0C6BAB476BA639E,
+	Capture__ctor_m3ED807279C93FFCE8BE4EAF447DA01E62EF93D7B,
+	ExclusiveReference_Get_mE79B077388AFBD19A4524E630701783E7DCE61E4,
+	ExclusiveReference_Release_m9A1577138872106EA54A04EA4AB77F710CEDE336,
+	ExclusiveReference__ctor_m0427943C75CBB283EF26034339E3D412A080B5D7,
+	Group__ctor_mECF4574592517D363C35ADC07F9D6F7E7DE6B4F6,
+	Group__cctor_m213E26F039439904671CFD5DAF5D85B47D5CBE68,
+	Group__ctor_mDCB3D51B8A672B342F452177D42D6D3F2F9BA91A,
+	Match_get_Empty_m5D3AE3D0580F06ED901EE69FCCED6AF44715528F,
+	Match__ctor_m08A8262ACD89C9E47AA7168D0F2CC6E3338855D7,
+	Match_Reset_m9EDCC3689E8A5A57A644946AEC3E41C1901C7DAF,
+	Match_AddMatch_m3C9178A7D6F8175A7628E4BE579FD209B7C7650A,
+	Match_BalanceMatch_mCC0EC358E4C33191B896226512FE8F086EFEA4CF,
+	Match_RemoveMatch_m6268C01D537F0BACB7DD707E11FA873C3E1918C7,
+	Match_IsMatched_m7686CA418F588EC198A82DE287326C46F4CBDD5F,
+	Match_MatchIndex_mA39CA9F84C3872675CB9C76EC342EFB30A2B5DA0,
+	Match_MatchLength_m25492EACF56E8211FEEC4856F93D7A19D30A984F,
+	Match_Tidy_m88B2494631267F8CF7E90F3305F713550ED39CE8,
+	Match__cctor_m9158A9D469720E89CD9004B65F55EEEF5E330C0E,
+	Match__ctor_m38BC8AD7EEFA99C6FC25587D6FE56450FA849E0C,
+	MatchSparse__ctor_mEA523FCAF96D8A81401D3ED010CACE4463CCE811,
+	Regex__ctor_mFDE4B6A423C15AA60BF9FEC7D4D7DFD4657D7C6E,
+	Regex__ctor_mEF4515C4C44DF8BE410F388C82CC679D743FB5CD,
+	Regex__ctor_m87918FB2A856E264A492D2A2B4B412BE4E2370BB,
+	Regex__ctor_mF11825F6E24D7D780BD34C74C96392DEC3602A5D,
+	Regex_System_Runtime_Serialization_ISerializable_GetObjectData_m95B0E2523A72DF6AC56DEA7CDA286F771E06B0FD,
+	Regex_ValidateMatchTimeout_m71FE7188780DEAD57093B7345CCC50D0159218BE,
+	Regex_InitDefaultMatchTimeout_mC91736B02BD12B92CBD93C329E7A8233CD0B9DA4,
+	Regex_get_Options_m823A30690EEA63798DB8497F3E9CF062412B8653,
+	Regex_get_MatchTimeout_mD484D1CF0B6BF8516A08991D1387761CAE2340D6,
+	Regex_get_RightToLeft_m546BF531C94563A11427CD24367525462CDB4509,
+	Regex_ToString_mF967EF5E8BD74C3692379B8436AB8D3C5963FA75,
+	Regex_IsMatch_m3C44A8D92E43EA8CC8D623ECC394B27F09E2D5DA,
+	Regex_IsMatch_m90348BB44AD120A322F411001522DB0758A6678B,
+	Regex_IsMatch_m79684C4D2CE6C5495BCCE9A32AC029E1E5950B7C,
+	Regex_IsMatch_m2FB867817B341A5FA3E64A41F31820C9658F22A5,
+	Regex_InitializeReferences_m2CD000C1AFAA8B214F32D989C7D116B684A31840,
+	Regex_Run_m74FB5EF178DF43F88B9058B94939F557479B93FC,
+	Regex_LookupCachedAndUpdate_m88CA03797C5ED796BD5E1319DF6B1B6B6FCE6C0D,
+	Regex_CacheCode_m68F93FF3B918776D190D4DB807A3323691C77F0A,
+	Regex_UseOptionR_m84945EDBEDCD61DBCEB691C929CA28F4B0AF4B49,
+	Regex_UseOptionInvariant_m0CA185DBDB15932BB8A8B4F53EB8ACECEC006566,
+	Regex__cctor_m86CE9B8D0FF5F2B54D4FF27D2213A1E6917477DF,
+	RegexBoyerMoore__ctor_m39674FB18BB75DD891AAE3781FDA0CCDDEBC2F8C,
+	RegexBoyerMoore_MatchPattern_m41D57E11972B2142649662886DA145AFE396F602,
+	RegexBoyerMoore_IsMatch_m820D06ED51C062451AFAF22682D2EB06C8DFABD9,
+	RegexBoyerMoore_Scan_m204A42056131A694B6D31FC69563355788CABD67,
+	RegexBoyerMoore_ToString_mB0A62E68E8A3CAC5CE3AC45E1C54FA72DFB626F6,
+	RegexCharClass__cctor_m5170E52D9864BA712125FB33F309FE9E37869EA8,
+	RegexCharClass__ctor_mAA44510F3E5001A8612355B4FFB718D9DDC74264,
+	RegexCharClass__ctor_mB05A6CC8015C5D545C639682454A524DE7E2EA97,
+	RegexCharClass_get_CanMerge_mC27A4CF83CFBEF3741A3DB4F99ABA6DE76B57837,
+	RegexCharClass_set_Negate_mEB8659D83748A4DF28CDDFC3AC573A6504385E09,
+	RegexCharClass_AddChar_m4C4BFD42572978A9F98ADE75BE3811593957A9E3,
+	RegexCharClass_AddCharClass_m0E5DD1105844AFB7CE45B5C801304B5C803FB5CA,
+	RegexCharClass_AddSet_mFFDE070E770BE967173D630AD50010C3397F7B97,
+	RegexCharClass_AddSubtraction_m17E538235B02A1435BD43D4FE4501DA67AA35145,
+	RegexCharClass_AddRange_mCFE9B670B3EBB13A5CDB694B1D1D6B1C0249D110,
+	RegexCharClass_AddCategoryFromName_m9AD2D607E1E34A52CBC26FC38D468905C43A9202,
+	RegexCharClass_AddCategory_m6A4625370DA8927DF5342275CB1F6155FC2BA255,
+	RegexCharClass_AddLowercase_m01C1B11EB0B82E065276C7ECF60725886F59A07A,
+	RegexCharClass_AddLowercaseRange_mCDDE9661C9C300DFEB51A8FE36E2F790E3E75D75,
+	RegexCharClass_AddWord_m1D2553B878162B32B0548536AE4C3EE673041CA0,
+	RegexCharClass_AddSpace_mC6557749D96EBD114BCB133D14887A29304196D8,
+	RegexCharClass_AddDigit_mC4DE43D884E575729BB2E575DA5552989368F6B3,
+	RegexCharClass_SingletonChar_m01C15732FAD399460FF5BB449B8177A77CAB1DB9,
+	RegexCharClass_IsMergeable_mB9A0CD8306728BAFA5460C7FD748A2A7AD4BA448,
+	RegexCharClass_IsEmpty_mAD6C63FE25C4CF3E52A20185418925D12C4C07CF,
+	RegexCharClass_IsSingleton_m89D3E8460B0E7020DB0ABA607AC2F76FB9A34F1A,
+	RegexCharClass_IsSingletonInverse_m3E75D541C85AD842B9EB80705D6869EDB3F6928D,
+	RegexCharClass_IsSubtraction_m3C9EF97AFE7E4BCC24A2DF10834BF62279D7EE26,
+	RegexCharClass_IsNegated_m9CEDECE7EDA98ACD502E75783CA631A719DBC675,
+	RegexCharClass_IsECMAWordChar_m6E7FC296DB816D89E3D6CF8672DCE6DFC519D741,
+	RegexCharClass_IsWordChar_m2DF03D32DAB403138E397CB05F45D37BD50EB18C,
+	RegexCharClass_CharInClass_m194AAA57BBBD30E78E70255D6F53FAFDB785EC0E,
+	RegexCharClass_CharInClassRecursive_m5560DBADE1463FDEC38643C72CDF2FD5B3F69A5F,
+	RegexCharClass_CharInClassInternal_m5D1634F64092E4BD9EB6427447F952983211A760,
+	RegexCharClass_CharInCategory_mCDE20DF783F8D4E4403EC7F00F9C12E34D86C2DD,
+	RegexCharClass_CharInCategoryGroup_m28E498004F5EA6445C83F1B8EB4A776C210D30C5,
+	RegexCharClass_NegateCategory_mF2E03FFFE79E427F39D9368013A334F5BD118E13,
+	RegexCharClass_Parse_mBC3780FFF0DDFB62CA2085746618E6C256E8D86C,
+	RegexCharClass_ParseRecursive_mF7E7DD4EB594C9C30A60E72CD3CFD4EC1D822CF5,
+	RegexCharClass_RangeCount_mEACBB4BD08CE18A9C4F0C433A7D6C5726F563E2E,
+	RegexCharClass_ToStringClass_m7A760D96732A03D46C4060064B3FC58349D2B4D5,
+	RegexCharClass_GetRangeAt_mE563FF8072DD9B4E1179F55416CCD7FC4EB2C4FC,
+	RegexCharClass_Canonicalize_m44EEFB16DB02E73C1E7280D15DAE98E50F4D6FA4,
+	RegexCharClass_SetFromProperty_mA33170AF599765B5FDE8611BED646A850FB2330E,
+	LowerCaseMapping__ctor_m881B66875631FF0DD253696FE56313A9E3F24187_AdjustorThunk,
+	SingleRange__ctor_m4674722AFC97A111D2466AE2050C2E4E6E57303E,
+	SingleRangeComparer_Compare_mF2CAD555BAC4D9CBF6A8F90D829CB528BD7BCCC9,
+	SingleRangeComparer__ctor_m9E44BF07F0F0C9E565E0BA050C1A26F496226BAD,
+	RegexCode__ctor_mBCB059D3E98AEA211794E89DDF99193231F298CA,
+	RegexCode_OpcodeBacktracks_mDA23B91B55FE4991B168BF8E18F6DDDC7667B882,
+	RegexFC__ctor_m354E8197215F3EE9097B69E783B744365A38EF20,
+	RegexFC__ctor_m023D08ED0365AE9AAC539333B4390A8052C59229,
+	RegexFC__ctor_mDCBBCCC1BB476741943D7F9AD88731B1DCA0C1B5,
+	RegexFC_AddFC_m5B05CD1D7700817843366EC1DF728977EDD4D11E,
+	RegexFC_GetFirstChars_m7252E826F9A5BC1842A5A255BAC5A36EE8DADAF5,
+	RegexFC_IsCaseInsensitive_mD87B0C49AAEBB61215F09A9C5ABF8CCB8B5AB64E,
+	RegexFCD_FirstChars_mC60DC5CA9A078998CB55594436AB9CBFD86478FB,
+	RegexFCD_Prefix_m50B30C508C6745832FD3A76B2169462455C1A28E,
+	RegexFCD_Anchors_m562FA644F10503074714E0F58A2A00F9F727D75E,
+	RegexFCD_AnchorFromType_m4B458E2C589633A43F9324C14F9192EF68F80A14,
+	RegexFCD__ctor_mFC6A3309CAFA8C3C2B94094AD443738823388A3B,
+	RegexFCD_PushInt_m63817D3969DF7BD31B7C93D43EE45C4AF539868F,
+	RegexFCD_IntIsEmpty_mE825A8A0DF9D5BA6618357ABBA93421D4099AAEB,
+	RegexFCD_PopInt_m1E4B64F2F6DDBCB7495E673540CF25FDD4D01B7E,
+	RegexFCD_PushFC_mBE154E351E7C49FFFC26E603B4672136D91479C7,
+	RegexFCD_FCIsEmpty_m57FDE5D4E352620B7773AD54B286531CA21FCDAD,
+	RegexFCD_PopFC_m987A35E9ADF69335799EDEEB12C2CD3A3F40FB6E,
+	RegexFCD_TopFC_m26ED21621830CF30FDA46AE8D7F3AC9F50DE416F,
+	RegexFCD_RegexFCFromRegexTree_mA85E74765529D05113116C73EC397E832D81D0BC,
+	RegexFCD_SkipChild_m661F5D339305B97A37D855240A0B9AF500FE03F6,
+	RegexFCD_CalculateFC_m2267FAA6BCA80275E21DC9A0BAF90BBC85204BD8,
+	RegexInterpreter__ctor_m7B9BA594CF5F338B2E257EDADC2481826BF4C6BB,
+	RegexInterpreter_InitTrackCount_mD93771C3D75617898528698E29AD09B7EA5EE24B,
+	RegexInterpreter_Advance_mCD1A51680CD0318DDF6D104DE8C722FCCC468CCA,
+	RegexInterpreter_Advance_m779870D7E1FA3580492E2E8B75E2805613525AF7,
+	RegexInterpreter_Goto_m438DE9CE790DF0757383C91126DEA68C6B0DADFE,
+	RegexInterpreter_Textto_m6CE60A7C8FA9F9CEECD26BD6025F055EB64887AA,
+	RegexInterpreter_Trackto_m0C7B05A7385BE3F9BB096FE28DC22942A9F96783,
+	RegexInterpreter_Textstart_mE71CFC006954F38B9EB6CD85BCC0867E63BF0894,
+	RegexInterpreter_Textpos_mC66F0DE729E76EDA0BEEA7B1ABEE369BA6C81D5B,
+	RegexInterpreter_Trackpos_m472ADA4F5E1D07E71896E42714DFB723CB016842,
+	RegexInterpreter_TrackPush_m5A8B9F863211AAEC7E5FAD14ECDDAFDE3059210D,
+	RegexInterpreter_TrackPush_mB2AF47E651D2A3853A719EFB908C30D27EC2FF5F,
+	RegexInterpreter_TrackPush_m3EA36B28D636D1C617F85CEA57650344B562A38F,
+	RegexInterpreter_TrackPush_mBCAADB1DF177D91DC9AA4518DCDB3AAF7D6C0E15,
+	RegexInterpreter_TrackPush2_m4EBCF8B183717311AEE3FAA6AD6FAF1F08B14F77,
+	RegexInterpreter_TrackPush2_mD591F73FDDF69084636E0834BCCD530B057898FF,
+	RegexInterpreter_Backtrack_m46612DE84F898D1656DE30F3BA86E93209E279E1,
+	RegexInterpreter_SetOperator_m5B633C33EE4CD85364E7C60003ACE8EA93FDAC91,
+	RegexInterpreter_TrackPop_m84B55BE8F346693942045E937174EC8C1AE91F08,
+	RegexInterpreter_TrackPop_m73AB2E002DB92E231B62510861277320F76BEEED,
+	RegexInterpreter_TrackPeek_m4EF7918CC0F10FFF7E73C1C9D13E74D1D8D13318,
+	RegexInterpreter_TrackPeek_mEECF3E94E7823A68474C691F695D71087729553C,
+	RegexInterpreter_StackPush_mC28C3F8B3C811C4DCA6CD312F7F487206C871E55,
+	RegexInterpreter_StackPush_m911FF20379BF912884E7F98BB59CFB6C51AA1861,
+	RegexInterpreter_StackPop_mD057CA7B190ED8FBD33C6CE48E1F28E4B09FC4F2,
+	RegexInterpreter_StackPop_m90FC35FD76D9B63851ECFD641DAA08B1B58C7B91,
+	RegexInterpreter_StackPeek_m08C28311048F6B075379EE46B924FC211BA48EC6,
+	RegexInterpreter_StackPeek_m308DE22A8E1AF524319E7F1D5A94DBFEC37700ED,
+	RegexInterpreter_Operator_m4DE2EAA1744D15294F2767D5217F753FE74FAC0B,
+	RegexInterpreter_Operand_m1ACB9C398C9C7ADF8DA58824877B99F08F181526,
+	RegexInterpreter_Leftchars_m3A200CD41FFE8C89CCB85B3CC7A367E32C5988D1,
+	RegexInterpreter_Rightchars_m3DB37A53D6C3DC3311C9EA020690CC0824959D30,
+	RegexInterpreter_Bump_mC33CB8A0CC0DF1C69F11115BD225D2D8B63F8753,
+	RegexInterpreter_Forwardchars_mE5E437E285604CDC60551C112F7B2CEF7297F4ED,
+	RegexInterpreter_Forwardcharnext_mD2C6694CC31BC75D3E20C511D1004D28AAE1390F,
+	RegexInterpreter_Stringmatch_m543BC6834400A925D2603AE6FBB47944694AFDF1,
+	RegexInterpreter_Refmatch_m52369ADBF64E25A9EEEBE216939454EBB8D8E138,
+	RegexInterpreter_Backwardnext_mD10CE2A9E229D0655EF01565DB39C902654D00CD,
+	RegexInterpreter_CharAt_mAE2AF6D293F53C2D8961C2D0C145BC3ADF6EC105,
+	RegexInterpreter_FindFirstChar_m95CDB0ECB99F7850479D951A5F32BB6B19B91F44,
+	RegexInterpreter_Go_mBE9DEAECBD68F60DDFE2BB5A8C24CF92A1FB503A,
+	RegexMatchTimeoutException__ctor_mCCDB413A8F68D924B276B8FED2744E81BE4C89AF,
+	RegexMatchTimeoutException__ctor_m4EFD030442FEEC81E59AB8CDF35D603A5D551058,
+	RegexMatchTimeoutException__ctor_m554FE8CFA7F42483517F11948A61E4D3C9F44D07,
+	RegexMatchTimeoutException_System_Runtime_Serialization_ISerializable_GetObjectData_m78FACBA38C002E195A507A32CDAB768D8DBC93E7,
+	RegexMatchTimeoutException_Init_m09AF601CC7369F2D7E1300B166517FE7D20EB6F1,
+	RegexMatchTimeoutException_Init_m0F165C7170A46724458C06DA5EC05536D8CB95B7,
+	RegexNode__ctor_m29676E9646F598C827F25E906EEB6EA14A6FD5DB,
+	RegexNode__ctor_m92FB70D6C28D7E021A2A1ACBAD583461AB014F11,
+	RegexNode__ctor_m89ACB97FB7FE8B38C0D69F0F2445A7916BC67D85,
+	RegexNode__ctor_mAE76BA90AA85F205CB0CC6799F06D1AD85A49F64,
+	RegexNode__ctor_m0EFEB707603B3C667626117E09A7EED58BBEC6D4,
+	RegexNode_UseOptionR_mB931929BBD1D89F8B263AA846C1665775096713E,
+	RegexNode_ReverseLeft_m994638E4886D007B9B29BC23EA3C8D76A92099FD,
+	RegexNode_MakeRep_mC310B028FBE3BD5EB80F83E4E05B891ADEE45C22,
+	RegexNode_Reduce_mE9E22C30C296E328ABC7EDC9C52F18059FAE27C1,
+	RegexNode_StripEnation_mE19E0A57BCE0D0BF47F51A5103C08FCC7BB9E24F,
+	RegexNode_ReduceGroup_m069FA93D4F88006F18473E647069B349683B9204,
+	RegexNode_ReduceRep_m726F03D9E2420F276A37777942B66D15CA73F77E,
+	RegexNode_ReduceSet_m912F4A0DFF694EB14DE520599369A811C2E9D10D,
+	RegexNode_ReduceAlternation_m60EECC172A975620A5118D14D6ECF8B846ECED9F,
+	RegexNode_ReduceConcatenation_m4BE1B6DBBC0F4BAB9A3873414B5EE77D825AD53B,
+	RegexNode_MakeQuantifier_m1332537AA6BCCCD68A3E59EA7994CCFE69A19444,
+	RegexNode_AddChild_m734A86A25E6074316FAC566F7D127253F7B71703,
+	RegexNode_Child_m5AA4FFDDCCFA22FE70BA0F236F19A963AEF72079,
+	RegexNode_ChildCount_m23B6965575DB0DBC1D90212820DEA144FCB06996,
+	RegexNode_Type_mFA1C2F11F3487BB1BCBA7F58FFB7975EC18E9CD4,
+	RegexParser_Parse_mD206BB554B6087ED35C5F744D72A93A07721D789,
+	RegexParser__ctor_mC69D13B4FC323EE77392251139C5F2C456171310,
+	RegexParser_SetPattern_m4B385D83A9680A1B2707EBCA8659B6E12EDD5E46,
+	RegexParser_Reset_mEC49D1DCEBC555768D2FB90DA42374F1C547E328,
+	RegexParser_ScanRegex_m62049A6C66D6D8CDD795B9C740283D1EC85126DB,
+	RegexParser_ScanCharClass_mF775DA8BFD214C64BC3D91E07436543717976DC4,
+	RegexParser_ScanCharClass_mFE669B1C9CB6652157D9E8DAEE5B924C581AE81F,
+	RegexParser_ScanGroupOpen_mA4918ACA08C7E4C945197BBE4EF734AF5B35096C,
+	RegexParser_ScanBlank_m99BA3097E182DE425BE0137BAFDD0218F0DF360D,
+	RegexParser_ScanBackslash_m45E9E0ABDB7DF70F58850B48905DE9DE026EA64C,
+	RegexParser_ScanBasicBackslash_m5F438E56ACBE272622D39D4208B2D5ED536DD7B8,
+	RegexParser_ScanCapname_m1D4DB4E5DA312CBCA841391F729CC626DC657D85,
+	RegexParser_ScanOctal_mCF3925D06CBBA1DD0CB60199F59991D099430C3A,
+	RegexParser_ScanDecimal_mE966D2C7F357215A52F88120F40A37707C1AB33A,
+	RegexParser_ScanHex_m296FC19218F8186D2C1B630DF9F138CFB195625E,
+	RegexParser_HexDigit_m4BAEE94B2077B96A4B1D56C459EFB2B1938E1174,
+	RegexParser_ScanControl_m244F59DA2B0711D154B7D68CCB5765390C65B5B8,
+	RegexParser_IsOnlyTopOption_m66FE256A81BBD173C96B90EE9EBE9721F9ED16A1,
+	RegexParser_ScanOptions_m5CD283C15179190846762B90F78F0A87E7495537,
+	RegexParser_ScanCharEscape_mF8821EE73F3F8A5D4267642F6E4F0A666FA5E7A6,
+	RegexParser_ParseProperty_m69C638E755F0A5C1A2BC8E08827E6124889C2CEF,
+	RegexParser_TypeFromCode_m0969E0D233AC767039B0A333901F47A22BABE0E8,
+	RegexParser_OptionFromCode_m6BCD10574DF5E08599B5F7FC8E947E3DC69EE151,
+	RegexParser_CountCaptures_m5255DE4B24B8D9BA7B2A2A7A1FD79A67B36F4634,
+	RegexParser_NoteCaptureSlot_m8B2D20B819C86E427837C879CCA72B9BCD1C4AA8,
+	RegexParser_NoteCaptureName_m96A5301077C4C6554E993A2266EA40B690F455C4,
+	RegexParser_AssignNameSlots_m168605CD3A6D6AAA52AFFDB13BE3D5DFAC3FE94B,
+	RegexParser_CaptureSlotFromName_mE3FD1D57EB29D4C7A0E4029E4D4785297798EE43,
+	RegexParser_IsCaptureSlot_m80540BE449D9B98B2B159CD5169F7AA6DB63CB80,
+	RegexParser_IsCaptureName_mBFB85B16ED80CA59452491B4C3278C77ADCA1FDF,
+	RegexParser_UseOptionN_mE9C62585222B2D99D295708E4486C952973F35D5,
+	RegexParser_UseOptionI_mFA3B59BD8A6F61626E20F8FE909A23289E694263,
+	RegexParser_UseOptionM_mDE945B2DE782D12A5013D408F4FFBCABEC48C63D,
+	RegexParser_UseOptionS_mE96EEA754E1EEEF658AAF73885D048342D1D200E,
+	RegexParser_UseOptionX_mD63DEED6741AEA0B3F6CC4239712A4B2EF690810,
+	RegexParser_UseOptionE_mC171EEF863E091591BAD771F16B72D742F044096,
+	RegexParser_IsSpecial_mFF68456E944ACAF048B4F96F5758FFDD1D5E7DCD,
+	RegexParser_IsStopperX_m0BCF2DB4B0E1324C9109C8BFD486FC5DBA8DC646,
+	RegexParser_IsQuantifier_mE0620E30A63AD0C0DB9550A52A4A7D0BB4BC3A31,
+	RegexParser_IsTrueQuantifier_m4AA95A9CE7CD78600E8D525ECA5A095984FBC63F,
+	RegexParser_IsSpace_m1E41FA7DD1FB93BF9220530CA91B35EF08879F30,
+	RegexParser_AddConcatenate_m3743C87DFCD1784A949BFDCE9443845CCD630A5D,
+	RegexParser_PushGroup_m6F4246ECA3A6F29DA096C3B41D97652427E3175E,
+	RegexParser_PopGroup_m43AB1FB84E11D8DFF6C5D38B9CAD324E5425DD74,
+	RegexParser_EmptyStack_mB65B33DCF98A5967407B7C6A07F8799681202BE5,
+	RegexParser_StartGroup_m36A6C0ED245D844CD2E630160994C3F2D7CCA994,
+	RegexParser_AddAlternate_mDBDEEF8180738DE0D31CC05B0E223EFF0D66939B,
+	RegexParser_AddConcatenate_mF80F14978ED6626A8F8E5F37AEB3B946A01192C1,
+	RegexParser_AddConcatenate_m81CC39ED404E571347F0E97650F3BEB14639B1B0,
+	RegexParser_Unit_mEAEEAC39DBE372DC762644F49E6E163CA37EA34E,
+	RegexParser_AddUnitOne_m72DFA82092408E9C63544126093D98390E0C2145,
+	RegexParser_AddUnitNotone_mAA142A94BB7B6A358BA36A3920DB139382889749,
+	RegexParser_AddUnitSet_m024168548909EA2DF649E6194D60135312ADF5B3,
+	RegexParser_AddUnitNode_m6EE11A898128A169E41A5C7B38B1F3DD314FB304,
+	RegexParser_AddUnitType_m1ECB4025CA3B580F051CF6891D9C96922CA2FA7A,
+	RegexParser_AddGroup_m54BBB919E4D4AD05EFECBC3ECBE46FC4A90569EA,
+	RegexParser_PushOptions_m2034533961B704CBFA0F97BD4A54CB7269F0D88A,
+	RegexParser_PopOptions_mA18691037302741375A44BD8BDC9387DFB07B676,
+	RegexParser_EmptyOptionsStack_m5FCB7AF81ACB5C91A73231C9F0AA0DFB32067A45,
+	RegexParser_PopKeepOptions_m8ACBCD324BAF7269F90AEB3CF901B666524658FA,
+	RegexParser_MakeException_m6D521D75808E2CD4255A68DC3456EAF2A88F2874,
+	RegexParser_Textpos_m36658DED82367E05DF4333E68A666FEEBC3DAC07,
+	RegexParser_Textto_m5C8BAB13E35429238EA9A5F13D5A5A580D0DD3AC,
+	RegexParser_MoveRightGetChar_m3CF088DE129BADB346CCEEF1D547E2D260BC894A,
+	RegexParser_MoveRight_m6F0A1C10AE9EA183F04A9E06B62B2B53648688AC,
+	RegexParser_MoveRight_m7D1D27C901CAB81BCF60803E22FBDF2DEEC6CC51,
+	RegexParser_MoveLeft_m1BC035A4EA49F4168093B2AB0EEAB2653CB04033,
+	RegexParser_CharAt_m08DBAE0DFD788548F74E061031B7221154F96A77,
+	RegexParser_RightChar_m9E231199A8E5EA994AA1746FC5E977AF3823FDEB,
+	RegexParser_RightChar_m246E9E1F8D0A4A8E485C23E233CD3915C23739D8,
+	RegexParser_CharsRight_m318662CFE3223C3FA5E921D376409B4E1B28F9B4,
+	RegexParser__cctor_mF468AF3C5916BA72C579CBD41A73D2DAD004F0EE,
+	RegexPrefix__ctor_m93489A4FF55425A15BF5390E77EE0B84F6F9364C,
+	RegexPrefix_get_Prefix_m7137EC6CA5B857F49946E2EAEA19784040D430CF,
+	RegexPrefix_get_CaseInsensitive_m76E04480FA9FFAE4C5031CA12F4AE9A2576212C0,
+	RegexPrefix_get_Empty_mAD10DECDBC7C51F9ACF5C02E3191874252DF9B8B,
+	RegexPrefix__cctor_mCDCE7EDB98AFB119EE0281D37F7BC019AD28773D,
+	RegexRunner__ctor_mC04D94995556E71E813F8420C8A4EC0B66404550,
+	RegexRunner_Scan_m1C3B1B034601773D510A4D2DEC337635A540BE31,
+	RegexRunner_StartTimeoutWatch_m257FBE0C72761082A11D275954C6A1343EB13301,
+	RegexRunner_CheckTimeout_m52486A9CE7B6EA4C83BB60FB200196AF0EE5687B,
+	RegexRunner_DoCheckTimeout_mCDAA40848A2F8AAD70928FFD8A6C08FF2D9E72A3,
+	RegexRunner_InitMatch_mF9CD772D4A8E12F89B4785324CD6939ABAE89AD4,
+	RegexRunner_TidyMatch_m61A8AE20E505F2055B276EB020EB0B804ED2D924,
+	RegexRunner_EnsureStorage_m6BC13F773B014E2875CCD9A83E4093A77AA1053C,
+	RegexRunner_IsBoundary_m6C846E11790EC61A9E75A24230E1477913DB3441,
+	RegexRunner_IsECMABoundary_m35C5F5DDC7C2F0E57EBA2E9D9892A88EDAEE4B97,
+	RegexRunner_DoubleTrack_m057C14C51F137222469C6526406B0E1069747618,
+	RegexRunner_DoubleStack_m8969F05F9E086EAA194DCBD2F137778239918925,
+	RegexRunner_DoubleCrawl_mF0425849E5E3C2BA5E9009CED7DE245C8CA0F7CC,
+	RegexRunner_Crawl_m655A5D262056F7E13F0645CE5611AE65E83D97DB,
+	RegexRunner_Popcrawl_mD8C76E2C584E6908F4BB11E055B97581F0CF7268,
+	RegexRunner_Crawlpos_m26A92CA69EF0C65BC7389834A12AD331538D064D,
+	RegexRunner_Capture_mE34CB0D3351BCC69F6FDE6CDEA763B93C5E92642,
+	RegexRunner_TransferCapture_m4F01B5A96647BC3FD338ACF6D509741D80FEC837,
+	RegexRunner_Uncapture_mA7163C77BE1683E508821AB251F33FB7520CE3F8,
+	RegexRunner_IsMatched_mD7F580AA0533D5C4BC41D18824FA74BE16EAE7A3,
+	RegexRunner_MatchIndex_mA8EEC418C65572A82720F5D16BAC99224CF0251A,
+	RegexRunner_MatchLength_m06FA694D5EFE42F89C25C8599BBE86C7726DB2C6,
+	RegexTree__ctor_m5B10D5149928B35CE397472028EE327669C211DA,
+	RegexWriter_Write_m57CF8209EF566CD40F9146C74DF889C8AA06E061,
+	RegexWriter__ctor_m63A858FAE36A8640812DFF917751C1E215A2AE82,
+	RegexWriter_PushInt_mFBC85956A26FEBC66244C8DFC881106D85DD2C1D,
+	RegexWriter_EmptyStack_mB0C109FA21F5CFD16A34438BA1CC1CE8BED91E7C,
+	RegexWriter_PopInt_m8885F9428571674EC224D6BBC93570B1B4671713,
+	RegexWriter_CurPos_mEA105879492A4B415FA8AC25B29AA49153F83C18,
+	RegexWriter_PatchJump_m6C0A440142E7AC772AD4AF7DF5D8291B6CA6D7D2,
+	RegexWriter_Emit_mDC0B76CE49A6DE83DD2D169236BCD516AE9263EF,
+	RegexWriter_Emit_m6B0ACB44155A07161060838F483D555E7EF6ACED,
+	RegexWriter_Emit_m7C1D08F071C805F13DBF7684AEC3F2F7E748C497,
+	RegexWriter_StringCode_m6AA17FFEBDD5E155004F05A78CF13B0D8E901158,
+	RegexWriter_MakeException_m443C4CFA99AE06710D1E1BFA3D6EB9737AE70F17,
+	RegexWriter_MapCapnum_m6AFE8BED80960BAA522EAA873D535C9D5AD4B811,
+	RegexWriter_RegexCodeFromRegexTree_mAC489A29C00688CA929661BC394F1C4CF997CFC5,
+	RegexWriter_EmitFragment_mEFDD8EA3A65320222CF4EA8A52B33C687EE0C5AC,
+	SharedReference__ctor_m48E749BC646BEC89282B8F336325D42DE48CFC81,
 	UncNameHelper_ParseCanonicalName_mCBE64015FD1B6B4829CEAA89625C1D44E280E37E,
 	UncNameHelper_IsValid_m4055361D79684EE7B098C055B2E9068EE06F1EF6,
 	Uri_get_IsImplicitFile_m048350CB1E9AB92599F1557680A5D3B5FDE7C35D,
@@ -21473,27 +23715,39 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	BuiltInUriParser__ctor_m66250DC53CE01410149D46279D0B413FC1C5CA1C,
 	UriTypeConverter__ctor_m1CAEEF1C615B28212B83C76D892938E0A77D3A64,
 	ThrowStub_ThrowNotSupportedException_mF1DE187697F740D8C18B8966BBEB276878CD86FD,
-	ASN1__ctor_m6DD2E5BD0B12A6BFA95E1822A55B2294B8C237BC,
-	ASN1__ctor_mAB2593792CB61AD1542F4F9D6FB6E8BB96DE007E,
-	ASN1__ctor_mE005F52336402C3D41EAD9E28A95910B3C0865DA,
-	ASN1_get_Count_m5A0E71B4C4A2257C0875AE1041AAA953C5B12A19,
-	ASN1_get_Tag_m1346989AC839D85A9E0A211525A6B551974E4862,
-	ASN1_get_Value_m9BD6239E12A6148AF9507C2F58058C6B8147A079,
-	ASN1_set_Value_m225FF9AC03EA872809C7742070A34A264C58588E,
-	ASN1_Add_mF6ED0416BB021A1C333F99E42F8B17AF8B26639B,
-	ASN1_GetBytes_m4ABC0EF4CBE8CF6BE65CEC52CDB02BB59E2E9AE4,
-	ASN1_Decode_m94E3A6F94EDACE796521D04E6A832D99592F1149,
-	ASN1_DecodeTLV_m30440B1DE0A8C4236AA9658DEBF2808FD3BC00C3,
-	ASN1_get_Item_m88B75C57A7E130A02A709AE8FFD2E0972E71FC08,
-	ASN1_ToString_mF3953615856548F00889AD245391D09FBE782CBA,
-	ASN1Convert_FromInt32_m59FF0922659B0A323026CCC0876BC33020C4FC9A,
-	ASN1Convert_ToInt32_mA2A8761F965979408D46FBEB946DB59F36137A5E,
-	ASN1Convert_ToOid_mFFA93B4BBEFCA8E4E86DAE87CDB998E78BFB2D5A,
-	BitConverterLE_GetUIntBytes_m871281C3039A5B7DFB56E0F3EBBE22F74135997C,
-	BitConverterLE_GetBytes_m1207548B6BC0E2D49DD06D5B3A3AC19C001BDB35,
-	CryptoConvert_ToHex_m2FB6183AFF3B31424407BB7D767A844E3464B411,
+	ConfigurationCollectionAttribute__ctor_mF41393517164A49C3127C24B1CCBBA3CCBC44A65,
+	ConfigurationElement_get_Properties_mB1F40F2F14D68682556E31C36BEF7B62067C9E98,
+	ConfigurationElement_IsModified_mA046D03044CDCD875C22E34247CE15E7BBC883A5,
+	ConfigurationElement_Reset_m39498D76FA0912DA725E3224537BBF7FA5B0FC1A,
+	ConfigurationElement_ResetModified_m6AAF1F8A88CEF6F993A6666E3B4D4B2456024989,
+	ConfigurationElementCollection_get_Count_m58EFBCAA164C912FEBD007AACF85784B80C54EFA,
+	ConfigurationElementCollection_get_IsSynchronized_m01A1041417359C9558B7BD6BBE38A079B1290C59,
+	ConfigurationElementCollection_get_SyncRoot_m9AF9A3529CAF268BE69B95ACD13FEE0A64FACCAD,
+	ConfigurationElementCollection_GetEnumerator_m9BAC931AF7292090D4A17FB6BE425A87698B615B,
+	ConfigurationElementCollection_IsModified_m8CE9100FF55419730D78D1399847C4AA31596769,
+	ConfigurationElementCollection_Reset_mCAD4115E5753AFD91A9980F1727F19C2820CFC5A,
+	ConfigurationElementCollection_ResetModified_m0E48AB9040D7A874EB16EABBD66DE7A5C9682C3E,
+	ConfigurationElementCollection_System_Collections_ICollection_CopyTo_m0F4E4D3C5BC76BFC9246418F4F9930BCFCB88175,
+	ConfigurationPropertyCollection_get_Count_mCD54D7BF7C9539EC577F6B1AC88C53A67FEFD844,
+	ConfigurationPropertyCollection_get_IsSynchronized_mC9C67CAB13360A77A9EC5DA5474900997EAAC474,
+	ConfigurationPropertyCollection_get_SyncRoot_m9C5F4616FF01536A643161A98B57D8343A1B0876,
+	ConfigurationPropertyCollection_GetEnumerator_mC0049DA2728B41148DB85EA951D5708F732731C3,
+	ConfigurationPropertyCollection_System_Collections_ICollection_CopyTo_mA43D6C442A7E2B71FF5338B36485FAB2861E5E9D,
+	ConfigurationSection_DeserializeSection_mC39769C65F7E36F2B33E155B4D8ACADB83377B5F,
+	ConfigurationSection_IsModified_mDD7D74427E761D9EFAA2629FE71DD83A8B7D1785,
+	ConfigurationSection_ResetModified_mCA8B3DE0DE1903CDB60E70517BEBD92A06C647E4,
+	ConfigurationSection_SerializeSection_m76F991963602BC728C4B22044ED618A42FA3C3E5,
+	IgnoreSection__ctor_m30C69267DD27E85879BA3AE28ABCDAE783B28350,
+	IgnoreSection_get_Properties_m654A228B012E724695AFD79627F13FCF739244E4,
+	IgnoreSection_DeserializeSection_mD4D92311BEF0747F961B3E11BFDC13B56052A0EC,
+	IgnoreSection_IsModified_m0430C7830B3A902BCAE985427CB2FCE1F15EB595,
+	IgnoreSection_Reset_m46C76CCBADF508876E17A2A59778E427E20B7628,
+	IgnoreSection_ResetModified_mE7AEAA166BBA055767C5AFA05C9F223E1D0FB070,
+	IgnoreSection_SerializeSection_m03CB506F46AEA369F5FCAEC048509461D907FEE9,
+	ThrowStub_ThrowNotSupportedException_mF0DAFE591641D359313AB87E6900E4B05E42390A,
 	Error_ArgumentNull_mCA126ED8F4F3B343A70E201C44B3A509690F1EA7,
 	Error_MoreThanOneMatch_m85C3617F782E9F2333FC1FDF42821BE069F24623,
+	Error_NoElements_m17188AC2CF25EB359A4E1DDE9518A98598791136,
 	AssetFileNameExtensionAttribute__ctor_m49EB0E6BB7D29A0AC5131A6EC007AFBC1DE60390,
 	FreeFunctionAttribute__ctor_m69E4EBDD649729C9473BA68585097AF48D06B83D,
 	FreeFunctionAttribute__ctor_m18D7DE98494E55663EB23287EE6DB00E6649241F,
@@ -21536,6 +23790,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	StaticAccessorAttribute__ctor_m8F492CF3D710FAE0D63BB8C2640D271264C84448,
 	StaticAccessorAttribute_set_Name_mBFD8EFC09BA63B0CE005B306037E564B530377D0,
 	StaticAccessorAttribute_set_Type_m85233B66B145700BD66145EB0AA31D0960896AE2,
+	ThreadSafeAttribute__ctor_mC3058002BD52E2EB8475B8115A1AC5FFCA53E1DD,
 	UnmarshalledAttribute__ctor_m7E224B875755FD7109EDFB2CBA2A2F7F617A1191,
 	VisibleToOtherModulesAttribute__ctor_m82D98B6D202548277D803878EB2BE3A82722CC74,
 	VisibleToOtherModulesAttribute__ctor_mEC52A33ADE6FEA527A467F9F64BF966F2A63A942,
@@ -21669,18 +23924,22 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Color_GetHashCode_m88317C719D2DAA18E293B3F5CD17B9FB80E26CF1_AdjustorThunk,
 	Color_Equals_m63ECBA87A0F27CD7D09EEA36BCB697652E076F4E_AdjustorThunk,
 	Color_Equals_mA81EEDDC4250DE67C2F43BC88A102EA32A138052_AdjustorThunk,
+	Color_op_Multiply_mA6BEAF09F1E0468B0557CEDFF1D228248F7D02B5,
 	Color_op_Multiply_mF36917AD6235221537542FD079817CAB06CB1934,
 	Color_op_Equality_m71B1A2F64AD6228F10E20149EF6440460D2C748E,
 	Color_Lerp_mD37EF718F1BAC65A7416655F0BC902CE76559C46,
 	Color_get_red_m5562DD438931CF0D1FBBBB29BF7F8B752AF38957,
+	Color_get_green_mD53D8F980E92A0755759FBB2981E3DDEFCD084C0,
 	Color_get_blue_m5449DCBB31EEB2324489989754C00123982EBABA,
 	Color_get_white_mE7F3AC4FF0D6F35E48049C73116A222CBE96D905,
 	Color_get_black_mEB3C91F45F8AA7E4842238DFCC578BB322723DAF,
+	Color_get_yellow_mC8BD62CCC364EA5FC4273D4C2E116D0E2DE135AE,
 	Color_get_cyan_m4E9C84C7E1003311C2D4BDB281F2D11DF5F7FDE2,
 	Color_get_magenta_m04E2DDB63AA6288C701A93E248643A06EBD2D7AD,
 	Color_get_grey_mC37E72622FEB89E52EBCB5245D42DBF63E4FE3B7,
 	Color_get_clear_m419239BDAEB3D3C4B4291BF2C6EF09A7D7D81360,
 	Color_op_Implicit_m653C1CE2391B0A04114B9132C37E41AC92B33AFE,
+	Color_op_Implicit_m51CEC50D37ABC484073AECE7EB958B414F2B6E7B,
 	Color32__ctor_m1AEF46FBBBE4B522E6984D081A3D158198E10AA2_AdjustorThunk,
 	Color32_op_Implicit_m52B034473369A651C8952BD916A2AB193E0E5B30,
 	Color32_op_Implicit_mA89CAD76E78975F51DF7374A67D18A5F6EF8DA61,
@@ -21724,8 +23983,10 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	CustomYieldInstruction__ctor_m06E2B5BC73763FE2E734FAA600D567701EA21EC5,
 	CustomYieldInstruction_get_Current_m9B2B482ED92A58E85B4D90A5AC7C89DFF87E33DC,
 	CustomYieldInstruction_MoveNext_m7EA6BAAEF6A01DC791D0B013D5AB5C377F9A6990,
+	CustomYieldInstruction_Reset_m9B3349022DFDDA3A059F14D199F2408725727290,
 	Debug_get_unityLogger_mFA75EC397E067D09FD66D56B4E7692C3FCC3E960,
 	Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708,
+	Debug_Log_mCF5342DCBD53044ABDE6377C236B9E40EC26BF3F,
 	Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29,
 	Debug_LogError_m97139CB2EE76D5CD8308C1AD0499A5F163FC7F51,
 	Debug_LogErrorFormat_m994E4759C25BF0E9DD4179C10E3979558137CCF0,
@@ -21847,6 +24108,12 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	GraphicsFormatUtility_GetRenderTextureFormat_m4A8B97E7A7BD031B38EE1C5DA0C93B0F65016468,
 	GraphicsFormatUtility_IsCompressedTextureFormat_m456D7B059F25F7378E05E3346CB1670517A46C71,
 	GraphicsFormatUtility_IsCrunchFormat_m97E8A6551AAEE6B1E4E92F92167FC97CC7D73DB1,
+	RenderPipeline_add_beginFrameRendering_mE76FE94AB2A3E3800137B82D68292DBF285B7021,
+	RenderPipeline_remove_beginFrameRendering_m2D94B925AC426D31B758068A1AF8BF885DC58CCA,
+	RenderPipeline_Render_m6F569FDF85F276FDA96400155E4F976BBAA92B91,
+	RenderPipeline_get_disposed_m36B43AE3C77998D35345F4191A750DB2F298653C,
+	RenderPipeline_set_disposed_m1B33C088D39CA3A20464959E2315E6F5C59F7537,
+	RenderPipeline_Dispose_m4A30E310454FB6DF50E82F62280D294D201A4D62,
 	RenderPipelineManager_get_currentPipeline_m9F74A23E08154080D2CE28C94792F8C098E37827,
 	RenderPipelineManager_set_currentPipeline_m1E33E98910B140AAF662102BC0C7D542B651C912,
 	RenderPipelineManager_CleanupRenderPipeline_m209FE4EF1B83336A0BB3A6B72E2FAF010582FDDF,
@@ -21910,6 +24177,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Gradient_Equals_m0A13AD7938F81F21CC380609A506A39B37CF2097,
 	Gradient_Equals_m7F23C7692189DDD94FC31758493D4C99C2F3FB1E,
 	Gradient_GetHashCode_m2596E6672ACDAD829961AB1FBD3EB649A908DE64,
+	Input_GetKeyInt_mCAE84934A2A069329005CB582E2B038FA5DDFF12,
 	Input_GetKeyDownInt_m87B29738C0DD59D90CF4661004F090CB697BDC0C,
 	Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496,
 	Input_GetAxisRaw_m35430CD9260C960DFE19F809D5410BA0DBFDE0F7,
@@ -21918,6 +24186,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Input_GetMouseButtonDown_mBC5947EA49ED797F0DB1830BFC13AF6514B765FD,
 	Input_GetMouseButtonUp_m726EDCD35F8DECF774810AB1E9ED590B85DB10F1,
 	Input_GetTouch_m1ABE5E9866FD4C5FDFC5DD8FF4E7DCEDE2DD9313,
+	Input_GetKey_m54DC93F781FFEAB1DCDFAA3D15FA2FC01BF7667A,
 	Input_GetKeyDown_mD82B14BB87E1C811668BD1A2CFBC0CF3D4983FEA,
 	Input_get_mousePosition_mC8B181E5125330ECFB9F8C5D94AA8F4AD1ABD10C,
 	Input_get_mouseScrollDelta_mC314425F4261A9D7E8EA72705F7AF8CB110D5B94,
@@ -21968,26 +24237,52 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Material_get_mainTexture_mE85CF647728AD145D7E03A172EFD5930773E514E,
 	Material_HasProperty_m901DE6C516A0D2C986B849C7B44F679AE21B8927,
 	Material_HasProperty_m8611FACA6F9D9B2B5C3E92B6D93D2D514B443512,
+	Material_set_renderQueue_m02A0C73EC4B9C9D2C2ABFFD777EBDA45C1E1BD4D,
 	Material_EnableKeyword_m7466758182CBBC40134C9048CDF682DF46F32FA9,
 	Material_DisableKeyword_m2ACBFC5D28ED46FF2CF5532F00D702FF62C02ED3,
+	Material_get_passCount_m790A357C17FB4D829C479652B1B65BC15F73FBB1,
+	Material_CopyPropertiesFromMaterial_mC80A6EB2A756B079CEEDEBD5F03A36A6DD18227A,
+	Material_GetShaderKeywords_m786F6539953C2B890A0827715404D3508BFCF685,
+	Material_SetShaderKeywords_m32714E17C5D17AAE15927F89624416E14B044A82,
+	Material_get_shaderKeywords_mF653034CC23EB4A65580BA4388F7258328C9C90C,
+	Material_set_shaderKeywords_m336EBA03D542BE657FEBDD62C7546568CD3081C9,
 	Material_SetFloatImpl_mFD6022220F625E704EC4F27691F496166E590094,
 	Material_SetColorImpl_m0779CF8FCCFC298AAF42A9E9FF6503C9FDC43CFE,
+	Material_SetMatrixImpl_mAC50A1E655FF577F6AEB3C67F14DAE7D1AA60C4B,
+	Material_SetTextureImpl_mBCF204C1FAD811B00DBAE98847D6D533EE05B135,
+	Material_GetFloatImpl_m7F4A1A6FE5D9EA1F5C90CD1476AB819C7BD7D4ED,
+	Material_GetColorImpl_m46381ED49C354AEB9FEFCE5BF410A1909E867E76,
 	Material_GetTextureImpl_m19D8CE6C5701AC4B69A6D5354E08240DF6C036D2,
+	Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2,
+	Material_SetFloat_mC2FDDF0798373DEE6BBA9B9FFFE03EC3CFB9BF47,
 	Material_SetInt_m1FCBDBB985E6A299AE11C3D8AF29BB4D7C7DF278,
 	Material_SetColor_mB91EF8CAC3AB3B39D2535BF9F7FECECF3EC2161C,
+	Material_SetColor_m48FBB701F6177B367EDFAC6BE896D183EF640725,
+	Material_SetVector_m95B7CB07B91F004B4DD9DB5DFA5146472737B8EA,
+	Material_SetMatrix_m6C552C454B30BA42F5972F65403B2EED62D68D81,
+	Material_SetTexture_m4FFF0B403A64253B83534701104F017840142ACA,
+	Material_GetFloat_mC1764F8B39FD31C6B7629D417BC8375D6E6AC60C,
+	Material_GetColor_m1FFF5ECB4967771D751C60205635A0D3F7AA2F0E,
+	Material_GetVector_mDE1F87F355E0ECAD883E4F2CF62DB338C2E00C38,
 	Material_GetTexture_mCD6B822EA19773B8D39368FF1A285E7B69043896,
+	Material_GetTexture_mDB1B89D76D44AD07BD214224C59A6FE0B62F6477,
 	Material_SetColorImpl_Injected_mEE762DBD0B37ACA313061179B3CB767B59E4B0FB,
+	Material_SetMatrixImpl_Injected_mD2486E408D7547B08CC36A2DE70520F97A68529C,
+	Material_GetColorImpl_Injected_m22325A32C4B5AAEA791AED50195F66CDBAE93C82,
+	Mathf_NextPowerOfTwo_m071D88C91A1CBECD47F18CA20D219C77879865E7,
 	Mathf_Sin_m5275643192EFB3BD27A722901C6A4228A0DB8BB6,
 	Mathf_Cos_mC5ECAE74D1FE9AF6F6EFF50AD3CD6BA1941B267A,
 	Mathf_Acos_mF3B88F0C8A5AE43F4C4A42676C8D3DE67B3EAF82,
 	Mathf_Sqrt_mF1FBD3142F5A3BCC5C35DFB922A14765BC0A8E2B,
 	Mathf_Abs_mD852D98E3D4846B45F57D0AD4A8C6E00EF272662,
+	Mathf_Abs_mC7DD2FB3789B5409055836D0E7D8227AD2099FDC,
 	Mathf_Min_mCF9BE0E9CAC9F18D207692BB2DAC7F3E1D4E1CB7,
 	Mathf_Min_m1A2CC204E361AE13C329B6535165179798D3313A,
 	Mathf_Max_m670AE0EC1B09ED1A56FF9606B0F954670319CB65,
 	Mathf_Max_mBDE4C6F1883EE3215CD7AE62550B2AC90592BC3F,
 	Mathf_Pow_mC1BFA8F6235567CBB31F3D9507A6275635A38B5F,
 	Mathf_Log_mD0CFD1242805BD697B5156AA46FBB43E7636A19B,
+	Mathf_Ceil_m4FC7645E3D0F8FEDC33FE507E3D913108DD94E94,
 	Mathf_Floor_mD447D35DE1D81DE09C2EFE21A75F0444E2AEF9E1,
 	Mathf_Round_mC8FAD403F9E68B0339CF65C8F63BFA3107DB3FC9,
 	Mathf_CeilToInt_m0230CCC7CC9266F18125D9425C38A25D1CA4275B,
@@ -22004,6 +24299,9 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Mathf_InverseLerp_m7054CDF25056E9B27D2467F91C95D628508F1F31,
 	Mathf__cctor_m4855BF06F66120E2029CFA4F3E82FBDB197A86EC,
 	Matrix4x4__ctor_mC7C5A4F0791B2A3ADAFE1E6C491B7705B6492B12_AdjustorThunk,
+	Matrix4x4_GetLossyScale_m0FB088456F10D189CDBAD737670B053EE644BB5C_AdjustorThunk,
+	Matrix4x4_get_lossyScale_m6E184C6942DA569CE4427C967501B3B4029A655E_AdjustorThunk,
+	Matrix4x4_TRS_m5BB2EBA1152301BAC92FDC7F33ECA732BAE57990,
 	Matrix4x4_GetHashCode_m6627C82FBE2092AE4711ABA909D0E2C3C182028F_AdjustorThunk,
 	Matrix4x4_Equals_m7FB9C1A249956C6CDE761838B92097C525596D31_AdjustorThunk,
 	Matrix4x4_Equals_mF8358F488D95A9C2E5A9F69F31EC7EA0F4640E51_AdjustorThunk,
@@ -22012,6 +24310,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Matrix4x4_MultiplyPoint3x4_m7C872FDCC9E3378E00A40977F641A45A24994E9A_AdjustorThunk,
 	Matrix4x4_ToString_m7E29D2447E2FC1EAB3D8565B7DCAFB9037C69E1D_AdjustorThunk,
 	Matrix4x4__cctor_mC5A7950045F0C8DBAD83A45D08812BEDBC6E159E,
+	Matrix4x4_GetLossyScale_Injected_m3FC1B3C317274522F89E7BBD28D60C0B9AA2A8D1,
+	Matrix4x4_TRS_Injected_mADF67489B3C6715B6BA35E22B0BA6713784100CC,
 	Mesh__ctor_m3AEBC82AB71D4F9498F6E254174BEBA8372834B4,
 	Mesh_Internal_Create_mF1F8E9F726EAC9A087D49C81E2F1609E8266649E,
 	Mesh_GetIndicesImpl_m2118C6CA196093FD19BB05E5258C0DCE06FEAD30,
@@ -22022,19 +24322,28 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Mesh_GetAllocArrayFromChannelImpl_m965F3844FBD29C866754948D036A6BC6ECF89334,
 	Mesh_get_canAccess_m1E0020EA7961227FBC0D90D851A49BCF7EB1E194,
 	Mesh_get_subMeshCount_m6BE7CFB52CE84AEE45B4E5A704E865954397F52F,
+	Mesh_get_bounds_m15A146B9397AA62A81986030D289320EDE4B3037,
+	Mesh_set_bounds_mB09338F622466456ADBCC449BB1F62F2EF1731B6,
 	Mesh_ClearImpl_mFFD3A4748AF067B75DBD646B4A64B3D9A2F3EE14,
 	Mesh_RecalculateBoundsImpl_m43DE3DEFC2DADC090DC6FD2C27F44D6DBB88CEF6,
+	Mesh_MarkDynamicImpl_m439AACE205D2202AD4E5D4A12191F4CCCC031876,
 	Mesh_GetUVChannel_m15BB0A6CC8E32867621A78627CD5FF2CAEA163CC,
 	Mesh_DefaultDimensionForChannel_mF943AF434BB9F54DBB3B3DE65F7B816E617A89C9,
 	Mesh_SetSizedArrayForChannel_mCC8ABD25EDD3EF7237B8B8ADE4E649F95055EFEC,
 	Mesh_get_vertices_m7D07DC0F071C142B87F675B148FC0F7A243238B9,
+	Mesh_set_vertices_mC1406AE08BC3495F3B0E29B53BACC9FD7BA685C6,
 	Mesh_get_normals_m3CE4668899836CBD17C3F85EB24261CBCEB3EABB,
+	Mesh_set_normals_m4054D319A67DAAA25A794D67AD37278A84406589,
 	Mesh_get_tangents_mFF92BD7D6EBA8C7EB8340E1529B1CB98006F44DD,
+	Mesh_set_tangents_mE66D8020B76E43A5CA3C4E60DB61CD962D7D3C57,
 	Mesh_get_uv_m0EBA5CA4644C9D5F1B2125AF3FE3873EFC8A4616,
+	Mesh_set_uv_m56E4B52315669FBDA89DC9C550AC89EEE8A4E7C8,
 	Mesh_get_uv2_m3E70D5DD7A5C6910A074A78296269EBF2CBAE97F,
+	Mesh_set_uv2_m8D37F9622B68D4CEA7FCF96BE4F8E442155DB038,
 	Mesh_get_uv3_mC56484D8B69A65DA948C7F23B06ED490BCFBE8B0,
 	Mesh_get_uv4_m1C5734938A443D8004339E8D8DDDC33B3E0935F6,
 	Mesh_get_colors32_m24C6C6BC1A40B7F09FF390F304A96728A4C99246,
+	Mesh_set_colors32_m29459AFE2843D67E95D60E5A13B6F6AF7670230C,
 	Mesh_SetVertices_m5F487FC255C9CAF4005B75CFE67A88C8C0E7BB06,
 	Mesh_SetNormals_m76D71A949B9288FA8ED17DDADC530365307B9797,
 	Mesh_SetTangents_m6EEAB861C9286B1DA4935B87A883045ADD3955E5,
@@ -22044,6 +24353,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Mesh_CheckCanAccessSubmesh_mF86EBD1C9EC3FE557880FA138510F7761585D227,
 	Mesh_CheckCanAccessSubmeshTriangles_m214B5F30F7461C620D03F10F6CF1CAF53DBEE509,
 	Mesh_CheckCanAccessSubmeshIndices_m81DF83B1676084AF0B70A36BC7621ADB08430722,
+	Mesh_set_triangles_m143A1C262BADCFACE43587EBA2CDC6EBEB5DFAED,
 	Mesh_GetIndices_m2FD8417547E7595F590CE55D381E0D13A8D72AA5,
 	Mesh_GetIndices_m4260DCF1026449C4E8C4C40229D12AF8CAB26EAF,
 	Mesh_SetTrianglesImpl_m8EDF09F91CF1F2FE8B6095E7C73685FA36ABCECD,
@@ -22051,7 +24361,12 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Mesh_SetTriangles_m39FB983B90F36D724CC1C21BA7821C9697F86116,
 	Mesh_Clear_mB750E1DCAB658124AAD81A02B93DED7601047B60,
 	Mesh_RecalculateBounds_m1BF701FE2CEA4E8E1183FF878B812808ED1EBA49,
+	Mesh_MarkDynamic_m554A9D7214E30E4F8F0515B712F3E3FA6D695A5F,
+	Mesh_get_bounds_Injected_mA4338C67E67FC449E1344556D073855ACB4E9DED,
+	Mesh_set_bounds_Injected_mFA253839FEEC7CDF976FE740CA3C2712F491BB8B,
 	MeshFilter_DontStripMeshFilter_m7FBA33F8214DB646F74E00F7CEFFDF2D0018004C,
+	MeshFilter_set_sharedMesh_mFE8D12C35148063EB287951C7BFFB0328AAA7C5D,
+	MeshFilter_set_mesh_mA18AA96C75CC91CF0917BA1F437626499FAAF496,
 	MeshRenderer_DontStripMeshRenderer_mC5359CA39BA768EBDB3C90D4FAE999F4EB1B6B24,
 	MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97,
 	MonoBehaviour_IsInvoking_mD0C27BE34FB97F408191450A702FA016E19997E5,
@@ -22121,8 +24436,10 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	MessageTypeSubscribers__ctor_mD26A2485EA3ECACFA2CB35D08A48256CE9DFE825,
 	MessageTypeSubscribers_get_MessageTypeId_mE7DD7E800436C92A325A1080AF60663AE1100D25,
 	MessageTypeSubscribers_set_MessageTypeId_m294A7B621AAF1984D886D2569CF1206E4F469115,
+	NoAllocHelpers_SafeLength_m85E794F370BFE9D3954E72480AE6ED358AF5102C,
 	NoAllocHelpers_ExtractArrayFromList_mB4B8B76B4F160975C949FB3E15C1D497DBAE8EDC,
 	Object__ctor_m091EBAEBC7919B0391ABDAFB7389ADC12206525B,
+	Object_GetInstanceID_m33A817CEE904B3362C8BAAF02DB45976575CBEF4,
 	Object_GetHashCode_mCF9141C6640C2989CD354118673711D5F3741984,
 	Object_Equals_m813F5A9FF65C9BC0D6907570C2A9913507D58F32,
 	Object_op_Implicit_m8B2A44B4B1406ED346D1AE6D962294FD58D0D534,
@@ -22141,6 +24458,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Object_ToString_m4EBF621C98D5BFA9C0522C27953BB45AB2430FE1,
 	Object_op_Equality_mBC2401774F3BE33E8CF6F0A8148E66C95D6CFF1C,
 	Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1,
+	Object_GetOffsetOfInstanceIDInCPlusPlusObject_m7C7130E8611F32F6CC9A47400AC5BDC2BA5E6D23,
 	Object_Internal_CloneSingle_m4231A0B9138AC40B76655B772F687CC7E6160C06,
 	Object_Internal_InstantiateSingle_mCC3EB0F918934D233D43DFDB457605C4B248738D,
 	Object_ToString_m7A4BBACD14901DD0181038A25BED62520D273EDC,
@@ -22250,6 +24568,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Quaternion_op_Inequality_mDA6D2E63A498C8A9AB9A11DD7EA3B96567390C70,
 	Quaternion_Dot_m0C931CC8127C5461E5B8A857BDE2CE09297E468B,
 	Quaternion_Euler_m537DD6CEAE0AD4274D8A84414C24C30730427D05,
+	Quaternion_Euler_m55C96FCD397CC69109261572710608D12A4CBD2B,
 	Quaternion_GetHashCode_m43BDCF3A72E31FA4063C1DEB770890FF47033458_AdjustorThunk,
 	Quaternion_Equals_m099618C36B86DC63B2E7C89673C8566B18E5996E_AdjustorThunk,
 	Quaternion_Equals_m0A269A9B77E915469801463C8BBEF7A06EF94A09_AdjustorThunk,
@@ -22379,11 +24698,20 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	RenderTextureDescriptor_get_depthBufferBits_m51E82C47A0CA0BD8B20F90D43169C956C4F24996_AdjustorThunk,
 	RenderTextureDescriptor__cctor_mA5675E6684E1E8C26E848D2390FB2ABE8E3C11FD,
 	Renderer_GetMaterial_m370ADC0227BC648BEFAAF85AFB09722E8B20024B,
+	Renderer_GetSharedMaterial_m3819AC6D141381FD4C99793E855D2ACED6FB3071,
+	Renderer_SetMaterial_m68B4F4BB5C58FB88AE7AF3829B532869C781FD0F,
+	Renderer_set_shadowCastingMode_mC7E601EE9B32B63097B216C78ED4F854B0AF21EC,
+	Renderer_set_receiveShadows_mD2BD2FF58156E328677EAE5E175D2069BC2925A0,
 	Renderer_get_sortingLayerID_m2E204E68869EDA3176C334AE1C62219F380A5D85,
+	Renderer_set_sortingLayerID_mF2A52A5697C3A9288DEAC949F54C4CCA97716526,
 	Renderer_get_sortingOrder_m33DD50ED293AA672FDAD862B4A4865666B5FEBAF,
+	Renderer_set_sortingOrder_mBCE1207CDB46CB6BA4583B9C3FB4A2D28DC27D81,
 	Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617,
+	Renderer_get_sharedMaterial_m2BE9FF3D269968F2E323AC60EFBBCC0B26E7E6F9,
+	Renderer_set_sharedMaterial_mC94A354D9B0FCA081754A7CB51AEE5A9AD3946A3,
 	RequireComponent__ctor_m27819B55F8BD1517378CEFECA00FB183A13D9397,
 	Resolution_ToString_m42289CE0FC4ED41A9DC62B398F46F7954BC52F04_AdjustorThunk,
+	Resources_Load_mF0FA033BF566CDDA6A0E69BB97283B44C40726E7,
 	Resources_GetBuiltinResource_m73DDAC485E1E06C925628AA7285AC63D0797BD0A,
 	RuntimeInitializeOnLoadMethodAttribute__ctor_mB64D0D2B5788BC105D3640A22A70FCD5183CB413,
 	RuntimeInitializeOnLoadMethodAttribute_set_loadType_m99C91FFBB561C344A90B86F6AF9ED8642CB87532,
@@ -22430,6 +24758,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	SerializeField__ctor_mEE7F6BB7A9643562D8CEF189848925B74F87DA27,
 	SetupCoroutine_InvokeMoveNext_m9106BA4E8AE0E794B17F184F1021A53F1D071F31,
 	SetupCoroutine_InvokeMember_m0F2AD1D817B8E221C0DCAB9A81DA8359B20A8EFB,
+	Shader__ctor_m6D011DE6D578D5F19FBF7EAED326C7209C419E21,
+	Shader_Find_m755654AA68D1C663A3E20A10E00CDC10F96C962B,
 	Shader_PropertyToID_m831E5B48743620DB9E3E3DD15A8DEA483981DD45,
 	SortingLayer_GetLayerValueFromID_m564F9C83200E5EC3E9578A75854CB943CE5546F8,
 	SpaceAttribute__ctor_m645A0DE9B507F2AFD8C67853D788F5F419D547C7,
@@ -22480,6 +24810,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	SystemInfo_SupportsTextureFormatNative_mD028594492646D7AB78A4C2F51CA06F63E665210,
 	SystemInfo_IsFormatSupported_m6941B7C4566DEE1EFFD7F6DCB7BFA701ECF9C1D6,
 	TextAreaAttribute__ctor_m6134ACE5D232B16A9433AA1F47081FAA9BAC1BA1,
+	TextAsset_get_text_mD3FBCD974CF552C7F7C7CD9A07BACAE51A2C5D42,
+	TextAsset_ToString_m8C7ED5DD80E20B3A16A2100F62319811BE5DC830,
 	Texture__ctor_m19850F4654F76731DD82B99217AD5A2EB6974C6C,
 	Texture_GetDataWidth_m862817D573E6B1BAE31E9412DB1F1C9B3A15B21D,
 	Texture_GetDataHeight_m3E5739F25B967D6AF703541F236F0B1F3F8F939E,
@@ -22496,15 +24828,23 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Texture_CreateNonReadableException_m66E69BE853119A5A9FE2C27EA788B62BF7CFE34D,
 	Texture_get_texelSize_Injected_m812BEA61C30039FF16BE6A2E174C81DCB40000DE,
 	Texture2D__ctor_m185B87D9FE6E39A890C667FCAA8A15A0D93AFCA6,
+	Texture2D__ctor_m22561E039BC96019757E6B2427BE09734AE2C44A,
 	Texture2D__ctor_m0C86A87871AA8075791EF98499D34DA95ACB0E35,
 	Texture2D_get_format_mF0EE5CEB9F84280D4E722B71546BBBA577101E9F,
 	Texture2D_get_whiteTexture_mF447523DE8957109355641ECE0DD3D3C8D2F6C41,
 	Texture2D_Internal_CreateImpl_mD3BC6187168CEDAFAC59DFA2EA1DCE102071C548,
 	Texture2D_Internal_Create_m8CD51387F8BEF8ACCBC2BACA532EE7C6DC7F0E10,
 	Texture2D_get_isReadable_mCF446A169E1D8BF244235F4E9B35DDC4F5E696AD,
+	Texture2D_ApplyImpl_mEFE072AD63B1B7B317225DAEDDB1FF9012DB398B,
+	Texture2D_ResizeImpl_m92009FC5D076C295BA1DECBA9F4A21A678A425C3,
 	Texture2D_GetPixelBilinearImpl_m950AB40E4151F10B6AA6C5759903BA07348114FB,
+	Texture2D_ResizeWithFormatImpl_mA7D86CB3F93C5B34F4F728C3AF4BABC9FC8C42BC,
 	Texture2D_GetRawTextureData_m387AAB1686E27DA77F4065A2111DF18934AFB364,
 	Texture2D_GetPixelBilinear_m3E0E9A22A0989E99A7295BC6FE6999728F290A78,
+	Texture2D_Apply_mCC17B1895AEB420CF75B1A50A62AB623C225A6C1,
+	Texture2D_Apply_m0F3B4A4B1B89E44E2AF60ABDEFAA18D93735B5CA,
+	Texture2D_Resize_m9B3D67DF42A47D5C573D084C080CEDA5E330A8D2,
+	Texture2D_Resize_m3A64BAF31DF4A82284B56C15614CE4FDA0785F7D,
 	Texture2D_GetPixelBilinearImpl_Injected_m120BD9810D176C39E874FFDAF53AD3AC3B6ADF85,
 	Texture2DArray__ctor_mD92521FF6DA05FF47471B741DDC7E4D5B3C3F4E2,
 	Texture2DArray__ctor_mEDE73B65A89EACA4B487FFBA92B155ED5B09970F,
@@ -22578,7 +24918,10 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Transform_InverseTransformPoint_mB6E3145F20B531B4A781C194BAC43A8255C96C47,
 	Transform_get_childCount_m7665D779DCDB6B175FB52A254276CDF0C384A724,
 	Transform_SetAsFirstSibling_m2CAD80F7C9D89EE145BC9D3D0937D6EBEE909531,
+	Transform_get_lossyScale_m9C2597B28BE066FC061B7D7508750E5D5EA9850F,
 	Transform_IsChildOf_mCB98BA14F7FB82B6AF6AE961E84C47AE1D99AA80,
+	Transform_get_hasChanged_m57B246DA5FB4AC01F1F109DCFE1D7A12048767D2,
+	Transform_set_hasChanged_mA2BDCABEEF63468A4CF354CB7ACFDCC8E910A3D9,
 	Transform_GetEnumerator_mE98B6C5F644AE362EC1D58C10506327D6A5878FC,
 	Transform_GetChild_mC86B9B61E4EC086A571B09EA7A33FFBF50DF52D3,
 	Transform_get_position_Injected_mFD1BD0E2D17761BA08289ABBB4F87EDFFF7C1EBB,
@@ -22596,9 +24939,11 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Transform_TransformDirection_Injected_m5E7C9D4E879820DF32F1CB1DE1504C59B8E98943,
 	Transform_TransformPoint_Injected_mB697D04DF989E68C8AAFAE6BFBBE718B68CB477D,
 	Transform_InverseTransformPoint_Injected_m320ED08EABA9713FDF7BDAD425630D567D39AB1D,
+	Transform_get_lossyScale_Injected_m6521BCE12BE0D202E15CDC24EC11304CD837EAE4,
 	Enumerator__ctor_mBF5A46090D26A1DD98484C00389566FD8CB80770,
 	Enumerator_get_Current_mD91FA41B0959224F24BF83051D46FCF3AF82F773,
 	Enumerator_MoveNext_mF27E895DC4BB3826D2F00E9484A9ECC635770031,
+	Enumerator_Reset_mA4AD59858E0D61FE247C0E158737A4C02FCE244F,
 	SpriteAtlas_CanBindTo_m6CE0E011A4C5F489F9A62317380FB35F20DF7016,
 	SpriteAtlasManager_RequestAtlas_m792F61C44C634D9E8F1E15401C8CECB7A12F5DDE,
 	SpriteAtlasManager_add_atlasRegistered_m6742D91F217B69CC2A65D80B5F25CFA372A1E2DA,
@@ -22691,6 +25036,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Vector3_op_Addition_m929F9C17E5D11B94D50B4AFF1D730B70CB59B50E,
 	Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3,
 	Vector3_op_Multiply_m1C5F07723615156ACF035D88A1280A9E8F35A04E,
+	Vector3_op_Multiply_mC7A8D6FD19E58DBF98E30D454F59F142F7BF8839,
 	Vector3_op_Division_mDF34F1CC445981B4D1137765BC6277419E561624,
 	Vector3_op_Equality_mA9E2F96E98E71AE7ACCE74766D700D41F0404806,
 	Vector3_op_Inequality_mFEEAA4C4BF743FB5B8A47FF4967A5E2C73273D6E,
@@ -22706,8 +25052,11 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Vector4_get_sqrMagnitude_m6B2707CBD31D237605D066A5925E6419D28B5397_AdjustorThunk,
 	Vector4_get_zero_m42821248DDFA4F9A3E0B2E84CBCB737BE9DCE3E9,
 	Vector4_op_Subtraction_m2D5AED6DD0324E479548A9346AE29DAB489A8250,
+	Vector4_op_Multiply_m16A8F11F144C03A8C817AC4FE542689E746043F4,
 	Vector4_op_Division_m1D1BD7FFEF0CDBB7CE063CA139C22210A0B76689,
 	Vector4_op_Equality_m9AE0D09EC7E02201F94AE469ADE9F416D0E20441,
+	Vector4_op_Inequality_m7038D1E27BCA2E4C0EA8E034C30E586635FBF228,
+	Vector4_op_Implicit_mEAB05A77FF8B3EE79C31499F0CF0A0D621A6496C,
 	Vector4_ToString_m769402E3F7CBD6C92464D916527CC87BBBA53EF9_AdjustorThunk,
 	Vector4_SqrMagnitude_mC2577C7119B10D3211BEF8BD3D8C0736274D1C10,
 	Vector4__cctor_m478FA6A83B8E23F8323F150FF90B1FB934B1C251,
@@ -23361,6 +25710,106 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Rigidbody_AddForce_mD64ACF772614FE36CFD8A477A07A407B35DF1A54,
 	Rigidbody_set_velocity_Injected_mA0CBA4077CADA05CF30404564E8D6260EF60E07D,
 	Rigidbody_AddForce_Injected_mEB8DB621D03BE740C5CBD472E873FF8B6EF6C119,
+	FaceInfo_set_familyName_m070B9D53BD86AF04CD44A193236472B863B2A5AD_AdjustorThunk,
+	FaceInfo_set_styleName_m178E36C8E91C5F733CC14C8F1C72D9261DF75689_AdjustorThunk,
+	FaceInfo_get_pointSize_m7FF87189B44B164920FDFBC1AF255255F310B5FF_AdjustorThunk,
+	FaceInfo_set_pointSize_m78055606128C35E03B858125ACE7D433EB282949_AdjustorThunk,
+	FaceInfo_get_scale_mF90743435232CC99211482A602E0E8FC85F177F0_AdjustorThunk,
+	FaceInfo_set_scale_m785FEBD05216CE8D6A125CFBEFE0D107ACFA7267_AdjustorThunk,
+	FaceInfo_get_lineHeight_m524B1B20AEED2B8A3E9BEA9E2CD1ECBCF0C39E61_AdjustorThunk,
+	FaceInfo_set_lineHeight_mDD90F9FD3601ECCC584619250EE463F1587F11AA_AdjustorThunk,
+	FaceInfo_get_ascentLine_m13CEC01C7B73BE33EEFFA354CEF301439CE0E87A_AdjustorThunk,
+	FaceInfo_set_ascentLine_m4A223B740073EE53058578E0B243447CC05F06E6_AdjustorThunk,
+	FaceInfo_get_capLine_m595382AC2AED0EBE2FD0EE34FD62BBD2A2BD0100_AdjustorThunk,
+	FaceInfo_set_capLine_m0E9C415B4B4CF8CAA5DDF415D23D57723A5E4DB3_AdjustorThunk,
+	FaceInfo_set_meanLine_m9296408D9FB6DC29479C9011118E0C0A07C36EF0_AdjustorThunk,
+	FaceInfo_get_baseline_m6903D36FD0392A31203A6580D35186DE2DA61CBA_AdjustorThunk,
+	FaceInfo_set_baseline_m413E9CF838D3116208742B77DA439AA19B1153B2_AdjustorThunk,
+	FaceInfo_get_descentLine_mCF674AE70BF8C18047BB823008C3A648FAFE750B_AdjustorThunk,
+	FaceInfo_set_descentLine_mCCECAE131BAEE9D0F6AE5BD788CD15BC25CDBDEE_AdjustorThunk,
+	FaceInfo_get_superscriptOffset_m6D6B04E0A73FFDD8EC6D1836DC7E806270F6D947_AdjustorThunk,
+	FaceInfo_set_superscriptOffset_m028955D8EB3CD9C2BE99165C06B6BE4A769F6C9C_AdjustorThunk,
+	FaceInfo_get_superscriptSize_m7DAC9FD6EC72892974AA0664A2CD237DCDE99864_AdjustorThunk,
+	FaceInfo_set_superscriptSize_m8CAC9E06CDC52C00323E723CAA1199D238E7142C_AdjustorThunk,
+	FaceInfo_get_subscriptOffset_m6FA6DB14BC472CEF9B0056D22192C5F9C161FD91_AdjustorThunk,
+	FaceInfo_set_subscriptOffset_m069A0EA04A5BD2C227C9635CD7A50FA850BF74A2_AdjustorThunk,
+	FaceInfo_get_subscriptSize_m44430100DE344AA8BC502C810191A93D2F93FCBD_AdjustorThunk,
+	FaceInfo_set_subscriptSize_m894DD0EFAF75BF99D54FCD344D7B908BC1197F70_AdjustorThunk,
+	FaceInfo_get_underlineOffset_mF219DC8934F4C0A4EFE10E8856EBABE2FFE8688F_AdjustorThunk,
+	FaceInfo_set_underlineOffset_m199A2AC207C84BC63EBEA6A959329222D441111E_AdjustorThunk,
+	FaceInfo_get_underlineThickness_mBD8888AA62DCA3EF8390F4958DF4703DA513CD2E_AdjustorThunk,
+	FaceInfo_set_underlineThickness_mA53F991E6ADC225E7CDD319D733FCB88E9B3C2F9_AdjustorThunk,
+	FaceInfo_get_strikethroughOffset_m6D56B3F6B3947CF4C40B351B3E70DE5CCE7B0006_AdjustorThunk,
+	FaceInfo_set_strikethroughOffset_m2DE60E5C276D6016FE4CAE20734D43E48A5DEBF1_AdjustorThunk,
+	FaceInfo_set_strikethroughThickness_m116BE386CDB6944650E86BD29B1ECC6DB9DEF87A_AdjustorThunk,
+	FaceInfo_get_tabWidth_mEE028F7DF366FABC8F358C064317B2F58BA38C1D_AdjustorThunk,
+	FaceInfo_set_tabWidth_mB3A1AF9DB93C0E354608E2AADE9451CF5737B4C5_AdjustorThunk,
+	Glyph__ctor_m21EF1BF22F642135C7C98A7F3E4A025F069A5BA9,
+	Glyph__ctor_mDE5144A797FA0EF0136512443E10B649F3D101BF,
+	Glyph__ctor_m138B15C3C7EF727A502378428EE4262C57E7518E,
+	Glyph_get_index_mE8CFBF3B6E08A43EF11AA2E941F7FD9EDFF1C79F,
+	Glyph_set_index_m188CF50CD0658F2312AF3EA620A7BC8640AAFF1A,
+	Glyph_get_metrics_m25A3C9DDEA15A3EC461A53F194F549699322A811,
+	Glyph_set_metrics_m94E3778C5179B44C6141DFC75202C295ADF00DD9,
+	Glyph_get_glyphRect_mD937109DC8AE147EED30E0CEB667ACAAE281D4F0,
+	Glyph_set_glyphRect_m5D45BF2EF4A7738AF7158D49DEDB5E09E034742C,
+	Glyph_get_scale_mB6FDF083196D83B61233ECBF9407A708DE4F692E,
+	Glyph_set_scale_m649B0F686653E1B9F9EA247C8F9F975EADABCF6C,
+	Glyph_get_atlasIndex_mF246F5C157408FCD5281DBFF08E21CBF28BB529A,
+	Glyph_set_atlasIndex_m29899906406A5F1F909359F9F8CB0ED15C64D5E8,
+	GlyphMetrics__ctor_m7A9438A14ED6BF7418634DB6FE23052FDB12BE23_AdjustorThunk,
+	GlyphMetrics_get_width_mD69248CE4E78D9D43DFF7573A83637DEE7A47E9E_AdjustorThunk,
+	GlyphMetrics_get_height_mB5A04A175CFE3D75A523F6287125681C00B9176C_AdjustorThunk,
+	GlyphMetrics_get_horizontalBearingX_m8523F1F23BC4A6761FD0378CCED4D5E63843F77E_AdjustorThunk,
+	GlyphMetrics_get_horizontalBearingY_mAD3428D1774FA6D75FE8BF77CCB8689F8A76110B_AdjustorThunk,
+	GlyphMetrics_get_horizontalAdvance_m1147FB02BC559DB0BF276725DA79F70CACF9FAE0_AdjustorThunk,
+	GlyphMetrics_GetHashCode_mB88CD082436B6E204011997AB57BFA8843EBBD5C_AdjustorThunk,
+	GlyphMetrics_Equals_mF3CC06B964ABE29EF38712324B813677D88856A3_AdjustorThunk,
+	GlyphMetrics_Equals_m9B560B32ACCF0761D3BAD2031882235C7EAD601D_AdjustorThunk,
+	GlyphRect__ctor_mFDDDD22BF8B61E1DE7B24BE8957D918F213AAEC0_AdjustorThunk,
+	GlyphRect_get_x_m0BAD0C0AA39EDD78635C17E6334C06D272C9FEDF_AdjustorThunk,
+	GlyphRect_get_y_m2149E34A0421CAA14EC681885722D4E587B3103B_AdjustorThunk,
+	GlyphRect_get_width_mDFB5E23F494329D497B7DE156B831DF6A0D2DC28_AdjustorThunk,
+	GlyphRect_get_height_mD272F54F14F730E8CAECFE7DC759F9E237374F90_AdjustorThunk,
+	GlyphRect_get_zero_mA40D939BFBFB8D3A7301CA4A6D99A1DBDFC34736,
+	GlyphRect_GetHashCode_m3A99EB971A433E57B195D6C06EBFF5F7ADD4E2E2_AdjustorThunk,
+	GlyphRect_Equals_m0AC7F5A910EDE18B48500657446BD514CA555114_AdjustorThunk,
+	GlyphRect_Equals_m1F715BF623E07565AEA7268996F4F57EE3EE9371_AdjustorThunk,
+	GlyphRect__cctor_m5AD2AC6BB42D6536F8F6E2F4369BA400354BFC35,
+	FontEngine__ctor_m90CBF12264B15BCA2368C372FC2062A06B0E788F,
+	FontEngine_InitializeFontEngine_m1C7695D66160277DE576EB9D8BA749849BDC24B7,
+	FontEngine_InitializeFontEngine_Internal_m1E2A10F8DAB78AD620024ECFA665C55F91B55445,
+	FontEngine_LoadFontFace_mFEBC3184605C0BD37A83021F6B47E5C3FA3FAD3C,
+	FontEngine_LoadFontFace_With_Size_FromFont_Internal_m325AFCA4FC2C627409FC9831A009940112D6B013,
+	FontEngine_GetFaceInfo_mB4B6045A34FEBFE58EB401216E930F50364B0A41,
+	FontEngine_GetFaceInfo_Internal_m651FC0E71B8D4FB858C70374126E142659537F8C,
+	FontEngine_GetGlyphIndex_m9877A2238C4292F3CC5F72688E4BB2EBBB9DBCB1,
+	FontEngine_TryGetGlyphWithUnicodeValue_mBC940303E740DC1897FCA6247D048266298BE00C,
+	FontEngine_TryGetGlyphWithUnicodeValue_Internal_m8B4C9643A51BB4D3E1F83C7DDF593E9247D5A38C,
+	FontEngine_TryGetGlyphWithIndexValue_m75A9F7605232FAF4D9948E2E7BDFFB01A8FD5178,
+	FontEngine_TryGetGlyphWithIndexValue_Internal_mB4D0E3754E546E77B9F0D6C1A0A621C273B0D170,
+	FontEngine_TryPackGlyphInAtlas_m0E9E8FBBC64AF69CB1DEB3C8A2EF862222C3B8EA,
+	FontEngine_TryPackGlyphInAtlas_Internal_m5FFA31006069F5F44A10B55C2BE8BF7C6BB91A9B,
+	FontEngine_RenderGlyphsToTexture_m6A61FED7FC28A80B730C4B2C492A8E802DD2EB80,
+	FontEngine_RenderGlyphsToTexture_Internal_m75E35FA3BB446FAD0E9574A2109BF1AF8758218D,
+	FontEngine_TryAddGlyphToTexture_mD70AEC0FDCEE818B4366C78FF662464F13112172,
+	FontEngine_TryAddGlyphToTexture_Internal_mAD9085B9AF5B6BEBAB100A0F0DD3114CF23B7E82,
+	FontEngine_TryAddGlyphsToTexture_mFC834881F6DB0867C01A9902A879C13ED66404A4,
+	FontEngine_TryAddGlyphsToTexture_Internal_m8A1C14812C18BE60C2C3795D1DD21FFE6B9C3EEB,
+	FontEngine_GetGlyphPairAdjustmentTable_m1FC9B74860076DCCECBCE77EEA38737FB32DF24B,
+	FontEngine_GetGlyphPairAdjustmentTable_Internal_m8A6247127839E83B66B84C0898E64ADA151996D8,
+	FontEngine_ResetAtlasTexture_mAC70CAE4652D8D5F7F2A623DB2CA5F7DB6C5293E,
+	FontEngine__cctor_m17164EA5533727BA15D0E56719925E8AA986F7BC,
+	FontEngineUtilities_MaxValue_mFF6CBAAE6C3015C2A0E7492A381F6F2118CA1215,
+	GlyphAdjustmentRecord_get_glyphIndex_m5E03D5A58AF3664F35E15CC1B449101B96DD0BD3_AdjustorThunk,
+	GlyphAdjustmentRecord_get_glyphValueRecord_m8F2643EF5E5FCD7683AF53BA831603817709E3CC_AdjustorThunk,
+	GlyphMarshallingStruct__ctor_mC65A885AB9C9D04B45FB90DF913C6404DA655220_AdjustorThunk,
+	GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_mDEF2D51630A188E44897AE311E31D2759C4DEF46_AdjustorThunk,
+	GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m51AFEB36698BA7BD73C96B239F8461374736BB66_AdjustorThunk,
+	GlyphValueRecord_get_xPlacement_mCC70E3C1C7A2437B47128E74C905B25C452DAF8F_AdjustorThunk,
+	GlyphValueRecord_get_yPlacement_m1785A042219A2303F2AC442CCD12842935474CCD_AdjustorThunk,
+	GlyphValueRecord_get_xAdvance_mF3C5C569D232241F77947296305A8C7C297E8279_AdjustorThunk,
+	GlyphValueRecord_get_yAdvance_mE6A8FDC6406B7A6BFA72852DB976AAFAD0009FE4_AdjustorThunk,
 	Canvas__ctor_m83621E7EFCEFA5A0EDC886CB878FE10E7281B951,
 	Canvas_add_willRenderCanvases_mACABFF4EAFB7DCFF4B9A33357D496EC3010D7E6B,
 	Canvas_remove_willRenderCanvases_m9A5F0E946B4549D576EDAD5618FEA2D532377831,
@@ -23379,6 +25828,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	Canvas_get_targetDisplay_m80D9D93CA075084BDD3B05AF5F880698D7BB235D,
 	Canvas_get_sortingLayerID_mD0EB8964D1C7E68F429F83B5C5AF58426D354C75,
 	Canvas_set_sortingLayerID_m9FE5A69A22DB3316964C9D5CD49E5B4352550747,
+	Canvas_get_additionalShaderChannels_m703769513A111C46DC0F0B32864A69E54C085BEC,
+	Canvas_set_additionalShaderChannels_m0A3CB0D3137C41915E293268BA95920404921FE2,
 	Canvas_get_rootCanvas_mFC5752C1955AF10E71AA6160A3A1880586116123,
 	Canvas_get_worldCamera_m36F1A8DBFC4AB34278125DA017CACDC873F53409,
 	Canvas_GetDefaultCanvasMaterial_m972CD867F8C777A55C35A735ACE85BADC628233B,
@@ -23408,12 +25859,14 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	CanvasRenderer_EnableRectClipping_m7C409436632B57EEC761606E22408355D8197397,
 	CanvasRenderer_DisableRectClipping_m67C4FF4EF6888518AC4B9B8CE256DC761DF08D42,
 	CanvasRenderer_SetMaterial_m9851A87FA12E2CD1321BB971953E899292EC4707,
+	CanvasRenderer_GetMaterial_m86FB9F04CBD33AD7FC3FCE1B55CB8C79FAEFC7CC,
 	CanvasRenderer_SetPopMaterial_m4772792D80E04FF3B3F5BA0B65AF94F3BE326A2C,
 	CanvasRenderer_SetTexture_m406C073585AF48FD2A880D73419F6E1069BEEA84,
 	CanvasRenderer_SetAlphaTexture_m0DF53B597582D8661411DF84ABF25F995540F34E,
 	CanvasRenderer_SetMesh_mC87C841A52339C33E5B1C644C70FC9CC9C560988,
 	CanvasRenderer_Clear_m8D621D571EEE6C2609F18ADF888008273A5A29AC,
 	CanvasRenderer_SetMaterial_mD407C670DBA743283F32581586B5DD51272B08C7,
+	CanvasRenderer_GetMaterial_m7B757917B67B57B55EEE2E0451935B4B139E06F3,
 	CanvasRenderer_SplitUIVertexStreams_m6398634C55BA494F2D2AE13FC3878E698330AB9F,
 	CanvasRenderer_CreateUIVertexStream_m1826F08D237884FD9817F2E0251FF0F813A2C1CA,
 	CanvasRenderer_AddUIVertexStream_m58722DF8AED39532C201A0A79A84F10BEC9C7EAB,
@@ -24986,6 +27439,1395 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	VerticalLayoutGroup_CalculateLayoutInputVertical_mF06FF0EF1AA383EF8A9D373D3AD8F65E302D6C55,
 	VerticalLayoutGroup_SetLayoutHorizontal_mDBAB0E860D28A07621CFF5FD811FE46681835454,
 	VerticalLayoutGroup_SetLayoutVertical_m0C9CCFE9C74945FF3F45073528EEE427260B79C8,
+	CaretInfo__ctor_m2A1A904B1BB9F92DA16B51129303C3A515D0AFE5_AdjustorThunk,
+	ColorTween_get_startColor_m79C9747E3C651BC5D1123AB25863EE23008175A8_AdjustorThunk,
+	ColorTween_set_startColor_m2B769C6741BEE0F1DF5E09226F1FC36ED6799B0B_AdjustorThunk,
+	ColorTween_get_targetColor_m9FC04D007878395E9C323188AF2B1BC2177E787F_AdjustorThunk,
+	ColorTween_set_targetColor_m881BE7EF43253C535765C6CA7D1B1C5603BE3C8D_AdjustorThunk,
+	ColorTween_get_tweenMode_m768147B7D6714EAAFD670793B7CF7A6CF01C6379_AdjustorThunk,
+	ColorTween_set_tweenMode_mF4ABCEC43CB0D706B9D12AEE3722DB885D8942A5_AdjustorThunk,
+	ColorTween_get_duration_mBDF74743714A4C7373DBF108805E7D68B70BE1FA_AdjustorThunk,
+	ColorTween_set_duration_m673AE8A83214FB5A0CD9D995482D49CDC6723C58_AdjustorThunk,
+	ColorTween_get_ignoreTimeScale_m5EC81A0CD0E0C78C03983AEC40BE8861E9B6FF2A_AdjustorThunk,
+	ColorTween_set_ignoreTimeScale_m41D7A6143F764EA3D18125005B27F5F6366737DC_AdjustorThunk,
+	ColorTween_TweenValue_m55933ECAC62FD8F6320BE911214FE9FFB78E38D1_AdjustorThunk,
+	ColorTween_AddOnChangedCallback_mCB17182F2BBFC8316626CB229D9758C2B3CD05AB_AdjustorThunk,
+	ColorTween_GetIgnoreTimescale_mCA66E1F4C1012F1C0946741FF263A99C689540E4_AdjustorThunk,
+	ColorTween_GetDuration_mDD1E4514763566EB98FEF3E2494B324CD4807B33_AdjustorThunk,
+	ColorTween_ValidTarget_mEDC11E5C3559003C2BDC8F58310D0225DF696C23_AdjustorThunk,
+	ColorTweenCallback__ctor_mC6B431E8502AEA82EDFA9EE08D593EA026EA3C65,
+	Compute_DT_EventArgs__ctor_mFF94BC4129E9A4EF9C4C99DF0F618585BFB50510,
+	Compute_DT_EventArgs__ctor_m8D4F3E1043231DB1D4585435F232B394D2C6A521,
+	Extents__ctor_m71A6D28DCBFA8BDE2617E89AB46C40978FA81F17_AdjustorThunk,
+	Extents_ToString_mCDE6ADB89386A8BB3042771A3F98D9211D0BE537_AdjustorThunk,
+	FaceInfo_Legacy__ctor_mAB3F5AD05BFB37FACEC0A3F5D9973F93AC8D5D78,
+	FastAction_Add_m2753C253CA9E2322F2CD9C7757BB7296D03A2D9E,
+	FastAction_Remove_mDCC3743A749540B2BC1F718CF40C3001BD7F7F84,
+	FastAction_Call_m00F69EF2E2EFD13F03CA2F7988EDB50086EEB84B,
+	FastAction__ctor_m296BD8427F412D8A53750805BFC4467255CED3AC,
+	FloatTween_get_startValue_mA9D409C758431660EE013070179704EE05BC6D1B_AdjustorThunk,
+	FloatTween_set_startValue_m886A0DFD26F4DE82D0B8876CE486DCA6F28EB99E_AdjustorThunk,
+	FloatTween_get_targetValue_mFA1D2AD63B02958BA97E059D78AD6E448A858088_AdjustorThunk,
+	FloatTween_set_targetValue_mBC38AE1A6A89005DB88AEEA90EAE458326647524_AdjustorThunk,
+	FloatTween_get_duration_m9F75600C6074E2371F4B085C228009790C382ABF_AdjustorThunk,
+	FloatTween_set_duration_mCCC8CD4A31B83CAC202FDAB0361205A7516188C0_AdjustorThunk,
+	FloatTween_get_ignoreTimeScale_m91DEC43AD8A5FA1D6D1F16C00CA068D232CCCA61_AdjustorThunk,
+	FloatTween_set_ignoreTimeScale_m1B2CEEE7F1285DD799D23020C10F329F061B1DA2_AdjustorThunk,
+	FloatTween_TweenValue_m99F8C3F813B0984F7C5AEA5CA2F035FB6D32C063_AdjustorThunk,
+	FloatTween_AddOnChangedCallback_mBA8E5924866457647E95BCEE7E00649DCD60A62C_AdjustorThunk,
+	FloatTween_GetIgnoreTimescale_mD16A634E783CE9A8D79F58187CF794F208E33C6F_AdjustorThunk,
+	FloatTween_GetDuration_m8897B3E5D24ABE6C6963458F16ED9D9D70CF5BE1_AdjustorThunk,
+	FloatTween_ValidTarget_m76EDBCE1A349AAF5EF44EE2633B08BEFD0F7C4A7_AdjustorThunk,
+	FloatTweenCallback__ctor_m1C795A47C5FD0CD0E0DED180F72C2CC5F7CFB38F,
+	FontAssetCreationSettings__ctor_m800AB6405BF19A45BEFCD345F171A6BCC7F7AA11_AdjustorThunk,
+	GlyphPairKey__ctor_m3A5D2125C2F25129C709785DABC5537C0A14504D_AdjustorThunk,
+	GlyphPairKey__ctor_mA40DDE42B5B8E23FCC693BAEB144BB08D40E4496_AdjustorThunk,
+	GlyphValueRecord_Legacy__ctor_m2675A5F79DE031DE110E81FABCBF556B612B4873_AdjustorThunk,
+	GlyphValueRecord_Legacy_op_Addition_m6297D838D9AFA09202A110280AF5DF4AC6DEE43E,
+	KerningPair_get_firstGlyph_m96AE41BAEF6534A133CB3E94CEADA8EEEA65DEDF,
+	KerningPair_set_firstGlyph_m803F5AD38DCBCBEAF97AC2D29B560D9B1AD5D795,
+	KerningPair_get_firstGlyphAdjustments_mF200C94EABF1CFE65CCBEAB7BCACFF3C647C4A97,
+	KerningPair_get_secondGlyph_mAF6D653DB34CD05C53C4CD6816BE45A7FAB9E9CA,
+	KerningPair_set_secondGlyph_m118C501D1A85ADFB860F3134DD71F199E7CC801C,
+	KerningPair_get_secondGlyphAdjustments_mE99FDCA643F45AB660D4936D4AFA9B8FFED09A70,
+	KerningPair_get_ignoreSpacingAdjustments_mD68D0ADCB956F51D48FD18EFF32688AC5A6BC1CC,
+	KerningPair__ctor_m96EFB818AC9754737A6909044C49972CD1797242,
+	KerningPair__ctor_mB0B4EA55FECE5C592739F8E2A44B3B60716DF814,
+	KerningPair__ctor_mF2039BF36F48BFDCB0B952A5BA362916C2DEB268,
+	KerningPair_ConvertLegacyKerningData_m47C96DCAFA959D0C707CA52F622FD48744926977,
+	KerningPair__cctor_m79C41ADD4E56773B06AF5BA5A95046C0A40F2E38,
+	KerningPairKey__ctor_m73F77F7631B858785DF8D10112A319C4FBFBF1D4_AdjustorThunk,
+	KerningTable__ctor_m32FB2D4A2B2479CF17C099BE0C042376E9013249,
+	KerningTable_AddKerningPair_mF915E80935E56E3199F1D205CBDB0BE55E23A4CB,
+	KerningTable_AddKerningPair_mA7AD3240B59D9022440863898CE5E8BBE1B09319,
+	KerningTable_AddGlyphPairAdjustmentRecord_m32A760F556A19FC2E1CB3E5661AF46EDE742D57C,
+	KerningTable_RemoveKerningPair_m2F54F078747F383BEF82EC8FFC8140D057DCC231,
+	KerningTable_RemoveKerningPair_m0E5B7CF328563A3F4FA6560CA8AB86730C23D80A,
+	KerningTable_SortKerningPairs_m77277F2631EF201AA04F0CA0B35AFD5224DD7067,
+	U3CU3Ec__cctor_m6A71C46D73A3D0DA88F985BD86D2E3B45BC59F71,
+	U3CU3Ec__ctor_mFEF59552A56B56236EF264D0557746752BA9FF59,
+	U3CU3Ec_U3CSortKerningPairsU3Eb__7_0_m6443058FB61D41201C46195F600360A89DA99F61,
+	U3CU3Ec_U3CSortKerningPairsU3Eb__7_1_mC5C106477E61BCD877A2FC3DBAA0891981405B54,
+	U3CU3Ec__DisplayClass3_0__ctor_m580412B55CAA185CAB1B93D26B25F2194B28E34C,
+	U3CU3Ec__DisplayClass3_0_U3CAddKerningPairU3Eb__0_mB652BC434D037CF84B2AB91F2D8DC143E778A793,
+	U3CU3Ec__DisplayClass4_0__ctor_m81DC132E697974F50DC24BD0965FBC37EA0C4DC7,
+	U3CU3Ec__DisplayClass4_0_U3CAddGlyphPairAdjustmentRecordU3Eb__0_m08E0B69CF1D372BC58D4ED9E8F1974A6A6049CAD,
+	U3CU3Ec__DisplayClass5_0__ctor_m88E965C6B564BF23F117A9BDB0D8CD9BF0EEBE28,
+	U3CU3Ec__DisplayClass5_0_U3CRemoveKerningPairU3Eb__0_m4A28BC5DAB18715A10E4ECB1B862A0C141D20EDA,
+	MaterialReference__ctor_mC0D0055995F082C37559BF6DE1EDAA0D9E2C444C_AdjustorThunk,
+	MaterialReference_Contains_m23AC586CCB099EFBC053CB770A376A806AAC7E27,
+	MaterialReference_AddMaterialReference_mBCED916099107D859312D06F12044E007C0BC9E2,
+	MaterialReference_AddMaterialReference_mBEF97C70F89DFC05A18EC689BCF5FB368A6E72C1,
+	MaterialReferenceManager_get_instance_m31EBCEAB3974E3419683B3CD41890D503971AA0D,
+	MaterialReferenceManager_AddFontAsset_m0F2A70F54C6F13741B31158FCF52FBFE3C7E1D2A,
+	MaterialReferenceManager_AddFontAssetInternal_mE527177997F1D9FAD9A87091DD9E0FFEAD001033,
+	MaterialReferenceManager_AddSpriteAsset_m2BE14787064D4F467D8A31D2C867B529ACB59004,
+	MaterialReferenceManager_AddSpriteAssetInternal_mF5D74D0FCFFEEC1D8FE60BD94A637F302EB4A08B,
+	MaterialReferenceManager_AddSpriteAsset_mE81D1F44050D42C2EC659DC95F8CA2B4836C10B2,
+	MaterialReferenceManager_AddSpriteAssetInternal_m0BED546F46EC1619662EE0775EB73A2EBA63CA4C,
+	MaterialReferenceManager_AddFontMaterial_m2468B2695BF3AC8E81FA1A1EC19E259A33DDC17B,
+	MaterialReferenceManager_AddFontMaterialInternal_mCB884E525AA884578B548F9890B558B92AB6DCBA,
+	MaterialReferenceManager_AddColorGradientPreset_mDE80EFAABB2A14BD95FD46319F69AB96A2393E35,
+	MaterialReferenceManager_AddColorGradientPreset_Internal_m8A1EDD4AED2E4DFCC662C101DD95FCAC192C6081,
+	MaterialReferenceManager_Contains_mA47B1EE7A487AE400E4A94853448B001F5B86322,
+	MaterialReferenceManager_Contains_mECE568C5352EC5934780004095DBC3A749186F0B,
+	MaterialReferenceManager_TryGetFontAsset_m8A4BFE32C63385C04CAEDBD120A9306EEC3D078B,
+	MaterialReferenceManager_TryGetFontAssetInternal_mB8573336158A80687268F9DB641255C09E16E461,
+	MaterialReferenceManager_TryGetSpriteAsset_mABBA3060114916A6B6F90F1AD9CA0C605E249329,
+	MaterialReferenceManager_TryGetSpriteAssetInternal_m3319C2C8366CC2EDBF464918291CF180D2BF5E28,
+	MaterialReferenceManager_TryGetColorGradientPreset_mD1D419EF99846FCB3D2BA48E3269260B753C6F45,
+	MaterialReferenceManager_TryGetColorGradientPresetInternal_m3F60F9F115AACD72562737F9A71CE8A2509221DF,
+	MaterialReferenceManager_TryGetMaterial_m8A2153D05BE784E4C9D4016FCA3935484EF7F122,
+	MaterialReferenceManager_TryGetMaterialInternal_mE600C0A5D96669187048F1660538096D1C0BEEE0,
+	MaterialReferenceManager__ctor_mA230B6E3D1A7D22A4E1FADF2C1CF9FCB473E0A2A,
+	Mesh_Extents__ctor_mE89306AE3C1F9BBC8EC83483D18D1C30A9F45989_AdjustorThunk,
+	Mesh_Extents_ToString_m92D41502A2415A09102A7347398E4D4B94CC3FFC_AdjustorThunk,
+	SetPropertyUtility_SetColor_mA991E137437932BFA74CAFDC049BE305C8B4EB10,
+	ShaderUtilities_get_ShaderRef_MobileSDF_m55D5F69AEB13C08B9445CA1403E312AE38472393,
+	ShaderUtilities_get_ShaderRef_MobileBitmap_m09926A9F4E9B3EF4F9631D37A77898DEFD772F32,
+	ShaderUtilities__cctor_mCC0DA25B1E0507C3E6CB1C7B011557D7C8D6E776,
+	ShaderUtilities_GetShaderPropertyIDs_m933D279353B8C3F4AE1813FA85ACD30F9B6B70EE,
+	ShaderUtilities_UpdateShaderRatios_mDCEF0280171EA078A948597AECF4177491A14755,
+	ShaderUtilities_GetFontExtent_m11C874EE34C5B9640EED8CF35A3A562E3F79C0F6,
+	ShaderUtilities_IsMaskingEnabled_m721A76C5FBA282C0ABA48CDB42EF224569F181A1,
+	ShaderUtilities_GetPadding_m85F4485320B2346139D2D344E381DB6F3DB3B6BF,
+	ShaderUtilities_GetPadding_m7FFE9C50EDA8D4FA73E05241BCF45F1FEEEEE92B,
+	TexturePacker__ctor_m46B501969237BCB29DA078802E837B8AEF9D442F,
+	SpriteDataObject__ctor_m1236EBD6ECF0D3924CD9D459D7D627DA4F46CDE5,
+	SpriteFrame_ToString_m06F5A33D924B46027DCCB34E08D50803D5A453B0_AdjustorThunk,
+	SpriteSize_ToString_m2B7966FD1CFC5620064F31F0AE97D8C5B06EE789_AdjustorThunk,
+	TMP_Asset__ctor_m3DE63D48E7F514B23A74F77A3860D816EB197AFA,
+	TMP_Character__ctor_mF2903EF6CE696279295EEFD77EF1C2EFC0EC56A6,
+	TMP_Character__ctor_mC7AA3DE6DED0AD81A398C27F09DFA13162C2BAFD,
+	TMP_Character__ctor_mF534127A1CCE0963465083219858E2A4E2226035,
+	TMP_ColorGradient__ctor_m791B3ED1705422F5967322721F724A0096D99D5C,
+	TMP_ColorGradient__ctor_m1DA5B1124940B1D77BB34079EF79F84C3843DD02,
+	TMP_ColorGradient__ctor_m6A791A9AABB4A9CBFE9F2DD809284E8680301EFA,
+	TMP_ColorGradient__cctor_m71CE37A288F688B7A2DD33ED4CD561CE9DF81309,
+	TMP_DefaultControls_CreateUIElementRoot_m4D9708BA51AC9855444C89F27EC90D88CF0A1B7E,
+	TMP_DefaultControls_CreateUIObject_m5DDAF5FBEFA1490ACA35BC08F753CF9664F0B9D8,
+	TMP_DefaultControls_SetDefaultTextValues_m6042BB4C6357E4A7EC6A2FDE0DBF07C96F939102,
+	TMP_DefaultControls_SetDefaultColorTransitionValues_m495A0BE59C72A72837D9798402C36F8EEFD88C28,
+	TMP_DefaultControls_SetParentAndAlign_mE29E799022492873DCF02A4702BCD4AF35772C4B,
+	TMP_DefaultControls_SetLayerRecursively_mE0536A04C384CF3711CFFE6B5DE5BDBBE03067C8,
+	TMP_DefaultControls_CreateScrollbar_m747F36EF9FC7A7119F67A12F03BD7059DD07B44E,
+	TMP_DefaultControls_CreateButton_m98AF4DEDCC0EABBEB5F30D53BFFBE601BF190A51,
+	TMP_DefaultControls_CreateText_m28427FDD1065C39A07A7AACCE346AA5DE55CA9E6,
+	TMP_DefaultControls_CreateInputField_m4E19E547CE8951B0BA05437CCA3691BB01FA4E34,
+	TMP_DefaultControls_CreateDropdown_m34AF012613C6D85C4FE2A75CEF81026497AA7B28,
+	TMP_DefaultControls__cctor_m015050AEAC5466C948AAD03793A1F7B2ABB395F8,
+	TMP_Dropdown_get_template_m1D6D3A3617FD3BF1FD751396A53F5E43928D53DB,
+	TMP_Dropdown_set_template_m54659530042C87A98102D16AF0F28244EE4AC4B9,
+	TMP_Dropdown_get_captionText_mA636E3C115398DC194B373AEA4CB07C4EAFC70B6,
+	TMP_Dropdown_set_captionText_m8E7E47A54BDD21EBF040947F92C159346C47E49D,
+	TMP_Dropdown_get_captionImage_mB9137BB407BB4169C7779E4206FD10E6F9A679DE,
+	TMP_Dropdown_set_captionImage_mF2C5271CE2417F0D4A485592223F5323C9B18753,
+	TMP_Dropdown_get_itemText_mD384510C02A61B60E19FC782313FE7DFE91078E9,
+	TMP_Dropdown_set_itemText_mBDAC673CCC3DAD5E085C2D8BFBC46863A612806D,
+	TMP_Dropdown_get_itemImage_mFAF67CACDA6587BF56BC790E5749DC4A40751082,
+	TMP_Dropdown_set_itemImage_mFB469E632F331FAC8C9A9EB08D7893EE00E66615,
+	TMP_Dropdown_get_options_m2A509F28E9AA0D259D28CBA0A0992CE5ED60ABC2,
+	TMP_Dropdown_set_options_mCC29E2878531BA5CDAE82265B6072E8B4C849081,
+	TMP_Dropdown_get_onValueChanged_mB5CDDACD9AA95837D6305648143E308C2CAB8576,
+	TMP_Dropdown_set_onValueChanged_mF39C3A3484766C63BC3CCB286E50C92285FBE715,
+	TMP_Dropdown_get_value_m505AE9FA106D177AA773F6F2ACD55222C7FF3611,
+	TMP_Dropdown_set_value_m0157A3F590CD895A90BC91B26DA886C6F3F854E3,
+	TMP_Dropdown_SetValueWithoutNotify_m77538507D860C6E18B3892C4E1F8697A065379F0,
+	TMP_Dropdown_SetValue_m5AFAF91CED4ACAC133E70CDA49951BDB5AA33ADB,
+	TMP_Dropdown_get_IsExpanded_m79F11548A63AE3B248D0B3C6FD856534A83D2ED1,
+	TMP_Dropdown__ctor_m2535E37394AA92D593EE9C982E056B84E3AFC833,
+	TMP_Dropdown_Awake_m122B2BD88EDCD1ACC7D56CFB95A2D06774FE2D49,
+	TMP_Dropdown_Start_m6D54B50EACDB0130FC404A8610F987906E9B7613,
+	TMP_Dropdown_OnDisable_mA0573AC56C438141DA7C22B1553FA17A3A1F9A67,
+	TMP_Dropdown_RefreshShownValue_m837A9070B4FBA6621F00BB1E7B7ACD81FBAD451F,
+	TMP_Dropdown_AddOptions_m0254DD10370FEE3AC5220AD94A5BF79495E476D1,
+	TMP_Dropdown_AddOptions_m4B1F3555A4F12C8A49442F3BA7963F838852014B,
+	TMP_Dropdown_AddOptions_m47620892E46D43DD120A9F80CBF0FEB292936D25,
+	TMP_Dropdown_ClearOptions_m048C1E3B6871A1ED62FB586DBBCAFA4DE382C96A,
+	TMP_Dropdown_SetupTemplate_m1D3C052F72C631157C89206685E3A85ACDC43086,
+	TMP_Dropdown_OnPointerClick_mB001C8C32E6326AD59A29917A74C6526BD18A2B7,
+	TMP_Dropdown_OnSubmit_m13410F20F68435EECCB7CF566CFEC6640420BD31,
+	TMP_Dropdown_OnCancel_m1237CB62DE1C63AF42310CF4922445D97B339EE7,
+	TMP_Dropdown_Show_m85E1B97A71F170686579230841CF85262C32085D,
+	TMP_Dropdown_CreateBlocker_mA85EAB1FBBF841199FF2B17CB36C6D2FBAE3CF82,
+	TMP_Dropdown_DestroyBlocker_mF59977CE31025B504AECA914A6503376E4D935B8,
+	TMP_Dropdown_CreateDropdownList_mDD27064E69DF4722A378C0AD1B025028504C38EB,
+	TMP_Dropdown_DestroyDropdownList_m0F770160B0148D9861BC17C504EA20B55A854082,
+	TMP_Dropdown_CreateItem_mA5038ADA189AC780133B66865A6B6935D6A71046,
+	TMP_Dropdown_DestroyItem_mF8D859D0BDBE4678E5B213FAB58A8FE86922637A,
+	TMP_Dropdown_AddItem_m9DA72E46C8B2F9DF68AE25E18EC06AA9C03E2EE7,
+	TMP_Dropdown_AlphaFadeList_mE97D64B1D8908AC87CDE1366A7B73A3A51C24B3E,
+	TMP_Dropdown_AlphaFadeList_m1759AA1518F5FA264358A219CE5424ED9CD4D24F,
+	TMP_Dropdown_SetAlpha_m7B93215214872002541F7AF4B3A0280DA4BD34DE,
+	TMP_Dropdown_Hide_mC3D767D152BD51E76C28A342884179F0A05EE85A,
+	TMP_Dropdown_DelayedDestroyDropdownList_m6DD41D394989827DF9C6567C86B8520333255716,
+	TMP_Dropdown_ImmediateDestroyDropdownList_mFC1530BA413B1128B0BAF4DA97E50510ADDC04F2,
+	TMP_Dropdown_OnSelectItem_mD7F714C36EEEA70B97C08B1DF5075F3AD715C4B0,
+	TMP_Dropdown__cctor_m1354234AFADFBCD4F94562A62B0D1D105850F044,
+	U3CU3Ec__DisplayClass60_0__ctor_mC7F89E67DD8E84D796C07F7C9E8ABB6F5FEF1556,
+	U3CU3Ec__DisplayClass60_0_U3CShowU3Eb__0_m00C1450B70C201913151492F8AE9FBC61A31358D,
+	U3CDelayedDestroyDropdownListU3Ed__72__ctor_m274A07822241A8BC59918B7A6F5CC71A1F617358,
+	U3CDelayedDestroyDropdownListU3Ed__72_System_IDisposable_Dispose_m86AF6C422029C4550F130A9902ED81ED058FA19F,
+	U3CDelayedDestroyDropdownListU3Ed__72_MoveNext_mC643A7B618B36232F537ED2F22252FB6D27D977F,
+	U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m58717D11B90F4472FF220450742D992A0CA1F841,
+	U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_IEnumerator_Reset_m1DC1BA0A67BE883A25FFDD75B415004D41BAB1CA,
+	U3CDelayedDestroyDropdownListU3Ed__72_System_Collections_IEnumerator_get_Current_m17D87CD5D3C14C87374EA32D7705D9EAEACBC86D,
+	DropdownEvent__ctor_m5159D8F99C902E86113EAADFE9F2B81A495CA2F5,
+	DropdownItem_get_text_m265E86336F652B2361FD8B4D81C3ED5D03FE261A,
+	DropdownItem_set_text_m99A6C5CCDFBAFC3CB35A35516ADC4CF84E595ADF,
+	DropdownItem_get_image_m49AB0D285796A7BB112B3640E44B8F8F70C73070,
+	DropdownItem_set_image_mF7707ABF8FDA846D054D6DD1AE8684B9A5457504,
+	DropdownItem_get_rectTransform_mF0F78A3EE59C906576CE2AFADBE3808A7CCB661D,
+	DropdownItem_set_rectTransform_m89EBB610B9C17AD408DADB3A096C8BF8EDF978A0,
+	DropdownItem_get_toggle_mEBCC39E603EAAE9541A7BB816EE35B82A4EDF696,
+	DropdownItem_set_toggle_mC131CA30062487AC118DD1D709A1B8A947AB87AB,
+	DropdownItem_OnPointerEnter_m6876CB32E28EBD21349B852D58690168C6EF0C86,
+	DropdownItem_OnCancel_m777656A4AF558A4FBBD7000287CB54F01DFBC6C1,
+	DropdownItem__ctor_mAA48CFA89DE4CFE4DBC4D54EACA5D59160BC5598,
+	OptionData_get_text_m88D2899521CF3C6A53E4B8F1685203D888864642,
+	OptionData_set_text_mCE67F5B12C243D8DDB9C96FED26FE3EE86B6C2B2,
+	OptionData_get_image_m40827FAD87A1F471CE5C566BF057829D8F5DD555,
+	OptionData_set_image_mA3906C699D22D16DC123736152506A9CBBCEB73D,
+	OptionData__ctor_mAF4A3E2D1F7F7121683B66BB64E2D7D9383E2CC4,
+	OptionData__ctor_m80B363DB2199075040C07161E8A83BB415B63B60,
+	OptionData__ctor_m46ED680863078DF54B1AD2767AB76C58D44578CC,
+	OptionData__ctor_mB9A9C7195A843B453FAA80A404D0E8481F2A5042,
+	OptionDataList_get_options_mD7B62EB17EF0D8C700792B5868E950678C82668D,
+	OptionDataList_set_options_mFDF56C11D9611B047BEF9D9434568892B7697A0F,
+	OptionDataList__ctor_m8A0F35954EC2393F3B34401C40E3966BF86091CC,
+	TMP_FontAsset_get_version_m6611DA6B390BF90278FE956CC4715AA9FD44885B,
+	TMP_FontAsset_set_version_m332D7A4F4EEE28ED7318E1DBD6C17E0E6B6D3B49,
+	TMP_FontAsset_get_sourceFontFile_m62799B42E36BEEA1B7162D0FDE5B11A482E053FF,
+	TMP_FontAsset_set_sourceFontFile_m2C1EECF7B7EB2AE94B12B1CB04712554F9879C5A,
+	TMP_FontAsset_get_atlasPopulationMode_m57AAEECB2BB22BFB7E2038E365D2E934906B6925,
+	TMP_FontAsset_set_atlasPopulationMode_mA5D62F8AFA1083A76A49BAF4BB2B6775DFC65A34,
+	TMP_FontAsset_get_faceInfo_m96E66C8F54B8BF428E68564FA871C2D0698A9BFD,
+	TMP_FontAsset_set_faceInfo_mA4527A8A81DF83593C2307C6B777B350D38F99C1,
+	TMP_FontAsset_get_glyphTable_m9EFCC2243B2739AC576F87A07F6E8AE8C2A90550,
+	TMP_FontAsset_set_glyphTable_m3252AEBCBBA45F6F9D6B06FD132A90B5D938A65B,
+	TMP_FontAsset_get_glyphLookupTable_m9F0993D9E53E3B37FF204AC531A16EA7A48EAEA6,
+	TMP_FontAsset_get_characterTable_mC69663A9EC0FCF3CDA26418D7A662FFCCCD8E82F,
+	TMP_FontAsset_set_characterTable_m9FFD7FD48B3B8A5FD6498209861806146B93D162,
+	TMP_FontAsset_get_characterLookupTable_mB01E64728A3D6B7BFE5EDA2FF678B836996CFD37,
+	TMP_FontAsset_get_atlasTexture_m8961567D6F382F5B6465CAFEFCDB44F8428D5601,
+	TMP_FontAsset_get_atlasTextures_m56381033C0E2CF0672B11910F5749D8C64F5AA7C,
+	TMP_FontAsset_set_atlasTextures_m8B0B40F09AC86B0D1468A07DF014A79115C5FCD2,
+	TMP_FontAsset_get_usedGlyphRects_m1BE2AC04816308DDBCD92B35CE12E5BFF1A2F2BE,
+	TMP_FontAsset_set_usedGlyphRects_m02D8DF610E9B3E3598A2F93CDD1F514EEFD56E92,
+	TMP_FontAsset_get_freeGlyphRects_m62DA42D990705B7537617547B2C32C14C9770B37,
+	TMP_FontAsset_set_freeGlyphRects_mF185621149C8EB803148FF60A4029D66DF0F0735,
+	TMP_FontAsset_get_fontInfo_m5A3D9B948135E63A8AE282AC93103A9E5580377B,
+	TMP_FontAsset_get_atlasWidth_mD5B991F38DCA7247093AC9BC8E3387076D8A6B56,
+	TMP_FontAsset_set_atlasWidth_m88EDBBA8F93F19AABC55CC8B0FCD918ABDCF94D5,
+	TMP_FontAsset_get_atlasHeight_mFE49170F556D1026A99EFC06A4727BEC88D32910,
+	TMP_FontAsset_set_atlasHeight_mF06DCF6BAAFC50236AF84B8DD74EADE666133312,
+	TMP_FontAsset_get_atlasPadding_m754E9BBDA8E492EFFD0869A089D3DEF15234BEED,
+	TMP_FontAsset_set_atlasPadding_mFC2573373408F2BD87ECA6ADD700ACD210F24317,
+	TMP_FontAsset_get_atlasRenderMode_m1D90578DEC281C1E12CD8FE875B72A5DFC6814EB,
+	TMP_FontAsset_set_atlasRenderMode_m58B1C0782105E4C2E35CFB566F253AB4057CF7BA,
+	TMP_FontAsset_get_fontFeatureTable_m7C0C0CC2EC91D89D8D6FB734A9A5F0A1D953161F,
+	TMP_FontAsset_set_fontFeatureTable_m7CC7996CF82AA71F5D70CA2978BC65303C6004C9,
+	TMP_FontAsset_get_fallbackFontAssetTable_mD68B9B681CD12ED337BB98433EA42F274F89DB2F,
+	TMP_FontAsset_set_fallbackFontAssetTable_mC19AF1CE557DDE8E97BC94E84ECADAA6A1CFA12A,
+	TMP_FontAsset_get_creationSettings_mCF7ADFA64ACB21CCEB6AC5845A09ACFCE4147495,
+	TMP_FontAsset_set_creationSettings_mD2806D4A43A2F240F592BECB30952580BA9F5DEF,
+	TMP_FontAsset_get_fontWeightTable_mE529682F047751A84A0C7B7BB7333DBBD6882551,
+	TMP_FontAsset_set_fontWeightTable_m5060F29D1526FBCF4926C468690E907FF8C8F6DE,
+	TMP_FontAsset_CreateFontAsset_m5F1E1D3F57CA57EABFC1F2150F94CD7AE2130798,
+	TMP_FontAsset_CreateFontAsset_m8832E7EECA89A0E69BCF8FA39F75DFFBC19A4A77,
+	TMP_FontAsset_Awake_m4A832CD8A2553C4F68C7C22F7046391A3463A4BE,
+	TMP_FontAsset_InitializeDictionaryLookupTables_mEC7414972FD47DC48F016C74E04C47F829B6138B,
+	TMP_FontAsset_ReadFontAssetDefinition_mB19C8CC08E9B48557DEFBBB5481D6E7F50335203,
+	TMP_FontAsset_SortCharacterTable_m8CE5CA6862C9D1E46695DA5DB6C00AD461795A62,
+	TMP_FontAsset_SortGlyphTable_mB32D43E1D9C0318C250802FD54E1CCDE56DF8757,
+	TMP_FontAsset_SortGlyphAndCharacterTables_mCC3E06AD1E26ED8F9AB17D4419D3970F6B8636F8,
+	TMP_FontAsset_HasCharacter_mE52DF3A60A3A457FCBAF79625078F3B353607744,
+	TMP_FontAsset_HasCharacter_m55D82F7FD2DCC311D10912425A0ED4F77DBF0A03,
+	TMP_FontAsset_HasCharacter_m5294A8BB0D9F6FE9B28F83365B728E11338ACF02,
+	TMP_FontAsset_HasCharacter_Internal_m4B203B997ACCF9683CECA2B50394B24F54DF88C9,
+	TMP_FontAsset_HasCharacters_mB90CA341ADF7919396A603F6CA375ACC78165959,
+	TMP_FontAsset_HasCharacters_m47B86529B1E8ADC01D65D07C7C78FF2822A8678B,
+	TMP_FontAsset_GetCharacters_mC7D4B6535C697834DA442F2CDE18AF4F4CA08543,
+	TMP_FontAsset_GetCharactersArray_m7D4E9769FC08753B1FF67FE9F6AFEEEC0FEAB781,
+	TMP_FontAsset_TryAddCharacters_mFAAA16F068761A58994EB2D99168954478852A64,
+	TMP_FontAsset_TryAddCharacters_m44ED28A7EE9464DFED25151751698773D0ECB371,
+	TMP_FontAsset_TryAddCharacters_mA5B2A5062224571CD718724A89515A715D0F4FDE,
+	TMP_FontAsset_TryAddCharacters_mB6165CD88A5187D3C54E49AAEB62EA7037AF8D7D,
+	TMP_FontAsset_TryAddCharacter_Internal_mF819C6763550D10205C083CDCB3546A5447D2327,
+	TMP_FontAsset_AddCharacter_Internal_m708BC9928BAEBC5FDD92EC918B82F956BB9A66FE,
+	TMP_FontAsset_TryAddCharacterInternal_mEA410CC2F803499842A2D223B48B46506CEA0E6E,
+	TMP_FontAsset_GetGlyphIndex_m5AD54645C591C23CF2AE50163411A2BECD027FA0,
+	TMP_FontAsset_UpdateAtlasTexture_mC020B800783526166514FF11D3D3343651880D7A,
+	TMP_FontAsset_UpdateGlyphAdjustmentRecords_m32454C76CB00D52C9475D892C6C4FEEF2D7B0B2A,
+	TMP_FontAsset_ClearFontAssetData_m67872BECE980BC41E3D577FCAB0D9C07DC58BF9D,
+	TMP_FontAsset_UpgradeFontAsset_mD30FE45858342E99081EEBAA0BF728BC06948FA3,
+	TMP_FontAsset_UpgradeGlyphAdjustmentTableToFontFeatureTable_m519A1A1C87F5D5E5146995DA30E4EFBBC8D6AC4C,
+	TMP_FontAsset__ctor_m8A75846088FC51CEFEC51490A9091FC90546214E,
+	TMP_FontAsset__cctor_m2FC955F497F620A69ADEB20C54F25B5C9632F463,
+	U3CU3Ec__cctor_m7EB58B3661508ECDE7B6ED01A46928504B6B0480,
+	U3CU3Ec__ctor_m5E9A1F7DF55F5BE2DD7EC1E41D9CFBB211D82476,
+	U3CU3Ec_U3CSortCharacterTableU3Eb__100_0_m70DED69038B0CD44CDFD0C723877DA2524FA824D,
+	U3CU3Ec_U3CSortGlyphTableU3Eb__101_0_m2F5725536C92615B4C7F8CB359B34AD5601B104D,
+	TMP_FontAssetUtilities__cctor_m65C0DF0B2447FAAEF159B8FDC2C1003D771023F5,
+	TMP_FontAssetUtilities_get_instance_m6FBCC27B6A3FFDD1447E2031F4FA9C11ECACE7E9,
+	TMP_FontAssetUtilities_GetCharacterFromFontAsset_mD7AF396D69656557F5AA2E35EF4A83609EC112E4,
+	TMP_FontAssetUtilities_GetCharacterFromFontAsset_Internal_m3662D85539391D668E745E0178FEAE668B769391,
+	TMP_FontAssetUtilities_GetCharacterFromFontAssets_m0F8ECBEF901AC2E15CF6E14F3BD38A6E3CC456BA,
+	TMP_FontAssetUtilities_TryGetCharacterFromFontFile_m901D7D8C6DD71CBC355606833F0461C748BF4D5B,
+	TMP_FontAssetUtilities_TryGetGlyphFromFontFile_m578FC9E4CD60EC0AD555F6D9EE62E9843F4B103E,
+	TMP_FontAssetUtilities__ctor_mFD82FB734E4621E76822F7EEDC7610908330406B,
+	TMP_FontFeatureTable_get_glyphPairAdjustmentRecords_m240C494168A809171BE9B21A1D8B93681E910FD1,
+	TMP_FontFeatureTable_set_glyphPairAdjustmentRecords_m55F3E25B7007CF2FBAB57A823E6525C3BA2D840E,
+	TMP_FontFeatureTable__ctor_mD4E783ED559F00AFA53A5C0B057C2940EF19EF1E,
+	TMP_FontFeatureTable_SortGlyphPairAdjustmentRecords_m583F8C8FD824635A6E73F24AD9863B67915D6C22,
+	U3CU3Ec__cctor_mD23EF57095E8127289946D3F3D66B0F0C5E5DCB5,
+	U3CU3Ec__ctor_m5AB83AD993D76BA03A6121F1B173B08674CA5D72,
+	U3CU3Ec_U3CSortGlyphPairAdjustmentRecordsU3Eb__6_0_mE0E67E37CDD4589B794361E2C46EFC8C20101265,
+	U3CU3Ec_U3CSortGlyphPairAdjustmentRecordsU3Eb__6_1_m8523B561D4C17CF9D36686729F6223DB82E6DC10,
+	TMP_FontStyleStack_Clear_m10522FBFF992EDED2760100F5FA23EDDD3A456B2_AdjustorThunk,
+	TMP_FontStyleStack_Add_m6D5F31F514380C1AF92F3AAC3079749DA64D7411_AdjustorThunk,
+	TMP_FontStyleStack_Remove_mD6CD885D934CE993AB971F9622117045B5C1FEE7_AdjustorThunk,
+	TMP_FontUtilities_SearchForCharacter_mE7AFA3CC33219338EF21869F56D4F0B83E131B55,
+	TMP_FontUtilities_SearchForCharacter_m81ECBBFAFD675A9824202E906CFF5826AD9D6D4F,
+	TMP_FontUtilities_SearchForCharacterInternal_mE51DC046B0FD7574620007581DC37B855A0CABDB,
+	TMP_FontUtilities_SearchForCharacterInternal_m89D59FCB239880FED174F0D9401A5D6329C31A60,
+	TMP_Glyph_Clone_mF464BF08B6C0729452C76A3FB3BA415D34BC8B95,
+	TMP_Glyph__ctor_m84D2B050E5E4762C1096105954D265A0239FC8C8,
+	TMP_GlyphAdjustmentRecord_get_glyphIndex_mA8D4CF960CAD6B2D6CE631C3819B0AF9F58ED65B_AdjustorThunk,
+	TMP_GlyphAdjustmentRecord_set_glyphIndex_m47EA017264669BCF0070071888B8009F5DC33C92_AdjustorThunk,
+	TMP_GlyphAdjustmentRecord_get_glyphValueRecord_m4CF829EF02D359F77A9A6542F9ABF2555F367A94_AdjustorThunk,
+	TMP_GlyphAdjustmentRecord_set_glyphValueRecord_m469E313D1FD38C2275435644A46252499793CDE9_AdjustorThunk,
+	TMP_GlyphAdjustmentRecord__ctor_m20C804287A2DB10E4F5C31FDE4A19620163C421D_AdjustorThunk,
+	TMP_GlyphAdjustmentRecord__ctor_m63B6E62A342CD7DD9615EBC65509742EBB3BA347_AdjustorThunk,
+	TMP_GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_m3D2D29FD06EC99FB5D290E86A8B48C926508BBDF,
+	TMP_GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m7E5F29F18EC8979E166F963E3CD5FC23E31F5266,
+	TMP_GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m76F782AA89B22791AC5B452509F241D1E86A96A8,
+	TMP_GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_m8B7E2176684C8E3DBE4ED4EA2D63D46D3EE59F43,
+	TMP_GlyphPairAdjustmentRecord_get_featureLookupFlags_mC5415458162FC51DC4DF4E6C623C6738798B5CA0,
+	TMP_GlyphPairAdjustmentRecord_set_featureLookupFlags_mB3ABF53F3E3B1A61510F87EC5565C62386F05A7E,
+	TMP_GlyphPairAdjustmentRecord__ctor_mF843152BFC34EC45E04221B1AF941138F61A604A,
+	TMP_GlyphPairAdjustmentRecord__ctor_m9884035C0EB843241BE4238DE5785D738682D7F9,
+	TMP_GlyphValueRecord_get_xPlacement_mE8B211BCC0F047D5A981E4765F66884E8826F82A_AdjustorThunk,
+	TMP_GlyphValueRecord_set_xPlacement_mB234B75CC6B7630081623781F5BAF9963CDEB9F6_AdjustorThunk,
+	TMP_GlyphValueRecord_get_yPlacement_mE6D61CD59137296A0296B05704932EB7B9925C22_AdjustorThunk,
+	TMP_GlyphValueRecord_set_yPlacement_m22130F49E21346F3B3D61BD6BA985688B0666003_AdjustorThunk,
+	TMP_GlyphValueRecord_get_xAdvance_m337CA60953B1208B16853C433065D621B2C20C9F_AdjustorThunk,
+	TMP_GlyphValueRecord_set_xAdvance_m7F20E0A069014B7F5FE4DD58F80FB5EFA13F546D_AdjustorThunk,
+	TMP_GlyphValueRecord_get_yAdvance_m24096D89BA337CB044EB10BC98D1398EA6E0623E_AdjustorThunk,
+	TMP_GlyphValueRecord_set_yAdvance_m8353E7E6D0358FBB8FA86914C520D24A795CC867_AdjustorThunk,
+	TMP_GlyphValueRecord__ctor_m986E4BD32C0BA35C2B75AAE7BB62A72057AFABC3_AdjustorThunk,
+	TMP_GlyphValueRecord__ctor_mC5D6912CF60A1749818B2436D2DE95369220DC73_AdjustorThunk,
+	TMP_GlyphValueRecord__ctor_mC3B5FC382BFAC1B3E99A1E4F64AA69521E23EDE1_AdjustorThunk,
+	TMP_GlyphValueRecord_op_Addition_m84B89D0F31EC63BF8D2953D50DF0616900789A75,
+	TMP_InputField_get_inputSystem_mD5B5E9EFA905368372A8159A7A08C644FCF24028,
+	TMP_InputField_get_compositionString_mFC0A11B8AC9DFBD5727A24467362725A6699992F,
+	TMP_InputField__ctor_m6E2B891AA2A08531AECD73ADAC21101799CA830F,
+	TMP_InputField_get_mesh_m73BDB9DE18208ED4B78968F05BA2B27072467481,
+	TMP_InputField_get_shouldHideMobileInput_mC6AF27F37DBE6DC3D3D7F5481CCFE00A0889B594,
+	TMP_InputField_set_shouldHideMobileInput_m8ED8627E9A8B0F8D172DB5A4FDDD60C92E9232B3,
+	TMP_InputField_get_shouldHideSoftKeyboard_mAAEEAFF911FD54178692A4FF03C74F0D48761035,
+	TMP_InputField_set_shouldHideSoftKeyboard_mABA034C70D46D0082296188BB8B49DEE9CA24A6F,
+	TMP_InputField_isKeyboardUsingEvents_mE671DC31B447B809B8EE06E60DF76D0CFA4BAF58,
+	TMP_InputField_get_text_m0B83533C9290F4C6956BDE7FC9024CBF5DDCB785,
+	TMP_InputField_set_text_m2216272F61CDF30B771A8D4C9C847C0370BCBD5B,
+	TMP_InputField_SetTextWithoutNotify_m03109ED79C9A5313E74A91CAC7A6F7DD1E04648D,
+	TMP_InputField_SetText_mD1575DAF69D1DDF88A61D46F8FD6A119B91D65C1,
+	TMP_InputField_get_isFocused_m15D595A58CE1832B89FD2E2B483BA56A358F9523,
+	TMP_InputField_get_caretBlinkRate_m9E4BA3BEF06239E8B0CCA2420B9C653C6108DE6C,
+	TMP_InputField_set_caretBlinkRate_m794ED12DB58B63924CC3693865114808DA516DD4,
+	TMP_InputField_get_caretWidth_mED485EB35983C93A969877E5F521F95F32146453,
+	TMP_InputField_set_caretWidth_m5D5293B939B0BB6A04FD4C8C4B1F236430DD7689,
+	TMP_InputField_get_textViewport_mA36B5AF9BE40271D7B40B0C78C0AB91013C09503,
+	TMP_InputField_set_textViewport_mD4241A2B3ADA82231A09315F8A1C7D63123CCB60,
+	TMP_InputField_get_textComponent_m0205792D74056E25704359D5490B2811547FC261,
+	TMP_InputField_set_textComponent_m081AD29608049FAE5F0D2B09806ED7DA0A49A94A,
+	TMP_InputField_get_placeholder_mFDF56D3C20AA417F5423FDAFB0CB6ED32A6F275A,
+	TMP_InputField_set_placeholder_mC65BEA8F22D6EB597E2A0EC91016409C1982F8A9,
+	TMP_InputField_get_verticalScrollbar_m0A136C0022A4F242CC1D987D44CC2B964021874B,
+	TMP_InputField_set_verticalScrollbar_mCCEDEB20C9E289CE53E3AC14AA0E7D08292654E1,
+	TMP_InputField_get_scrollSensitivity_m7C5A1CA2E0D5C813B4523F422B4F2CEAC7A4AAD9,
+	TMP_InputField_set_scrollSensitivity_m6C62D55ABA516CB5378FA0BB624620B6AE12DCEF,
+	TMP_InputField_get_caretColor_mDD74F2E13C6F7B79628598D575CE53B5615846B4,
+	TMP_InputField_set_caretColor_m4D5434F49390E7B3C6CF826DD84E9C2BF7E62B8F,
+	TMP_InputField_get_customCaretColor_m71F6482C132A877A82E9F5523667CD6C4434FE9B,
+	TMP_InputField_set_customCaretColor_mBE51FB8ED66B3D9315A60134C42CB0B8253E9278,
+	TMP_InputField_get_selectionColor_m3EB3B8AB2C2011FFE82890BE0EDC8BD273DBCDD3,
+	TMP_InputField_set_selectionColor_mF6B6E1FF4CB1DD8895B93059A104ADA34C468900,
+	TMP_InputField_get_onEndEdit_m2D1630CDCE0A49EBD0D934E349116BBE73124938,
+	TMP_InputField_set_onEndEdit_m3CBC5E1BC9C8461A4AA32DF8D4E5248D0C1F0467,
+	TMP_InputField_get_onSubmit_m32478BB548DFCDAFC4B0EE7DEC8A8AA1B9BB92F1,
+	TMP_InputField_set_onSubmit_mFC73F25348CCC073D3CD58D813A357DD199530D2,
+	TMP_InputField_get_onSelect_m01C3A1948C9C8A2E4A96BB28BD7458C3A221A051,
+	TMP_InputField_set_onSelect_m04F0423019B44EDD0533F212DD13B62647F864F2,
+	TMP_InputField_get_onDeselect_mD666ADC8DE452860618902F189943E005D18D6D8,
+	TMP_InputField_set_onDeselect_m66244D0802C4DE18E74D978219305E67CE1571C2,
+	TMP_InputField_get_onTextSelection_mCCAF739E6B46A3405202CF91910320DF42F5862D,
+	TMP_InputField_set_onTextSelection_mAD8D171DFA19311B5A2DD08E467F3E4795A74EB8,
+	TMP_InputField_get_onEndTextSelection_m8767C4F7152128E2EE8BF2856A2FF997A4DF99C4,
+	TMP_InputField_set_onEndTextSelection_m6AEB3827B448931308805E45D1662B14D2FA716A,
+	TMP_InputField_get_onValueChanged_mD17CC6295CE93EF4D2F7A4C19F73E837214B725D,
+	TMP_InputField_set_onValueChanged_mC5CFAD51F0BA7ACF1C8AF804183C2C14E0F10E8F,
+	TMP_InputField_get_onTouchScreenKeyboardStatusChanged_mE8E40D1CB46176A21A83BDAFC9178A8ED805256E,
+	TMP_InputField_set_onTouchScreenKeyboardStatusChanged_mC684A2B7A4AF58F8CF32E9F493463C036D4288A4,
+	TMP_InputField_get_onValidateInput_m22A1437592B32640790C4A4C5F0BF2861CFAA1B0,
+	TMP_InputField_set_onValidateInput_m881E05A6243CAA0F9EB2D3CA3F112AEB557BA87B,
+	TMP_InputField_get_characterLimit_mD4D7BE6B182181A5219129D5134EEE00B952A981,
+	TMP_InputField_set_characterLimit_m02AFDCEFFA7334935F039B99B9E5840C54A4A7D9,
+	TMP_InputField_get_pointSize_m53D598DDE0ABDB0EF5619879ABAEF70D906E0D9E,
+	TMP_InputField_set_pointSize_m734C40F79638660D7FD772CD6DFBA0A4A54411E4,
+	TMP_InputField_get_fontAsset_m4DB4DEA9E4609F417C59E6BFD559EEE5F804159A,
+	TMP_InputField_set_fontAsset_m3EB7C4120BA7B697948E21925F28A82085F19996,
+	TMP_InputField_get_onFocusSelectAll_mA2A53849DE6653DFD3AD78D6451070D5FC171C42,
+	TMP_InputField_set_onFocusSelectAll_mE279F1B6D7B0E9841811128726BD296ED037ED3F,
+	TMP_InputField_get_resetOnDeActivation_m328F10DD9D0979C9957780C9DF8789CE7BA5E2FD,
+	TMP_InputField_set_resetOnDeActivation_m4747CDA0B69F1D6A9D8AB02FDD74382D7C65C8EA,
+	TMP_InputField_get_restoreOriginalTextOnEscape_m5B5B9005D04B4122B09398BABFB4771C17BA7382,
+	TMP_InputField_set_restoreOriginalTextOnEscape_mA44ECE89E66468AC747B8E0696274884DB23F58B,
+	TMP_InputField_get_isRichTextEditingAllowed_m73DAAC913241AA9ABD6BFE66427A0B93713884FA,
+	TMP_InputField_set_isRichTextEditingAllowed_m8C50F1B682588500FDDC59E24B3D15B379420D0F,
+	TMP_InputField_get_contentType_mF8BF483423065F1F6C037ED9306C4DB3F9ED3806,
+	TMP_InputField_set_contentType_m5121FE2275440C7C972230687273EF74426C61CE,
+	TMP_InputField_get_lineType_mB84156D88F036BBBEA54DBA9A2DC4C696C6D5ADA,
+	TMP_InputField_set_lineType_m2ED0D14820C15CDD64505BF3A8296CC2F3CD98E9,
+	TMP_InputField_get_lineLimit_mB3B345E3A7C45C821A9818A317809D2095C7265B,
+	TMP_InputField_set_lineLimit_m6370634626F36FEC518EAABDB7B623158772E94E,
+	TMP_InputField_get_inputType_mFF56880328B9DF2F42CA3CE2E2FCF47DD251486A,
+	TMP_InputField_set_inputType_mE875126C1491475CC3E3EF707F6AA9A8B1716DD5,
+	TMP_InputField_get_keyboardType_mC950A01BDA84084B48DA2C4207FD8CBB6D688624,
+	TMP_InputField_set_keyboardType_mAAA1ED0DD819CFC4D1C7302385DDEC708FAEADE7,
+	TMP_InputField_get_characterValidation_mE9761B78E3A1A9F889A0E945BA9704405D84C14E,
+	TMP_InputField_set_characterValidation_mE4315D78F21531F33AEA73F2D2ECF5B3DDEE9BF2,
+	TMP_InputField_get_inputValidator_mC717418E121B68C0DD1DCDADF20F5B14A1C1FEF3,
+	TMP_InputField_set_inputValidator_m3BDEF6DF8CCC0DF0BB69373C12F71E2FE64695BD,
+	TMP_InputField_get_readOnly_mFB02F1C9763E97CB996BF6D6A91F3A190F5ABEDE,
+	TMP_InputField_set_readOnly_m1640459979AE226D786BBF56AB66C8BDB8450BFB,
+	TMP_InputField_get_richText_m7E35022E8B728EA392977F8F1AEB2BAA8B1FAC1D,
+	TMP_InputField_set_richText_mC953E55B33E17DDFDA1838518466A0DB4766FAF3,
+	TMP_InputField_get_multiLine_m32C7B876777CC7FBEDBAA89706D0E35C65CFF345,
+	TMP_InputField_get_asteriskChar_mEE98A897232D7B643B527D0C0B9D64A6B1482BB0,
+	TMP_InputField_set_asteriskChar_m2C53FA48CC322E3B0574ADA58D0358EBA461AFE1,
+	TMP_InputField_get_wasCanceled_mFE7B044E0973E4BB288049B7D22B5611AC3DFFA9,
+	TMP_InputField_ClampStringPos_m47559C118F1F0BEA296A7107C6E97650DCCFA516,
+	TMP_InputField_ClampCaretPos_m8E0BB18793A0DD86842F2D713C0AD29A91AC1F62,
+	TMP_InputField_get_caretPositionInternal_m9050B001005A0EA1322D758583CF16DE8E16CB40,
+	TMP_InputField_set_caretPositionInternal_m357BEEB0F15098712A3D68C185672C2513A84693,
+	TMP_InputField_get_stringPositionInternal_m54A3525F6D51E2190EAB35048DFA6B67FF162D45,
+	TMP_InputField_set_stringPositionInternal_m4FB6D1ED9D413B4B0AE6A42E15E8E09B00DBD653,
+	TMP_InputField_get_caretSelectPositionInternal_m04529761EA4858F662362BB2B679B88B298EA5AF,
+	TMP_InputField_set_caretSelectPositionInternal_mA7C5AAAE2F581554B27B54012FBF67CACF711AA1,
+	TMP_InputField_get_stringSelectPositionInternal_mBE3C45B014ACB9199B43251DC969FECC1BDBBEEB,
+	TMP_InputField_set_stringSelectPositionInternal_m361C741DF367D7295A5A7ED9D4E8C8B71F2E8756,
+	TMP_InputField_get_hasSelection_mF33171C0E4DFC78F3621A98290BA4FB3F41A1D65,
+	TMP_InputField_get_caretPosition_m23691ECB3F0337D76058533CE8A3A24B3D04CE5D,
+	TMP_InputField_set_caretPosition_m2FF6FF6FAE137F455B49EE2D2885640A38ABE5FB,
+	TMP_InputField_get_selectionAnchorPosition_m81412008AA4B0B03F4B6DA2900F12ABF250473FF,
+	TMP_InputField_set_selectionAnchorPosition_m0C3BE27511B1FE4DAE4E5106D346E3F7A6DCED8D,
+	TMP_InputField_get_selectionFocusPosition_m9932991537D331AD2A19B9F8558BBA998D8A35A4,
+	TMP_InputField_set_selectionFocusPosition_m61ED8A29E61CDB9021CE4A0C7DAC2CAA15C6C8AF,
+	TMP_InputField_get_stringPosition_mC1161AE479C1698F753683D5CB35223720F47F18,
+	TMP_InputField_set_stringPosition_m4E009FFA0D5E67D3EF56B2BEE3B408E752B53241,
+	TMP_InputField_get_selectionStringAnchorPosition_mAE92EEF95B63CB85C6E510C2FD2E7ACF14763A4D,
+	TMP_InputField_set_selectionStringAnchorPosition_m85FE271C135BB0842140623D1B1D3DDBF19C6FE4,
+	TMP_InputField_get_selectionStringFocusPosition_m509737B7AF84AC4F317FD83A944017537566138A,
+	TMP_InputField_set_selectionStringFocusPosition_mE574AD6FA49FC00ED3A466A66C62D2EA7831E5EC,
+	TMP_InputField_OnEnable_m9E31E6218CA50A292F39FD26363A6BED17778F0E,
+	TMP_InputField_OnDisable_m1B89D908720DB8FB6F8FA9A4644A9B172CC470E6,
+	TMP_InputField_ON_TEXT_CHANGED_mBF7C2BEB84E8A67DF73A9EAFAF8B172F377C28CD,
+	TMP_InputField_CaretBlink_mB609253CF43EF03332FEF1F9CA3E9C0DCE72E154,
+	TMP_InputField_SetCaretVisible_mB8F009AC0299907B1C1325DB3AD070E0DCF78545,
+	TMP_InputField_SetCaretActive_m1505AFE8A6341F9251F86D3C73C1DD9DD0B54AF8,
+	TMP_InputField_OnFocus_m75A70BF833B737F034065CA146C8A14C95200262,
+	TMP_InputField_SelectAll_m410919EBE8CCF14DB25ACE47A3513EA9AC2D6338,
+	TMP_InputField_MoveTextEnd_m1DEFE60D84EDF06CE7F17632AE4BB8331DABECDF,
+	TMP_InputField_MoveTextStart_m2D8ED1B1994B184FE7B00252874E5E02F1FC6283,
+	TMP_InputField_MoveToEndOfLine_mAB25E7ACB304DD1148B25DF5CAF982CF91B72D42,
+	TMP_InputField_MoveToStartOfLine_m80915B0041DE0935D27F7B6C56683B4DA83D8825,
+	TMP_InputField_get_clipboard_m18A9FB50C4862026741B51D530397B0C27D8DAA5,
+	TMP_InputField_set_clipboard_mDC9BFC8924CE63F383FD961DB7B9A77C87317460,
+	TMP_InputField_InPlaceEditing_mA0368BA9DF0447A8BE337B379B56DC29FC4FF75C,
+	TMP_InputField_UpdateStringPositionFromKeyboard_m02E8D4DE59F5348018DEF896D12967410A8170D1,
+	TMP_InputField_LateUpdate_m88C7B9A4318CD78B77145AD045B56B5DAC78FF4C,
+	TMP_InputField_MayDrag_m6B7E92B3BD537A8E8FF42A6323AB83377CDF5B12,
+	TMP_InputField_OnBeginDrag_m20CB228BBE3E6A3AAC961C66EFDA787634571B68,
+	TMP_InputField_OnDrag_mD55760E4037E79D28A0166DE58DE0EF7A44EDDF7,
+	TMP_InputField_MouseDragOutsideRect_mE269A95CDBA4C979496C83A802BF20580DECFFA7,
+	TMP_InputField_OnEndDrag_m395BB2B926B644BB1B5B06E274BA22D052B3964C,
+	TMP_InputField_OnPointerDown_m135D44B4B85BE3FC522707DFA527CD281C36AD8C,
+	TMP_InputField_KeyPressed_m2BEC2846C67990B855652138D9A726A8E3944783,
+	TMP_InputField_IsValidChar_m7728572C1B211CB6BD3CB6965E55720A5C7EB6A9,
+	TMP_InputField_ProcessEvent_m3D9BE20C2667DA3D6600539CB3C88B959F3928EE,
+	TMP_InputField_OnUpdateSelected_m3F83CE47C35F039FD7337ADECCEC972F27EBD52C,
+	TMP_InputField_OnScroll_m145E8A2909EBF1C5B53099E047E229DBD2F5F992,
+	TMP_InputField_GetSelectedString_m099498095B27FFB8F007B6EFDEFB3DCD280735D2,
+	TMP_InputField_FindNextWordBegin_m05EF697DDD7B4EE62BE691FE6EC633F8C764C354,
+	TMP_InputField_MoveRight_m2A9DFFF076F9A881982904EF397FEEE0EE5E4A85,
+	TMP_InputField_FindPrevWordBegin_mECBD4B291A9AD62AAD415126D18D512FD2C1FB76,
+	TMP_InputField_MoveLeft_m83710D2E07767B1A23F0579537FBD4F75EFE0A41,
+	TMP_InputField_LineUpCharacterPosition_mEC7042FD61BFEA68CE57315BAE90220335B5BC21,
+	TMP_InputField_LineDownCharacterPosition_m0BFF543B6C744C5525E6E14F0A12545D5DE31912,
+	TMP_InputField_PageUpCharacterPosition_m20A3BBEBDFAA83B709645142710E18398BA9D2E0,
+	TMP_InputField_PageDownCharacterPosition_mC87CCE50E6048997852EEBAE095D88511EBFA48B,
+	TMP_InputField_MoveDown_mFAA5591109F89E9FABE71676DFBC96635F79D3A7,
+	TMP_InputField_MoveDown_m14F75BACAB710DD1AB04C6BBA1C277BD86CD6E58,
+	TMP_InputField_MoveUp_m88AC4C9A0CF6FE37663AB9CEA48BC9925D29BD35,
+	TMP_InputField_MoveUp_m2E2C007B705344ECD5656FA9EB6A2B5D5AA148AD,
+	TMP_InputField_MovePageUp_m858E89B8228263A1DA49277BBDB72C83B2169094,
+	TMP_InputField_MovePageUp_mC7F2A8E76B8A28DD6C32C829F6A757EF343C5D8F,
+	TMP_InputField_MovePageDown_m7A468BB79B71C377E15F6CE48A6E6F567DEAC436,
+	TMP_InputField_MovePageDown_m307E831B04435658B986CD963F9745CB9561034D,
+	TMP_InputField_Delete_m68544090E96FA6745928F644B5BA8285A908A644,
+	TMP_InputField_DeleteKey_m81A690E2D917D772B5DC698129207DD645F9630D,
+	TMP_InputField_Backspace_m5DB3D076711BBE731F7575A8F400E7C515A1EDF6,
+	TMP_InputField_Append_m59434D99ABA56A0A45AF1131DE8316ACF944C79A,
+	TMP_InputField_Append_m6B1020CC29D5CA4E320AFC3955BC0AFD816ED7D2,
+	TMP_InputField_Insert_m2FFEF28CBACC44053B06EB191BF059C5BAD1105C,
+	TMP_InputField_UpdateTouchKeyboardFromEditChanges_m062D39378608BA90B22E8903FD8261486747E8A6,
+	TMP_InputField_SendOnValueChangedAndUpdateLabel_mE69F70C953F8EE163740F20FEEE337573D92670F,
+	TMP_InputField_SendOnValueChanged_mBA12B8B93B5DCC5FBFED959FCF2B02E19A6D4DD3,
+	TMP_InputField_SendOnEndEdit_m4B3375F6988CC98D780D7654DFE2EC773D4DC2E8,
+	TMP_InputField_SendOnSubmit_m7E2E48E4E0EEEB82BEED3CCE3BE5CA08E73E72F3,
+	TMP_InputField_SendOnFocus_m81CB408D3184EEE5E04577FD312EDCC609075016,
+	TMP_InputField_SendOnFocusLost_m512CC37D236E7B8C4C653D8A138445CF8FD7032E,
+	TMP_InputField_SendOnTextSelection_m8AEB9CD114A0725302EF9EC5C763FE0E0B6AD902,
+	TMP_InputField_SendOnEndTextSelection_m5DD285320AB9D6606A7A70FCFE7C5302081E3958,
+	TMP_InputField_SendTouchScreenKeyboardStatusChanged_mEB6A50DCE87564F3FCC3030BFB0AA8FB717C67E0,
+	TMP_InputField_UpdateLabel_m1361CF967D63717955D4B9062DDBAC157CE20D73,
+	TMP_InputField_UpdateScrollbar_m79E5DD92F02A613008520F1A225FD19C4118A078,
+	TMP_InputField_OnScrollbarValueChange_mE571EA0D41D708D4CA052611DD57450FFD1BFA41,
+	TMP_InputField_AdjustTextPositionRelativeToViewport_m5B8EECCF129C65E334B2F802B52692F83F3899DF,
+	TMP_InputField_GetCaretPositionFromStringIndex_m3BB76399A73444B92E4E9810A47C33B0F4DB3235,
+	TMP_InputField_GetMinCaretPositionFromStringIndex_mD496CDA83804F6F4B15996D579FEDEE3702F2C8B,
+	TMP_InputField_GetMaxCaretPositionFromStringIndex_mD09DBEF6E5C711E2E37B181D2912BB2ACC5A849B,
+	TMP_InputField_GetStringIndexFromCaretPosition_m7AB93FE2023A83721AF679E4F582018E676845B3,
+	TMP_InputField_ForceLabelUpdate_m64A9CE0383C82B595437F9D1BEF61AC9B7B0C5DB,
+	TMP_InputField_MarkGeometryAsDirty_mFB94D8F7F042A4BB1B247A0731DABA6350E6B45F,
+	TMP_InputField_Rebuild_m4E3A79E1FB3E92B03849E0903D83DAC1867ACB5C,
+	TMP_InputField_LayoutComplete_mA3DF9791D0DA69309E5956B2C0A243BB7EB85D8D,
+	TMP_InputField_GraphicUpdateComplete_m060885B2AC9C2B6BD61A64B223AB4F7600814FBF,
+	TMP_InputField_UpdateGeometry_m276135D6071D582B5DE51D6588D796A9F1D02CC8,
+	TMP_InputField_AssignPositioningIfNeeded_m2A8EBF26E4A74EC3C79D3EB95AB34BD34937BD78,
+	TMP_InputField_OnFillVBO_m8481B6A4B13D38CE2DE4F3A44ACF106C28FB7883,
+	TMP_InputField_GenerateCaret_m7AD5AFB001E4C41CE0108FBD8F1153F8860E47D8,
+	TMP_InputField_CreateCursorVerts_mA2E6A4F13FC4559B68BC77D239A4176034A93081,
+	TMP_InputField_GenerateHightlight_mDE2194997C2D1E45D83F68A1F2BC329D6E0D6827,
+	TMP_InputField_AdjustRectTransformRelativeToViewport_m4D0CE7670528E055358CE7A439350065D6629639,
+	TMP_InputField_Validate_mCB989784D2BD470DD9F8578C9B48E63AA32CC6D2,
+	TMP_InputField_ActivateInputField_mE70FCEB22402C3C03A61B57FB105025EAB64FF94,
+	TMP_InputField_ActivateInputFieldInternal_m465E913699720C321D936412B93A2A0A102D97CB,
+	TMP_InputField_OnSelect_m2E24E9182A21B7F555CCB6614B223FB1B89DD8DD,
+	TMP_InputField_OnPointerClick_mAFB40B098932E7713801B18BEB5AA63DD5E67F69,
+	TMP_InputField_OnControlClick_m670288DB3BA7CFE67997292AF3A2F28F31D9817C,
+	TMP_InputField_ReleaseSelection_m74D88BD5A50D66D13831A0463219889A050714DC,
+	TMP_InputField_DeactivateInputField_mFE03AFA5FA0BB2B4E16F724174263A7FF410A2C3,
+	TMP_InputField_OnDeselect_m9F47D1C9B5120BB8D0DB7EB459FCCDE109F2D477,
+	TMP_InputField_OnSubmit_mE17833F0E50DC0ABEC040E6630C5EC27F183DB9A,
+	TMP_InputField_EnforceContentType_m59EB09C7D8B6F5800EC549F64621C79224AE6859,
+	TMP_InputField_SetTextComponentWrapMode_m9C06D6329AEC07A8FB0A6DC90A941AACB293A21C,
+	TMP_InputField_SetTextComponentRichTextMode_m91ACFB7DE6C22070C41A8D02C5DA40F888BABA73,
+	TMP_InputField_SetToCustomIfContentTypeIsNot_mCF7E89C76039296CEEF106D3C45E671A436AC96D,
+	TMP_InputField_SetToCustom_mE22AA4893C1802A0F07DE3D298244350B3AFA87F,
+	TMP_InputField_SetToCustom_m3A3B49D63ADEF96FB5E96F3EBA387C4262230FE2,
+	TMP_InputField_DoStateTransition_m4772BC053176C14591A2F40CAD15911F53625700,
+	TMP_InputField_CalculateLayoutInputHorizontal_mAAC4589E14F4E325B5E48BA04FB1A12B3167ADA2,
+	TMP_InputField_CalculateLayoutInputVertical_m190077ADE1063FE1B8DDB5E51C1C895B851165FC,
+	TMP_InputField_get_minWidth_m838BF9EEE7AB6296530FF8F34F63B0CF1F191192,
+	TMP_InputField_get_preferredWidth_m65AC05763C6355C00645B2420ED072ED397F2AB4,
+	TMP_InputField_get_flexibleWidth_m3794D57AA24292C813673862B1542337B000DBB8,
+	TMP_InputField_get_minHeight_m8C9C97862E5DF485A4AE5089072ED5BA0F52C8A8,
+	TMP_InputField_get_preferredHeight_m26419D3BF8908369F97752073DDD5D9ABFD64A3C,
+	TMP_InputField_get_flexibleHeight_mCF2B60976B66D7D5FC8D3B03D941D32DBDD97471,
+	TMP_InputField_get_layoutPriority_m99AEDDFDD8B5FA3AE2906B55E4EC7479310D7A3B,
+	TMP_InputField_SetGlobalPointSize_mFC69E156D07268401BC2F914DD0D956EDA85D5D1,
+	TMP_InputField_SetGlobalFontAsset_m0EFEDE76398C47B2CD565379B465003E5CB92461,
+	TMP_InputField__cctor_m628D175232F7E47F051B6FBBC8F7258B829ADCFD,
+	TMP_InputField_UnityEngine_UI_ICanvasElement_get_transform_m26B2C64E495FEF8746181E8478AABFED37C93DF2,
+	U3CCaretBlinkU3Ed__267__ctor_mC699F231886DF53BE8EAEBFF0B382A21B526300E,
+	U3CCaretBlinkU3Ed__267_System_IDisposable_Dispose_mDD95AF0564249DDF3B85F6BAF136CEBB5AB94FF1,
+	U3CCaretBlinkU3Ed__267_MoveNext_mF08C5807BA50B4176911AE5D754A833D829CD484,
+	U3CCaretBlinkU3Ed__267_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m07530821610C865083C61E529BB9D89C4F36037F,
+	U3CCaretBlinkU3Ed__267_System_Collections_IEnumerator_Reset_mCA944CBD6914A912C084E0C0652F5658489E2435,
+	U3CCaretBlinkU3Ed__267_System_Collections_IEnumerator_get_Current_m5D97BA91753957D206EA8AFF3ED3ED8CE695DF87,
+	U3CMouseDragOutsideRectU3Ed__285__ctor_m00621968B9D009D9666D30375A27E24DB5E48945,
+	U3CMouseDragOutsideRectU3Ed__285_System_IDisposable_Dispose_m9ED3DB5D2609EBCD333AFED1F7517372E2D0F6AE,
+	U3CMouseDragOutsideRectU3Ed__285_MoveNext_m507B40457D322CFF2B732021A0242BD5EA3AE80C,
+	U3CMouseDragOutsideRectU3Ed__285_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE098B15D6DDF9C8CCF124292D59BBB5748075D81,
+	U3CMouseDragOutsideRectU3Ed__285_System_Collections_IEnumerator_Reset_mCB3269F30C77CE8E30C2ADDE141705E55C4F9A4D,
+	U3CMouseDragOutsideRectU3Ed__285_System_Collections_IEnumerator_get_Current_m63A1ECA11B7D6D6298BBC5FB241C40CC7DC84913,
+	OnChangeEvent__ctor_m5D91870239AF60B63837CFD9A7AD318385110566,
+	OnValidateInput__ctor_m57AF303504576D68D6DE5902D8E4D2A9E504D49A,
+	OnValidateInput_Invoke_m73C11D1534196B5C2FA728C46342043A8F93E61E,
+	OnValidateInput_BeginInvoke_m4CA340029A37B6121AD91575987C4B55418F7CEB,
+	OnValidateInput_EndInvoke_m5572A626B672DBB088B74DDE28F247591EA7DC7F,
+	SelectionEvent__ctor_mDE136423905DC114E1508BC15A2D53F3D2DE2BB9,
+	SubmitEvent__ctor_mDC065E53A47B58CFEF1CF5DC952D25498FD78A07,
+	TextSelectionEvent__ctor_m0E1828CFD97B30DD17D95AFD58EA97E6261595CA,
+	TouchScreenKeyboardEvent__ctor_m0DEAEFD2929C40528A9B37F65099613733E12213,
+	TMP_InputValidator__ctor_m13BF53AE17FC2913362245907E5E68CFDC251BA1,
+	TMP_LinkInfo_SetLinkID_m20B1AA296BAA576A803F743D7DB6A1CE59C51C05_AdjustorThunk,
+	TMP_LinkInfo_GetLinkText_m2588B2538FDD663E9C7D00D21ECD6D9D7F564D8C_AdjustorThunk,
+	TMP_LinkInfo_GetLinkID_m08F4A2FC2423450D5AA20BCCDA4F6CDE6F3CBE8E_AdjustorThunk,
+	TMP_MaterialManager__cctor_mA3E01803C3BD9E9804CA874BA82DDB129A781AFF,
+	TMP_MaterialManager_OnPreRender_mCB5BC98FDBD1C0B102E811036BF5136DB2FC9A0D,
+	TMP_MaterialManager_OnPreRenderCanvas_m839EA882D14989062273CD1D75D2CF7E047BD3CE,
+	TMP_MaterialManager_GetStencilMaterial_mBC5160EDE5C5E78D2A836BB8C0EF03282045F729,
+	TMP_MaterialManager_ReleaseStencilMaterial_m051D54EA3C478101B9B690BD7C120A6CA0FFA7F5,
+	TMP_MaterialManager_GetBaseMaterial_mC2B7B711E49103ECE017B2AFE2E93E6847CFC4AD,
+	TMP_MaterialManager_SetStencil_mDA4E5E847232AF2335878BA9F7EDEDB48C8DED80,
+	TMP_MaterialManager_AddMaskingMaterial_m6E756532DBEDCFBB3B3578FB0CBFF6E4255645BD,
+	TMP_MaterialManager_RemoveStencilMaterial_mA81B93609BD3B6064AE083D5E203B4DEFCFD81B1,
+	TMP_MaterialManager_ReleaseBaseMaterial_m12A6C5140B13F213B273FBC806C329D4CB750E80,
+	TMP_MaterialManager_ClearMaterials_mCB967BE61BDC535C325D74D54EB2ABF43DD904D2,
+	TMP_MaterialManager_GetStencilID_m416131A0A82239B3CFD843A0018D6A146176A06C,
+	TMP_MaterialManager_GetMaterialForRendering_m6533DE515A114559DEEEEA48439DFD248B6DD17D,
+	TMP_MaterialManager_FindRootSortOverrideCanvas_m5F5ED571F5FBB7F02E17DD0B667FD8A37E160AEF,
+	TMP_MaterialManager_GetFallbackMaterial_m54C7394AEF6C09254D42E35C6E291E5C6BE85D97,
+	TMP_MaterialManager_AddFallbackMaterialReference_m716AC60C927EF988F11532ED30BF6436E6E92004,
+	TMP_MaterialManager_RemoveFallbackMaterialReference_mFD2148F998A6AEE6C4F2386E5A2F9ACB567CD214,
+	TMP_MaterialManager_CleanupFallbackMaterials_m350C64087007C419901EB7AE4475F6D6623DDBD2,
+	TMP_MaterialManager_ReleaseFallbackMaterial_m3ED09333A4A060E004D90CEFD34CF568DC378CF6,
+	TMP_MaterialManager_CopyMaterialPresetProperties_mF602C9E3596B526045982B62B267F98CFD9A3D88,
+	U3CU3Ec__DisplayClass10_0__ctor_m2371F017B8DE7BA53A47BC83789EB473E29EC57D,
+	U3CU3Ec__DisplayClass10_0_U3CGetBaseMaterialU3Eb__0_m070982C19C98149C5C8F0F153654E9FFD6573E3F,
+	U3CU3Ec__DisplayClass12_0__ctor_m4F24E8CE62E0D7D0E838A1726F4A3810E805D937,
+	U3CU3Ec__DisplayClass12_0_U3CAddMaskingMaterialU3Eb__0_mC2A8207FF0FBEB0407C0103C208377D333A9A947,
+	U3CU3Ec__DisplayClass13_0__ctor_m0FA0F842624EC8C1B9DECD2706A9D8B7EDDC4474,
+	U3CU3Ec__DisplayClass13_0_U3CRemoveStencilMaterialU3Eb__0_mBF6C68341D455F0D169903AC541FC3B1474EEA8E,
+	U3CU3Ec__DisplayClass14_0__ctor_mB0A41E33B2C5F81D397D387544953862BDC16B8C,
+	U3CU3Ec__DisplayClass14_0_U3CReleaseBaseMaterialU3Eb__0_m77C16EDB31634336188679321D815574D5CA0D18,
+	FallbackMaterial__ctor_mCF6E7FD9A15BC095C34E314E59E034AD9559795A,
+	MaskingMaterial__ctor_mCBFFFBABEE1ABF7FA9DA1BA8E404FD7D53E928B8,
+	TMP_Math_Approximately_mD1E8C7947699EE157A2054C17BA7BD42D5F567F3,
+	TMP_Math__cctor_m28B03C0C82CDC26FC7C8F6A1EE2B2FA133E2666B,
+	TMP_MeshInfo__ctor_mDB589231FFC0C3C8B285210AD214AF55B05BD1CF_AdjustorThunk,
+	TMP_MeshInfo__ctor_m2BB3A745E1C05B28824E997F16AEE1BA2CBEEB84_AdjustorThunk,
+	TMP_MeshInfo_ResizeMeshInfo_mADFC1672F4FA41419EA5973DFBC86F5F2D6F404D_AdjustorThunk,
+	TMP_MeshInfo_ResizeMeshInfo_mF670709E54C8FA2565148D6BAC962280A444A583_AdjustorThunk,
+	TMP_MeshInfo_Clear_m5ED3D53714F14FAAF0312E23C0B2F79557B2A4AE_AdjustorThunk,
+	TMP_MeshInfo_Clear_m8AD3382CBB3129497FAEC30AE3B5C8409D0EB953_AdjustorThunk,
+	TMP_MeshInfo_ClearUnusedVertices_mBD5148E5F2036D084431D4064737CEBF0E87C238_AdjustorThunk,
+	TMP_MeshInfo_ClearUnusedVertices_m9CEB29872034C0F9347835545F5D9D09D2130B8C_AdjustorThunk,
+	TMP_MeshInfo_ClearUnusedVertices_mD690CEC2537EF76870AB69FFED4A8DD31A3AC7F0_AdjustorThunk,
+	TMP_MeshInfo_SortGeometry_mB66F3F360A82794625B04F842DD117987F450998_AdjustorThunk,
+	TMP_MeshInfo_SortGeometry_m889F420C133A7500E8F8A4A182EB31AD640CD301_AdjustorThunk,
+	TMP_MeshInfo_SwapVertexData_m284B24BD252CD2226ADBB7C88321AE77D0BB0A18_AdjustorThunk,
+	TMP_MeshInfo__cctor_mE984F1746BAAC39244E0DE17FA28745BAF828388,
+	TMP_ScrollbarEventHandler_OnPointerClick_m5A18FC32525899C65F04E8E9FEE8A61975C4B5E8,
+	TMP_ScrollbarEventHandler_OnSelect_mC6F121BB11C777927D613241A5489FAE38541A4B,
+	TMP_ScrollbarEventHandler_OnDeselect_m2EE981A8CE435462B07BB798CE4B1B3CB9C31550,
+	TMP_ScrollbarEventHandler__ctor_mE4ABDC5DB065E8DAA88B03FADD8CDC7218B4D0FD,
+	TMP_SelectionCaret_Cull_m6A8E285D4E9E0263B971524C150E13BBD72CBF42,
+	TMP_SelectionCaret__ctor_mEA1FD44789FDEC919CCFE0C0EBC0D09A7D6AE70A,
+	TMP_Settings_get_version_m39F3DDEDECDA6FA43D83E524ADBB456AC4C8D1F0,
+	TMP_Settings_get_enableWordWrapping_m34AE1B2523BE8F1053AEE6C566FB8FAB2B0CEFE3,
+	TMP_Settings_get_enableKerning_m818CD7E43A5E68A6102FF1E50B9DDCB74C4B7D96,
+	TMP_Settings_get_enableExtraPadding_mF89950FDAD5447DA2E8A144FAC66C98D18C40BF4,
+	TMP_Settings_get_enableTintAllSprites_mAE030C1089B4F5B01A1CA8BFE77BFE7AFB70CC6A,
+	TMP_Settings_get_enableParseEscapeCharacters_m1BD0DDDCE95E5785AE098D3FDCF61D1A8D59D3C5,
+	TMP_Settings_get_enableRaycastTarget_m756A273130DD2B281A3D06D8F676FD82B0F2B1AD,
+	TMP_Settings_get_getFontFeaturesAtRuntime_m4B6BC492D74C0335B2AD9A89CD7D152A0769B821,
+	TMP_Settings_get_missingGlyphCharacter_mF57C2B4CC93CB8A5C294D10D90947FA2DAF8E46F,
+	TMP_Settings_set_missingGlyphCharacter_m5D59C0B92063ADDAB5FED64A9D9612454A0595D5,
+	TMP_Settings_get_warningsDisabled_mEDFD0B29B9F8CD8DF38D21C481EA9B0352A5FB5C,
+	TMP_Settings_get_defaultFontAsset_m6C11675A47E6635F6A67B65761B554C3D3E12264,
+	TMP_Settings_get_defaultFontAssetPath_m858864B72725D1DB3EA505EA807DC94AF7DE3F7C,
+	TMP_Settings_get_defaultFontSize_m291E720E02E2FF65C593A6083BE40688A90CF0F0,
+	TMP_Settings_get_defaultTextAutoSizingMinRatio_m122DE45709066DFF23B9C62C0FA5EA11CD50040B,
+	TMP_Settings_get_defaultTextAutoSizingMaxRatio_mFC6ABDE7D301E6F5C767531DA1595C0CF13CC11C,
+	TMP_Settings_get_defaultTextMeshProTextContainerSize_m01600094D151635E225CBD97DB1E115572C1EF1A,
+	TMP_Settings_get_defaultTextMeshProUITextContainerSize_mE0C18E7E6F4C137D2B677102864809064F313724,
+	TMP_Settings_get_autoSizeTextContainer_m99CA476AC7FCA396242782D30FCBC0921160E2B4,
+	TMP_Settings_get_fallbackFontAssets_m002C1133AE79ADFBED3EC255431C8E9F9EEA7FC3,
+	TMP_Settings_get_matchMaterialPreset_mDD06897713B2AFDECC9A4309B055FBD6D9D001DA,
+	TMP_Settings_get_defaultSpriteAsset_m0B4889176371220F24AB38A0B153BA2B7FCBB411,
+	TMP_Settings_get_defaultSpriteAssetPath_m413E9F522D322D8541175128A471AA12665AC58F,
+	TMP_Settings_get_defaultColorGradientPresetsPath_mB3BF577767BE347DFE07EA425374884DC5C56447,
+	TMP_Settings_get_enableEmojiSupport_mCB9AD64585217397D801F2062167DBEC149B3353,
+	TMP_Settings_set_enableEmojiSupport_m8B1846832B1F5B043B66D59A765FC3B740274E50,
+	TMP_Settings_get_defaultStyleSheet_mF847DA769F2CBC247F67DBECEF1DDF52DC8C39BC,
+	TMP_Settings_get_leadingCharacters_m95154CD657757BC593FBBF37B378A21D2471E702,
+	TMP_Settings_get_followingCharacters_m5F087720CC241CF188D79D55D6E5D5F862EEA7FA,
+	TMP_Settings_get_linebreakingRules_m8F2BFCE7A88AA20EFE38B4EF93A0FF098B022F83,
+	TMP_Settings_get_instance_mED364A86AB8411EEB0C7A458A66484B1C98B7CB9,
+	TMP_Settings_LoadDefaultSettings_m2EA42466A832FF963D2CF8F34B3F24F5C7500900,
+	TMP_Settings_GetSettings_mFA0AD57A559BE629AA9DF66493A606D91B4CEC41,
+	TMP_Settings_GetFontAsset_m723CC48F271386FBA75E539EC26CC4866A01F804,
+	TMP_Settings_GetSpriteAsset_mD926A79E5BE12B90F764CC2962891F16B8F41884,
+	TMP_Settings_GetStyleSheet_m5BC59BCA8BD19C004CC6ADA6C39B0FE33998064A,
+	TMP_Settings_LoadLinebreakingRules_m1932F75FD27536A13BA3973E00E483B6C477B6AD,
+	TMP_Settings_GetCharacters_m87B52E9D173924679473739B32E85624198F4A15,
+	TMP_Settings__ctor_m8E9F9AFF202F895E7A355D60C16E8F47C1F2C4E3,
+	LineBreakingTable__ctor_mC6A4E8E2994E4991D77840BA533EB36B4F4047A3,
+	TMP_Sprite__ctor_mF12AF1F3615015D80983BCF38AE36E563153B077,
+	TMP_SpriteAnimator_Awake_m6A9BAB89D2307AFD0BCB270890C84744055D6C5E,
+	TMP_SpriteAnimator_OnEnable_m0B6EBF3D1FD7E986CCB899B7A07F0A358055A583,
+	TMP_SpriteAnimator_OnDisable_m1B0098A55B41DA3B7CE5687CBB67F13C89BA80D6,
+	TMP_SpriteAnimator_StopAllAnimations_m80939F1E1D0B76FC7983A5715BD1034D44F59AE1,
+	TMP_SpriteAnimator_DoSpriteAnimation_mFA62CD0D49EB370AE7FA91FF341AAB4A62CDD315,
+	TMP_SpriteAnimator_DoSpriteAnimationInternal_m144E4B3BDEDEF0DDB2072179173D40B496FBFFD9,
+	TMP_SpriteAnimator__ctor_m60F7416159A00530BF4FC021FA42E33953D209E3,
+	U3CDoSpriteAnimationInternalU3Ed__7__ctor_m08F04F4D0C65189C51CDC46BDCC04AF8B1367BA5,
+	U3CDoSpriteAnimationInternalU3Ed__7_System_IDisposable_Dispose_mF034D4BC13285E41BE50EC8F7A9C22040049BDCB,
+	U3CDoSpriteAnimationInternalU3Ed__7_MoveNext_m291E89FF50D99F13C1EFF8FCE39C97B3AC2C9AAE,
+	U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0D2789BF0E97DD4034E28EFFC2912F61FD39CD3D,
+	U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_IEnumerator_Reset_m02D8195F2DE1EA6A1687D2857FE327783C02DEF1,
+	U3CDoSpriteAnimationInternalU3Ed__7_System_Collections_IEnumerator_get_Current_m62228FE3978EE7E2E12AE15E0EA2B4EDC8A38E58,
+	TMP_SpriteAsset_get_version_mAD47C52C6698B01C9C22D2B3448AA5B187E7359B,
+	TMP_SpriteAsset_set_version_mF7C5E09C26144013997151806DBBB41089CD10FB,
+	TMP_SpriteAsset_get_spriteCharacterTable_m9ED68AC98A521D2CAD2EDF75B11EC23F0C93A1E1,
+	TMP_SpriteAsset_set_spriteCharacterTable_m9D5D288EB24B0509D965BE54750ED1BB04FBACD1,
+	TMP_SpriteAsset_get_spriteGlyphTable_m64D4F7FF69FC913975F43ECC22FDA0FAB3E2DB59,
+	TMP_SpriteAsset_set_spriteGlyphTable_m1D4C5BE1BC2ACF4F77FA0A82F903B73852FC58F9,
+	TMP_SpriteAsset_Awake_m61FB8D32E487ACB8E7E633A66F9229A869841549,
+	TMP_SpriteAsset_GetDefaultSpriteMaterial_m845A6273ED57DAF047CBD43341F29454FE19ED1A,
+	TMP_SpriteAsset_UpdateLookupTables_m473F3B6B16DDF60B0D4A07036D0965DAC70EA4A5,
+	TMP_SpriteAsset_GetSpriteIndexFromHashcode_m3C05A1728A1C0D0392F35EE9B63FDC1EB068DFE5,
+	TMP_SpriteAsset_GetSpriteIndexFromUnicode_m3DC1234970BD370C9ED850859C20B5C9A3309DD2,
+	TMP_SpriteAsset_GetSpriteIndexFromName_mFD0F909D3245AEDDCC906F6172E819982E5AFDC6,
+	TMP_SpriteAsset_SearchForSpriteByUnicode_mFB42B51B2EA9864ABCD401149178A76E2A25DF3C,
+	TMP_SpriteAsset_SearchForSpriteByUnicodeInternal_m2ED48F8352E35BC09537CC58871EDC304E0D6952,
+	TMP_SpriteAsset_SearchForSpriteByUnicodeInternal_mD079A193F2CB6CC326300656F766CA9B547EE1A7,
+	TMP_SpriteAsset_SearchForSpriteByHashCode_mED6A9B28B532508D0C43989005C3E394DDFD2206,
+	TMP_SpriteAsset_SearchForSpriteByHashCodeInternal_mF9C5148D00B7AA13937D2ED2DC79EF6ADC319BDD,
+	TMP_SpriteAsset_SearchForSpriteByHashCodeInternal_mD6F8AE0031CD58440EEA4FA716D7FA146AF3B039,
+	TMP_SpriteAsset_SortGlyphTable_m536D62D66E92109C99BF899A95405BCB24B86721,
+	TMP_SpriteAsset_SortCharacterTable_m774139B8EBF28333DABEFA8A3BAE9C9CAC12C798,
+	TMP_SpriteAsset_SortGlyphAndCharacterTables_m5A47041A0175347BF9098B6C2BF2142E5FB4B92A,
+	TMP_SpriteAsset_UpgradeSpriteAsset_mC0146E0F2BA3308E4F837318C225E578CCF03FA4,
+	TMP_SpriteAsset__ctor_mA1F4EBC822DA5439B75D2A6AE6654E8949BB6BD2,
+	U3CU3Ec__cctor_mA3D78523CBFA531D45973F0806CAD9E29C2DE543,
+	U3CU3Ec__ctor_m2BE6091AB2893038573185E15B588E15C54097F3,
+	U3CU3Ec_U3CSortGlyphTableU3Eb__32_0_m742F8E4C3A6B94BDFF6C5B1DC686DDA74E924BD9,
+	U3CU3Ec_U3CSortCharacterTableU3Eb__33_0_m819C30410B52F95857DA71BB03D776D525EEA490,
+	TMP_SpriteCharacter_get_name_m7B9372625D32D8F8565912F1E76735B5AE8D21EC,
+	TMP_SpriteCharacter_set_name_m2C522613B78BDCE6298D080FB3C88F88BD3DFCFF,
+	TMP_SpriteCharacter_get_hashCode_mFD53B175E29DDAA808D6E2C588B58A15EA61D2B2,
+	TMP_SpriteCharacter__ctor_mA39F1B6118C4002E580AFCAEDA9C65FB04B2EFA9,
+	TMP_SpriteCharacter__ctor_m972B04B1D8B275617BA9F99B781E50470395F771,
+	TMP_SpriteGlyph__ctor_m741C2A4A809B012FFA4B43E6349E3F6A5F982A9C,
+	TMP_SpriteGlyph__ctor_mAAC585918D47B084D489CCB0682387CE9F95EAB3,
+	TMP_SpriteGlyph__ctor_mCA68612A69F3A5251BBA7D6ED1BD369679292B10,
+	TMP_Style_get_name_m31B5C39F26CE8D9DF519E854B1CE965430618165,
+	TMP_Style_set_name_mF0C70FCAAE651D5FC702B39C7ABDFBA390F72A33,
+	TMP_Style_get_hashCode_mD855529D4DC91212C99654D63A3AB4DCDD465321,
+	TMP_Style_set_hashCode_m25B62D1C8BCFAF2440D62703584DCB1492CC5F3C,
+	TMP_Style_get_styleOpeningDefinition_m08CD5457DFBE22FD2DD058878FB66A6FA2379135,
+	TMP_Style_get_styleClosingDefinition_mE1AE938A52C0997DABA363CDE194491A3E8BFE4B,
+	TMP_Style_get_styleOpeningTagArray_mD14F5B38FE24916AB41BD00C68F0815F92EBDFE9,
+	TMP_Style_get_styleClosingTagArray_m84F69B96364C8DBBA1A4FF28FFA57B4108221958,
+	TMP_Style_RefreshStyle_mDA383979A1CF696431A044B7BFB927C973E41CDC,
+	TMP_Style__ctor_m1149578B62D350F53B1D3933CB055B86F64A7416,
+	TMP_StyleSheet_get_instance_mDCFB261DE16AE3D3FEE5A2FC55ED82E65ED6752B,
+	TMP_StyleSheet_LoadDefaultStyleSheet_m5E71E4115A7E388BE5F384EE85CE45659D803E20,
+	TMP_StyleSheet_GetStyle_mE59C1E3867AE5F59AB11071B0982654026D9F661,
+	TMP_StyleSheet_GetStyleInternal_m0D35B4B992B4480E62319981E1EB36F886E62CD7,
+	TMP_StyleSheet_UpdateStyleDictionaryKey_m377BB2F87B93A92387B51DA1DC782FE1BE0CD2BD,
+	TMP_StyleSheet_UpdateStyleSheet_m43D3D95B330A07CF426419BF19F4C7B44875B77B,
+	TMP_StyleSheet_RefreshStyles_mA5B063D7C7F025717E01817C90A7DB7DE3078C2C,
+	TMP_StyleSheet_LoadStyleDictionaryInternal_m03FA3CD9BF70427B5A7D578ADFC31A1C1348969D,
+	TMP_StyleSheet__ctor_m79D60BAFF83CD70D93262BB6E7851A7FF99A17D3,
+	TMP_SubMesh_get_fontAsset_mBB13A69923BE33D806849B0BA227773F4AE48BA2,
+	TMP_SubMesh_set_fontAsset_m11C09E550D0582F16625C80616615FD92BE1F31B,
+	TMP_SubMesh_get_spriteAsset_mA790CB32DEA074BB375E26CE13694AF3A4E807EB,
+	TMP_SubMesh_set_spriteAsset_m44DFDB188DFEF5266A673409BCD85A860081979D,
+	TMP_SubMesh_get_material_m466677FA4475AA84E45C0B9CA8E290B2F24750C4,
+	TMP_SubMesh_set_material_mA6A729528D7FEC2C7CFDBE04B52290A5F3EBF463,
+	TMP_SubMesh_get_sharedMaterial_m62E104C664FCE465060F92F02C544B69E91497B2,
+	TMP_SubMesh_set_sharedMaterial_mCB86338B0FB35D25346FF24E157E68D3568D7EBD,
+	TMP_SubMesh_get_fallbackMaterial_m0C76B23E26DC19F8D8F3A7963E9AF34A0C77CC11,
+	TMP_SubMesh_set_fallbackMaterial_m5AAE65076AB071DB5FF6483571D8DB8D67DFD34D,
+	TMP_SubMesh_get_fallbackSourceMaterial_m8B0A23A3D8C1C45E4ACBFAC5D8CAE600B229B3BE,
+	TMP_SubMesh_set_fallbackSourceMaterial_mB8A3391019E0935B317231B860745DA815C55E13,
+	TMP_SubMesh_get_isDefaultMaterial_m17DB478E7065176D5A4D1257C3C48BFFC9EBCB3D,
+	TMP_SubMesh_set_isDefaultMaterial_mD752FA7B1C178B697AF37DAE91F75CB1CD5A6380,
+	TMP_SubMesh_get_padding_mBAE2229E48FE6492B76D650F7B737EBE5787F2A2,
+	TMP_SubMesh_set_padding_m79E33A101555067B8742040B02825F23FDA7AA4B,
+	TMP_SubMesh_get_renderer_m41AAA8AA7765A2B0A722B0C7BE4D0CFB456B50BE,
+	TMP_SubMesh_get_meshFilter_mA62434D5993EAEEEDA2656BFC820EAD453E05ED7,
+	TMP_SubMesh_get_mesh_m97B26133112C9C2B950F614CD2ECBD2517FB96AE,
+	TMP_SubMesh_set_mesh_m510D900B5ED954F89081D62207D30CA79C5D71A9,
+	TMP_SubMesh_OnEnable_m6553FA792DE68981F9CB2E3575E43C59794C3A7D,
+	TMP_SubMesh_OnDisable_mCC6CF5F9DE6BF4C6093F278FA08A812CD282AA78,
+	TMP_SubMesh_OnDestroy_mCD31CE389300981012099EDFB0083264094EAB00,
+	TMP_SubMesh_AddSubTextObject_mB7B7238D8F39F657241137CC37465938DEAF738E,
+	TMP_SubMesh_DestroySelf_mD8C31083236F16DB1E9CF02C944D4B85B8D03B2F,
+	TMP_SubMesh_GetMaterial_m8474E2B4A097E31B172D4830B26EB8C662E2F7F4,
+	TMP_SubMesh_CreateMaterialInstance_mA343250B63F0480986C539DD7A8BB91991C7A1A3,
+	TMP_SubMesh_GetSharedMaterial_m5132D5C66C31AEE52A4503C5A3DB673455FD4D04,
+	TMP_SubMesh_SetSharedMaterial_mE1F3FBD23BAC6F4BC62DF87D5E646DC52A657F01,
+	TMP_SubMesh_GetPaddingForMaterial_m7C4AA173286AEFC51F8A0C6244305EFBE0D77C15,
+	TMP_SubMesh_UpdateMeshPadding_m0F83AE63A001CA3E837DBD04C3AE812E3BFAD721,
+	TMP_SubMesh_SetVerticesDirty_m0DCB0817F132B3EC914185DE787786166C34F081,
+	TMP_SubMesh_SetMaterialDirty_m7D8571FCAFFDE2AA37BA30D366C6CB6930796556,
+	TMP_SubMesh_UpdateMaterial_m88AFF6F9C91E2ECFC3FC67DB2D2EB414666E4E08,
+	TMP_SubMesh__ctor_m1ADF507E28A75DDAF435089F2CF9FBD8F825A21B,
+	TMP_SubMeshUI_get_fontAsset_mEECD9EA301A5A3FDBF8A1D0442C300487547324A,
+	TMP_SubMeshUI_set_fontAsset_mFD359974A411A54D0C3177BDD54562CF64E84C57,
+	TMP_SubMeshUI_get_spriteAsset_mFEA02B3B2892E5D1B1854A2EB4FCD96D4855BAAB,
+	TMP_SubMeshUI_set_spriteAsset_m1E43411260761CF327662C64A747A2B41A6F44D6,
+	TMP_SubMeshUI_get_mainTexture_m75EBC20D6DF2EB308E2CF25DA453696AF9EDA2D8,
+	TMP_SubMeshUI_get_material_m4ADD56071A0368AE718D61F0B56D456E7E02BF69,
+	TMP_SubMeshUI_set_material_m4EA71447E0C2293251DAD48F614DE6C80BE42285,
+	TMP_SubMeshUI_get_sharedMaterial_mE6DA34C068C076131D6A5AD5CA91F337D1652380,
+	TMP_SubMeshUI_set_sharedMaterial_mA6BDB53634C5F61810CBAA2E7D13FCE2EF78A7C1,
+	TMP_SubMeshUI_get_fallbackMaterial_mDB20A24E1008038FE3944076B89840749F806B45,
+	TMP_SubMeshUI_set_fallbackMaterial_m6F0E2367FBCD108AE3716BF44B6E13DD9C590162,
+	TMP_SubMeshUI_get_fallbackSourceMaterial_m9E08705F8B4AF3770E8E6BAE54EEC730255E1858,
+	TMP_SubMeshUI_set_fallbackSourceMaterial_m4F856EBBA2B8B7C4CAC314742995AE6EFB528F62,
+	TMP_SubMeshUI_get_materialForRendering_mC24A045110E8E98310469BCA5A34DEE254CFB498,
+	TMP_SubMeshUI_get_isDefaultMaterial_m80C46FEC4CA9C9AA31DA7EE8DCCB12F67B24FC76,
+	TMP_SubMeshUI_set_isDefaultMaterial_m9FE7C3C1AA04CF137D9F9F39725D8D1DE6F315C3,
+	TMP_SubMeshUI_get_padding_m893F93C6773A93EE7A86360464B4379C8AA85F97,
+	TMP_SubMeshUI_set_padding_mBB5CA628AE09EF49AE9C3979AC56450B9FDB2BF4,
+	TMP_SubMeshUI_get_canvasRenderer_mE49DFC3D69EFAC885E3619B4B2C7A518B06C4738,
+	TMP_SubMeshUI_get_mesh_mCBCF215077B2044CAC4CB91585C0EAFB376FB788,
+	TMP_SubMeshUI_set_mesh_m5DE44F27BCDA9E6E716E970977A58D9C3EC84A47,
+	TMP_SubMeshUI_AddSubTextObject_mE3BE58DD1E65F547250AC7534F0E985896473635,
+	TMP_SubMeshUI_OnEnable_m6B0440FDC293BC35CA11F08EA1CD277776084DE2,
+	TMP_SubMeshUI_OnDisable_mC4F0D0768E150EFCB43933F3D1A2924C8F152DEC,
+	TMP_SubMeshUI_OnDestroy_m08DA023C2E1465331C49DAF46A8CBCA53BE85F14,
+	TMP_SubMeshUI_OnTransformParentChanged_m2CB68442B7E42D9970353B0436D021B6B9343EE3,
+	TMP_SubMeshUI_GetModifiedMaterial_m924A0ADD80340624FBDDC1C79E02EE44EADE182D,
+	TMP_SubMeshUI_GetPaddingForMaterial_m84C43B4E5E8A5ED40903C1321AC84AFFBACC139F,
+	TMP_SubMeshUI_GetPaddingForMaterial_m0EF23FF6E7ED8FD5A9A5D25A503C3AD409FD9E06,
+	TMP_SubMeshUI_UpdateMeshPadding_mD3CCCD0DE1D1C463479C52F6A9BE9F52279A7B96,
+	TMP_SubMeshUI_SetAllDirty_m9022CC950A08C6FA4382102D9C226AF2FC45B4A1,
+	TMP_SubMeshUI_SetVerticesDirty_m78F45A53C0B18BDF80866FA3B35DB5C0F76E010B,
+	TMP_SubMeshUI_SetLayoutDirty_m2908A8725B2343069A6FC6B02B8A43A08400F8CD,
+	TMP_SubMeshUI_SetMaterialDirty_mDE21BF922CF7E76F5BF47EA05532E4A68603F182,
+	TMP_SubMeshUI_SetPivotDirty_mF3B09B9B40DC7B0EC7CFA82B37633A7548BD327C,
+	TMP_SubMeshUI_Cull_m4F77B427280B5FF4E6865E10394F9EAEC68E25DF,
+	TMP_SubMeshUI_UpdateGeometry_m99688341598A7360DD3BEC3BCEC826BD4B767028,
+	TMP_SubMeshUI_Rebuild_m833FA47F3D5403A5FA4E477373787007BD1ABF9C,
+	TMP_SubMeshUI_RefreshMaterial_m84941526413E70CA592AAD68EB22EF8A851E8175,
+	TMP_SubMeshUI_UpdateMaterial_mF0F5647995D3B781F2D170FB951C26BB9200C747,
+	TMP_SubMeshUI_RecalculateClipping_m0BD1B93003BFB969506393EABB9FA9E3DFB494E7,
+	TMP_SubMeshUI_RecalculateMasking_m2B143005F268C227CA80869E7634EA30D267A3F6,
+	TMP_SubMeshUI_GetMaterial_m68785DD9CF7C3395A39F6D02B7EFBC3A0E226117,
+	TMP_SubMeshUI_GetMaterial_m46EE1E480485814ADB252DA1DA9530097651C209,
+	TMP_SubMeshUI_CreateMaterialInstance_m97A8EF7732C8A4DC78E722DEE259802114824A0B,
+	TMP_SubMeshUI_GetSharedMaterial_m68FE901F3890B4CC93C0B6612EB87B02C4263A8D,
+	TMP_SubMeshUI_SetSharedMaterial_mC2D28565EDA3BF176AC18567DD484DC1A16E3872,
+	TMP_SubMeshUI__ctor_m275F799B19C7801E92BF5D98EEBA6AF5A5EAD85B,
+	TMP_Text_get_text_m585E635D68DD2AD9C884A88658222AB7F84720FB,
+	TMP_Text_set_text_m5CFCFE6E69321D9E6B6BAEAF92AE153C3484A960,
+	TMP_Text_get_isRightToLeftText_mB3F090ACF62BB32BADAA8C4D1A01B358F0952358,
+	TMP_Text_set_isRightToLeftText_m33340F6AFAFA1EBE5D167AC0F2633191F80FB7C5,
+	TMP_Text_get_font_m8F42703EF2164110D2ADD1F299209EF348FC146C,
+	TMP_Text_set_font_mA12EB3B05A3E13AA1A419E41D703565FA38CD93F,
+	TMP_Text_get_fontSharedMaterial_m76330C51EF15753A8DA0ED8EFAD1FF5C51FCD67B,
+	TMP_Text_set_fontSharedMaterial_m00766CC7424BC54B8761A45ED472472C94985A3C,
+	TMP_Text_get_fontSharedMaterials_m2D7358B0C12143FAF84059D5EB6973A7FFE63FF5,
+	TMP_Text_set_fontSharedMaterials_m96E23908758F3F76845E89B814A4EBEFA2E292F1,
+	TMP_Text_get_fontMaterial_m20DE45A2E6B9A042F8871B6DB45C1F1266673E41,
+	TMP_Text_set_fontMaterial_m19DDF984AC62E246FEB3BE7CEAB0223F31D2820D,
+	TMP_Text_get_fontMaterials_mB98DFD5FA2D01DC989E5441B3CDF795BDD664489,
+	TMP_Text_set_fontMaterials_m075BC9E192D6D110B4E9AE924AEAF222D2933CD7,
+	TMP_Text_get_color_mDB0E771C63F8D54035885C69B8342DC4E1932CB1,
+	TMP_Text_set_color_mD588B300B53B5C43018D71A6CD264B594766031C,
+	TMP_Text_get_alpha_m654B0A34DF46DBB8C3C3332A184A629832AD705C,
+	TMP_Text_set_alpha_mFF33995D9FB8FA28C71E9542E9CD0282EBA413D0,
+	TMP_Text_get_enableVertexGradient_m6DE83199E83AE7FFF211D4993E787631FCF8718E,
+	TMP_Text_set_enableVertexGradient_m99548A0B934B629166CDC84115E2AD58D5863692,
+	TMP_Text_get_colorGradient_mE89A53E934DC9C01DAB09340FC1801091D5F32AA,
+	TMP_Text_set_colorGradient_m66E509F13AF891C7EC178F5201D64CBC6BF3E541,
+	TMP_Text_get_colorGradientPreset_mE4BCD0314D0DD635DE4CB9D755D4AE5DF832631F,
+	TMP_Text_set_colorGradientPreset_mC45FBDDBE173C577B8B951E5FCA9DE20F1478502,
+	TMP_Text_get_spriteAsset_m0939FBB1F14E44E227B5AA1D9E0ADCF049788800,
+	TMP_Text_set_spriteAsset_m0DC109F55710D3DAFE660927BEF63A116869E35D,
+	TMP_Text_get_tintAllSprites_m5ABCE4E559E811E2B83E872543CC1579799C146F,
+	TMP_Text_set_tintAllSprites_m29C7254A59E55C3BA6983E9E00175E91A15412AF,
+	TMP_Text_get_overrideColorTags_mD9DC3851B1D734A5E0C94AFF1CEAB2F76E3BF1AD,
+	TMP_Text_set_overrideColorTags_mC23F3EF47BB9CCE97B659B62F0DDEF9ADCECBEEF,
+	TMP_Text_get_faceColor_m4F272162906C7A1671177D8A7205E046C34FA070,
+	TMP_Text_set_faceColor_mA7E84875B26E980BDF9472FE5EA84F78E351C51E,
+	TMP_Text_get_outlineColor_mF14BC9C22F2A61B8FF3C3225DD8393D8D58EB78C,
+	TMP_Text_set_outlineColor_mFA1C39E129CBF0DF9AD16CAEC8CF1089BECB5D18,
+	TMP_Text_get_outlineWidth_mFB3398A4FB667873ECEA3389EB0AFBD6EC635F1F,
+	TMP_Text_set_outlineWidth_m152D711479C16DD16F4CFF1F0F62E850C6A4B2D4,
+	TMP_Text_get_fontSize_mCC2F675A5C06792A72EB688108F9A2233222682B,
+	TMP_Text_set_fontSize_m65AA86AAA1DCCDB50F1AF6E9990F5B24F6655E6A,
+	TMP_Text_get_fontScale_m9F65205A757C81B8C73909D77716E632F3A6BCDC,
+	TMP_Text_get_fontWeight_m399E43CF1C66161323A6D3F1FA085B012FE2D576,
+	TMP_Text_set_fontWeight_m9990C6AE0EA18C7A5BEBF3151782B055E6B5FA5E,
+	TMP_Text_get_pixelsPerUnit_m81B760800BA1680E84BC2571B7C2CF45DC0C1F8E,
+	TMP_Text_get_enableAutoSizing_m81C585B89E7807E21C0FB3AC05ABEB9E1316D70A,
+	TMP_Text_set_enableAutoSizing_m800CA62F5E5F8DFACAFBFCE0F2EDEBA67711273F,
+	TMP_Text_get_fontSizeMin_mB8F84CE5C438D454328FEBAF74ABCD6706A73330,
+	TMP_Text_set_fontSizeMin_mA173E8771EC05B1A17C9AD51EE82DF4D1DAEE10F,
+	TMP_Text_get_fontSizeMax_mDB903927E54409CE5ECCC853925505103084630C,
+	TMP_Text_set_fontSizeMax_m31B146BB88FD3875FF16D2FDF480E06FB28A1813,
+	TMP_Text_get_fontStyle_mFC0D0C2CF512294F2831B4F71BC5A3B07998B714,
+	TMP_Text_set_fontStyle_m45473CFBA98058E820971DBD81DB157D2BCEC884,
+	TMP_Text_get_isUsingBold_m96EC0C0AAE56582C5C3755B6B4BD312912E4E9FB,
+	TMP_Text_get_alignment_m078C6E7DBA5490966E214EECDB728B3B7A10CDB4,
+	TMP_Text_set_alignment_mC56F6D5F0AF9996F977B8DE999911A0C36F458BD,
+	TMP_Text_get_characterSpacing_m0E8BA15BB908AB8E90EFAA79688F2F7DB6F35119,
+	TMP_Text_set_characterSpacing_m6E04070632B73B9BD2E83FEA57D7FBB4BCC88351,
+	TMP_Text_get_wordSpacing_mD464A681F2E5A9488AB968E8D706D796D9F84C43,
+	TMP_Text_set_wordSpacing_mF4C4ED004D3EBB8B8D2F0384768051352B02251F,
+	TMP_Text_get_lineSpacing_mE85966CD05287073CF925E4A7F1D553D0C957CA1,
+	TMP_Text_set_lineSpacing_m398CBDC0EE7380C4107A2C5D3D77113551DC2CAA,
+	TMP_Text_get_lineSpacingAdjustment_m6570C71297BF019072E35BABB4D369A2E0892B1A,
+	TMP_Text_set_lineSpacingAdjustment_mBDB525BB33F7D56959C2940A0F91E6EF75179C92,
+	TMP_Text_get_paragraphSpacing_mF7ACFD7BC22882972CFE8DECC54A7C13EBEFB86A,
+	TMP_Text_set_paragraphSpacing_mFD793C9787CF3F75C56E1969FD136FD10E638067,
+	TMP_Text_get_characterWidthAdjustment_m9A91E6226793194C94F0B5F083714371984F5367,
+	TMP_Text_set_characterWidthAdjustment_m922AB532464282BB84A68C17BE52E3996CF9EA80,
+	TMP_Text_get_enableWordWrapping_m8140D63B850629B25F6ABE9211E9F777E7826533,
+	TMP_Text_set_enableWordWrapping_m4AFFA9D95B58FDE11164D7548087A5E611600DC5,
+	TMP_Text_get_wordWrappingRatios_m6BEF0010465524A426B00419C5C4FEAB83D977B0,
+	TMP_Text_set_wordWrappingRatios_m6F03BAD11970220DC1CF07B0C23E22B1BB28C896,
+	TMP_Text_get_overflowMode_m9AEA255E92E7DE938E35BBC4DAEF3542E584FD47,
+	TMP_Text_set_overflowMode_m49CCD6EF8B9A150581703F8C8CC971E70C6D99B8,
+	TMP_Text_get_isTextOverflowing_mCE3B3F43C3240AF18AC931D29B1B6D4B0608B018,
+	TMP_Text_get_firstOverflowCharacterIndex_m5BD0EECC99BD6F68B973A6F9B81A930CB963E92E,
+	TMP_Text_get_linkedTextComponent_mEBC0A6312F1F76DD58FBD46F11E6ED2483F2BB50,
+	TMP_Text_set_linkedTextComponent_m7A420A57136DFBD6B2E792AC0386A7AFE7DFC742,
+	TMP_Text_get_isLinkedTextComponent_m4802F2C0D8317699C790F5C2921FAA0CF7934533,
+	TMP_Text_set_isLinkedTextComponent_m6CCA8C8F4167929FC0762D8C24E445AE209279FB,
+	TMP_Text_get_isTextTruncated_m43D9F69F69EDC0FB9857CE90FD937D9F624EA28E,
+	TMP_Text_get_enableKerning_m2578689AF5554E0CA5410D69C3E2DC5F6C18AB6A,
+	TMP_Text_set_enableKerning_mB37CD958669E5E7D8C186F0DE027E86DB79BD31E,
+	TMP_Text_get_extraPadding_m53CB163C6AA1FD58764120845CE1555374AA5AD4,
+	TMP_Text_set_extraPadding_m37A9AE68168551DB0DEAFDBE31062B74DD01E582,
+	TMP_Text_get_richText_m83366F02ACB64AA1770F58245E67A86986CE5056,
+	TMP_Text_set_richText_m3D51ED9DC0254FAAE687B63C0F3914E59325D2ED,
+	TMP_Text_get_parseCtrlCharacters_mE1389834E9E452A25D18350F76C7A9B746BA7DC7,
+	TMP_Text_set_parseCtrlCharacters_mF08487262983C4256C5307793E59B4F97561BB97,
+	TMP_Text_get_isOverlay_m3876730DDAE7037EEFC539BEC7466AEFB0DEDC55,
+	TMP_Text_set_isOverlay_mDC3FC2B8935E281D871CB5E69685CC8B67BCEBDB,
+	TMP_Text_get_isOrthographic_mA443FD54934C574BCAEEEA32A42039DE130CD10B,
+	TMP_Text_set_isOrthographic_m7024C45A40C5E29A537608D96B833BC9AE9E63E5,
+	TMP_Text_get_enableCulling_mE2C8FD6386080F0A9F7F86C54A4B794955C60D4B,
+	TMP_Text_set_enableCulling_m0753EC66C95CB7D48B856EAADD3742EAA6A76C5C,
+	TMP_Text_get_ignoreRectMaskCulling_m5BEB38E3905A4130EB236EF225F12623F12AC145,
+	TMP_Text_set_ignoreRectMaskCulling_mE6E1445C52ECF43F3BBE3459244A98872FA88E2E,
+	TMP_Text_get_ignoreVisibility_mD15152D484F3A856C677110D1099D5987D98CECC,
+	TMP_Text_set_ignoreVisibility_mDE9831D1E8D5B1D0C5FA2A84209CC91019C84427,
+	TMP_Text_get_horizontalMapping_m6C162F60AC4D96E99C2E1EB4A509BC8947348BF8,
+	TMP_Text_set_horizontalMapping_m787923BD586D18085D8BD7E6716A4B87D54BC748,
+	TMP_Text_get_verticalMapping_m8131351A7EB12A1D5836CCD7472214AF65D46454,
+	TMP_Text_set_verticalMapping_mE4D1BFF7CABFCF2916818FE5D01C85A9C68301A6,
+	TMP_Text_get_mappingUvLineOffset_m290794F1D0FAEB24BB0C285D3B8B359DE32C8A1A,
+	TMP_Text_set_mappingUvLineOffset_mA718E8C4399C0CFAAA185B77B01D10888D640C30,
+	TMP_Text_get_renderMode_m4655208F83894082E76CEA66BD0692EE200DD99B,
+	TMP_Text_set_renderMode_mAA70ED3023B598E47B362C1C3A98B5EEFC25D880,
+	TMP_Text_get_geometrySortingOrder_m48398428297E54FEFEF54B0512FB52771EFD8A4C,
+	TMP_Text_set_geometrySortingOrder_m8AFA5991F8276345A552CE8A06269C5307CA6B94,
+	TMP_Text_get_vertexBufferAutoSizeReduction_m543ACF5A1C771E46D9CBF7AA5357BBF06A95415A,
+	TMP_Text_set_vertexBufferAutoSizeReduction_mF2EF4DEC27FB0FF03686A1E4FE607C5797C68701,
+	TMP_Text_get_firstVisibleCharacter_m53A48CC6EBB4D9BDE61BE0E6F5B2ADADC6ED6743,
+	TMP_Text_set_firstVisibleCharacter_m869CC3BE6B29F86CE0CE6E0C7E53DDAFDA423179,
+	TMP_Text_get_maxVisibleCharacters_m274EB595D6A59EBD2EA8DCFCEC76BC0C12A86667,
+	TMP_Text_set_maxVisibleCharacters_mAEF085DC0D75235AF4C533311A9248C1FBD6D9B6,
+	TMP_Text_get_maxVisibleWords_mB89AFA1EDC688050A5BC0C852BBF7C064774C11F,
+	TMP_Text_set_maxVisibleWords_mC17A09BD5832843EFF0892329F3EBC74D3F93499,
+	TMP_Text_get_maxVisibleLines_m52EE38EB087974BA708A00A8EAC59CAD242C6F16,
+	TMP_Text_set_maxVisibleLines_mF6FB4DDE8126332606D40235C7D9929E4E4F3D51,
+	TMP_Text_get_useMaxVisibleDescender_mE87F700FCE4ACD381E983B513B969B4E227D09D2,
+	TMP_Text_set_useMaxVisibleDescender_m9701F6F44DB46F6D93386D7A97AB50245D29C28F,
+	TMP_Text_get_pageToDisplay_m07E377FB28F8BC99F25E7EAAC2BA12C55CC701DD,
+	TMP_Text_set_pageToDisplay_m5AC9C27080737EC057DFC30DDD48060378605872,
+	TMP_Text_get_margin_mA6FBABBD6E6F2D09BEAD1F9C5AD43FD8D76F25E6,
+	TMP_Text_set_margin_mC256DE10A2D8A26A631D7065CDE64F32AED1B9AB,
+	TMP_Text_get_textInfo_m773CC543D209B2EDEE8C8DF086F0A19803A40D78,
+	TMP_Text_get_havePropertiesChanged_m245597D2C7482B160E88C691C6B750BC2261805E,
+	TMP_Text_set_havePropertiesChanged_mFE7AE3C0AD44DC45A9A0160A1EDE0DDAEF810B49,
+	TMP_Text_get_isUsingLegacyAnimationComponent_m6542171FF3DD7A9FAE6AF672FD21B503227B016A,
+	TMP_Text_set_isUsingLegacyAnimationComponent_mCAA8E948EC34802EC2F3C45D3A2643ADB84B233A,
+	TMP_Text_get_transform_m9AEC630AEC329A1A36760BC203AFF907027B5B1C,
+	TMP_Text_get_rectTransform_m7D5ABF7B98E93576BDA8F7E1A2A7415284D4F05E,
+	TMP_Text_get_autoSizeTextContainer_mFFB528A68A9C203EADE1380E2F5567E25E927620,
+	TMP_Text_set_autoSizeTextContainer_mEE6566FD6355099A4E977925C87BB8026C2069B9,
+	TMP_Text_get_mesh_m7515CFACE1C9FD48D56A80BF979E7715E4BE99F7,
+	TMP_Text_get_isVolumetricText_m55363EF05066FFEE38E8B40C13FFB08D84264360,
+	TMP_Text_set_isVolumetricText_m4382357B4BB94E779A34755DB216914B0FCD2A59,
+	TMP_Text_get_bounds_m7E7F2C8D0DD7CC68CE034CF5423F996D69CBEFE7,
+	TMP_Text_get_textBounds_mE845DE75A8E1B0DEBBD12878AB68815CF7672C48,
+	TMP_Text_get_spriteAnimator_mA468A6CCBAB56268107BACABE9F050CA8FCE1DC9,
+	TMP_Text_get_flexibleHeight_m2772E66E842DFF07FEC4B6D0860A6839E551B4EA,
+	TMP_Text_get_flexibleWidth_mABDD64CCE910C2E5F4DA183852B63E26CABB6415,
+	TMP_Text_get_minWidth_m806F8954AC1240A981D03C31D676AC61A5FFA459,
+	TMP_Text_get_minHeight_mCBCCC71B627519C50BCC04374975A2E3D461ACD4,
+	TMP_Text_get_maxWidth_m9AFD4D9D5A2C8E74FF7ECB0DA1EA6213ADE798F1,
+	TMP_Text_get_maxHeight_mB83CDF264BE504458836781C72FD4180D2CE6EB7,
+	TMP_Text_get_layoutElement_mF2543803B3125A200614ACFD15986D76994018AD,
+	TMP_Text_get_preferredWidth_m87DCD55F07A19D493CE459A631522A51260CA0F9,
+	TMP_Text_get_preferredHeight_mE91D6FEB62BE3721DF42683B9D992FD7AFB42962,
+	TMP_Text_get_renderedWidth_m6C9F9C59FA44A6E2173D03C468E957730E0784E7,
+	TMP_Text_get_renderedHeight_m2B431C6A857B86D7D12481CB8141F27CF34C94FD,
+	TMP_Text_get_layoutPriority_m646E1754642A35B332304BE649D0694CBE61AA11,
+	TMP_Text_LoadFontAsset_mD54AC24C71FB6E303C04E50C7EFCA7BDA9A23ABA,
+	TMP_Text_SetSharedMaterial_mC61403BE41BD66A4446FC3C42E893A814DD38A78,
+	TMP_Text_GetMaterial_mFD7E1D66B90C7D4264BF6A13E1C96AAEEE566036,
+	TMP_Text_SetFontBaseMaterial_m461962576CBEF0A7DF56BD124B60C87FC1B26C67,
+	TMP_Text_GetSharedMaterials_mEDE18DFA628E64CB02E05C7374E1D40600BCDB4A,
+	TMP_Text_SetSharedMaterials_m9527A8BBBA8BCBABAA664DD0DB21267A218D4D58,
+	TMP_Text_GetMaterials_mFD565E68B8CB9DA9DD067F2D18EC005A81DCD2CA,
+	TMP_Text_CreateMaterialInstance_m5C75A42D058ECD5AA55546EF76AEC63C13B5D48A,
+	TMP_Text_SetVertexColorGradient_m75210CF17159C4624ED7CA86B25100D7E621E458,
+	TMP_Text_SetTextSortingOrder_mCA46CE0A42648415D5601332BBD53E7641535939,
+	TMP_Text_SetTextSortingOrder_m94EC7C47B50FF0E3EE6674F207C69AC551722F6A,
+	TMP_Text_SetFaceColor_mBE6F2CE59F3C4B855AC24871229B56166161BFA2,
+	TMP_Text_SetOutlineColor_mC054BE8E9F7A79954B20FB41D348EBFC47DE1D80,
+	TMP_Text_SetOutlineThickness_mFD9DAC528A6FE2392BC1E893A91DAFD586C89793,
+	TMP_Text_SetShaderDepth_m8F9F3BA9D3679B1A4C4360B0811930D4C7B2FC09,
+	TMP_Text_SetCulling_mD89ADEAA7558083BFB65A6756E92F6D3DB85BEB9,
+	TMP_Text_GetPaddingForMaterial_m282C3BF0A755CE150B6E4DC6B9F6F452DB160880,
+	TMP_Text_GetPaddingForMaterial_mAE39EEE41E08136940C4645878212E4FD520C558,
+	TMP_Text_GetTextContainerLocalCorners_m7E2AEAB9363EA4F1F23E20F05BEE55B5E9727ABC,
+	TMP_Text_ForceMeshUpdate_m613E9ADA7FC88A86E116D12CDFC7C90F988CCD2E,
+	TMP_Text_ForceMeshUpdate_m73C62676192C3884D169BE89FC113E49A2881815,
+	TMP_Text_SetTextInternal_mA5A53B531F03D1E1665FEC9F09BB70A66534F068,
+	TMP_Text_UpdateGeometry_mD9C8CAC06C5698122C2CE5ADEA1AC6E5C2AB151A,
+	TMP_Text_UpdateVertexData_m21C3BDEF873C6FD4A0E73113AF55D8070F7B9AC5,
+	TMP_Text_UpdateVertexData_mF7AA1914D4AED3B025D7E1BB2A10FB7491784C1F,
+	TMP_Text_SetVertices_mDE2EF960ED878DE7D4A09048ECDBD1307F53900C,
+	TMP_Text_UpdateMeshPadding_mA624223D7A36957E5BFDC6BB1576CB24487E60E8,
+	TMP_Text_CrossFadeColor_mDCD43C5F580DACCE75032513A6A8658B3A24F121,
+	TMP_Text_CrossFadeAlpha_m9BE15DAA17DCF9AE8C3EA0EE1EF911FE32E85CD0,
+	TMP_Text_InternalCrossFadeColor_mB447286CE6DDF08F02AF0D51F37BA001CC549B91,
+	TMP_Text_InternalCrossFadeAlpha_m495A8C3BB741FE910DA709272089A396BD0C41CB,
+	TMP_Text_ParseInputText_m35CFE982D3C252C472A1FD8C1E64429E5F98CA79,
+	TMP_Text_SetText_m2EEB1DF5B0CB980253EC850A0F13AA56904FFA70,
+	TMP_Text_SetText_mE32BA75B23EADDAA9DCB4B7EB6E9AF7C5EE5A379,
+	TMP_Text_SetText_m98B5C09DFCA9EC4189283172512C606A75187DC3,
+	TMP_Text_SetText_m97A4A792EE5247905AB8256CF1945489227F75D6,
+	TMP_Text_SetText_mAF0CF7B54C89EBED5402A3782B259C37686CBF74,
+	TMP_Text_SetText_m2F480412300ED72CA0B1195C0C64C38D56F1F5A8,
+	TMP_Text_SetCharArray_m533103FA8E3649D58EB0D266CDE6AA4B06F7CBCF,
+	TMP_Text_SetCharArray_mC32F52335F38CC32E1221AC47362A58C279D1413,
+	TMP_Text_SetCharArray_m9FAB24E5F518356DE8C4B8C0BB553141920CDDDE,
+	TMP_Text_SetTextArrayToCharArray_mB37FD1798AFE8DB899335E39C1B531BF16DB1A5B,
+	TMP_Text_StringToCharArray_m9C7FED4835F2449022776FD58C44F9270E2F35DF,
+	TMP_Text_StringBuilderToIntArray_m141E814F8786FF34C240F2397DCB7ECDCDA73C14,
+	TMP_Text_ReplaceOpeningStyleTag_m74E810FF5B1EB7E3ED8862925C3E5DF7E08FCC3E,
+	TMP_Text_ReplaceOpeningStyleTag_mD258F32CF12E998D0D9B26BD2D6D2A57A31BDF28,
+	TMP_Text_ReplaceOpeningStyleTag_m4E535C42672519061377E4A35E70DC616B54C268,
+	TMP_Text_ReplaceOpeningStyleTag_m93C3741B9DF660D693070F5945C70BA5A42F0846,
+	TMP_Text_ReplaceClosingStyleTag_m1741869347BFA5120F8C95100324A340CE6E2A5F,
+	TMP_Text_ReplaceClosingStyleTag_m16666694EC081C261C24622F00C6B07A95382120,
+	TMP_Text_ReplaceClosingStyleTag_mD2C56F2962261A3207AF1028D444E2FB7D00C283,
+	TMP_Text_ReplaceClosingStyleTag_mA18E48AE65821B53B3C9683328A3A21431C9A412,
+	TMP_Text_IsTagName_mB9BFDF8BBB8ABFD24C310597848E634A20D5D4F3,
+	TMP_Text_IsTagName_mC9DAAC5BCC8265F5CCD5E3B0FD6EB7555FB60896,
+	TMP_Text_IsTagName_m405FF7D7F28E099336640FF26368FB5FF1B45608,
+	TMP_Text_IsTagName_m7C1513CB94AC9B8123FEB4E467B85A4922E7620F,
+	TMP_Text_GetTagHashCode_mD7C06923F9EA39B6F28D4CD2B57914B6242CF041,
+	TMP_Text_GetTagHashCode_mCA5CBD3E0605DBE75DC426CFEF1A48D6D8A1E01B,
+	TMP_Text_GetTagHashCode_mBD373B2A85BC9911C770AAD3B4525A2CB8C6E83B,
+	TMP_Text_GetTagHashCode_mC362B06D21DC995DA325A603E73DCF3466DE05E4,
+	TMP_Text_AddFloatToCharArray_m90938B5E7E0BCF694B33BCCC2351C58255B38787,
+	TMP_Text_AddIntToCharArray_m65F252E20CD1A2F95B3E27C25A4EF9054A2C0D41,
+	TMP_Text_SetArraySizes_mF2F9015EDC23E300F91ED34F72D1553CD4BAF8B4,
+	TMP_Text_GenerateTextMesh_m0855579D8FEF01CB75B57DCA8580350D2FF2C222,
+	TMP_Text_GetPreferredValues_m57114EE0A6F11067CA2861AD40203E7606F45FA8,
+	TMP_Text_GetPreferredValues_m5CF4F98B9C42862B02414FCA6AC14D08D69F588D,
+	TMP_Text_GetPreferredValues_m5A655DB26C49A177628B3FF46B581245051C8A7F,
+	TMP_Text_GetPreferredValues_m6F0CB998DBE6BFD05B390E8B40861E9415E40EBE,
+	TMP_Text_GetPreferredWidth_mBAE2F8D3045661A66AD6D953AB03C67E8EDE7884,
+	TMP_Text_GetPreferredWidth_mAC6F8B73DB5209F6F1585CBD1461A8FB4CA1B31F,
+	TMP_Text_GetPreferredHeight_m746C2BEFF40208B3AE28160CB3BA5B48467CE11A,
+	TMP_Text_GetPreferredHeight_m9163451EC9E415D9FB1CF520657A8DDCA1529FE1,
+	TMP_Text_GetRenderedValues_m9B822CE403B2DE4A087568B4793BB0C1F4D9093D,
+	TMP_Text_GetRenderedValues_m0054DC6EDB8AF7780B071DA2D68B61BF5F24410B,
+	TMP_Text_GetRenderedWidth_mD0E38BA3233BF1C5300FB3C8E80CD68F07C8E2D0,
+	TMP_Text_GetRenderedWidth_m09597001977CC5B43C4E2EDB3DA42AFA95B3E501,
+	TMP_Text_GetRenderedHeight_mB8B4DFC07B3553362005BB8A411B77DA1821CAD2,
+	TMP_Text_GetRenderedHeight_mA667C05DAC4452CCA6414B35FCBCAD9B2E9E1AF8,
+	TMP_Text_CalculatePreferredValues_mAD41359339EAB2AC14C01547C87B58C43AA26055,
+	TMP_Text_GetCompoundBounds_m49676C9FE6A20B1A550F9AFE771600739EFC5A75,
+	TMP_Text_GetTextBounds_m356167ABEF50B830CC5CF0838F419C5AA712F70E,
+	TMP_Text_GetTextBounds_m02E9B122F3E4F9CBFCA04674978EF7A0FECEA45F,
+	TMP_Text_AdjustLineOffset_mF8655C0D3F94497F974E6927BFEEB48FE9BB0B39,
+	TMP_Text_ResizeLineExtents_m4B2D1137863B76A03199E9ED042FEE7C1A1220CC,
+	TMP_Text_GetTextInfo_m889BAC9C4939DBD7AC845A0A66FE6CEDF56F60DD,
+	TMP_Text_ComputeMarginSize_m7F2EF19E150F013762C13D40C0BDBBBE62870C49,
+	TMP_Text_SaveWordWrappingState_m8F1A1BEB7D9D7801ABD343213416CA89E9476CE3,
+	TMP_Text_RestoreWordWrappingState_mE89EDF25D735F8530A7C397282074B52F1E8439D,
+	TMP_Text_SaveGlyphVertexInfo_m5B17CDF9884DBF375C572E6F81893E10A6DD3C6C,
+	TMP_Text_SaveSpriteVertexInfo_m591F4C69A4869D42745398DA7E32A2523CDA183D,
+	TMP_Text_FillCharacterVertexBuffers_m430F7556BD9CDBBC0C4EA5A50C69D02F77880A7D,
+	TMP_Text_FillCharacterVertexBuffers_mC4D58D84C4B6901054E14E77F8ACFF32E5062CDF,
+	TMP_Text_FillSpriteVertexBuffers_m76C3C465812AF5687B535CBF84F2B022CE2AFABC,
+	TMP_Text_DrawUnderlineMesh_mAC0C99B6E0E054743903E252910B0D03AA20F059,
+	TMP_Text_DrawTextHighlight_mBB66188D449A5056466A7E87C0DB6A62786E4F6E,
+	TMP_Text_LoadDefaultSettings_mF25E632EF6893FC8F21015016A41ECAC84F65070,
+	TMP_Text_GetSpecialCharacters_m113088313670FA27611D4B80E3B716188CD764D2,
+	TMP_Text_ReplaceTagWithCharacter_m4EBA8E9E1246417B03EABBD17DA42570C31D7BEC,
+	TMP_Text_GetFontAssetForWeight_m5E06C7CABBE01581573EE9C61B81DAD2879237CC,
+	TMP_Text_SetActiveSubMeshes_m9F91C76D759E2FF69700A71437B4F04C0317F786,
+	TMP_Text_ClearSubMeshObjects_mF2DBF6C9C56368EB8011796B57645BB2E4CBA3A4,
+	TMP_Text_ClearMesh_mC95610B9FB0CC69117865017D087E657F6099B3A,
+	TMP_Text_ClearMesh_m0FCF4061B557A919ACE12D6B7E899AE597AD4096,
+	TMP_Text_GetParsedText_m32D1E8D177CF340C95546B8AEC00FCCC70E1E9C0,
+	TMP_Text_PackUV_m1AF0DCCB6321FE0E7BF4901291B725DBAB085F75,
+	TMP_Text_PackUV_m88FEA3127A1A2CB066A6072E98FE3EA2E88F3126,
+	TMP_Text_InternalUpdate_m68E4047E5EB540A055DBB25D6C40408AD3E0DB8F,
+	TMP_Text_HexToInt_mF09CB73323A39CABCC83FBD34EA69DF80E8EE3B8,
+	TMP_Text_GetUTF16_mC37EAA320F128E0449A893AEFBE436BBABD5A8D7,
+	TMP_Text_GetUTF16_m61BE253641597816445326C4D026E32A4D72042C,
+	TMP_Text_GetUTF32_m76AD817A328C05E4BAB81C5EF04CF78F3E0ED961,
+	TMP_Text_GetUTF32_mFFCA08E1EE49BB79CD098EFE3287741C67F7741F,
+	TMP_Text_HexCharsToColor_m41FE6A82A09B68AFDCBD7E0613C008EC79003A99,
+	TMP_Text_HexCharsToColor_mDA26BEC23AC05B301874BE980B871C25C9572030,
+	TMP_Text_GetAttributeParameters_m1596FBF7E2CE0CAA36F80F64ACB4EE140592EA90,
+	TMP_Text_ConvertToFloat_mAA679590C43944D553726CB9540B0A7076F3132E,
+	TMP_Text_ConvertToFloat_mBFA8DA2CC3638E8547B43E03CD8FB2F17B32B208,
+	TMP_Text_ValidateHtmlTag_m353DF3A937F86B98B948183F904EEA77CE254948,
+	TMP_Text__ctor_m6444C2C1FB1948F2597F8A1AB77FB239A81E5CA2,
+	TMP_Text__cctor_m29A610CEFE37029538BFDD4B42DD53C36CF95390,
+	TMP_TextElement_get_elementType_m67A2AB2A7F6828054EACBAF1F4EF10D5B8942C23,
+	TMP_TextElement_get_unicode_mDDF9BAC4654137D346B105D1D3481E44006E1D55,
+	TMP_TextElement_set_unicode_m3E2547D4FA653B812378A5606F3B963F72237DEF,
+	TMP_TextElement_get_glyph_mA2A19945696242D52143E3DF49BDC49F1E8A2153,
+	TMP_TextElement_set_glyph_mBF78A26600836A3A9938BB5F43D63C180027AFEE,
+	TMP_TextElement_get_glyphIndex_m0FF6CF612313ECAF763105EE76E0AD4280CB931F,
+	TMP_TextElement_set_glyphIndex_mDA12F474FC95D2D4B3229459C7C6FFC9968B42C4,
+	TMP_TextElement_get_scale_m3F70966EB22594EB684AB558C59BDA133A2C0F49,
+	TMP_TextElement_set_scale_m8F560287155DCE2ED4A0E69DA983DAF2FCCD2F38,
+	TMP_TextElement__ctor_mFE79DDEA4E85B8E0DC4313882351CA197A8550C1,
+	TMP_TextElement_Legacy__ctor_m43ED3C88A1227B77B614A37181E073A222DA90A4,
+	TMP_TextInfo__ctor_mF39F1C7955515DA7FF63D7D3AB5EA580A0E2449C,
+	TMP_TextInfo__ctor_m2A240B71105AF53F8A24C1BDB5C7A78E166DD57E,
+	TMP_TextInfo_Clear_m1CDBF30EE7548387764B806645D7910E512C7E88,
+	TMP_TextInfo_ClearMeshInfo_m90F088957B6778FA4278D50432323F0C2A83B483,
+	TMP_TextInfo_ClearAllMeshInfo_m7DD7B5114DFACBABDDE7D7B27C728C34E5EF05A9,
+	TMP_TextInfo_ResetVertexLayout_m39014C2A2F811ED9C67A7532E5A3CB45FECD3799,
+	TMP_TextInfo_ClearUnusedVertices_m7645AF7AB94651BA920CF6FC7E4D7E4105E9DE54,
+	TMP_TextInfo_ClearLineInfo_m7BF5E63C7B49C5FB7EBB116D5C94DD3901B0B03B,
+	TMP_TextInfo_CopyMeshInfoVertexData_m7159403DDF762D7F1A0A24B75FF917B73E3F42E3,
+	TMP_TextInfo__cctor_mD2C9864BA68C11DE6989DC59C8F3F73B4F4B31E9,
+	TMP_TextParsingUtilities__cctor_mDC279E0ABC1835CC429A36CB85BC1A1EC6E7C9FC,
+	TMP_TextParsingUtilities_get_instance_m3303FC0ED28CC76652A53C31584A642A330F5510,
+	TMP_TextParsingUtilities_GetHashCode_m194D7250E22FFE0EF0B451AF6E97053B19483C0C,
+	TMP_TextParsingUtilities_GetHashCodeCaseSensitive_m95C9859C6B2AD76E0BECF49742097179E5E7AADF,
+	TMP_TextParsingUtilities_ToLowerASCIIFast_mEE6BF705F53064F464900F064B09C7B5AC2D8E3D,
+	TMP_TextParsingUtilities_ToUpperASCIIFast_m53379780AEC938A90699E4128C680DD72F4C83D7,
+	TMP_TextParsingUtilities_ToUpperASCIIFast_mCCB0B4346E052E84898B1272FD2476973186BF08,
+	TMP_TextParsingUtilities_ToLowerASCIIFast_mC463A3DA66D372CCA853F335B56AB9C22CEDA923,
+	TMP_TextParsingUtilities_IsHighSurrogate_mB2203BA61705034A537D20AF10002E34BDA7A439,
+	TMP_TextParsingUtilities_IsLowSurrogate_m01DB93A3246640997189F276CEABF5BEF83763A6,
+	TMP_TextParsingUtilities__ctor_m6395312107C3C35C3578D843A4F19E521DE481ED,
+	TMP_TextUtilities_GetCursorIndexFromPosition_mC34D84C130CEDB02E2C8CE7591B2FCEA872AD72F,
+	TMP_TextUtilities_GetCursorIndexFromPosition_m565A978C054D2EA2AFD8346747F3463CD76596C0,
+	TMP_TextUtilities_FindNearestLine_m1A60CBB85E7D7F5B9687D42C8178CBE1BE29B591,
+	TMP_TextUtilities_FindNearestCharacterOnLine_m352E8606C8B7674B1458CDA95867275EA2AD6636,
+	TMP_TextUtilities_IsIntersectingRectTransform_mB332191CF4FADACA95C63C1ABE92831512C05DAC,
+	TMP_TextUtilities_FindIntersectingCharacter_m7F8B19DC9B6B29EC6491A912D0F78CCECEF40088,
+	TMP_TextUtilities_FindNearestCharacter_mE016C462BAA950AB17A971896216F98C89753653,
+	TMP_TextUtilities_FindIntersectingWord_m348AE6446B380BE334D0AD4A27047AFD1A563650,
+	TMP_TextUtilities_FindNearestWord_m51E169EA6CC4920E34DCAB1D5B814824A567F6C3,
+	TMP_TextUtilities_FindIntersectingLine_mE7E12992E579C69DA5BF5AD1C8B1754BE535B2D3,
+	TMP_TextUtilities_FindIntersectingLink_mC2B0B41159DF2F5BAE81D37071633929E5FB9DD7,
+	TMP_TextUtilities_FindNearestLink_mCE9F2D2E79104207EDD7E65E5612E04E96F2F90A,
+	TMP_TextUtilities_PointIntersectRectangle_m193289CD8786E6B2FB06163988DBF8FCE2AC79E8,
+	TMP_TextUtilities_ScreenPointToWorldPointInRectangle_mFE5C4F353402FF5A474453FB310CB40B36EC7924,
+	TMP_TextUtilities_IntersectLinePlane_mD1E007BC3AE3DCAE4A51AC7BD8D67F23C71C6E51,
+	TMP_TextUtilities_DistanceToLine_m211B57E93D3927E6FBFA202C14E4D708939CDCA8,
+	TMP_TextUtilities_ToLowerFast_m1DEAD360B85F0378A77EE723C84AE2E8B9FDCD2E,
+	TMP_TextUtilities_ToUpperFast_m7329EEEA76C453A57844853C60901D174A4D2221,
+	TMP_TextUtilities_GetSimpleHashCode_m3340CE59FAD65A71193665015260BA7758CEAB6E,
+	TMP_TextUtilities_GetSimpleHashCodeLowercase_m9479C0A65C56E3D31ECEF17749ED4B21998FC20D,
+	TMP_TextUtilities_HexToInt_mF522350598B16262D5F382F20EE918B46C294AE5,
+	TMP_TextUtilities_StringHexToInt_mD0F404AD055EDBEC8AFFD5D0F3BB09E48B3420D5,
+	TMP_TextUtilities__cctor_m3858383B99A5C79C62DC5DD5DE593E67C2599382,
+	LineSegment__ctor_m3FE30DA4047C714B588477076617C5812064ABAC_AdjustorThunk,
+	TMP_UpdateManager_get_instance_mDE5A6E7F4AFD283F90126FC490DE60B3395093CC,
+	TMP_UpdateManager__ctor_m5E12CCE949D7259442974D1A7D6900AA25F136B0,
+	TMP_UpdateManager_RegisterTextObjectForUpdate_m9DF5E044B54B3EEA77ED895B43C65757FA05ABC9,
+	TMP_UpdateManager_InternalRegisterTextObjectForUpdate_m91657EDEA9E610389658252EFE741DD382CB5693,
+	TMP_UpdateManager_RegisterTextElementForLayoutRebuild_m8F55EC6B0A9CC4BEAC5AD2E95E64268597BE47BB,
+	TMP_UpdateManager_InternalRegisterTextElementForLayoutRebuild_mDF27950AC384CE4BD255AF84B2E36CC088AFB43F,
+	TMP_UpdateManager_RegisterTextElementForGraphicRebuild_m3D34D167DC3FF3E09A9D6DE1493C3969751636AB,
+	TMP_UpdateManager_InternalRegisterTextElementForGraphicRebuild_mB56D1393B0F98361C2847A9C9FAA29E9B9E8CDCB,
+	TMP_UpdateManager_OnBeginFrameRendering_mF0DF312CF368AFC386DA367F37BBC0A706F61FC6,
+	TMP_UpdateManager_OnCameraPreCull_m5DE3D79212A60E0310878EE7A1EC56B52539BB3C,
+	TMP_UpdateManager_DoRebuilds_m234D33DCEBB0C9559D53E153A59A1A005A9D6A86,
+	TMP_UpdateManager_UnRegisterTextObjectForUpdate_mF2A6084A1F39167B7B76774614BB4FF40DC72C20,
+	TMP_UpdateManager_UnRegisterTextElementForRebuild_mCB1E447E215194B09F38F3A2221C82C07FE0CB02,
+	TMP_UpdateManager_InternalUnRegisterTextElementForGraphicRebuild_m2F52786882934428AEF607CCCE755A8D6D88820B,
+	TMP_UpdateManager_InternalUnRegisterTextElementForLayoutRebuild_mDB68AE152179562FC92E7DA9B53E1E1437A8024A,
+	TMP_UpdateManager_InternalUnRegisterTextObjectForUpdate_mC772067A6F9FAE06B5E9AAB1EF78E77B63233D10,
+	TMP_UpdateRegistry_get_instance_mC74D0724B4403A8181C565E0C541F11CA13999BE,
+	TMP_UpdateRegistry__ctor_m4C1958E39CFA299F7CA163AD35DDFB4A0E87E3B5,
+	TMP_UpdateRegistry_RegisterCanvasElementForLayoutRebuild_m8621A5736D568569C6325487CD6F0B300A0C3488,
+	TMP_UpdateRegistry_InternalRegisterCanvasElementForLayoutRebuild_m46AF2AE34F4CBA1C212C595AF301C6D4E57AD1F3,
+	TMP_UpdateRegistry_RegisterCanvasElementForGraphicRebuild_m30D79014737D78910B19A8F97A508AEFD506D423,
+	TMP_UpdateRegistry_InternalRegisterCanvasElementForGraphicRebuild_m74587A2910708B04FC14BF3C826210B607F7CAB3,
+	TMP_UpdateRegistry_PerformUpdateForCanvasRendererObjects_m7CB26CAAB99D00C370C1647CCCF6B0FBCF3644D2,
+	TMP_UpdateRegistry_PerformUpdateForMeshRendererObjects_m8C6ED87B4ED13537FAF1694077D81A156CA4ED77,
+	TMP_UpdateRegistry_UnRegisterCanvasElementForRebuild_m68958A25BB03374F69AC08C3FD8782B6426BC853,
+	TMP_UpdateRegistry_InternalUnRegisterCanvasElementForLayoutRebuild_mC1CB8E5E893EE96B5D429661128AE482D90F4A94,
+	TMP_UpdateRegistry_InternalUnRegisterCanvasElementForGraphicRebuild_m6A1F61221822AAA3E67E07DA4417C23D9B6E6849,
+	TMP_WordInfo_GetWord_mF7E1BD19C83BA1F3BAAFAC496CF05F1BCD13F0D2_AdjustorThunk,
+	TMPro_EventManager_ON_PRE_RENDER_OBJECT_CHANGED_m01D8F14A61481E705720BCD2F3CD2D191A434121,
+	TMPro_EventManager_ON_MATERIAL_PROPERTY_CHANGED_m64111F5FE1A3B780301C9D9934F6B6C0DD655D97,
+	TMPro_EventManager_ON_FONT_PROPERTY_CHANGED_mA119E6DF11D0E33F257E9AB3BD6335509D810CB5,
+	TMPro_EventManager_ON_SPRITE_ASSET_PROPERTY_CHANGED_m14F4BF7FD9A0CD0A1BEE5619CF388D512105EBF6,
+	TMPro_EventManager_ON_TEXTMESHPRO_PROPERTY_CHANGED_m0EF943AD6E0AB434C981A8CE12B5FFBBFF55635E,
+	TMPro_EventManager_ON_DRAG_AND_DROP_MATERIAL_CHANGED_mEEAA4879052134D8CB89772E9630F2D5D9352B1C,
+	TMPro_EventManager_ON_TEXT_STYLE_PROPERTY_CHANGED_m5C2496CFFEC96D62063E980EC1CACC2B17EAEFD7,
+	TMPro_EventManager_ON_COLOR_GRAIDENT_PROPERTY_CHANGED_m1D28B23D29418E7E89B572F178FEEA19B765DBC3,
+	TMPro_EventManager_ON_TEXT_CHANGED_m950F4ADB007127B72E57303060C7F6405563E051,
+	TMPro_EventManager_ON_TMP_SETTINGS_CHANGED_m49D6B3DEE0A12BD84519D29859276E9C3069B1BE,
+	TMPro_EventManager_ON_RESOURCES_LOADED_mF3C17118C632424A69A43353DDE7076AC1BD6C28,
+	TMPro_EventManager_ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED_mD3DDF1D0080955E9475ABDC2E0E06DC078D82BB6,
+	TMPro_EventManager_ON_COMPUTE_DT_EVENT_m893D8FF31C23EAF115A365AC0AFFCB84E4EB3FC8,
+	TMPro_EventManager__cctor_mCA21D908D041480E45EE10BB50C9E355012BCD6C,
+	TMPro_ExtensionMethods_ArrayToString_mD6ECD8BD848577E03A2831AAA4D5A7DA95F4A4B8,
+	TMPro_ExtensionMethods_IntToString_mC3C6E96232281414E2990157249B88751C04F433,
+	TMPro_ExtensionMethods_IntToString_mC83EF6E46BE55750D44FE27B0C412A00C4004338,
+	TMPro_ExtensionMethods_Compare_m2511824FCD78A6118463515B5663407A9105C127,
+	TMPro_ExtensionMethods_CompareRGB_m08AC611C3C4047127378B36C4D44EEC6F4B6EC34,
+	TMPro_ExtensionMethods_Compare_m10C7BB0662CFB19051659EACFF8EDF0084D7E8D8,
+	TMPro_ExtensionMethods_CompareRGB_m9305C0DBD1C5FAAFA79754B876D0F063F62D463A,
+	TMPro_ExtensionMethods_Multiply_m47B92957322D6D195B0F3221836D25B661CA52A4,
+	TMPro_ExtensionMethods_Tint_m3CE518D39299107D4D33B5E7671B935356D77E4F,
+	TMPro_ExtensionMethods_Tint_m0052477E0F651026A9ACC4945755ADA979683020,
+	TMPro_ExtensionMethods_Compare_m92FF0DFFA92EEC8DE9D08099F19638DBA5F9023C,
+	TMPro_ExtensionMethods_Compare_mCB8C299F5CB778627C9E639A4155D9C9F5BE22A1,
+	TextContainer_get_hasChanged_m378D5FF61BD2505A071106BB1C3C4F2991332EB6,
+	TextContainer_set_hasChanged_m95DAC2C59558680E0CAEF26159EC3B8D67C3A720,
+	TextContainer_get_pivot_m5181134E03A8BF8E3D40C13755B9477DDD1DE01D,
+	TextContainer_set_pivot_m1F84BF8C34F992D8CFEBB3169D92DDA12FE0E9D1,
+	TextContainer_get_anchorPosition_m8C546539F3E0A9AACBD3020C61809C27C3CEEF3B,
+	TextContainer_set_anchorPosition_m0B5397BE986F6FDE4E6F7D1C3C41BBF07F2D17CA,
+	TextContainer_get_rect_mDA13E7E028FEA103B83E918320DF6F77EB3FFF85,
+	TextContainer_set_rect_m69AE2FF8B8C3F9B4D3D183307A1DDF28FD8179F9,
+	TextContainer_get_size_mF0E4195DC3BCD588620BCA6942849F9A6CAC9868,
+	TextContainer_set_size_mA2BA9DA2DF2914014657E454BFE50219E669160B,
+	TextContainer_get_width_m1143D04E380D2D46B5EA0E802FF8E62159892D83,
+	TextContainer_set_width_mEE968C4EDF5BAF31082A3170B533B276C7A82D16,
+	TextContainer_get_height_mF570F9217BF09F1AEF34C9ADAB48537FEC61E6A1,
+	TextContainer_set_height_m6CB957A4807F81C3B27002B5CF5B050806D74FE2,
+	TextContainer_get_isDefaultWidth_mB72DA8350D0DC6777705E24BF90D9ACF02C5539C,
+	TextContainer_get_isDefaultHeight_m9830856138E9F1CA095714B4257C7ECE731A6BE8,
+	TextContainer_get_isAutoFitting_m15D125D5CAFB8D928735D8A071A796B7C71BCA7B,
+	TextContainer_set_isAutoFitting_m03D5D5AFE1CC6F5EC53A137FA768E66F3068E965,
+	TextContainer_get_corners_m318928BC6A86A5FD504C880CE3DFD0FAF15E0E77,
+	TextContainer_get_worldCorners_mDE95C39ED21538B6179B52533507539921512EFB,
+	TextContainer_get_margins_m5DE3D01777697A4B1417444EF2517BF9507F28CB,
+	TextContainer_set_margins_mE83338B5A002652CF7C30AEDCC0870A7A1A68217,
+	TextContainer_get_rectTransform_mA53A93644407F8DD7D8DA4486D259A5B6025ADD7,
+	TextContainer_get_textMeshPro_m527309EE3FF9CF11DFB2CA9FFCDBB52B33BEC992,
+	TextContainer_Awake_m391E508A8F576247DC01EFA007AB10455CE3262A,
+	TextContainer_OnEnable_m3EFBC18262089B28E86AB0113A3EA9877D39C76F,
+	TextContainer_OnDisable_m2DE78D6020E43D6B6936A0E5A5B6E0789B0B66B7,
+	TextContainer_OnContainerChanged_mA4756AD378D89899F0104FADB78E9C0DEB17B642,
+	TextContainer_OnRectTransformDimensionsChange_m269F9BEF3904A73D7A81FE711C9DB8DE7E1D0D63,
+	TextContainer_SetRect_m1A423889E2E0A1E2CD284CEA2F5161DB76B1D7EE,
+	TextContainer_UpdateCorners_m8CA2EA7F3EF7F862E7AE0E718FA1A683A02BDD65,
+	TextContainer_GetPivot_m5379B14582E6BBB6F666455E698386042CBCE3DD,
+	TextContainer_GetAnchorPosition_m0028A214C1133E5D363A22952B54063F868B060E,
+	TextContainer__ctor_mBEF5E1C96827C11C21C024C3E47D88F2842C86D7,
+	TextContainer__cctor_m3B5C9B4C82881CC2B5411E29E2C9390BABE2746F,
+	TextMeshPro_get_sortingLayerID_m43C804244695C386E85433588F0E4CF7A2A93BF4,
+	TextMeshPro_set_sortingLayerID_mB66B1467EC5FFE9321B1797471013B9E4EA7F67B,
+	TextMeshPro_get_sortingOrder_mFC472E09FA72FC3765177D86EFA7EDAC5406AA81,
+	TextMeshPro_set_sortingOrder_m57BA7A34D6AE109F81460F77E8098A43A3D9C8F6,
+	TextMeshPro_get_autoSizeTextContainer_m0354F661F7F5B004A2B2BA07BF556CDA0D36637E,
+	TextMeshPro_set_autoSizeTextContainer_m51DB85ECFAACBD2C1021C4035DB231053D3696C4,
+	TextMeshPro_get_textContainer_m0A69AFD8B1199D3410B173222890283EF58DBF17,
+	TextMeshPro_get_transform_m14B36D05C2CCC150141AED87F5A38536373BC23D,
+	TextMeshPro_get_renderer_mF8CD651E1D88C0C5E8A08C0930835B2DF7EE59F7,
+	TextMeshPro_get_mesh_m59B2615FE72E691B3DC5AE938E2E7B334D9F6D91,
+	TextMeshPro_get_meshFilter_m38BAEBB3D31284FE6B762E6D5F71CAD0AE0A6EDE,
+	TextMeshPro_get_maskType_m9D4C7069FDEB33C53E364E11A21975E5D28837A8,
+	TextMeshPro_set_maskType_m234C8751848A3603345D67A5D1E741E3F8D4C458,
+	TextMeshPro_SetMask_m44F7488A9B0B3B4ACF27B5D18AB5E32EB37D6AD2,
+	TextMeshPro_SetMask_m3D94FFE674A91AAFD41139268508536E1BE05B28,
+	TextMeshPro_SetVerticesDirty_m9330F902CB5ED4B2CF7D080D4C1FCA1B10AD8E43,
+	TextMeshPro_SetLayoutDirty_mF303356F28966ECC5B9D44F134D104F16ED7FD00,
+	TextMeshPro_SetMaterialDirty_mFD1FE415AB92B60D66F93EA9BD4621FE15511778,
+	TextMeshPro_SetAllDirty_m07F868E653AEC8C3DD223468C4F5F2A265A12758,
+	TextMeshPro_Rebuild_m56AD9C3DB6074B97404F8DA5B3F6989102EF59AD,
+	TextMeshPro_UpdateMaterial_m7ABB7C6E9AC4CF1BE4A443AEEB15D2A0E6B3073C,
+	TextMeshPro_UpdateMeshPadding_mA249FBD76F21EBEEB8D503AC7DD760AFCFDC6B38,
+	TextMeshPro_ForceMeshUpdate_m7A0B9D97E01D4400E37C6ABF1D61E48FB2C6C3E8,
+	TextMeshPro_ForceMeshUpdate_mE9EC335438D424BB1640ABD6E2E7BA705301751B,
+	TextMeshPro_GetTextInfo_mE18AA90B2F0E79E2E5B6C468070DE3C3260DED0F,
+	TextMeshPro_ClearMesh_m1B71E176AD8D9B36DCA1004F7FF17DC641292C8C,
+	TextMeshPro_UpdateGeometry_m09FFA9E3B3F40C8E35512039C477923B2437AEC0,
+	TextMeshPro_UpdateVertexData_m4732758FF09BA1B25D50CA2416CDB732406434C2,
+	TextMeshPro_UpdateVertexData_mEFC59291A16EB76F1E9DB883254B6FA51C45AE3A,
+	TextMeshPro_UpdateFontAsset_m386F86E8253E20A750757117EA0B236824C54849,
+	TextMeshPro_CalculateLayoutInputHorizontal_mC0EB6F288F991A967D418AFA3564D06C3A5E3A09,
+	TextMeshPro_CalculateLayoutInputVertical_m2E5ECD15D93BA1F83AFA8DF4014DB7D71941C1EE,
+	TextMeshPro_Awake_m5E38656FAAB13872824A91BD73BA320E81AC6A4F,
+	TextMeshPro_OnEnable_m25C8A802905989C75A9FDCA3625954A6193E14CA,
+	TextMeshPro_OnDisable_m5C41B70FEC1E34E156FDEA975B1E2C386D1FB80D,
+	TextMeshPro_OnDestroy_m42F5F590CC94C5C01A2C13C0A2F912B4BBC9B867,
+	TextMeshPro_LoadFontAsset_m7A4B00199E6238F1738B4FA4E33CBC1163F807EC,
+	TextMeshPro_UpdateEnvMapMatrix_m5CFCB2AB07790DF1147A7FF8EDDC9361BF9A7E8B,
+	TextMeshPro_SetMask_m3B3CE88AF40CA51EE3871ECF7E004A449F5B36E4,
+	TextMeshPro_SetMaskCoordinates_m54C7DBCEAB18454A6F75C84E00B1128E3ED943CC,
+	TextMeshPro_SetMaskCoordinates_mB715DBA84F3E9321E46843C35D2AB818907CB8FF,
+	TextMeshPro_EnableMasking_mE1A96C9396D808908FAAD78EAA2FB1F31C66EDA3,
+	TextMeshPro_DisableMasking_m8F66A13948C460CFB5AF46A8ED39F06BEC306E2C,
+	TextMeshPro_UpdateMask_m3D0E6B7DF4B8E946CB7B0647C779072799B8B344,
+	TextMeshPro_GetMaterial_mDD921EE1D1B7F24BC3BBAB02DEB74B9D35A8C83D,
+	TextMeshPro_GetMaterials_m02B85E8BBF5811F60A2F6C671E158FC58470A3E3,
+	TextMeshPro_SetSharedMaterial_m7C16CFF7332B01C6FBFC1F4BEC8EA16D48B47266,
+	TextMeshPro_GetSharedMaterials_m09323E9D43C67F0A33A7942BE53B0E106D823208,
+	TextMeshPro_SetSharedMaterials_m0277C4410B3BE554AA1BA4BCA9D85B7CB090B33F,
+	TextMeshPro_SetOutlineThickness_mC58D5697D1432E6106CB5E86D7DB322E96EEBC2B,
+	TextMeshPro_SetFaceColor_mB4AC4FE0254CBC5824E392DF1893AEE76F3937C9,
+	TextMeshPro_SetOutlineColor_m2B22937897B62C54583EAAE236E70F56AE7E6C0F,
+	TextMeshPro_CreateMaterialInstance_m2009255A68E0B7D6EC30BD04C39FD09BB00FC054,
+	TextMeshPro_SetShaderDepth_m67FD78A78E77FF5819D01AD6AD6E8CF151F6C9DC,
+	TextMeshPro_SetCulling_mBAAFB0E5E8A2CE2691BD0238CBC3BD48AF3C8D2B,
+	TextMeshPro_SetPerspectiveCorrection_m2EC45FE3A22D0A2D495C4EF6F4502406BCECABBC,
+	TextMeshPro_GetPaddingForMaterial_m0E769028845CFC102A541041E519E4C1B210C966,
+	TextMeshPro_GetPaddingForMaterial_mE903F6B9A478FD386F05FE08524E1185BDF88F1F,
+	TextMeshPro_SetArraySizes_m611B930C828F6AC73E2FB8786876AF1F2E335386,
+	TextMeshPro_ComputeMarginSize_m20E3FE09C37BBD17C4D91EF80A837AE5A50B1949,
+	TextMeshPro_OnDidApplyAnimationProperties_m585B92367BF647D817F240128FA1208DFDEE817B,
+	TextMeshPro_OnTransformParentChanged_mDAAA55A4C44868F4AE50584AA0432A4DD962E2CF,
+	TextMeshPro_OnRectTransformDimensionsChange_m0415026A8B66522899CA3C4B2BFA8B7B3B9A6C96,
+	TextMeshPro_InternalUpdate_m8DCC879859E90C68FACE7504A7AAD3B8F066A5A9,
+	TextMeshPro_OnPreRenderObject_m76401AE06F024952C6C61FCF3F996597AFAB7D60,
+	TextMeshPro_GenerateTextMesh_mCD97FC04394E61D8CE6EE25BCFE74DCE0697528D,
+	TextMeshPro_GetTextContainerLocalCorners_mCDB7EDBD7D66C6BA4C5704961118FE5A0A6F1813,
+	TextMeshPro_SetMeshFilters_m9138A0F9DFBCFAE3F5466F69B81163BABD383377,
+	TextMeshPro_SetActiveSubMeshes_m5E2DC5A77251F44F0E9CB7468BB34A2A1CB6697F,
+	TextMeshPro_ClearSubMeshObjects_mE9E5362F096A0534D87DB22F112B7E83B3B80E48,
+	TextMeshPro_GetCompoundBounds_m18E56D6B652F122B7F6D997E23B4D45BA44DA8E3,
+	TextMeshPro_UpdateSDFScale_m5DB958114C9CA327E6130093740887F476928376,
+	TextMeshPro_AdjustLineOffset_m55ACDBE58E15D562080A2658A20CE7E86C527B42,
+	TextMeshPro__ctor_mA698AF49114D85F9AF454AE3A99D0A651A86169C,
+	TextMeshProUGUI_get_materialForRendering_m44B371F6DF42D77E86963B4D41A9DD2BF8665130,
+	TextMeshProUGUI_get_autoSizeTextContainer_mF3AE9830CE6D5878C106B56533DF317D1B7E7179,
+	TextMeshProUGUI_set_autoSizeTextContainer_m0E7363B40B89938A34BF34CDC6F1FCE2E0C2FD62,
+	TextMeshProUGUI_get_mesh_m5DEADCE67913DEA23A6B4D4AFDA802875EBB6E9E,
+	TextMeshProUGUI_get_canvasRenderer_mE509219D3CDEEB5CD12E635234838CFC845DC21E,
+	TextMeshProUGUI_CalculateLayoutInputHorizontal_m85089D4DAFB4077227DDE7D159288304142D72F2,
+	TextMeshProUGUI_CalculateLayoutInputVertical_mB3F5E82FD3E1176836E7DD155CECAE958E2CD262,
+	TextMeshProUGUI_SetVerticesDirty_m0CAD96328132622440BF8CE5790489A88F5823AD,
+	TextMeshProUGUI_SetLayoutDirty_m8953EAA49BE07C70E8E9417E9B6C1D1A3324387E,
+	TextMeshProUGUI_SetMaterialDirty_mEDE19230B1968C34645971133693D4B48234FBC9,
+	TextMeshProUGUI_SetAllDirty_mB1EAEFBFDC8FE1429BBEFD2A8FC7579DB29CC769,
+	TextMeshProUGUI_Rebuild_m7BA4E1445DB42FD1EC2DB0A92324458BD178F610,
+	TextMeshProUGUI_UpdateSubObjectPivot_mB69AE45DEB3F545B0525116763FBCF9661194A73,
+	TextMeshProUGUI_GetModifiedMaterial_mDA4231D9F6A8F91FAAC84D2B639911755A9919F3,
+	TextMeshProUGUI_UpdateMaterial_mDBD372789086439AB59B43220B1EBD9303AC4238,
+	TextMeshProUGUI_get_maskOffset_mEA0DE6321C0176A02B25AD4553FA2676244F48CE,
+	TextMeshProUGUI_set_maskOffset_m897D6C97F9FA6A7ECE0FE5308C581F34D0067CE5,
+	TextMeshProUGUI_RecalculateClipping_mEBFDA7832A48955DDF15D506DEEA0A5D4DD006AA,
+	TextMeshProUGUI_RecalculateMasking_m61D20B962F888AFA00A0ED56F63BAEECEAE90B15,
+	TextMeshProUGUI_Cull_m3B3D1918E11C2EB162BD88596DA2665D346DA775,
+	TextMeshProUGUI_UpdateMeshPadding_m49A6EDDB84193BE5C7B5D9EA9A8A59C4FA4D6E9B,
+	TextMeshProUGUI_InternalCrossFadeColor_m98973DC3EFB682C3E7F78F99322386D72F1F2C8F,
+	TextMeshProUGUI_InternalCrossFadeAlpha_mC3C3AB4AA2394F5876E2E1341D172D2892CA695B,
+	TextMeshProUGUI_ForceMeshUpdate_mB3553EEC8F8074DFE42F3F8E7FDCA8EFADD48B36,
+	TextMeshProUGUI_ForceMeshUpdate_m7A36662E237EFDCB114C52D378F29C04BB17441C,
+	TextMeshProUGUI_GetTextInfo_m19814343E57187FBD6A02B49B14DFA1662C000D7,
+	TextMeshProUGUI_ClearMesh_m9D06AC60464E17518DE0F886B54E9D181F34FA76,
+	TextMeshProUGUI_UpdateGeometry_mD403AB070018706FBB17B64F92F31FAD9F76491A,
+	TextMeshProUGUI_UpdateVertexData_m08B88C1AAC495EC0647616D5225DF0C980E04E09,
+	TextMeshProUGUI_UpdateVertexData_m0BD656588435B103300D64099FBD328B0025A3C0,
+	TextMeshProUGUI_UpdateFontAsset_m33A9B5FAB14788A93B68FBB6DB2FFE84E4E53F8C,
+	TextMeshProUGUI_Awake_mFA110CE8FD9EB87CD84222FB4ECEE37BD61E410D,
+	TextMeshProUGUI_OnEnable_m1438F6B03B5D9894EACB591FE7DD97C7208323CF,
+	TextMeshProUGUI_OnDisable_mCFB9B94B69DFDF5860EBFF1732CB41453E68AB5B,
+	TextMeshProUGUI_OnDestroy_m83B1CFF16029CFF5FAC593A2473D7458E19006A8,
+	TextMeshProUGUI_LoadFontAsset_m16A0DBB50FD14E10C497FA5663BADAE7AC319046,
+	TextMeshProUGUI_GetCanvas_m2C00EBAF20D256374F2615D6AEEB19FC78B0D377,
+	TextMeshProUGUI_UpdateEnvMapMatrix_m935C1793F9F3C08994930DCB35A530269DDC5D0F,
+	TextMeshProUGUI_EnableMasking_m30D8389D5F11655BB87206EB8C5748F5C4C6A9F4,
+	TextMeshProUGUI_DisableMasking_m091E471BDEC2D447B59CAB262BAD47388AA0AF8B,
+	TextMeshProUGUI_UpdateMask_m966107DE699266CE2B33BD1FF36FF9AAC6ACB30B,
+	TextMeshProUGUI_GetMaterial_m51EFD2A903A5F41CFE82183FC1D2E5409DD3CDAE,
+	TextMeshProUGUI_GetMaterials_mCB0EE55A20C663A2EEB60ADB3DA15DF968CB1697,
+	TextMeshProUGUI_SetSharedMaterial_m75E3B7721A5598D6B0BB1E309E260F8C5064B741,
+	TextMeshProUGUI_GetSharedMaterials_m6EA59DACE8917537122F9AD52BF2761D3D639A1F,
+	TextMeshProUGUI_SetSharedMaterials_m6FAD51D7D4568F252B4CE716FE2C5B74039435B9,
+	TextMeshProUGUI_SetOutlineThickness_mBDF9D974779F900058E296C372109AC499970700,
+	TextMeshProUGUI_SetFaceColor_mD488E7CCE4AB5EDD398058B56499B938F5113BA5,
+	TextMeshProUGUI_SetOutlineColor_m2F4C6E3CFA36F8517B49C8736565856151D8431A,
+	TextMeshProUGUI_SetShaderDepth_mA210ECD97359D897C69D13FFDA01E066C73645C1,
+	TextMeshProUGUI_SetCulling_m48BABBF3B53A65758683EC9F67DCBD371BFFAEC1,
+	TextMeshProUGUI_SetPerspectiveCorrection_m723D78DE61D839E290D8FA77264AA5EB5B354DCD,
+	TextMeshProUGUI_GetPaddingForMaterial_mC533B46C609C9F321584FB2010A13D1EAE7CFCC2,
+	TextMeshProUGUI_GetPaddingForMaterial_mA745F039417DA00C83ED1E44C0391B56F0D08CEA,
+	TextMeshProUGUI_SetMeshArrays_m29F4A61043C149DBD9279840FAFF324ED70ED007,
+	TextMeshProUGUI_SetArraySizes_m876EAE8394515E722551C88F77D2CD650E5BB3A2,
+	TextMeshProUGUI_ComputeMarginSize_mA89DD6FB8F7D8AC4B0D15A8DDEF2C529629F97E9,
+	TextMeshProUGUI_OnDidApplyAnimationProperties_mBDADC3B7363F3AC0C25301DFB30EA5E4D158AFB2,
+	TextMeshProUGUI_OnCanvasHierarchyChanged_m52EA0B289457A26C6A600C5245149FCD221AD51B,
+	TextMeshProUGUI_OnTransformParentChanged_m6B64607E1AAEFF5E1C6A11B8508A7AB351B268DC,
+	TextMeshProUGUI_OnRectTransformDimensionsChange_m3A188028580A332B0BF015660E88D8D933E6873E,
+	TextMeshProUGUI_InternalUpdate_m54B35F28AD033F2FEB952AF38E26A3EDC4877573,
+	TextMeshProUGUI_OnPreRenderCanvas_mA1BB76D11387DF804E68A7C05BA58651ADAC825E,
+	TextMeshProUGUI_GenerateTextMesh_m28F6F3927D00EE31CA0016D955FA94AC170CBC64,
+	TextMeshProUGUI_GetTextContainerLocalCorners_m5EAA4EFB8D2D266BC3FBE5DF29B9DDABB0E5D906,
+	TextMeshProUGUI_SetActiveSubMeshes_m2BF988D6B0B5906D6E595DB4AAAF943EA295CDE4,
+	TextMeshProUGUI_GetCompoundBounds_m6750D03D68E27D7283F3923B75CAC60B661F3535,
+	TextMeshProUGUI_UpdateSDFScale_mE095308C38511257FC16EA6DC60C949FF4CC604D,
+	TextMeshProUGUI_AdjustLineOffset_mC67B89AD7902F828CC598D1B9F4ABDE004EF898C,
+	TextMeshProUGUI__ctor_mBD29AC494F8EE3D93174D945170B70DEF66E338B,
+	VertexGradient__ctor_m8EF36DB1F57E99DEDCEA45F3669BA6830F7D5677_AdjustorThunk,
+	VertexGradient__ctor_mFB456877435DCACDB401EC1CA3FAC38D2777EEAB_AdjustorThunk,
 	BombExplode_Awake_m32A823CF490A1EDF73E8ABDF65A0820FBD70103F,
 	BombExplode_Update_mE87584BF6AAF736FB875E25649395E0810ADB556,
 	BombExplode__ctor_mB786784DEACA7F1A693903A8FE899637E3494960,
@@ -25010,14 +28852,6 @@ extern const Il2CppMethodPointer g_MethodPointers[12538] =
 	FlagScript_Start_mC8085D3AC5EE1F8E56707A7DE31A5A2A622B18F9,
 	FlagScript_Update_m9DA36FEEB0C81A844DA4933026ED34CC0F654455,
 	FlagScript__ctor_mADAB0A0C89CD7B03CBD82216F27F720A6CB68B52,
-	FlagWinner_Start_m2B67DE38ED639B4904F1F46B9BB928E489671B48,
-	FlagWinner_Update_m2F69BD52AB20F0874AD01153070C1A09923CD996,
-	FlagWinner_OnTriggerEnter_mCC611A1C84CA5888D81DD578F6BAD6D804748EBF,
-	FlagWinner__ctor_m884EFD650F6986F35BBAE5B7E8AE1930D46B36B6,
-	FlagWinner2_Start_mBB6575F4E2179FA4C53C76B4DB98A0C8D81259CD,
-	FlagWinner2_Update_m197E851ED01F74D70774D3E54C8686AA47291232,
-	FlagWinner2_OnTriggerEnter_mE02565F9F1E17A609E5D6F09109D2CC2313B4AD8,
-	FlagWinner2__ctor_m56CCB565851A4011F2FD278316EFC0CB2B1FB2ED,
 	FloatingJoystick_Start_m0F34B432F4B1DF7D2A84264E9C5E8553A4E7F0DE,
 	FloatingJoystick_OnPointerDown_m2DB74D40D3D0D670E92442E24851FF5995CCE764,
 	FloatingJoystick_OnPointerUp_m31F698F0F60ECAAB34D55DF8B1FF2E533B818DEA,

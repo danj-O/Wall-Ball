@@ -43620,6 +43620,13 @@ extern "C" IL2CPP_METHOD_ATTR AppDomain_t1B59572328F60585904DF52A59FE47CF5B5FFFF
 		return L_0;
 	}
 }
+// System.Object System.AppDomain::GetData(System.String)
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * AppDomain_GetData_mD6C34853507A96159BB1A7773C65E8B21DBC7250 (AppDomain_t1B59572328F60585904DF52A59FE47CF5B5FFFF8 * __this, String_t* ___name0, const RuntimeMethod* method)
+{
+	typedef RuntimeObject * (*AppDomain_GetData_mD6C34853507A96159BB1A7773C65E8B21DBC7250_ftn) (AppDomain_t1B59572328F60585904DF52A59FE47CF5B5FFFF8 *, String_t*);
+	using namespace il2cpp::icalls;
+	return  ((AppDomain_GetData_mD6C34853507A96159BB1A7773C65E8B21DBC7250_ftn)mscorlib::System::AppDomain::GetData) (__this, ___name0);
+}
 // System.Object System.AppDomain::InitializeLifetimeService()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * AppDomain_InitializeLifetimeService_m05B608CD854DBFB1FD8919E2B2F0F93EAFF5B8CD (AppDomain_t1B59572328F60585904DF52A59FE47CF5B5FFFF8 * __this, const RuntimeMethod* method)
 {

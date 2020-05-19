@@ -17,16 +17,24 @@ public class PlayerController1 : MonoBehaviour
 
     private string getAxisHorizontal = "Horizontal";
     private string getAxisVertical = "Vertical";
+    private string getWallAxisHor;
+    private string getWallAxisVert;
 
-    public float speed = 20;
+
+    private float speed = 20f;
     private Vector3 moveDirectionWithSpeed;
     private Vector3 moveDirectionWithSpeedJoystick;
     private Vector3 combinedMoveDirectionWithSpeed;
 
     private FixedJoystick joystick;
+    private FixedJoystick wallJoystick;
+    private Vector3 wallDirectionJoystick;
+    private bool hasBuiltWall = false;
 
     public GameObject bomb;
     public GameObject wall;
+    public GameObject wallTemp;
+
     public BombStore bombStore;
     public WallStore wallStore;
 
@@ -63,9 +71,19 @@ public class PlayerController1 : MonoBehaviour
             isPlayer1 = true;
             getAxisHorizontal = "Horizontal";
             getAxisVertical = "Vertical";
+
+            getWallAxisHor = "HorizontalWall";
+            getWallAxisVert = "VerticalWall";
+
+            //for movement
             joystick = GameObject.FindWithTag("Joystick").GetComponent<FixedJoystick>();
+            //for wall spawn positioning
+            wallJoystick = GameObject.FindWithTag("wallJoystick").GetComponent<FixedJoystick>();
+            //listener for 
+            //GameObject.FindWithTag("wallJoystick").GetComponent<Button>().onClick.AddListener(DeployWall);
+
             GameObject.FindWithTag("Joybutton").GetComponent<Button>().onClick.AddListener(DeployBomb);
-            GameObject.FindWithTag("JoybuttonWall").GetComponent<Button>().onClick.AddListener(DeployWall);
+            //GameObject.FindWithTag("JoybuttonWall").GetComponent<Button>().onClick.AddListener(DeployWall);
             carryFlag = GameObject.FindWithTag("Carry Flag");
 
         }
@@ -74,9 +92,16 @@ public class PlayerController1 : MonoBehaviour
             isPlayer1 = false;
             getAxisHorizontal = "Horizontal2";
             getAxisVertical = "Vertical2";
+
+            getWallAxisHor = "HorizontalWall2";
+            getWallAxisVert = "VerticalWall2";
+
             joystick = GameObject.FindWithTag("Joystick2").GetComponent<FixedJoystick>();
+            wallJoystick = GameObject.FindWithTag("wallJoystick2").GetComponent<FixedJoystick>();
+            //GameObject.FindWithTag("wallJoystick2").GetComponent<Button>().onClick.AddListener(DeployWall);
+
             GameObject.FindWithTag("Joybutton2").GetComponent<Button>().onClick.AddListener(DeployBomb);
-            GameObject.FindWithTag("JoybuttonWall2").GetComponent<Button>().onClick.AddListener(DeployWall);
+            //GameObject.FindWithTag("JoybuttonWall2").GetComponent<Button>().onClick.AddListener(DeployWall);
             carryFlag = GameObject.FindWithTag("Carry Flag 2");
         }
 
@@ -102,6 +127,9 @@ public class PlayerController1 : MonoBehaviour
         Vector3 moveDirectionJoystick = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
         moveDirectionWithSpeedJoystick = moveDirectionJoystick * speed;
 
+        wallDirectionJoystick = new Vector3(wallJoystick.Horizontal, 0.0f, wallJoystick.Vertical);
+
+
         //this decides if the player is on computer keyboard or mobile device
         if (moveDirection != Vector3.zero)
         {
@@ -122,10 +150,17 @@ public class PlayerController1 : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection.normalized), 0.5f);
         }
 
+
+
         //DROPPING PREFABS(WALLS AND BOMBS) SECTION
 
+        if (wallDirectionJoystick != Vector3.zero)
+        {
+
+        }
+
         //bomb cooldown conditional
-        if(bombCooldown > 0 && !isBombCooledDown)
+        if (bombCooldown > 0 && !isBombCooledDown)
         {
             bombCooldown -= Time.deltaTime;
         }
@@ -149,6 +184,19 @@ public class PlayerController1 : MonoBehaviour
             SetBombCountText();
         }
 
+        //WALL INSTANTIATE FOR MOBILE
+        //if (wallDirectionJoystick != Vector3.zero && wallCount > 0 && !hasBuiltWall)
+        //{
+        //    Instantiate(wall, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
+        //    wallCount -= 1;
+        //    SetWallCountText();
+        //    hasBuiltWall = true;
+        //} else if (wallDirectionJoystick == Vector3.zero && hasBuiltWall)
+        //{
+        //    hasBuiltWall = false;
+        //}
+
+        //WALL INSTANTIATE FOR KEYS
         if ((Input.GetKeyDown(KeyCode.V) && isPlayer1 && wallCount > 0) || (Input.GetKeyDown(KeyCode.Comma) && !isPlayer1 && wallCount > 0))
         {
             Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
@@ -168,6 +216,11 @@ public class PlayerController1 : MonoBehaviour
             carryFlag.SetActive(false);
             //GameObject.FindWithTag("Flag2").SetActive(true);
         }
+
+
+
+
+
         Collider[] hits = Physics.OverlapSphere(transform.position, overlapColliderRange);
         foreach (Collider hit in hits)
         {
@@ -180,6 +233,10 @@ public class PlayerController1 : MonoBehaviour
             }
         }
     }
+
+
+
+
 
 
     //here we can add items to inventory when entering a pickup area MAYBE
@@ -230,13 +287,13 @@ public class PlayerController1 : MonoBehaviour
             isCarryingFlag = true;
         }
 
-        if (other.tag == "Flag1" && isCarryingFlag && isPlayer1)
+        if (other.tag == "Flag1" && isCarryingFlag && isPlayer1 || other.tag == "End Zone" && isCarryingFlag && isPlayer1)
         {
             Debug.Log("Red player wins!");
             //restarts the game--should change this to option menu
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        else if (other.tag == "Flag2" && isCarryingFlag && !isPlayer1)
+        else if (other.tag == "Flag2" && isCarryingFlag && !isPlayer1 || other.tag == "End Zone 2" && isCarryingFlag && !isPlayer1)
         {
             Debug.Log("Blue player wins!");
             //restarts the game--should change this to option menu
@@ -249,7 +306,7 @@ public class PlayerController1 : MonoBehaviour
     {
         if (bombCount > 0)
         {
-            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z) + (transform.forward * 2), transform.rotation);
+            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z) + (transform.forward * 2), transform.rotation);
             bombCount -= 1;
             SetBombCountText();
 
@@ -260,13 +317,25 @@ public class PlayerController1 : MonoBehaviour
             SetBombCountText();
         }
     }
-    private void DeployWall()
+
+    public void DeployWallTemp()
+    {
+        if (wallDirectionJoystick != Vector3.zero)
+        {
+            Instantiate(wallTemp, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
+        }
+    }
+
+    public void DeployWall()
     {
         if (wallCount > 0)
         {
-            Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
-            wallCount -= 1;
-            SetWallCountText();
+            if (wallDirectionJoystick != Vector3.zero)
+            {
+                Instantiate(wall, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
+                wallCount -= 1;
+                SetWallCountText();
+            }
         }
         else if (wallCount == 0)
         {

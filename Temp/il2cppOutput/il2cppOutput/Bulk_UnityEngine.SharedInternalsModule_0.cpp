@@ -70,6 +70,8 @@ struct NativeWritableSelfAttribute_tBDA68FDFF238481055D2A5BE4E6D66A5FAA7013D;
 struct NotNullAttribute_t04A526B0B7DD6B37D2FFC6E5079575E0C461E2A0;
 // UnityEngine.Bindings.StaticAccessorAttribute
 struct StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2;
+// UnityEngine.Bindings.ThreadSafeAttribute
+struct ThreadSafeAttribute_t3FB9EE5993C748628BC06D9D46ACA3A58FDAE317;
 // UnityEngine.Bindings.UnmarshalledAttribute
 struct UnmarshalledAttribute_tAAB7B6FBEEA7672AE8DB6EC9676CA8911A422B3A;
 // UnityEngine.Bindings.VisibleToOtherModulesAttribute
@@ -1358,6 +1360,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // TARGETTYPE_T8EE9F64281EE7EA0EDE81FA41E92A8C44C0F31BA_H
+#ifndef THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
+#define THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Bindings.ThreadSafeAttribute
+struct  ThreadSafeAttribute_t3FB9EE5993C748628BC06D9D46ACA3A58FDAE317  : public NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
 #ifndef ARGUMENTNULLEXCEPTION_T581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_H
 #define ARGUMENTNULLEXCEPTION_T581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_H
 #ifdef __clang__
@@ -2306,6 +2328,23 @@ extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Type_m85233B66B14
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.Bindings.ThreadSafeAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void ThreadSafeAttribute__ctor_mC3058002BD52E2EB8475B8115A1AC5FFCA53E1DD (ThreadSafeAttribute_t3FB9EE5993C748628BC06D9D46ACA3A58FDAE317 * __this, const RuntimeMethod* method)
+{
+	{
+		NativeMethodAttribute__ctor_mE26CCBB6FA1CF524CDF21471D4D513E7DE1C5B43(__this, /*hidden argument*/NULL);
+		NativeMethodAttribute_set_IsThreadSafe_m11B322FBC460DD97E27F24B6686F5D8C4077F7E6(__this, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

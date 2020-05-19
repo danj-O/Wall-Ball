@@ -36448,6 +36448,15 @@ IL_0018:
 		return L_15;
 	}
 }
+// System.Void System.Runtime.Serialization.SerializationInfoEnumerator::Reset()
+extern "C" IL2CPP_METHOD_ATTR void SerializationInfoEnumerator_Reset_m6AB5305A2ED1A370080E22C4A6D3FD18397F5961 (SerializationInfoEnumerator_tB72162C419D705A40F34DDFEB18E6ACA347C54E5 * __this, const RuntimeMethod* method)
+{
+	{
+		__this->set_m_currItem_4((-1));
+		__this->set_m_current_5((bool)0);
+		return;
+	}
+}
 // System.String System.Runtime.Serialization.SerializationInfoEnumerator::get_Name()
 extern "C" IL2CPP_METHOD_ATTR String_t* SerializationInfoEnumerator_get_Name_m925E3C668A70982F88C8EBEEB86BA0D45B71857E (SerializationInfoEnumerator_tB72162C419D705A40F34DDFEB18E6ACA347C54E5 * __this, const RuntimeMethod* method)
 {

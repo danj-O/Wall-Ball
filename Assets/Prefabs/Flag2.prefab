@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7091182287155351770}
   - component: {fileID: 7091182287155351749}
   - component: {fileID: 7091182287155351748}
-  - component: {fileID: 7091182287155351751}
   m_Layer: 0
   m_Name: Flag2
   m_TagString: Flag2
@@ -92,16 +91,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9834365, y: 1.9270949, z: 1.7779074}
   m_Center: {x: -0.10398482, y: 0.057325058, z: 0.08555636}
---- !u!114 &7091182287155351751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7091182287155351750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b33d371f2407d4a0fa779bc4cba431d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}

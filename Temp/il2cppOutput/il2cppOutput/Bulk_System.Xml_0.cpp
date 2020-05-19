@@ -1031,6 +1031,18 @@ IL_003b:
 		return (bool)((!(((RuntimeObject*)(XmlNode_t07D70045D843753E4FE8AFE40FD36244E6B6D7FB *)L_6) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
 	}
 }
+// System.Void System.Xml.XmlChildEnumerator::System.Collections.IEnumerator.Reset()
+extern "C" IL2CPP_METHOD_ATTR void XmlChildEnumerator_System_Collections_IEnumerator_Reset_m3EF3533A19F3926CDCCD9CD82498D01B5F7EA08A (XmlChildEnumerator_tA5E9216BDDC135630E6C1283B8976192A9847ABA * __this, const RuntimeMethod* method)
+{
+	{
+		__this->set_isFirst_2((bool)1);
+		XmlNode_t07D70045D843753E4FE8AFE40FD36244E6B6D7FB * L_0 = __this->get_container_0();
+		NullCheck(L_0);
+		XmlNode_t07D70045D843753E4FE8AFE40FD36244E6B6D7FB * L_1 = VirtFuncInvoker0< XmlNode_t07D70045D843753E4FE8AFE40FD36244E6B6D7FB * >::Invoke(9 /* System.Xml.XmlNode System.Xml.XmlNode::get_FirstChild() */, L_0);
+		__this->set_child_1(L_1);
+		return;
+	}
+}
 // System.Object System.Xml.XmlChildEnumerator::System.Collections.IEnumerator.get_Current()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * XmlChildEnumerator_System_Collections_IEnumerator_get_Current_m2E52170DBEF6245A93126D3C7FF60ED17DDE2BD1 (XmlChildEnumerator_tA5E9216BDDC135630E6C1283B8976192A9847ABA * __this, const RuntimeMethod* method)
 {

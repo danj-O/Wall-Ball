@@ -1206,6 +1206,7 @@ extern const uint32_t Context_get_NeedsContextSink_m87D439FC7478E73CD069A510E641
 extern const uint32_t CrossContextChannel_AsyncProcessMessage_m7A467BB10101E5AE3316FE547DB1BFBC00C73118_MetadataUsageId;
 extern const uint32_t CrossContextChannel_SyncProcessMessage_m9413B3BDD24E7161604BFECBA353AB5772FC3F04_MetadataUsageId;
 extern const uint32_t DictionaryEnumerator_MoveNext_mB1768E3DC0980322503D658FE95B9443812991C1_MetadataUsageId;
+extern const uint32_t DictionaryEnumerator_Reset_m13E09097E0CEBBB90906F8A85DAE7E4B41AF450E_MetadataUsageId;
 extern const uint32_t DictionaryEnumerator__ctor_mA7D9DB0B74A0FB195C28FF779A366377D32FCC85_MetadataUsageId;
 extern const uint32_t DictionaryEnumerator_get_Current_m6DDDCF2A497034F7A84013A02B3B046CB0AC74C9_MetadataUsageId;
 extern const uint32_t DictionaryEnumerator_get_Entry_m43D72FBF041254775BFFD1B888E35ED32CB6E365_MetadataUsageId;
@@ -31495,6 +31496,23 @@ IL_0060:
 	}
 	{
 		return (bool)0;
+	}
+}
+// System.Void System.Runtime.Remoting.Messaging.MessageDictionary_DictionaryEnumerator::Reset()
+extern "C" IL2CPP_METHOD_ATTR void DictionaryEnumerator_Reset_m13E09097E0CEBBB90906F8A85DAE7E4B41AF450E (DictionaryEnumerator_tA162086B57068DE62A7BAD2CAA7003E632DE2AB9 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (DictionaryEnumerator_Reset_m13E09097E0CEBBB90906F8A85DAE7E4B41AF450E_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		__this->set__posMethod_2((-1));
+		RuntimeObject* L_0 = __this->get__hashtableEnum_1();
+		NullCheck(L_0);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Collections.IEnumerator::Reset() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_0);
+		return;
 	}
 }
 // System.Collections.DictionaryEntry System.Runtime.Remoting.Messaging.MessageDictionary_DictionaryEnumerator::get_Entry()
