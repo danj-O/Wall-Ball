@@ -50,7 +50,9 @@ public class PlayerController1 : MonoBehaviour
     public Text wallCountText;
     public Text bombCountText;
 
-    public Text WinnerText;
+    private string winningPlayer;
+    public Text winnerText;
+    public winningScreen winningScreen;
 
     public GameObject carryFlag;
     public GameObject flag;
@@ -116,6 +118,10 @@ public class PlayerController1 : MonoBehaviour
 
         SetWallCountText();
         SetBombCountText();
+
+        winningScreen.gameObject.SetActive(false);
+        winnerText.text = "";
+
     }
 
     // Update is called once per frame
@@ -290,14 +296,21 @@ public class PlayerController1 : MonoBehaviour
         if (other.tag == "Flag1" && isCarryingFlag && isPlayer1 || other.tag == "End Zone" && isCarryingFlag && isPlayer1)
         {
             Debug.Log("Red player wins!");
+            winningPlayer = "RED PLAYER ";
+            setWinnerText();
+            winningScreen.gameObject.SetActive(true);
+
             //restarts the game--should change this to option menu
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (other.tag == "Flag2" && isCarryingFlag && !isPlayer1 || other.tag == "End Zone 2" && isCarryingFlag && !isPlayer1)
         {
             Debug.Log("Blue player wins!");
+            winningPlayer = "BLUE PLAYER ";
+            setWinnerText();
+            winningScreen.gameObject.SetActive(true);
             //restarts the game--should change this to option menu
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -353,5 +366,10 @@ public class PlayerController1 : MonoBehaviour
     private void SetBombCountText()
     {
         bombCountText.text = "Bombs: " + bombCount.ToString();
+    }
+
+    private void setWinnerText()
+    {
+        winnerText.text = winningPlayer + "WINS!";
     }
 }

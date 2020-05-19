@@ -62,6 +62,8 @@ struct Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030;
 struct VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1;
 // WallStore
 struct WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588;
+// winningScreen
+struct winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8;
 
 
 
@@ -1251,26 +1253,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // FLAGCONTAINERSCRIPT_TE826EA8386F806B4334C87EAE992C10255C9E296_H
-#ifndef FLAGSCRIPT_T93AF4B2C3A91DE4571D4CFD807902EB185A3A1E7_H
-#define FLAGSCRIPT_T93AF4B2C3A91DE4571D4CFD807902EB185A3A1E7_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// FlagScript
-struct  FlagScript_t93AF4B2C3A91DE4571D4CFD807902EB185A3A1E7  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // FLAGSCRIPT_T93AF4B2C3A91DE4571D4CFD807902EB185A3A1E7_H
 #ifndef HEALTHBAR_T6F257D50776AE421D484077F9DD032D2CF76B729_H
 #define HEALTHBAR_T6F257D50776AE421D484077F9DD032D2CF76B729_H
 #ifdef __clang__
@@ -1569,6 +1551,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // JOYSTICKSETTEREXAMPLE_T0C714E5922483B0E1D4C129300C7C8FD79E4F435_H
+#ifndef MAINMENU_T7CD5D54EA3EBFAE6ECFE46E095EFEBFD14C45105_H
+#define MAINMENU_T7CD5D54EA3EBFAE6ECFE46E095EFEBFD14C45105_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// MainMenu
+struct  MainMenu_t7CD5D54EA3EBFAE6ECFE46E095EFEBFD14C45105  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // MAINMENU_T7CD5D54EA3EBFAE6ECFE46E095EFEBFD14C45105_H
 #ifndef MOVEFORWARD_TA68D4EE90033B0E6530CE89AC3C4D23A4EE2230C_H
 #define MOVEFORWARD_TA68D4EE90033B0E6530CE89AC3C4D23A4EE2230C_H
 #ifdef __clang__
@@ -1950,36 +1952,42 @@ public:
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___bomb_20;
 	// UnityEngine.GameObject PlayerController1::wall
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___wall_21;
+	// UnityEngine.GameObject PlayerController1::wallTemp
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___wallTemp_22;
 	// BombStore PlayerController1::bombStore
-	BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * ___bombStore_22;
+	BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * ___bombStore_23;
 	// WallStore PlayerController1::wallStore
-	WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * ___wallStore_23;
+	WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * ___wallStore_24;
 	// System.Int32 PlayerController1::wallCount
-	int32_t ___wallCount_24;
+	int32_t ___wallCount_25;
 	// System.Int32 PlayerController1::bombCount
-	int32_t ___bombCount_25;
+	int32_t ___bombCount_26;
 	// System.Single PlayerController1::bombCooldown
-	float ___bombCooldown_26;
+	float ___bombCooldown_27;
 	// System.Single PlayerController1::bombCooldownDefault
-	float ___bombCooldownDefault_27;
+	float ___bombCooldownDefault_28;
 	// System.Boolean PlayerController1::isBombCooledDown
-	bool ___isBombCooledDown_28;
+	bool ___isBombCooledDown_29;
 	// UnityEngine.UI.Text PlayerController1::wallCountText
-	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___wallCountText_29;
+	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___wallCountText_30;
 	// UnityEngine.UI.Text PlayerController1::bombCountText
-	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___bombCountText_30;
-	// UnityEngine.UI.Text PlayerController1::WinnerText
-	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___WinnerText_31;
+	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___bombCountText_31;
+	// System.String PlayerController1::winningPlayer
+	String_t* ___winningPlayer_32;
+	// UnityEngine.UI.Text PlayerController1::winnerText
+	Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * ___winnerText_33;
+	// winningScreen PlayerController1::winningScreen
+	winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8 * ___winningScreen_34;
 	// UnityEngine.GameObject PlayerController1::carryFlag
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___carryFlag_32;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___carryFlag_35;
 	// UnityEngine.GameObject PlayerController1::flag
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___flag_33;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___flag_36;
 	// System.Boolean PlayerController1::isCarryingFlag
-	bool ___isCarryingFlag_34;
+	bool ___isCarryingFlag_37;
 	// System.Boolean PlayerController1::flagIsDropped
-	bool ___flagIsDropped_35;
+	bool ___flagIsDropped_38;
 	// System.Single PlayerController1::overlapColliderRange
-	float ___overlapColliderRange_36;
+	float ___overlapColliderRange_39;
 
 public:
 	inline static int32_t get_offset_of_isPlayer1_4() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___isPlayer1_4)); }
@@ -2137,131 +2145,158 @@ public:
 		Il2CppCodeGenWriteBarrier((&___wall_21), value);
 	}
 
-	inline static int32_t get_offset_of_bombStore_22() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombStore_22)); }
-	inline BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * get_bombStore_22() const { return ___bombStore_22; }
-	inline BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE ** get_address_of_bombStore_22() { return &___bombStore_22; }
-	inline void set_bombStore_22(BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * value)
+	inline static int32_t get_offset_of_wallTemp_22() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallTemp_22)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_wallTemp_22() const { return ___wallTemp_22; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_wallTemp_22() { return &___wallTemp_22; }
+	inline void set_wallTemp_22(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___bombStore_22 = value;
-		Il2CppCodeGenWriteBarrier((&___bombStore_22), value);
+		___wallTemp_22 = value;
+		Il2CppCodeGenWriteBarrier((&___wallTemp_22), value);
 	}
 
-	inline static int32_t get_offset_of_wallStore_23() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallStore_23)); }
-	inline WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * get_wallStore_23() const { return ___wallStore_23; }
-	inline WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 ** get_address_of_wallStore_23() { return &___wallStore_23; }
-	inline void set_wallStore_23(WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * value)
+	inline static int32_t get_offset_of_bombStore_23() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombStore_23)); }
+	inline BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * get_bombStore_23() const { return ___bombStore_23; }
+	inline BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE ** get_address_of_bombStore_23() { return &___bombStore_23; }
+	inline void set_bombStore_23(BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE * value)
 	{
-		___wallStore_23 = value;
-		Il2CppCodeGenWriteBarrier((&___wallStore_23), value);
+		___bombStore_23 = value;
+		Il2CppCodeGenWriteBarrier((&___bombStore_23), value);
 	}
 
-	inline static int32_t get_offset_of_wallCount_24() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallCount_24)); }
-	inline int32_t get_wallCount_24() const { return ___wallCount_24; }
-	inline int32_t* get_address_of_wallCount_24() { return &___wallCount_24; }
-	inline void set_wallCount_24(int32_t value)
+	inline static int32_t get_offset_of_wallStore_24() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallStore_24)); }
+	inline WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * get_wallStore_24() const { return ___wallStore_24; }
+	inline WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 ** get_address_of_wallStore_24() { return &___wallStore_24; }
+	inline void set_wallStore_24(WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588 * value)
 	{
-		___wallCount_24 = value;
+		___wallStore_24 = value;
+		Il2CppCodeGenWriteBarrier((&___wallStore_24), value);
 	}
 
-	inline static int32_t get_offset_of_bombCount_25() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCount_25)); }
-	inline int32_t get_bombCount_25() const { return ___bombCount_25; }
-	inline int32_t* get_address_of_bombCount_25() { return &___bombCount_25; }
-	inline void set_bombCount_25(int32_t value)
+	inline static int32_t get_offset_of_wallCount_25() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallCount_25)); }
+	inline int32_t get_wallCount_25() const { return ___wallCount_25; }
+	inline int32_t* get_address_of_wallCount_25() { return &___wallCount_25; }
+	inline void set_wallCount_25(int32_t value)
 	{
-		___bombCount_25 = value;
+		___wallCount_25 = value;
 	}
 
-	inline static int32_t get_offset_of_bombCooldown_26() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCooldown_26)); }
-	inline float get_bombCooldown_26() const { return ___bombCooldown_26; }
-	inline float* get_address_of_bombCooldown_26() { return &___bombCooldown_26; }
-	inline void set_bombCooldown_26(float value)
+	inline static int32_t get_offset_of_bombCount_26() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCount_26)); }
+	inline int32_t get_bombCount_26() const { return ___bombCount_26; }
+	inline int32_t* get_address_of_bombCount_26() { return &___bombCount_26; }
+	inline void set_bombCount_26(int32_t value)
 	{
-		___bombCooldown_26 = value;
+		___bombCount_26 = value;
 	}
 
-	inline static int32_t get_offset_of_bombCooldownDefault_27() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCooldownDefault_27)); }
-	inline float get_bombCooldownDefault_27() const { return ___bombCooldownDefault_27; }
-	inline float* get_address_of_bombCooldownDefault_27() { return &___bombCooldownDefault_27; }
-	inline void set_bombCooldownDefault_27(float value)
+	inline static int32_t get_offset_of_bombCooldown_27() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCooldown_27)); }
+	inline float get_bombCooldown_27() const { return ___bombCooldown_27; }
+	inline float* get_address_of_bombCooldown_27() { return &___bombCooldown_27; }
+	inline void set_bombCooldown_27(float value)
 	{
-		___bombCooldownDefault_27 = value;
+		___bombCooldown_27 = value;
 	}
 
-	inline static int32_t get_offset_of_isBombCooledDown_28() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___isBombCooledDown_28)); }
-	inline bool get_isBombCooledDown_28() const { return ___isBombCooledDown_28; }
-	inline bool* get_address_of_isBombCooledDown_28() { return &___isBombCooledDown_28; }
-	inline void set_isBombCooledDown_28(bool value)
+	inline static int32_t get_offset_of_bombCooldownDefault_28() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCooldownDefault_28)); }
+	inline float get_bombCooldownDefault_28() const { return ___bombCooldownDefault_28; }
+	inline float* get_address_of_bombCooldownDefault_28() { return &___bombCooldownDefault_28; }
+	inline void set_bombCooldownDefault_28(float value)
 	{
-		___isBombCooledDown_28 = value;
+		___bombCooldownDefault_28 = value;
 	}
 
-	inline static int32_t get_offset_of_wallCountText_29() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallCountText_29)); }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_wallCountText_29() const { return ___wallCountText_29; }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_wallCountText_29() { return &___wallCountText_29; }
-	inline void set_wallCountText_29(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
+	inline static int32_t get_offset_of_isBombCooledDown_29() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___isBombCooledDown_29)); }
+	inline bool get_isBombCooledDown_29() const { return ___isBombCooledDown_29; }
+	inline bool* get_address_of_isBombCooledDown_29() { return &___isBombCooledDown_29; }
+	inline void set_isBombCooledDown_29(bool value)
 	{
-		___wallCountText_29 = value;
-		Il2CppCodeGenWriteBarrier((&___wallCountText_29), value);
+		___isBombCooledDown_29 = value;
 	}
 
-	inline static int32_t get_offset_of_bombCountText_30() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCountText_30)); }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_bombCountText_30() const { return ___bombCountText_30; }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_bombCountText_30() { return &___bombCountText_30; }
-	inline void set_bombCountText_30(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
+	inline static int32_t get_offset_of_wallCountText_30() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___wallCountText_30)); }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_wallCountText_30() const { return ___wallCountText_30; }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_wallCountText_30() { return &___wallCountText_30; }
+	inline void set_wallCountText_30(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
 	{
-		___bombCountText_30 = value;
-		Il2CppCodeGenWriteBarrier((&___bombCountText_30), value);
+		___wallCountText_30 = value;
+		Il2CppCodeGenWriteBarrier((&___wallCountText_30), value);
 	}
 
-	inline static int32_t get_offset_of_WinnerText_31() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___WinnerText_31)); }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_WinnerText_31() const { return ___WinnerText_31; }
-	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_WinnerText_31() { return &___WinnerText_31; }
-	inline void set_WinnerText_31(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
+	inline static int32_t get_offset_of_bombCountText_31() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___bombCountText_31)); }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_bombCountText_31() const { return ___bombCountText_31; }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_bombCountText_31() { return &___bombCountText_31; }
+	inline void set_bombCountText_31(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
 	{
-		___WinnerText_31 = value;
-		Il2CppCodeGenWriteBarrier((&___WinnerText_31), value);
+		___bombCountText_31 = value;
+		Il2CppCodeGenWriteBarrier((&___bombCountText_31), value);
 	}
 
-	inline static int32_t get_offset_of_carryFlag_32() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___carryFlag_32)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_carryFlag_32() const { return ___carryFlag_32; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_carryFlag_32() { return &___carryFlag_32; }
-	inline void set_carryFlag_32(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_winningPlayer_32() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___winningPlayer_32)); }
+	inline String_t* get_winningPlayer_32() const { return ___winningPlayer_32; }
+	inline String_t** get_address_of_winningPlayer_32() { return &___winningPlayer_32; }
+	inline void set_winningPlayer_32(String_t* value)
 	{
-		___carryFlag_32 = value;
-		Il2CppCodeGenWriteBarrier((&___carryFlag_32), value);
+		___winningPlayer_32 = value;
+		Il2CppCodeGenWriteBarrier((&___winningPlayer_32), value);
 	}
 
-	inline static int32_t get_offset_of_flag_33() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___flag_33)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_flag_33() const { return ___flag_33; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_flag_33() { return &___flag_33; }
-	inline void set_flag_33(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_winnerText_33() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___winnerText_33)); }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * get_winnerText_33() const { return ___winnerText_33; }
+	inline Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 ** get_address_of_winnerText_33() { return &___winnerText_33; }
+	inline void set_winnerText_33(Text_tE9317B57477F4B50AA4C16F460DE6F82DAD6D030 * value)
 	{
-		___flag_33 = value;
-		Il2CppCodeGenWriteBarrier((&___flag_33), value);
+		___winnerText_33 = value;
+		Il2CppCodeGenWriteBarrier((&___winnerText_33), value);
 	}
 
-	inline static int32_t get_offset_of_isCarryingFlag_34() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___isCarryingFlag_34)); }
-	inline bool get_isCarryingFlag_34() const { return ___isCarryingFlag_34; }
-	inline bool* get_address_of_isCarryingFlag_34() { return &___isCarryingFlag_34; }
-	inline void set_isCarryingFlag_34(bool value)
+	inline static int32_t get_offset_of_winningScreen_34() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___winningScreen_34)); }
+	inline winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8 * get_winningScreen_34() const { return ___winningScreen_34; }
+	inline winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8 ** get_address_of_winningScreen_34() { return &___winningScreen_34; }
+	inline void set_winningScreen_34(winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8 * value)
 	{
-		___isCarryingFlag_34 = value;
+		___winningScreen_34 = value;
+		Il2CppCodeGenWriteBarrier((&___winningScreen_34), value);
 	}
 
-	inline static int32_t get_offset_of_flagIsDropped_35() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___flagIsDropped_35)); }
-	inline bool get_flagIsDropped_35() const { return ___flagIsDropped_35; }
-	inline bool* get_address_of_flagIsDropped_35() { return &___flagIsDropped_35; }
-	inline void set_flagIsDropped_35(bool value)
+	inline static int32_t get_offset_of_carryFlag_35() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___carryFlag_35)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_carryFlag_35() const { return ___carryFlag_35; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_carryFlag_35() { return &___carryFlag_35; }
+	inline void set_carryFlag_35(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___flagIsDropped_35 = value;
+		___carryFlag_35 = value;
+		Il2CppCodeGenWriteBarrier((&___carryFlag_35), value);
 	}
 
-	inline static int32_t get_offset_of_overlapColliderRange_36() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___overlapColliderRange_36)); }
-	inline float get_overlapColliderRange_36() const { return ___overlapColliderRange_36; }
-	inline float* get_address_of_overlapColliderRange_36() { return &___overlapColliderRange_36; }
-	inline void set_overlapColliderRange_36(float value)
+	inline static int32_t get_offset_of_flag_36() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___flag_36)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_flag_36() const { return ___flag_36; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_flag_36() { return &___flag_36; }
+	inline void set_flag_36(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___overlapColliderRange_36 = value;
+		___flag_36 = value;
+		Il2CppCodeGenWriteBarrier((&___flag_36), value);
+	}
+
+	inline static int32_t get_offset_of_isCarryingFlag_37() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___isCarryingFlag_37)); }
+	inline bool get_isCarryingFlag_37() const { return ___isCarryingFlag_37; }
+	inline bool* get_address_of_isCarryingFlag_37() { return &___isCarryingFlag_37; }
+	inline void set_isCarryingFlag_37(bool value)
+	{
+		___isCarryingFlag_37 = value;
+	}
+
+	inline static int32_t get_offset_of_flagIsDropped_38() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___flagIsDropped_38)); }
+	inline bool get_flagIsDropped_38() const { return ___flagIsDropped_38; }
+	inline bool* get_address_of_flagIsDropped_38() { return &___flagIsDropped_38; }
+	inline void set_flagIsDropped_38(bool value)
+	{
+		___flagIsDropped_38 = value;
+	}
+
+	inline static int32_t get_offset_of_overlapColliderRange_39() { return static_cast<int32_t>(offsetof(PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A, ___overlapColliderRange_39)); }
+	inline float get_overlapColliderRange_39() const { return ___overlapColliderRange_39; }
+	inline float* get_address_of_overlapColliderRange_39() { return &___overlapColliderRange_39; }
+	inline void set_overlapColliderRange_39(float value)
+	{
+		___overlapColliderRange_39 = value;
 	}
 };
 
@@ -2439,6 +2474,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // WALLSTORE_TCF9BDA322E43E4F53FDF433E3AF84D00F07BC588_H
+#ifndef WINNINGSCREEN_TBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8_H
+#define WINNINGSCREEN_TBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// winningScreen
+struct  winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // WINNINGSCREEN_TBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8_H
 #ifndef DYNAMICJOYSTICK_TCF78F682E54A0DC802556F259FCCD587476C2DC3_H
 #define DYNAMICJOYSTICK_TCF78F682E54A0DC802556F259FCCD587476C2DC3_H
 #ifdef __clang__
@@ -2598,24 +2653,23 @@ extern const int32_t g_FieldOffsetTable2603[2] =
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2604 = { sizeof (__StaticArrayInitTypeSizeU3D12_t02D4D72A8B5221D32AB6F2F2DD8D17E86997BF22)+ sizeof (RuntimeObject), sizeof(__StaticArrayInitTypeSizeU3D12_t02D4D72A8B5221D32AB6F2F2DD8D17E86997BF22 ), 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2605 = { sizeof (__StaticArrayInitTypeSizeU3D40_tB9EB85DC7184311C5BB54C1E612DC4F2D7A15F5D)+ sizeof (RuntimeObject), sizeof(__StaticArrayInitTypeSizeU3D40_tB9EB85DC7184311C5BB54C1E612DC4F2D7A15F5D ), 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2606 = { sizeof (U3CModuleU3E_t6CDDDF959E7E18A6744E43B613F41CDAC780256A), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2607 = { sizeof (FlagScript_t93AF4B2C3A91DE4571D4CFD807902EB185A3A1E7), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2608 = { sizeof (JoystickPlayerExample_tC21BF4F29E220888E49AD1C28ED50EA82E0C583B), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2608[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2607 = { sizeof (JoystickPlayerExample_tC21BF4F29E220888E49AD1C28ED50EA82E0C583B), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2607[3] = 
 {
 	JoystickPlayerExample_tC21BF4F29E220888E49AD1C28ED50EA82E0C583B::get_offset_of_speed_4(),
 	JoystickPlayerExample_tC21BF4F29E220888E49AD1C28ED50EA82E0C583B::get_offset_of_variableJoystick_5(),
 	JoystickPlayerExample_tC21BF4F29E220888E49AD1C28ED50EA82E0C583B::get_offset_of_rb_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2609 = { sizeof (JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2609[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2608 = { sizeof (JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2608[4] = 
 {
 	JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435::get_offset_of_variableJoystick_4(),
 	JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435::get_offset_of_valueText_5(),
 	JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435::get_offset_of_background_6(),
 	JoystickSetterExample_t0C714E5922483B0E1D4C129300C7C8FD79E4F435::get_offset_of_axisSprites_7(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2610 = { sizeof (Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2610[11] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2609 = { sizeof (Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2609[11] = 
 {
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153::get_offset_of_handleRange_4(),
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153::get_offset_of_deadZone_5(),
@@ -2629,38 +2683,38 @@ extern const int32_t g_FieldOffsetTable2610[11] =
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153::get_offset_of_cam_13(),
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153::get_offset_of_input_14(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2611 = { sizeof (AxisOptions_t5AC84B43FFEB20E770F1E4CF5EC2D3AADA9D18D0)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable2611[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2610 = { sizeof (AxisOptions_t5AC84B43FFEB20E770F1E4CF5EC2D3AADA9D18D0)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable2610[4] = 
 {
 	AxisOptions_t5AC84B43FFEB20E770F1E4CF5EC2D3AADA9D18D0::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2612 = { sizeof (DynamicJoystick_tCF78F682E54A0DC802556F259FCCD587476C2DC3), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2612[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2611 = { sizeof (DynamicJoystick_tCF78F682E54A0DC802556F259FCCD587476C2DC3), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2611[1] = 
 {
 	DynamicJoystick_tCF78F682E54A0DC802556F259FCCD587476C2DC3::get_offset_of_moveThreshold_15(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2613 = { sizeof (FixedJoystick_tA793D5240D38B506203B52A20B5E94895CC41909), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2614 = { sizeof (FloatingJoystick_tBA7C79E5FC21EE9F117E0583A6A5FD38EFF5F8FE), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2615 = { sizeof (VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2615[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2612 = { sizeof (FixedJoystick_tA793D5240D38B506203B52A20B5E94895CC41909), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2613 = { sizeof (FloatingJoystick_tBA7C79E5FC21EE9F117E0583A6A5FD38EFF5F8FE), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2614 = { sizeof (VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2614[3] = 
 {
 	VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1::get_offset_of_moveThreshold_15(),
 	VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1::get_offset_of_joystickType_16(),
 	VariableJoystick_t9C1A77B6CFC93759F7E8F5F84F9EDBFF28A80ED1::get_offset_of_fixedPosition_17(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2616 = { sizeof (JoystickType_t8F089F639C0CED5CA78941C78E1CC72EB61892B6)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable2616[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2615 = { sizeof (JoystickType_t8F089F639C0CED5CA78941C78E1CC72EB61892B6)+ sizeof (RuntimeObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable2615[4] = 
 {
 	JoystickType_t8F089F639C0CED5CA78941C78E1CC72EB61892B6::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2617 = { sizeof (BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2617[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2616 = { sizeof (BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2616[6] = 
 {
 	BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25::get_offset_of_wallBreak_4(),
 	BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25::get_offset_of_bombTimer_5(),
@@ -2669,33 +2723,34 @@ extern const int32_t g_FieldOffsetTable2617[6] =
 	BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25::get_offset_of_explosion_8(),
 	BombExplode_t01DDA454E70FB8F9D9A9170F02DAB60F15D30A25::get_offset_of_particleDestroyDuration_9(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2618 = { sizeof (BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2618[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2617 = { sizeof (BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2617[3] = 
 {
 	BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE::get_offset_of_respawnTimer_4(),
 	BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE::get_offset_of_inventory_5(),
 	BombStore_tF3E8EF485341CDAEFC234403C0646E3EDAFF15EE::get_offset_of_bombStoreText_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2619 = { sizeof (Flag2ContainerScript_t6E975844F3979CEA4576945AF363F4B3962380DD), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2619[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2618 = { sizeof (Flag2ContainerScript_t6E975844F3979CEA4576945AF363F4B3962380DD), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2618[3] = 
 {
 	Flag2ContainerScript_t6E975844F3979CEA4576945AF363F4B3962380DD::get_offset_of_player_4(),
 	Flag2ContainerScript_t6E975844F3979CEA4576945AF363F4B3962380DD::get_offset_of_playerScript_5(),
 	Flag2ContainerScript_t6E975844F3979CEA4576945AF363F4B3962380DD::get_offset_of_flag_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2620 = { sizeof (FlagContainerScript_tE826EA8386F806B4334C87EAE992C10255C9E296), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2620[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2619 = { sizeof (FlagContainerScript_tE826EA8386F806B4334C87EAE992C10255C9E296), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2619[3] = 
 {
 	FlagContainerScript_tE826EA8386F806B4334C87EAE992C10255C9E296::get_offset_of_player_4(),
 	FlagContainerScript_tE826EA8386F806B4334C87EAE992C10255C9E296::get_offset_of_playerScript_5(),
 	FlagContainerScript_tE826EA8386F806B4334C87EAE992C10255C9E296::get_offset_of_flag_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2621 = { sizeof (HealthBar_t6F257D50776AE421D484077F9DD032D2CF76B729), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2621[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2620 = { sizeof (HealthBar_t6F257D50776AE421D484077F9DD032D2CF76B729), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2620[1] = 
 {
 	HealthBar_t6F257D50776AE421D484077F9DD032D2CF76B729::get_offset_of_slider_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2622 = { sizeof (Joybutton_t2CEF27A929C51F4778C115FCC5C175B713184B52), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2621 = { sizeof (Joybutton_t2CEF27A929C51F4778C115FCC5C175B713184B52), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2622 = { sizeof (MainMenu_t7CD5D54EA3EBFAE6ECFE46E095EFEBFD14C45105), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2623 = { sizeof (MoveForward_tA68D4EE90033B0E6530CE89AC3C4D23A4EE2230C), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable2623[1] = 
 {
@@ -2733,7 +2788,7 @@ extern const int32_t g_FieldOffsetTable2624[27] =
 	Player2Controller_t6B0F7E2BABE56AAD4C1D3C723E3FC9AE790FA53D::get_offset_of_overlapColliderRange_30(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2625 = { sizeof (PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2625[33] = 
+extern const int32_t g_FieldOffsetTable2625[36] = 
 {
 	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_isPlayer1_4(),
 	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_rb_5(),
@@ -2753,21 +2808,24 @@ extern const int32_t g_FieldOffsetTable2625[33] =
 	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_hasBuiltWall_19(),
 	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bomb_20(),
 	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wall_21(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombStore_22(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallStore_23(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallCount_24(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCount_25(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCooldown_26(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCooldownDefault_27(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_isBombCooledDown_28(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallCountText_29(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCountText_30(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_WinnerText_31(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_carryFlag_32(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_flag_33(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_isCarryingFlag_34(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_flagIsDropped_35(),
-	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_overlapColliderRange_36(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallTemp_22(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombStore_23(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallStore_24(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallCount_25(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCount_26(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCooldown_27(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCooldownDefault_28(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_isBombCooledDown_29(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_wallCountText_30(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_bombCountText_31(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_winningPlayer_32(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_winnerText_33(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_winningScreen_34(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_carryFlag_35(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_flag_36(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_isCarryingFlag_37(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_flagIsDropped_38(),
+	PlayerController1_tEF6D253E2176F0282BBB081F592798F725F6409A::get_offset_of_overlapColliderRange_39(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2626 = { sizeof (SuperWall_tD2655D2C9A398E249F6B67931A9E63065962344E), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable2626[4] = 
@@ -2792,6 +2850,7 @@ extern const int32_t g_FieldOffsetTable2628[3] =
 	WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588::get_offset_of_inventory_5(),
 	WallStore_tCF9BDA322E43E4F53FDF433E3AF84D00F07BC588::get_offset_of_wallStoreText_6(),
 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2629 = { sizeof (winningScreen_tBF73D2C0F1CBD274F94585AC40A452F5F80A4FC8), -1, 0, 0 };
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

@@ -395,22 +395,22 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<AudioManager>("Audio");
 	//64. LevelGameManager
 	RegisterUnityClass<LevelGameManager>("Core");
-	//65. BoxCollider
-	RegisterUnityClass<BoxCollider>("Physics");
-	//66. LightProbes
+	//65. LightProbes
 	RegisterUnityClass<LightProbes>("Core");
-	//67. LightmapSettings
+	//66. LightmapSettings
 	RegisterUnityClass<LightmapSettings>("Core");
-	//68. MeshCollider
-	RegisterUnityClass<MeshCollider>("Physics");
-	//69. CGProgram
+	//67. CGProgram
 	RegisterUnityClass<CGProgram>("Core");
-	//70. CapsuleCollider
-	RegisterUnityClass<CapsuleCollider>("Physics");
-	//71. Light
+	//68. Light
 	RegisterUnityClass<Light>("Core");
-	//72. RenderSettings
+	//69. RenderSettings
 	RegisterUnityClass<RenderSettings>("Core");
+	//70. BoxCollider
+	RegisterUnityClass<BoxCollider>("Physics");
+	//71. MeshCollider
+	RegisterUnityClass<MeshCollider>("Physics");
+	//72. CapsuleCollider
+	RegisterUnityClass<CapsuleCollider>("Physics");
 	//73. SphereCollider
 	RegisterUnityClass<SphereCollider>("Physics");
 

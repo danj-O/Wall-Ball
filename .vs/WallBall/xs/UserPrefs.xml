@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{358711D1-48CF-C8BA-F884-2C8B65D8E858}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/winningScreen.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController1.cs" Line="288" Column="90" />
-      <File FileName="Assets/Scripts/FlagContainerScript.cs" Line="16" Column="65" />
-      <File FileName="Assets/Scripts/Flag2ContainerScript.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController1.cs" Line="116" Column="23" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/winningScreen.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
