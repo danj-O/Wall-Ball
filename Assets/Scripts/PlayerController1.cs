@@ -9,6 +9,8 @@ public class PlayerController1 : MonoBehaviour
 {
     public bool isPlayer1;
 
+    private PlayerController1 otherPlayerScript;
+
     private Rigidbody rb;
     private Button bombButton;
     private Button wallButton;
@@ -17,8 +19,8 @@ public class PlayerController1 : MonoBehaviour
 
     private string getAxisHorizontal = "Horizontal";
     private string getAxisVertical = "Vertical";
-    private string getWallAxisHor;
-    private string getWallAxisVert;
+    private string getWallAxisHor = "HorizontalWall";
+    private string getWallAxisVert = "VerticalWall";
 
 
     private float speed = 20f;
@@ -34,14 +36,16 @@ public class PlayerController1 : MonoBehaviour
     public GameObject bomb;
     public GameObject wall;
     public GameObject wallTemp;
+    private Rigidbody wallTempRb;
+    private bool tempWallSpawned = false;
 
     public BombStore bombStore;
     public WallStore wallStore;
 
     //public int maxHealth = 100;
     //public int currentHealth;
-    private int wallCount;
-    private int bombCount;
+    public int wallCount;
+    public int bombCount;
 
     public float bombCooldown;
     private float bombCooldownDefault = 0f;
@@ -58,8 +62,11 @@ public class PlayerController1 : MonoBehaviour
     public GameObject flag;
     public bool isCarryingFlag;
     public bool flagIsDropped;
+    public bool isTagged;
 
     private float overlapColliderRange = 2.5f;
+
+    public bool inDangerZone;
 
 
     void Start()
@@ -71,6 +78,7 @@ public class PlayerController1 : MonoBehaviour
         if (gameObject.tag == "Playa")
         {
             isPlayer1 = true;
+            isTagged = false;
             getAxisHorizontal = "Horizontal";
             getAxisVertical = "Vertical";
 
@@ -225,7 +233,11 @@ public class PlayerController1 : MonoBehaviour
 
 
 
+        Collider[] zones = Physics.OverlapSphere(transform.position, 0f);
+        foreach (Collider zone in zones)
+        {
 
+        }
 
         Collider[] hits = Physics.OverlapSphere(transform.position, overlapColliderRange);
         foreach (Collider hit in hits)
@@ -236,16 +248,31 @@ public class PlayerController1 : MonoBehaviour
                 flagIsDropped = true;
                 carryFlag.SetActive(false);
                 Debug.Log("TAGGED!!! DROP THE GEM!");
+            } else if ((hit.tag == "Player2" && isPlayer1 && inDangerZone && !isTagged) || (hit.tag == "Playa" && !isPlayer1 && inDangerZone && !isTagged))
+            {
+                otherPlayerScript = hit.GetComponent<PlayerController1>();
+
+                int wallPenalty = wallCount / 2;
+                otherPlayerScript.wallCount = wallPenalty;
+                otherPlayerScript.SetWallCountText();
+                wallCount = wallPenalty;
+                SetWallCountText();
+
+                int bombPenalty = bombCount / 2;
+                otherPlayerScript.bombCount = bombPenalty;
+                otherPlayerScript.SetBombCountText();
+                bombCount = bombPenalty;
+                SetBombCountText();
+
+                isTagged = true;
+                Debug.Log("NICE ONE " + hit.tag + "! You took " + wallPenalty + " walls/bombs.");
             }
+
+
         }
     }
 
 
-
-
-
-
-    //here we can add items to inventory when entering a pickup area MAYBE
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wall Store")
@@ -299,9 +326,6 @@ public class PlayerController1 : MonoBehaviour
             winningPlayer = "RED PLAYER ";
             setWinnerText();
             winningScreen.gameObject.SetActive(true);
-
-            //restarts the game--should change this to option menu
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (other.tag == "Flag2" && isCarryingFlag && !isPlayer1 || other.tag == "End Zone 2" && isCarryingFlag && !isPlayer1)
         {
@@ -309,8 +333,6 @@ public class PlayerController1 : MonoBehaviour
             winningPlayer = "BLUE PLAYER ";
             setWinnerText();
             winningScreen.gameObject.SetActive(true);
-            //restarts the game--should change this to option menu
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -333,9 +355,12 @@ public class PlayerController1 : MonoBehaviour
 
     public void DeployWallTemp()
     {
-        if (wallDirectionJoystick != Vector3.zero)
+        if (wallDirectionJoystick != Vector3.zero && !tempWallSpawned)
         {
-            Instantiate(wallTemp, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
+            wallTemp.SetActive(true);
+            wallTemp.transform.position= transform.position + (wallDirectionJoystick * 2);
+            wallTemp.transform.rotation = Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f);
+
         }
     }
 
@@ -348,12 +373,17 @@ public class PlayerController1 : MonoBehaviour
                 Instantiate(wall, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
                 wallCount -= 1;
                 SetWallCountText();
+
+                wallTemp.SetActive(false);
+
             }
         }
         else if (wallCount == 0)
         {
             Debug.Log("Player out of walls");
             SetWallCountText();
+
+            wallTemp.SetActive(false);
         }
 
     }

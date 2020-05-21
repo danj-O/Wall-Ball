@@ -25,6 +25,8 @@ TagManager:
   - wallButton
   - End Zone
   - End Zone 2
+  - Wall Temp
+  - Wall Temp 2
   layers:
   - Default
   - TransparentFX

@@ -9,4 +9,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
     }
+    public void PlayTag()
+    {
+        SceneManager.LoadScene("Tag");
+    }
 }

@@ -7,6 +7,10 @@ public class winningScreen : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void ReturnToMenuScreen()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
