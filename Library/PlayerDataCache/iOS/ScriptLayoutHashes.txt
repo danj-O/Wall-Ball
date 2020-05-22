@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/Life/unity projects/WallBall Builds/wallball_0_9 (added a background)
+/Users/Life/unity projects/WallBall Builds/wallball_1_0 (dynamic joysticks for movement, middle safe zone, better poly prefabs for walls and stores)
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/MainGame.unity
@@ -22,6 +22,8 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.winningScreen
+71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Polybrush.dll:UnityEngine.Polybrush.ZoomOverride
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -101,8 +103,9 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-d8c3017e7cd8f004b029d259f107b1ca Assembly-CSharp.dll:.PlayerController1
+c7f3cb10be8d9c64be9d8a541787773e Assembly-CSharp.dll:.PlayerController1
 4e9333594897a1fb8b136ad2eae996c7 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
+93951db5bbc3a8c806fe33b4ae08827d Unity.Polybrush.dll:UnityEngine.Polybrush.OverlayRenderer
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -118,14 +121,18 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.WallBombTextBoxScript
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+9869d29a5e06e89901b88d69e4225ddf Unity.Polybrush.dll:Polybrush.z_AdditionalVertexStreams
 7018d69f894f7fd7880e1ee1d3d7c930 Assembly-CSharp.dll:.BombExplode
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Joybutton
 ce669872a2be11bc686ea22961d8a3bb Assembly-CSharp.dll:.FloatingJoystick
+83e769eee07fc231384c812eedbb8224 Assembly-CSharp.dll:.ZoneScript
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MoveForward
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 4841d4c0b4b6b98ec1e2cdc4350131f9 Assembly-CSharp.dll:.Wall
+c83d985fc87addea4eaf9b79cf45679c Assembly-CSharp.dll:.Flag2ContainerScriptTag
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 37edfc5c385eb4b9af32fd36df3f6fce Assembly-CSharp.dll:.Player2Controller
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -142,6 +149,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+f25b95eca44ed99ea2867d1dfa8f99dc Assembly-CSharp.dll:.PlayerControllerTag
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 0f1f7b15465ea128bd7abc47dff0b5d5 Assembly-CSharp.dll:.WallStore
@@ -168,6 +176,8 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 d0427c1314cbbbf2b3fd14e430338661 Assembly-CSharp.dll:.BombStore
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MainMenu
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
+c042aadbc09f16545c490ddfea25c79e Unity.Polybrush.dll:UnityEngine.Polybrush.PolybrushMesh
+c83d985fc87addea4eaf9b79cf45679c Assembly-CSharp.dll:.FlagContainerScriptTag
 df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
@@ -175,12 +185,3 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9dac16f3efc511835ac976dfae55f580 Assembly-CSharp.dll:.VariableJoystick
 c83d985fc87addea4eaf9b79cf45679c Assembly-CSharp.dll:.FlagContainerScript
 4841d4c0b4b6b98ec1e2cdc4350131f9 Assembly-CSharp.dll:.SuperWall
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.winningScreen
-f25b95eca44ed99ea2867d1dfa8f99dc Assembly-CSharp.dll:.PlayerControllerTag
-c83d985fc87addea4eaf9b79cf45679c Assembly-CSharp.dll:.FlagContainerScriptTag
-c83d985fc87addea4eaf9b79cf45679c Assembly-CSharp.dll:.Flag2ContainerScriptTag
-83e769eee07fc231384c812eedbb8224 Assembly-CSharp.dll:.ZoneScript
-71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Polybrush.dll:UnityEngine.Polybrush.ZoomOverride
-93951db5bbc3a8c806fe33b4ae08827d Unity.Polybrush.dll:UnityEngine.Polybrush.OverlayRenderer
-9869d29a5e06e89901b88d69e4225ddf Unity.Polybrush.dll:Polybrush.z_AdditionalVertexStreams
-c042aadbc09f16545c490ddfea25c79e Unity.Polybrush.dll:UnityEngine.Polybrush.PolybrushMesh

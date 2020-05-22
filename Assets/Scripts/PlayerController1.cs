@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController1 : MonoBehaviour
 {
+    private Gyroscope m_Gyro;
+    private Vector3 shakoMeter;
+
     public bool isPlayer1;
 
     private PlayerController1 otherPlayerScript;
@@ -28,7 +31,7 @@ public class PlayerController1 : MonoBehaviour
     private Vector3 moveDirectionWithSpeedJoystick;
     private Vector3 combinedMoveDirectionWithSpeed;
 
-    private FixedJoystick joystick;
+    private DynamicJoystick joystick;
     private FixedJoystick wallJoystick;
     private Vector3 wallDirectionJoystick;
     private bool hasBuiltWall = false;
@@ -52,6 +55,7 @@ public class PlayerController1 : MonoBehaviour
     private bool isBombCooledDown = true;
 
     public Text wallCountText;
+    public GameObject wallBombTextBox;
     public Text bombCountText;
 
     private string winningPlayer;
@@ -86,7 +90,7 @@ public class PlayerController1 : MonoBehaviour
             getWallAxisVert = "VerticalWall";
 
             //for movement
-            joystick = GameObject.FindWithTag("Joystick").GetComponent<FixedJoystick>();
+            joystick = GameObject.FindWithTag("Joystick").GetComponent<DynamicJoystick>();
             //for wall spawn positioning
             wallJoystick = GameObject.FindWithTag("wallJoystick").GetComponent<FixedJoystick>();
             //listener for 
@@ -106,7 +110,7 @@ public class PlayerController1 : MonoBehaviour
             getWallAxisHor = "HorizontalWall2";
             getWallAxisVert = "VerticalWall2";
 
-            joystick = GameObject.FindWithTag("Joystick2").GetComponent<FixedJoystick>();
+            joystick = GameObject.FindWithTag("Joystick2").GetComponent<DynamicJoystick>();
             wallJoystick = GameObject.FindWithTag("wallJoystick2").GetComponent<FixedJoystick>();
             //GameObject.FindWithTag("wallJoystick2").GetComponent<Button>().onClick.AddListener(DeployWall);
 
@@ -124,17 +128,29 @@ public class PlayerController1 : MonoBehaviour
         wallCount = 3;
         bombCount = 6;
 
-        SetWallCountText();
+        //SetWallCountText();
+        wallCountText.text = "Walls: " + wallCount.ToString();
         SetBombCountText();
 
         winningScreen.gameObject.SetActive(false);
         winnerText.text = "";
 
+        m_Gyro = Input.gyro;
+        m_Gyro.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Input.gyro.rotationRateUnbiased);
+        shakoMeter = Input.gyro.rotationRateUnbiased;
+        if (shakoMeter.x > 3f || shakoMeter.y > 3f || shakoMeter.z > 2.5f || shakoMeter.x < -3f || shakoMeter.y < -3f || shakoMeter.z < -2.5f)
+        {
+            Debug.Log("YOU SHAKING!!!!!\nSHAKKINGGG\nSHAKKEEINGG");
+        }
+
+
+
         Vector3 moveDirection = new Vector3(Input.GetAxis(getAxisHorizontal), 0.0f, Input.GetAxis(getAxisVertical));
         moveDirectionWithSpeed = moveDirection * speed;
 
@@ -213,7 +229,7 @@ public class PlayerController1 : MonoBehaviour
         //WALL INSTANTIATE FOR KEYS
         if ((Input.GetKeyDown(KeyCode.V) && isPlayer1 && wallCount > 0) || (Input.GetKeyDown(KeyCode.Comma) && !isPlayer1 && wallCount > 0))
         {
-            Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
+            Instantiate(wall, transform.position + (transform.forward * 2), transform.rotation);
             wallCount -= 1;
             SetWallCountText();
         }
@@ -253,19 +269,19 @@ public class PlayerController1 : MonoBehaviour
                 otherPlayerScript = hit.GetComponent<PlayerController1>();
 
                 int wallPenalty = wallCount / 2;
-                otherPlayerScript.wallCount = wallPenalty;
+                otherPlayerScript.wallCount += wallPenalty;
                 otherPlayerScript.SetWallCountText();
                 wallCount = wallPenalty;
                 SetWallCountText();
 
                 int bombPenalty = bombCount / 2;
-                otherPlayerScript.bombCount = bombPenalty;
+                otherPlayerScript.bombCount += bombPenalty;
                 otherPlayerScript.SetBombCountText();
                 bombCount = bombPenalty;
                 SetBombCountText();
 
                 isTagged = true;
-                Debug.Log("NICE ONE " + hit.tag + "! You took " + wallPenalty + " walls/bombs.");
+                Debug.Log("NICE ONE " + hit.tag + "! You took " + wallPenalty + " walls and " + bombPenalty + " bombs");
             }
 
 
@@ -358,8 +374,8 @@ public class PlayerController1 : MonoBehaviour
         if (wallDirectionJoystick != Vector3.zero && !tempWallSpawned)
         {
             wallTemp.SetActive(true);
-            wallTemp.transform.position= transform.position + (wallDirectionJoystick * 2);
-            wallTemp.transform.rotation = Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f);
+            wallTemp.transform.position= new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z) + (wallDirectionJoystick * 2);
+            wallTemp.transform.rotation = Quaternion.LookRotation(wallDirectionJoystick);
 
         }
     }
@@ -370,7 +386,7 @@ public class PlayerController1 : MonoBehaviour
         {
             if (wallDirectionJoystick != Vector3.zero)
             {
-                Instantiate(wall, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
+                Instantiate(wall, new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z) + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick));
                 wallCount -= 1;
                 SetWallCountText();
 
@@ -392,10 +408,12 @@ public class PlayerController1 : MonoBehaviour
     private void SetWallCountText()
     {
         wallCountText.text = "Walls: " + wallCount.ToString();
+        wallBombTextBox.GetComponent<WallBombTextBoxScript>().anim();
     }
     private void SetBombCountText()
     {
         bombCountText.text = "Bombs: " + bombCount.ToString();
+        wallBombTextBox.GetComponent<WallBombTextBoxScript>().anim();
     }
 
     private void setWinnerText()
