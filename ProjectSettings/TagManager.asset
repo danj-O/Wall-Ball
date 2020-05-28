@@ -27,6 +27,7 @@ TagManager:
   - End Zone 2
   - Wall Temp
   - Wall Temp 2
+  - Wall
   layers:
   - Default
   - TransparentFX

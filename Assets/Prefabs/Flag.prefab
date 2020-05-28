@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4049180836971427719}
   - component: {fileID: 4049180836971427716}
   - component: {fileID: 4049180836971427717}
+  - component: {fileID: 95571473455734682}
   m_Layer: 0
   m_Name: Flag
   m_TagString: Flag1
@@ -91,3 +92,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9834365, y: 1.9270949, z: 1.7779074}
   m_Center: {x: -0.10398482, y: 0.057325058, z: 0.08555636}
+--- !u!95 &95571473455734682
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049180836971427714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -14,7 +14,7 @@ public class WallStore : MonoBehaviour
     void Start()
     {
         inventory = 1;
-        respawnTimer = 5f;
+        respawnTimer = 6f;
         SetWallCountText();
     }
 
@@ -25,7 +25,7 @@ public class WallStore : MonoBehaviour
 
         if (respawnTimer <= 0)
         {
-            respawnTimer = 5f;
+            respawnTimer = 6f;
             inventory += 1;
             SetWallCountText();
         }

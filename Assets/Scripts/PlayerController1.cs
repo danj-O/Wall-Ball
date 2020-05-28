@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+//using TMPro;
 
 
 public class PlayerController1 : MonoBehaviour
 {
+    public float gameTimer;
     private Gyroscope m_Gyro;
     private Vector3 shakoMeter;
 
@@ -24,6 +26,9 @@ public class PlayerController1 : MonoBehaviour
     private string getAxisVertical = "Vertical";
     private string getWallAxisHor = "HorizontalWall";
     private string getWallAxisVert = "VerticalWall";
+    //private string fire1;
+    //private string fire2;
+
 
 
     private float speed = 20f;
@@ -53,10 +58,14 @@ public class PlayerController1 : MonoBehaviour
     public float bombCooldown;
     private float bombCooldownDefault = 0f;
     private bool isBombCooledDown = true;
+    //public float distanceFromObj;
+    private float bombRespawnTimer;
 
     public Text wallCountText;
     public GameObject wallBombTextBox;
     public Text bombCountText;
+    //public GameObject warningTextBox;
+    //public Text warningText;
 
     private string winningPlayer;
     public Text winnerText;
@@ -68,7 +77,7 @@ public class PlayerController1 : MonoBehaviour
     public bool flagIsDropped;
     public bool isTagged;
 
-    private float overlapColliderRange = 2.5f;
+    private float overlapColliderRange = 1.2f;
 
     public bool inDangerZone;
 
@@ -119,13 +128,15 @@ public class PlayerController1 : MonoBehaviour
             carryFlag = GameObject.FindWithTag("Carry Flag 2");
         }
 
+        //warningText = warningTextBox.GetComponent<Text>();
+
         carryFlag.SetActive(false);
         isCarryingFlag = false;
         flagIsDropped = false;
 
         rb = GetComponent<Rigidbody>();
 
-        wallCount = 3;
+        wallCount = 10;
         bombCount = 6;
 
         //SetWallCountText();
@@ -142,7 +153,19 @@ public class PlayerController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.gyro.rotationRateUnbiased);
+
+        gameTimer += Time.deltaTime;
+        bombRespawnTimer += Time.deltaTime;
+        //Debug.Log(gameTimer);
+        if (bombRespawnTimer > 10)
+        {
+            bombCount += 1;
+            SetBombCountText();
+            bombRespawnTimer = 0;
+        }
+
+
+        //Debug.Log(Input.gyro.rotationRateUnbiased);
         shakoMeter = Input.gyro.rotationRateUnbiased;
         if (shakoMeter.x > 3f || shakoMeter.y > 3f || shakoMeter.z > 2.5f || shakoMeter.x < -3f || shakoMeter.y < -3f || shakoMeter.z < -2.5f)
         {
@@ -180,14 +203,18 @@ public class PlayerController1 : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection.normalized), 0.5f);
         }
 
+        //RaycastHit theHit;
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out theHit))
+        //{
+        //    if (theHit.collider.gameObject.tag == "Wall")
+        //    {
+        //        Debug.Log("WALLLL!!!!");
+        //        distanceFromObj = theHit.distance * 100;
+        //    }
+        //}
 
 
         //DROPPING PREFABS(WALLS AND BOMBS) SECTION
-
-        if (wallDirectionJoystick != Vector3.zero)
-        {
-
-        }
 
         //bomb cooldown conditional
         if (bombCooldown > 0 && !isBombCooledDown)
@@ -212,19 +239,10 @@ public class PlayerController1 : MonoBehaviour
         {
             Debug.Log("Player out of bombs");
             SetBombCountText();
+            setWarningText("bomb");
         }
 
-        //WALL INSTANTIATE FOR MOBILE
-        //if (wallDirectionJoystick != Vector3.zero && wallCount > 0 && !hasBuiltWall)
-        //{
-        //    Instantiate(wall, transform.position + (wallDirectionJoystick * 2), Quaternion.LookRotation(wallDirectionJoystick) * Quaternion.Euler(0f, 90f, 0f));
-        //    wallCount -= 1;
-        //    SetWallCountText();
-        //    hasBuiltWall = true;
-        //} else if (wallDirectionJoystick == Vector3.zero && hasBuiltWall)
-        //{
-        //    hasBuiltWall = false;
-        //}
+
 
         //WALL INSTANTIATE FOR KEYS
         if ((Input.GetKeyDown(KeyCode.V) && isPlayer1 && wallCount > 0) || (Input.GetKeyDown(KeyCode.Comma) && !isPlayer1 && wallCount > 0))
@@ -237,6 +255,7 @@ public class PlayerController1 : MonoBehaviour
         {
             Debug.Log("Player 1 out of walls");
             SetWallCountText();
+            setWarningText("wall");
         }
 
         if ((Input.GetKeyDown(KeyCode.C) && isPlayer1) || (Input.GetKeyDown(KeyCode.L) && !isPlayer1))
@@ -264,7 +283,9 @@ public class PlayerController1 : MonoBehaviour
                 flagIsDropped = true;
                 carryFlag.SetActive(false);
                 Debug.Log("TAGGED!!! DROP THE GEM!");
-            } else if ((hit.tag == "Player2" && isPlayer1 && inDangerZone && !isTagged) || (hit.tag == "Playa" && !isPlayer1 && inDangerZone && !isTagged))
+                setWarningText("tagged with gem");
+            }
+            else if ((hit.tag == "Player2" && isPlayer1 && inDangerZone && !isTagged) || (hit.tag == "Playa" && !isPlayer1 && inDangerZone && !isTagged))
             {
                 otherPlayerScript = hit.GetComponent<PlayerController1>();
 
@@ -282,6 +303,8 @@ public class PlayerController1 : MonoBehaviour
 
                 isTagged = true;
                 Debug.Log("NICE ONE " + hit.tag + "! You took " + wallPenalty + " walls and " + bombPenalty + " bombs");
+                setWarningText("tagged");
+
             }
 
 
@@ -296,11 +319,13 @@ public class PlayerController1 : MonoBehaviour
             if (other.GetComponent<WallStore>().inventory <= 0)
             {
                 Debug.Log("Wall store has no walls!");
+                //setWarningText("wall store");
+
             }
             else if (other.GetComponent<WallStore>().inventory > 0)
             {
                 other.GetComponent<WallStore>().inventory -= 1;
-                Debug.Log(other.GetComponent<WallStore>().inventory);
+                //Debug.Log(other.GetComponent<WallStore>().inventory);
                 wallCount += 1;
                 SetWallCountText();
             }
@@ -309,6 +334,8 @@ public class PlayerController1 : MonoBehaviour
         {
             if (other.GetComponent<BombStore>().inventory <= 0)
             {
+                //setWarningText("bomb store");
+
             }
             else if (other.GetComponent<BombStore>().inventory > 0)
             {
@@ -327,6 +354,7 @@ public class PlayerController1 : MonoBehaviour
             Destroy(other.gameObject);
             carryFlag.SetActive(true);
             isCarryingFlag = true;
+            setWarningText("have flag!");
         }
         else if (other.tag == "Flag1" && !isPlayer1)
         {
@@ -334,6 +362,7 @@ public class PlayerController1 : MonoBehaviour
             Destroy(other.gameObject);
             carryFlag.SetActive(true);
             isCarryingFlag = true;
+            setWarningText("have flag");
         }
 
         if (other.tag == "Flag1" && isCarryingFlag && isPlayer1 || other.tag == "End Zone" && isCarryingFlag && isPlayer1)
@@ -366,6 +395,8 @@ public class PlayerController1 : MonoBehaviour
         {
             Debug.Log("Player out of bombs");
             SetBombCountText();
+            setWarningText("bomb");
+
         }
     }
 
@@ -398,6 +429,7 @@ public class PlayerController1 : MonoBehaviour
         {
             Debug.Log("Player out of walls");
             SetWallCountText();
+            setWarningText("wall");
 
             wallTemp.SetActive(false);
         }
@@ -419,5 +451,33 @@ public class PlayerController1 : MonoBehaviour
     private void setWinnerText()
     {
         winnerText.text = winningPlayer + "WINS!";
+    }
+
+    private void setWarningText(string textMod)
+    {
+        //if (textMod == "wall")
+        //{
+        //    warningText.text = "You are out of walls!";
+
+        //}
+        //if (textMod == "bomb")
+        //{
+        //    warningText.text = "You are out of bombs!";
+        //}
+        //if (textMod == "tagged with gem")
+        //{
+        //    warningText.text = "You've been tagged and dropped the gem!";
+        //}
+        //if (textMod == "tagged")
+        //{
+        //    warningText.text = "You've been tagged and lost stuff!";
+        //}
+        //if (textMod == "have flag")
+        //{
+        //    warningText.text = "You have the flag! take it home!";
+        //}
+        
+        ////tagged tagger wall bomb have flag
+        //warningTextBox.GetComponent<WarningTextBoxScript>().anim();
     }
 }

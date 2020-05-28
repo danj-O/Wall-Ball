@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Wall.cs" />
     <Compile Include="Assets\Scripts\WallBombTextBoxScript.cs" />
     <Compile Include="Assets\Scripts\WallStore.cs" />
+    <Compile Include="Assets\Scripts\WarningTextBoxScript.cs" />
     <Compile Include="Assets\Scripts\winningScreen.cs" />
     <Compile Include="Assets\Scripts\ZoneScript.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
