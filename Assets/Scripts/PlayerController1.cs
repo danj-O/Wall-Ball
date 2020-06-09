@@ -64,8 +64,8 @@ public class PlayerController1 : MonoBehaviour
     public Text wallCountText;
     public GameObject wallBombTextBox;
     public Text bombCountText;
-    //public GameObject warningTextBox;
-    //public Text warningText;
+    public GameObject warningTextBox;
+    public Text warningText;
 
     private string winningPlayer;
     public Text winnerText;
@@ -348,15 +348,15 @@ public class PlayerController1 : MonoBehaviour
             }
         }
 
-        if (other.tag == "Flag2" && isPlayer1)
+        if (other.tag == "Flag2" && isPlayer1 && !isTagged)
         {
             Debug.Log("Red player has the flag!");
             Destroy(other.gameObject);
             carryFlag.SetActive(true);
             isCarryingFlag = true;
-            setWarningText("have flag!");
+            setWarningText("have flag");
         }
-        else if (other.tag == "Flag1" && !isPlayer1)
+        else if (other.tag == "Flag1" && !isPlayer1 && !isTagged)
         {
             Debug.Log("Blue player has the flag!");
             Destroy(other.gameObject);
@@ -455,29 +455,29 @@ public class PlayerController1 : MonoBehaviour
 
     private void setWarningText(string textMod)
     {
-        //if (textMod == "wall")
-        //{
-        //    warningText.text = "You are out of walls!";
+        if (textMod == "wall")
+        {
+            warningText.text = "You are out of walls!";
 
-        //}
-        //if (textMod == "bomb")
-        //{
-        //    warningText.text = "You are out of bombs!";
-        //}
-        //if (textMod == "tagged with gem")
-        //{
-        //    warningText.text = "You've been tagged and dropped the gem!";
-        //}
-        //if (textMod == "tagged")
-        //{
-        //    warningText.text = "You've been tagged and lost stuff!";
-        //}
-        //if (textMod == "have flag")
-        //{
-        //    warningText.text = "You have the flag! take it home!";
-        //}
-        
-        ////tagged tagger wall bomb have flag
-        //warningTextBox.GetComponent<WarningTextBoxScript>().anim();
+        }
+        if (textMod == "bomb")
+        {
+            warningText.text = "You are out of bombs!";
+        }
+        if (textMod == "tagged with gem" && isCarryingFlag)
+        {
+            warningText.text = "You've been tagged and dropped the gem!";
+        }
+        if (textMod == "tagged" && !isCarryingFlag)
+        {
+            warningText.text = "You've been tagged and lost stuff!";
+        }
+        if (textMod == "have flag")
+        {
+            warningText.text = "You have the flag! take it home!";
+        }
+
+        //tagged tagger wall bomb have flag
+        warningTextBox.GetComponent<WarningTextBoxScript>().anim();
     }
 }

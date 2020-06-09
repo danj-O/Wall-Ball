@@ -13,6 +13,10 @@ public class BombExplode : MonoBehaviour
     public ParticleSystem explosion;
     private float particleDestroyDuration;
 
+    private float explosionRadius = 5f;
+    private float power = 900f;
+    private float upForce = 0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,6 +36,15 @@ public class BombExplode : MonoBehaviour
             //Debug.Log(bombTimer);
             if (bombTimer <= 0)
             {
+                //Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+                //foreach (Collider hit in colliders)
+                //{
+                //    if (hit.gameObject.tag == "Playa" || hit.gameObject.tag == "Player2")
+                //    {
+                //        Rigidbody rb = hit.GetComponent<Rigidbody>();
+                //        rb.AddExplosionForce(power, transform.position, explosionRadius, upForce, ForceMode.Impulse);
+                //    }
+                //}
                 //Debug.Log("BOOM");
                 isBombLive = false;
                 bombTimer = bombTimerDefault;
