@@ -108,8 +108,10 @@ public class PlayerController1 : MonoBehaviour
             GameObject.FindWithTag("Joybutton").GetComponent<Button>().onClick.AddListener(DeployBomb);
             //GameObject.FindWithTag("JoybuttonWall").GetComponent<Button>().onClick.AddListener(DeployWall);
             carryFlag = GameObject.FindWithTag("Carry Flag");
+            otherPlayerScript = GameObject.FindWithTag("Player2").GetComponent<PlayerController1>();
 
-        }
+
+}
         else if (gameObject.tag == "Player2")
         {
             isPlayer1 = false;
@@ -126,6 +128,8 @@ public class PlayerController1 : MonoBehaviour
             GameObject.FindWithTag("Joybutton2").GetComponent<Button>().onClick.AddListener(DeployBomb);
             //GameObject.FindWithTag("JoybuttonWall2").GetComponent<Button>().onClick.AddListener(DeployWall);
             carryFlag = GameObject.FindWithTag("Carry Flag 2");
+            otherPlayerScript = GameObject.FindWithTag("Playa").GetComponent<PlayerController1>();
+
         }
 
         //warningText = warningTextBox.GetComponent<Text>();
@@ -287,17 +291,17 @@ public class PlayerController1 : MonoBehaviour
             }
             else if ((hit.tag == "Player2" && isPlayer1 && inDangerZone && !isTagged) || (hit.tag == "Playa" && !isPlayer1 && inDangerZone && !isTagged))
             {
-                otherPlayerScript = hit.GetComponent<PlayerController1>();
+                PlayerController1 taggedPlayerScript = hit.GetComponent<PlayerController1>();
 
                 int wallPenalty = wallCount / 2;
-                otherPlayerScript.wallCount += wallPenalty;
-                otherPlayerScript.SetWallCountText();
+                taggedPlayerScript.wallCount += wallPenalty;
+                taggedPlayerScript.SetWallCountText();
                 wallCount = wallPenalty;
                 SetWallCountText();
 
                 int bombPenalty = bombCount / 2;
-                otherPlayerScript.bombCount += bombPenalty;
-                otherPlayerScript.SetBombCountText();
+                taggedPlayerScript.bombCount += bombPenalty;
+                taggedPlayerScript.SetBombCountText();
                 bombCount = bombPenalty;
                 SetBombCountText();
 
@@ -350,19 +354,26 @@ public class PlayerController1 : MonoBehaviour
 
         if (other.tag == "Flag2" && isPlayer1 && !isTagged)
         {
-            Debug.Log("Red player has the flag!");
-            Destroy(other.gameObject);
-            carryFlag.SetActive(true);
-            isCarryingFlag = true;
-            setWarningText("have flag");
+            if (!otherPlayerScript.isCarryingFlag)
+            {
+                Debug.Log("Red player has the flag!");
+                Destroy(other.gameObject);
+                carryFlag.SetActive(true);
+                isCarryingFlag = true;
+                setWarningText("have flag");
+            }
         }
         else if (other.tag == "Flag1" && !isPlayer1 && !isTagged)
         {
-            Debug.Log("Blue player has the flag!");
-            Destroy(other.gameObject);
-            carryFlag.SetActive(true);
-            isCarryingFlag = true;
-            setWarningText("have flag");
+            if (!otherPlayerScript.isCarryingFlag)
+            {
+                Debug.Log("Blue player has the flag!");
+                Destroy(other.gameObject);
+                carryFlag.SetActive(true);
+                isCarryingFlag = true;
+                setWarningText("have flag");
+            }
+
         }
 
         if (other.tag == "Flag1" && isCarryingFlag && isPlayer1 || other.tag == "End Zone" && isCarryingFlag && isPlayer1)

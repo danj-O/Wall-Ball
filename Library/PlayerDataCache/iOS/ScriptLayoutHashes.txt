@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/Life/unity projects/WallBall Builds/wallball_1_2 (more bombs, less walls)
+/Users/Life/unity projects/WallBall Builds/wallball_1_3 (warning texts)
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/MainGame.unity
@@ -103,7 +103,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-7c628915488d7c3b877ff52ffccd71ad Assembly-CSharp.dll:.PlayerController1
+4e4c6be8236c017da713b2f5ec9b165d Assembly-CSharp.dll:.PlayerController1
 4e9333594897a1fb8b136ad2eae996c7 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 93951db5bbc3a8c806fe33b4ae08827d Unity.Polybrush.dll:UnityEngine.Polybrush.OverlayRenderer
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
